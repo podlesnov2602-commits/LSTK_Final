@@ -1,9 +1,23 @@
 /* Premium Footer */
 .site-footer {
-  background: #0A0A0A;
+  background: var(--bg-footer);
   border-top: 2px solid var(--accent-primary);
   padding: 80px 0 40px;
   margin-top: 120px;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(180deg, var(--accent-glow) 0%, transparent 100%);
+  opacity: 0.08;
+  pointer-events: none;
 }
 
 .footer-grid {
