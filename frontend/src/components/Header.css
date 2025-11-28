@@ -165,6 +165,24 @@
     pointer-events: all;
   }
   
+  .nav-dropdown {
+    width: 100%;
+  }
+  
+  .dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
+    padding: 8px 0;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    margin-top: 8px;
+    box-shadow: none;
+    border: none;
+    background: var(--bg-tertiary);
+  }
+  
   .whatsapp-btn {
     display: none;
   }
