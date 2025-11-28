@@ -1,26 +1,26 @@
 /* Premium Dark Theme with Green Accent - Fabrika Karkasov Alatau */
 
 :root {
-  /* Dark Theme Base */
-  --bg-primary: #0D0D0D;
-  --bg-secondary: #1C1C1C;
-  --bg-tertiary: #2A2A2A;
+  /* Dark Theme Base - Premium */
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #0D0D0D;
+  --bg-tertiary: #1C1C1C;
   
   /* Text Hierarchy */
   --text-primary: #FFFFFF;
-  --text-secondary: #B5B5B5;
-  --text-muted: #808080;
+  --text-secondary: rgba(255, 255, 255, 0.9);
+  --text-muted: rgba(255, 255, 255, 0.6);
   
   /* Border System */
-  --border-primary: #3F3F3F;
-  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-primary: rgba(255, 255, 255, 0.15);
+  --border-subtle: rgba(255, 255, 255, 0.08);
   
-  /* Green Accent */
-  --accent-primary: #0DA66F;
-  --accent-hover: #18C482;
-  --accent-pressed: #0A8558;
-  --accent-bg: rgba(13, 166, 111, 0.1);
-  --accent-glow: rgba(13, 166, 111, 0.3);
+  /* Premium Green Accent */
+  --accent-primary: #12A45B;
+  --accent-hover: #15C06D;
+  --accent-pressed: #0E8549;
+  --accent-bg: rgba(18, 164, 91, 0.1);
+  --accent-glow: rgba(18, 164, 91, 0.4);
 }
 
 * {
