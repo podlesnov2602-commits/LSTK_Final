@@ -171,11 +171,12 @@
 
 .advantage-card {
   padding: 32px;
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
   transition: all 0.3s ease;
   text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .advantage-card:hover {
