@@ -48,18 +48,24 @@ const Header = () => {
                   onMouseEnter={() => setCatalogOpen(true)}
                   onMouseLeave={() => setCatalogOpen(false)}
                 >
-                  <button className="nav-link dropdown-toggle">
+                  <button 
+                    className="nav-link dropdown-toggle"
+                    onClick={() => setMobileCatalogOpen(!mobileCatalogOpen)}
+                  >
                     {item.label}
-                    <ChevronDown size={16} />
+                    <ChevronDown size={16} className={mobileCatalogOpen ? 'rotated' : ''} />
                   </button>
-                  {catalogOpen && (
+                  {(catalogOpen || mobileCatalogOpen) && (
                     <div className="dropdown-menu">
                       {item.subMenu.map((subItem) => (
                         <Link
                           key={subItem.path}
                           to={subItem.path}
                           className="dropdown-item"
-                          onClick={() => setMobileMenuOpen(false)}
+                          onClick={() => {
+                            setMobileMenuOpen(false);
+                            setMobileCatalogOpen(false);
+                          }}
                         >
                           {subItem.label}
                         </Link>
