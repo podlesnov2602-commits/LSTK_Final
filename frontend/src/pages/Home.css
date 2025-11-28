@@ -251,7 +251,19 @@
 /* Documents Teaser */
 .documents-teaser {
   padding: 120px 0;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.documents-teaser::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+  opacity: 0.5;
 }
 
 .documents-grid {
