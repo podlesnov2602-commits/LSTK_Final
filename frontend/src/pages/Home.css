@@ -94,11 +94,12 @@
 }
 
 .direction-card {
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
   overflow: hidden;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .direction-card:hover {
