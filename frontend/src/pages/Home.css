@@ -303,7 +303,19 @@
 /* Contact Section */
 .contact-section {
   padding: 120px 0;
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+  opacity: 0.5;
 }
 
 .contact-content {
