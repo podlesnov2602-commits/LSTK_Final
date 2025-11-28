@@ -1,0 +1,138 @@
+.documents-page {
+  width: 100%;
+}
+
+/* Documents Hero */
+.documents-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1496247749665-49cf5b1022e9');
+  background-size: cover;
+  background-position: center;
+}
+
+.documents-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(13, 13, 13, 0.9) 0%, rgba(13, 166, 111, 0.15) 100%);
+}
+
+.documents-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.documents-hero-content h1 {
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.documents-hero-content p {
+  color: var(--text-secondary);
+}
+
+/* Documents Grid Section */
+.documents-grid-section {
+  padding: 120px 0;
+  background: var(--bg-primary);
+}
+
+.documents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 32px;
+}
+
+.document-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  padding: 32px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.document-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.document-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-bg);
+  color: var(--accent-primary);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.document-card:hover .document-icon-wrapper {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+}
+
+.document-info h3 {
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.document-info p {
+  color: var(--text-secondary);
+}
+
+.download-btn {
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Documents Info Section */
+.documents-info-section {
+  padding: 120px 0;
+  background: var(--bg-secondary);
+}
+
+.documents-info-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.documents-info-content h2 {
+  color: var(--text-primary);
+  margin-bottom: 32px;
+}
+
+.documents-info-content p {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .documents-hero {
+    min-height: 50vh;
+  }
+  
+  .documents-grid-section,
+  .documents-info-section {
+    padding: 80px 0;
+  }
+  
+  .documents-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
