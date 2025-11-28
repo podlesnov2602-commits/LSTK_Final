@@ -8,6 +8,7 @@ const Header = () => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [catalogOpen, setCatalogOpen] = useState(false);
+  const [mobileCatalogOpen, setMobileCatalogOpen] = useState(false);
 
   const menuItems = [
     { path: '/', label: 'Главная' },
