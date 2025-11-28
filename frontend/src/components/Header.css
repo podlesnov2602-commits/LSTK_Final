@@ -1,12 +1,13 @@
 /* Premium Header */
 .site-header {
-  background: rgba(10, 10, 10, 0.95);
+  background: var(--bg-header);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
   height: 75px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .header-content {
