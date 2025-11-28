@@ -1,19 +1,27 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Menu, X } from 'lucide-react';
+import { Phone, Menu, X, ChevronDown } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import './Header.css';
 
 const Header = () => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [catalogOpen, setCatalogOpen] = useState(false);
 
   const menuItems = [
     { path: '/', label: 'Главная' },
-    { path: '/capsules', label: 'Капсулы' },
-    { path: '/hangars', label: 'Ангары' },
-    { path: '/garages', label: 'Гаражи' },
-    { path: '/about', label: 'О компании' },
+    { 
+      path: '#', 
+      label: 'Каталог',
+      isDropdown: true,
+      subMenu: [
+        { path: '/capsules', label: 'Капсулы' },
+        { path: '/hangars', label: 'Ангары' },
+        { path: '/garages', label: 'Гаражи' }
+      ]
+    },
+    { path: '/about', label: 'О нас' },
     { path: '/documents', label: 'Документы' },
     { path: '/contacts', label: 'Контакты' }
   ];
