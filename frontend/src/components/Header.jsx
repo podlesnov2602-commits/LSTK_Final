@@ -39,15 +39,43 @@ const Header = () => {
           </Link>
 
           <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-            {menuItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.label}
-              </Link>
+            {menuItems.map((item, index) => (
+              item.isDropdown ? (
+                <div 
+                  key={index}
+                  className="nav-dropdown"
+                  onMouseEnter={() => setCatalogOpen(true)}
+                  onMouseLeave={() => setCatalogOpen(false)}
+                >
+                  <button className="nav-link dropdown-toggle">
+                    {item.label}
+                    <ChevronDown size={16} />
+                  </button>
+                  {catalogOpen && (
+                    <div className="dropdown-menu">
+                      {item.subMenu.map((subItem) => (
+                        <Link
+                          key={subItem.path}
+                          to={subItem.path}
+                          className="dropdown-item"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {subItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
           </nav>
 
