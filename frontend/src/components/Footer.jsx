@@ -10,16 +10,19 @@ const Footer = () => {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-column">
-            <h3 className="footer-title">{siteConfig.company.name}</h3>
+            <div className="footer-logo">
+              <div className="footer-logo-icon">{siteConfig.company.logo}</div>
+              <h3 className="footer-title">{siteConfig.company.name}</h3>
+            </div>
             <p className="footer-description">
               {siteConfig.company.description}
             </p>
             <div className="footer-social">
               <a href={siteConfig.social.instagram} className="footer-social-link" target="_blank" rel="noopener noreferrer">
-                <Instagram size={20} />
+                <Instagram size={22} />
               </a>
               <a href={siteConfig.social.facebook} className="footer-social-link" target="_blank" rel="noopener noreferrer">
-                <Facebook size={20} />
+                <Facebook size={22} />
               </a>
             </div>
           </div>
