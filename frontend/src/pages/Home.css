@@ -55,7 +55,7 @@
 .hero-title {
   color: var(--text-primary);
   margin-bottom: 24px;
-  text-shadow: 0 0 40px rgba(13, 166, 111, 0.4);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 60px var(--accent-glow);
 }
 
 .hero-subtitle {
