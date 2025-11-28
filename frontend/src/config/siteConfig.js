@@ -3,6 +3,7 @@ export const siteConfig = {
   company: {
     name: 'Фабрика Каркасов Алатау',
     shortName: 'ФКА',
+    logo: 'ФКА', // Логотип текстом
     description: 'Производство ЛСТК конструкций в Казахстане'
   },
   contact: {
