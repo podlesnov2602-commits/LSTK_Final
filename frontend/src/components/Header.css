@@ -85,6 +85,14 @@
   color: var(--accent-primary);
 }
 
+.dropdown-toggle svg {
+  transition: transform 0.2s ease;
+}
+
+.dropdown-toggle svg.rotated {
+  transform: rotate(180deg);
+}
+
 .dropdown-menu {
   position: absolute;
   top: 100%;
