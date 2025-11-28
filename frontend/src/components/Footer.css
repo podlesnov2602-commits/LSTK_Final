@@ -55,9 +55,23 @@
   justify-content: center;
   font-size: 28px;
   font-weight: 900;
-  color: #0A0A0A;
+  color: #0C0C0C;
   letter-spacing: -0.02em;
-  box-shadow: 0 8px 24px rgba(18, 164, 91, 0.4);
+  box-shadow: 0 8px 32px var(--accent-glow-strong), 0 0 60px var(--accent-glow);
+  position: relative;
+}
+
+.footer-logo-icon::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 16px;
+  background: radial-gradient(ellipse at center, var(--accent-glow-strong) 0%, transparent 70%);
+  filter: blur(10px);
+  opacity: 0.12;
 }
 
 .footer-title {
