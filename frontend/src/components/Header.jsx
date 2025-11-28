@@ -1,34 +1,40 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Phone, Menu, X, ChevronDown } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Phone, Menu, X } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import './Header.css';
 
 const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [catalogOpen, setCatalogOpen] = useState(false);
-  const [mobileCatalogOpen, setMobileCatalogOpen] = useState(false);
 
   const menuItems = [
     { path: '/', label: 'Главная' },
-    { 
-      path: '#', 
-      label: 'Каталог',
-      isDropdown: true,
-      subMenu: [
-        { path: '/capsules', label: 'Капсулы' },
-        { path: '/hangars', label: 'Ангары' },
-        { path: '/garages', label: 'Гаражи' }
-      ]
-    },
+    { path: '#directions', label: 'Каталог', isAnchor: true },
     { path: '/about', label: 'О нас' },
     { path: '/documents', label: 'Документы' },
     { path: '/contacts', label: 'Контакты' }
   ];
 
-  const handleWhatsAppClick = () => {
-    window.open(siteConfig.social.whatsapp, '_blank');
+  const handleNavClick = (item) => {
+    if (item.isAnchor) {
+      if (location.pathname !== '/') {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.getElementById('directions');
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        const element = document.getElementById('directions');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -36,43 +42,20 @@ const Header = () => {
       <div className="container">
         <div className="header-content">
           <Link to="/" className="logo">
+            <div className="logo-icon">{siteConfig.company.logo}</div>
             <span className="logo-text">{siteConfig.company.name}</span>
           </Link>
 
           <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-            {menuItems.map((item, index) => (
-              item.isDropdown ? (
-                <div 
-                  key={index}
-                  className="nav-dropdown"
-                  onMouseEnter={() => setCatalogOpen(true)}
-                  onMouseLeave={() => setCatalogOpen(false)}
+            {menuItems.map((item) => (
+              item.isAnchor ? (
+                <button
+                  key={item.path}
+                  className="nav-link"
+                  onClick={() => handleNavClick(item)}
                 >
-                  <button 
-                    className="nav-link dropdown-toggle"
-                    onClick={() => setMobileCatalogOpen(!mobileCatalogOpen)}
-                  >
-                    {item.label}
-                    <ChevronDown size={16} className={mobileCatalogOpen ? 'rotated' : ''} />
-                  </button>
-                  {(catalogOpen || mobileCatalogOpen) && (
-                    <div className="dropdown-menu">
-                      {item.subMenu.map((subItem) => (
-                        <Link
-                          key={subItem.path}
-                          to={subItem.path}
-                          className="dropdown-item"
-                          onClick={() => {
-                            setMobileMenuOpen(false);
-                            setMobileCatalogOpen(false);
-                          }}
-                        >
-                          {subItem.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                  {item.label}
+                </button>
               ) : (
                 <Link
                   key={item.path}
@@ -86,10 +69,10 @@ const Header = () => {
             ))}
           </nav>
 
-          <button className="btn-primary whatsapp-btn" onClick={handleWhatsAppClick}>
-            <Phone size={18} />
-            {siteConfig.contact.phone}
-          </button>
+          <a href={`tel:${siteConfig.contact.phoneRaw}`} className="phone-link">
+            <Phone size={20} />
+            <span>{siteConfig.contact.phone}</span>
+          </a>
 
           <button 
             className="mobile-menu-toggle"
