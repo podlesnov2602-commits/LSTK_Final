@@ -42,8 +42,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(26, 29, 33, 0.75);
-  backdrop-filter: blur(1px);
+  background: rgba(27, 29, 30, 0.70);
+  backdrop-filter: blur(2px);
   z-index: 1;
 }
 
@@ -55,9 +55,9 @@
   bottom: 0;
   background: linear-gradient(
     180deg, 
-    rgba(14, 106, 76, 0.03) 0%, 
-    transparent 50%,
-    rgba(14, 106, 76, 0.05) 100%
+    rgba(15, 106, 74, 0.08) 0%, 
+    transparent 40%,
+    rgba(15, 106, 74, 0.12) 100%
   );
   z-index: 2;
 }
