@@ -31,12 +31,11 @@
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 85px;
-  gap: 0;
+  height: 90px;
+  gap: 64px;
 }
 
-/* Premium Logo - Larger */
+/* Premium Logo - Like Sample */
 .logo {
   text-decoration: none;
   display: flex;
@@ -49,7 +48,7 @@
 }
 
 .logo-icon {
-  height: 68px;
+  height: 60px;
   width: auto;
   display: block;
 }
