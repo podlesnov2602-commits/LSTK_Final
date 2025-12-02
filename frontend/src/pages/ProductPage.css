@@ -273,8 +273,16 @@
 .config-subtitle {
   color: var(--text-secondary);
   font-size: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 12px;
   font-weight: 500;
+}
+
+/* Config Price */
+.config-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-bottom: 24px;
 }
 
 /* Advantages Section for Product Pages */
