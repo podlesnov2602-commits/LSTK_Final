@@ -19,26 +19,25 @@ const Hangars = () => {
     'https://images.unsplash.com/photo-1669003152237-7bd1ac4c13f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx3YXJlaG91c2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQzMjM4OTJ8MA&ixlib=rb-4.1.0&q=85'
   ];
 
-  const configurations = [
-    {
-      title: 'Складской',
-      features: ['Каркас из ЛСТК', 'Профнастил', 'Ворота', 'Освещение']
-    },
-    {
-      title: 'Производственный',
-      features: ['Всё из складского', 'Утепление', 'Вентиляция', 'Отопление']
-    },
-    {
-      title: 'Логистический',
-      features: ['Всё из производственного', 'Подъёмная техника', 'Рампы', 'Офисные помещения']
-    }
+  const typicalSizes = [
+    { size: '150 м²', price: 'от 4.5 млн ₸' },
+    { size: '200 м²', price: 'от 6 млн ₸' },
+    { size: '300 м²', price: 'от 9 млн ₸' }
+  ];
+
+  const advantages = [
+    { title: '30% дешевле капитального', description: 'Экономия на строительстве' },
+    { title: 'Лёгкий фундамент', description: 'Не требует глубокого основания' },
+    { title: 'Быстрый монтаж', description: 'Готовность за 2-4 недели' },
+    { title: 'Возможность демонтажа', description: 'Можно разобрать и переместить' }
   ];
 
   const steps = [
-    { number: '01', title: 'Консультация', description: 'Обсуждаем ваши требования' },
-    { number: '02', title: 'Проектирование', description: 'Создаём 3D-модель' },
-    { number: '03', title: 'Производство', description: 'Изготовление на заводе' },
-    { number: '04', title: 'Монтаж', description: 'Установка за 2-5 дней' }
+    { number: '01', title: 'Заявка', description: 'Оставьте заявку на сайте' },
+    { number: '02', title: 'ТЗ', description: 'Обсуждаем техническое задание' },
+    { number: '03', title: 'Смета', description: 'Составляем смету проекта' },
+    { number: '04', title: 'Производство', description: 'Изготовление на заводе' },
+    { number: '05', title: 'Монтаж', description: 'Сборка на вашем участке' }
   ];
 
   const handleSubmit = (e) => {
