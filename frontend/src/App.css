@@ -182,11 +182,11 @@ body::after {
   background: rgba(14, 106, 76, 0.05);
 }
 
-/* Container */
+/* Container - Architectural Grid */
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 48px;
 }
 
 @media (max-width: 768px) {
