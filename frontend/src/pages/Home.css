@@ -253,7 +253,7 @@
 
 /* Production Section */
 .production-section {
-  padding: 120px 0;
+  padding: 160px 0;
   background: var(--bg-secondary);
   position: relative;
 }
@@ -264,9 +264,9 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
-  opacity: 0.5;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  opacity: 0.3;
 }
 
 .production-content {
