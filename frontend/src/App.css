@@ -135,27 +135,30 @@ body::after {
   color: var(--text-secondary);
 }
 
-/* Buttons - Premium Architectural Style */
+/* Buttons - Premium Industrial Style */
 .btn-primary {
   background: var(--accent-primary);
   color: #FFFFFF;
   border: none;
-  border-radius: 2px;
-  padding: 16px 32px;
+  border-radius: 0;
+  padding: 18px 36px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  letter-spacing: 0.02em;
+  gap: 12px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 12px rgba(15, 106, 74, 0.25);
 }
 
 .btn-primary:hover {
   background: var(--accent-hover);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(15, 106, 74, 0.35);
 }
 
 .btn-primary:active {
@@ -166,24 +169,25 @@ body::after {
 .btn-secondary {
   background: transparent;
   color: var(--text-primary);
-  border: 1px solid var(--border-primary);
-  border-radius: 2px;
-  padding: 15px 31px;
+  border: 2px solid var(--border-primary);
+  border-radius: 0;
+  padding: 16px 34px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  letter-spacing: 0.02em;
+  gap: 12px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .btn-secondary:hover {
   border-color: var(--accent-primary);
   color: var(--accent-primary);
-  background: rgba(14, 106, 76, 0.05);
+  background: var(--accent-bg);
 }
 
 /* Container - Architectural Grid */
