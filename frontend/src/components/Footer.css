@@ -98,10 +98,10 @@
 }
 
 .footer-link {
-  color: #C9D0D3;
+  color: #E5E5E5;
   text-decoration: none;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
   transition: all 0.3s ease;
   padding-left: 0;
   position: relative;
@@ -121,7 +121,7 @@
   width: 0;
   height: 2px;
   background: var(--accent-primary);
-  transition: width 0.2s ease;
+  transition: width 0.3s ease;
 }
 
 .footer-link:hover::before {
