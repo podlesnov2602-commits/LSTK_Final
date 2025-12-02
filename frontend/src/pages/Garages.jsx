@@ -86,13 +86,16 @@ const Garages = () => {
         </div>
       </section>
 
+      {/* Configurations with Prices */}
       <section className="configurations-section">
         <div className="container">
-          <h2 className="section-title display-md">Варианты комплектаций</h2>
+          <h2 className="section-title display-md">Типовые проекты</h2>
           <div className="configurations-grid">
             {configurations.map((config, index) => (
               <div key={index} className="config-card">
                 <h3 className="h2">{config.title}</h3>
+                <p className="config-subtitle">{config.subtitle}</p>
+                <div className="config-price">{config.price}</div>
                 <ul className="config-features">
                   {config.features.map((feature, idx) => (
                     <li key={idx}>
@@ -107,6 +110,22 @@ const Garages = () => {
         </div>
       </section>
 
+      {/* Advantages */}
+      <section className="advantages-section-product">
+        <div className="container">
+          <h2 className="section-title display-md">Преимущества</h2>
+          <div className="advantages-grid-product">
+            {advantages.map((advantage, index) => (
+              <div key={index} className="advantage-card-product">
+                <h3 className="h3">{advantage.title}</h3>
+                <p className="body-md">{advantage.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
       <section className="steps-section">
         <div className="container">
           <h2 className="section-title display-md">Как мы работаем</h2>
