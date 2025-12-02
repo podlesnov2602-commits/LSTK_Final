@@ -59,6 +59,9 @@
   cursor: pointer;
   padding: 0;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
+  height: 64px;
 }
 
 .nav-link:hover {
@@ -72,12 +75,11 @@
 .nav-link.active::after {
   content: '';
   position: absolute;
-  bottom: -8px;
+  bottom: 0;
   left: 0;
   right: 0;
   height: 2px;
   background: var(--accent-primary);
-  border-radius: 2px;
 }
 
 /* Premium Phone Link */
