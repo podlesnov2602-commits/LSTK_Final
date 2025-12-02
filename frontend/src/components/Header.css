@@ -13,25 +13,26 @@
 .header-content {
   display: flex;
   align-items: center;
-  height: 80px;
+  justify-content: space-between;
+  height: 90px;
   gap: 0;
 }
 
-/* Premium Logo - Perfectly Aligned */
+/* Premium Logo - Large & Clear */
 .logo {
   text-decoration: none;
   display: flex;
   align-items: center;
-  transition: opacity 0.3s ease;
-  margin-right: 80px;
+  transition: all 0.3s ease;
 }
 
 .logo:hover {
-  opacity: 0.85;
+  opacity: 0.88;
+  transform: scale(1.02);
 }
 
 .logo-icon {
-  height: 64px;
+  height: 70px;
   width: auto;
   display: block;
 }
