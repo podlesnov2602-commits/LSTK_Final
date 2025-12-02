@@ -11,46 +11,46 @@
 .footer-grid {
   display: grid;
   grid-template-columns: 2.5fr 1fr 1fr 1.5fr;
-  gap: 96px;
-  margin-bottom: 72px;
+  gap: 80px;
+  margin-bottom: 60px;
 }
 
 .footer-column {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 24px;
 }
 
 /* Company Column with Large Logo */
 .footer-column:first-child {
-  gap: 24px;
+  gap: 20px;
 }
 
 .footer-logo {
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .footer-logo-icon {
-  height: 128px;
+  height: 64px;
   width: auto;
   display: block;
 }
 
 .footer-title {
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 600;
   color: #FFFFFF;
   line-height: 1.3;
 }
 
 .footer-description {
-  color: #E5E5E5;
-  font-size: 16px;
+  color: var(--text-secondary);
+  font-size: 15px;
   line-height: 1.8;
-  max-width: 380px;
+  max-width: 350px;
 }
 
 /* Social Links */
