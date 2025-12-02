@@ -118,17 +118,18 @@
   margin-bottom: 40px;
 }
 
-/* Sections */
+/* Sections - Architectural Spacing */
 .section-title {
   text-align: center;
-  margin-bottom: 72px;
+  margin-bottom: 80px;
   color: var(--text-primary);
   font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 /* Directions Section */
 .directions-section {
-  padding: 140px 0;
+  padding: 160px 0;
   background: var(--bg-secondary);
   position: relative;
 }
