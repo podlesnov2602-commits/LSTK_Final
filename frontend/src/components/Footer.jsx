@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="footer-grid">
           <div className="footer-column">
             <div className="footer-logo">
-              <div className="footer-logo-icon">{siteConfig.company.logo}</div>
+              <img src={siteConfig.company.logo} alt={siteConfig.company.name} className="footer-logo-icon" />
               <h3 className="footer-title">{siteConfig.company.name}</h3>
             </div>
             <p className="footer-description">
