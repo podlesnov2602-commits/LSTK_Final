@@ -41,7 +41,7 @@ body {
   position: relative;
 }
 
-/* Premium Industrial Texture Overlay */
+/* Clean Premium Industrial Background */
 body::before {
   content: '';
   position: fixed;
@@ -49,16 +49,12 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, transparent 1px, transparent 2px, rgba(255,255,255,0.03) 3px),
-    repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0px, transparent 1px, transparent 2px, rgba(255,255,255,0.03) 3px);
-  background-size: 4px 4px;
+  background: linear-gradient(180deg, rgba(12, 90, 60, 0.02) 0%, transparent 30%, transparent 70%, rgba(12, 90, 60, 0.02) 100%);
   pointer-events: none;
   z-index: 1;
-  opacity: 0.4;
 }
 
-/* Vignette Effect */
+/* Subtle Depth with Vignette */
 body::after {
   content: '';
   position: fixed;
@@ -66,7 +62,7 @@ body::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+  background: radial-gradient(circle at center, transparent 50%, rgba(0,0,0,0.4) 100%);
   pointer-events: none;
   z-index: 1;
 }
