@@ -56,23 +56,33 @@
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 32px;
+}
+
+.gallery-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .gallery-item {
-  aspect-ratio: 4/3;
+  height: 280px;
   background-size: cover;
   background-position: center;
-  border-radius: 16px;
-  border: 1px solid var(--border-subtle);
-  transition: all 0.3s ease;
-  cursor: pointer;
+  border-radius: 14px;
+  transition: transform 0.3s ease;
 }
 
 .gallery-item:hover {
-  transform: scale(1.05);
-  border-color: var(--accent-primary);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  transform: scale(1.03);
+}
+
+.gallery-caption {
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
 }
 
 /* Configurations Section */
