@@ -199,7 +199,7 @@
 
 /* Advantages Section */
 .advantages-section {
-  padding: 140px 0;
+  padding: 160px 0;
   background: var(--bg-primary);
   position: relative;
 }
@@ -207,23 +207,21 @@
 .advantages-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
+  gap: 40px;
 }
 
 .advantage-card {
-  padding: 40px 32px;
+  padding: 48px 40px;
   background: var(--bg-secondary);
-  border: 1px solid var(--border-subtle);
-  border-radius: 10px;
-  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  transition: all 0.4s ease;
   text-align: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .advantage-card:hover {
   transform: translateY(-4px);
   border-color: var(--accent-primary);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
 .advantage-icon {
