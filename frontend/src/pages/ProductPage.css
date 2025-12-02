@@ -47,6 +47,15 @@
   color: var(--text-secondary);
 }
 
+.hero-subtitle {
+  margin-bottom: 32px;
+}
+
+.btn-hero {
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
 /* Gallery Section */
 .gallery-section {
   padding: 120px 0;
