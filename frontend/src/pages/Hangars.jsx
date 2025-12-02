@@ -71,27 +71,38 @@ const Hangars = () => {
         </div>
       </section>
 
-      <section className="configurations-section">
+      {/* Typical Sizes */}
+      <section className="typical-sizes-section">
         <div className="container">
-          <h2 className="section-title display-md">Варианты комплектаций</h2>
-          <div className="configurations-grid">
-            {configurations.map((config, index) => (
-              <div key={index} className="config-card">
-                <h3 className="h2">{config.title}</h3>
-                <ul className="config-features">
-                  {config.features.map((feature, idx) => (
-                    <li key={idx}>
-                      <Check size={20} />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+          <h2 className="section-title display-md">Типовые размеры и цены</h2>
+          <div className="sizes-grid">
+            {typicalSizes.map((item, index) => (
+              <div key={index} className="size-card">
+                <h3 className="h2">{item.size}</h3>
+                <div className="size-price">{item.price}</div>
+              </div>
+            ))}
+          </div>
+          <p className="sizes-note">Индивидуальные размеры по запросу</p>
+        </div>
+      </section>
+
+      {/* Advantages */}
+      <section className="advantages-section-product">
+        <div className="container">
+          <h2 className="section-title display-md">Преимущества</h2>
+          <div className="advantages-grid-product">
+            {advantages.map((advantage, index) => (
+              <div key={index} className="advantage-card-product">
+                <h3 className="h3">{advantage.title}</h3>
+                <p className="body-md">{advantage.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Process */}
       <section className="steps-section">
         <div className="container">
           <h2 className="section-title display-md">Как мы работаем</h2>
