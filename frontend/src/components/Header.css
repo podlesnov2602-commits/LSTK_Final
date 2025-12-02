@@ -93,32 +93,28 @@
 .phone-link {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 12px 24px;
+  gap: 10px;
+  padding: 10px 20px;
   background: transparent;
-  border: 1.5px solid var(--accent-primary);
-  border-radius: 8px;
+  border: 1px solid var(--accent-primary);
+  border-radius: 6px;
   color: var(--text-primary);
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .phone-link:hover {
   background: var(--accent-primary);
-  color: #0A0A0A;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(18, 164, 91, 0.3);
+  color: #FFFFFF;
+  border-color: var(--accent-primary);
 }
 
 .phone-link svg {
-  transition: transform 0.2s ease;
-}
-
-.phone-link:hover svg {
-  transform: rotate(-10deg);
+  width: 18px;
+  height: 18px;
 }
 
 /* Mobile Toggle */
