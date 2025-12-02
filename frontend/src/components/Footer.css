@@ -133,24 +133,24 @@
 .footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .footer-contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
-  color: #E5E5E5;
-  font-size: 16px;
+  gap: 12px;
+  color: var(--text-links);
+  font-size: 15px;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
   line-height: 1.7;
 }
 
 .footer-contact-item svg {
   color: var(--accent-primary);
   flex-shrink: 0;
-  margin-top: 3px;
+  margin-top: 2px;
 }
 
 .footer-contact-item:hover {
@@ -159,14 +159,14 @@
 
 /* Footer Bottom */
 .footer-bottom {
-  padding-top: 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   text-align: center;
 }
 
 .footer-copyright {
-  color: #D9D9D9;
-  font-size: 15px;
+  color: var(--text-muted);
+  font-size: 14px;
   font-weight: 400;
 }
 
