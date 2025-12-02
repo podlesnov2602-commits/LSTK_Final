@@ -84,10 +84,10 @@
 /* Column Headings */
 .footer-heading {
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   color: #FFFFFF;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
 }
 
 /* Navigation Links */
