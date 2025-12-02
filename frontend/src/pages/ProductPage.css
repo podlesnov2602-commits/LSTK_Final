@@ -266,3 +266,89 @@
     padding: 32px 24px;
   }
 }
+
+
+
+/* Config Subtitle */
+.config-subtitle {
+  color: var(--text-secondary);
+  font-size: 15px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Advantages Section for Product Pages */
+.advantages-section-product {
+  padding: 120px 0;
+  background: var(--bg-secondary);
+}
+
+.advantages-grid-product {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.advantage-card-product {
+  padding: 32px;
+  background: var(--bg-primary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  transition: all 0.3s ease;
+}
+
+.advantage-card-product:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+}
+
+.advantage-card-product h3 {
+  color: var(--accent-primary);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.advantage-card-product p {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Pricing Section */
+.pricing-section {
+  padding: 120px 0;
+  background: var(--bg-primary);
+}
+
+.pricing-card {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 48px;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.pricing-amount {
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin: 24px 0;
+}
+
+.pricing-note {
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .advantages-grid-product {
+    grid-template-columns: 1fr;
+  }
+  
+  .pricing-amount {
+    font-size: 42px;
+  }
+}
