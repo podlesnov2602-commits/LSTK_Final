@@ -1,13 +1,13 @@
 /* Premium Header */
 .site-header {
-  background: rgba(26, 29, 33, 0.95);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-header);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-subtle);
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 80px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  height: 68px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
 }
 
 .header-content {
