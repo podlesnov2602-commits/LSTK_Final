@@ -105,7 +105,7 @@ const Hangars = () => {
       {/* Process */}
       <section className="steps-section">
         <div className="container">
-          <h2 className="section-title display-md">Как мы работаем</h2>
+          <h2 className="section-title display-md">Процесс работы</h2>
           <div className="steps-grid">
             {steps.map((step, index) => (
               <div key={index} className="step-card">
