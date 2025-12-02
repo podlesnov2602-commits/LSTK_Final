@@ -53,12 +53,11 @@
   display: block;
 }
 
-/* Navigation - Premium Centered */
+/* Navigation - Left Aligned Like Sample */
 .main-nav {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 48px;
+  gap: 40px;
   height: 100%;
   flex: 1;
 }
@@ -66,7 +65,7 @@
 .nav-link {
   color: #FFFFFF;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   transition: all 0.3s ease;
   position: relative;
@@ -77,8 +76,9 @@
   white-space: nowrap;
   display: flex;
   align-items: center;
-  height: 85px;
-  letter-spacing: 0.03em;
+  height: 90px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .nav-link:hover {
