@@ -12,25 +12,25 @@
 .header-content {
   display: flex;
   align-items: center;
-  height: 68px;
+  height: 80px;
   gap: 0;
 }
 
-/* Premium Logo */
+/* Premium Logo - Perfectly Aligned */
 .logo {
   text-decoration: none;
   display: flex;
   align-items: center;
-  transition: opacity 0.2s ease;
-  margin-right: 64px;
+  transition: opacity 0.3s ease;
+  margin-right: 80px;
 }
 
 .logo:hover {
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .logo-icon {
-  height: 62px;
+  height: 64px;
   width: auto;
   display: block;
 }
