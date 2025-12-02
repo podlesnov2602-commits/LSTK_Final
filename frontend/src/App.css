@@ -2,11 +2,11 @@
 
 :root {
   /* Premium Dark Graphite Theme */
-  --bg-primary: #1F2224;
-  --bg-secondary: #26292C;
-  --bg-tertiary: #2D3033;
-  --bg-header: #1B1D1F;
-  --bg-footer: #1B1D1F;
+  --bg-primary: #0F1011;
+  --bg-secondary: #16181A;
+  --bg-tertiary: #1C1E20;
+  --bg-header: #0A0B0C;
+  --bg-footer: #0A0B0C;
   
   /* Text Hierarchy */
   --text-primary: #FFFFFF;
