@@ -81,24 +81,24 @@ body::after {
 
 /* Typography - Premium Inter */
 .display-lg {
-  font-size: 66px;
-  font-weight: 600;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+}
+
+.display-md {
+  font-size: 56px;
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
-.display-md {
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 1.15;
-  letter-spacing: -0.015em;
-}
-
 .display-sm {
-  font-size: 44px;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.015em;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.018em;
 }
 
 .h1 {
