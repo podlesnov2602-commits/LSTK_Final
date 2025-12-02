@@ -53,9 +53,13 @@
 }
 
 .hero-title {
-  color: var(--text-primary);
+  color: #FFFFFF;
   margin-bottom: 24px;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
+}
+
+.hero-subtitle {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-subtitle {
