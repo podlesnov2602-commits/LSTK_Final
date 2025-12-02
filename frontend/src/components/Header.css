@@ -35,12 +35,12 @@
   display: block;
 }
 
-/* Navigation - Centered Industrial */
+/* Navigation - Premium Centered */
 .main-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 56px;
+  gap: 48px;
   height: 100%;
   flex: 1;
 }
@@ -59,9 +59,8 @@
   white-space: nowrap;
   display: flex;
   align-items: center;
-  height: 90px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
+  height: 85px;
+  letter-spacing: 0.03em;
 }
 
 .nav-link:hover {
@@ -78,9 +77,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 2px;
   background: var(--accent-primary);
-  box-shadow: 0 0 8px var(--accent-glow);
 }
 
 /* Premium Phone Link - Industrial Green */
