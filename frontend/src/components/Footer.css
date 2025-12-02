@@ -46,10 +46,10 @@
 }
 
 .footer-description {
-  color: var(--text-secondary);
+  color: #D7D7D7;
   font-size: 15px;
   line-height: 1.8;
-  max-width: 350px;
+  max-width: 360px;
 }
 
 /* Social Links */
