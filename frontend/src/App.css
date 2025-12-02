@@ -76,24 +76,24 @@ body::after {
   z-index: 2;
 }
 
-/* Typography - Premium Inter */
+/* Typography - Premium Architectural */
 .display-lg {
-  font-size: 66px;
-  font-weight: 600;
+  font-size: 68px;
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
 .display-md {
-  font-size: 52px;
-  font-weight: 600;
+  font-size: 54px;
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.015em;
 }
 
 .display-sm {
-  font-size: 44px;
-  font-weight: 600;
+  font-size: 46px;
+  font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.015em;
 }
