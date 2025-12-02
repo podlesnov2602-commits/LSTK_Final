@@ -91,6 +91,15 @@ const Home = () => {
     <div className="home-page">
       {/* Hero Section */}
       <section className="hero-section">
+        <div className="hero-carousel">
+          {heroImages.map((image, index) => (
+            <div
+              key={index}
+              className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
+              style={{ backgroundImage: `url(${image})` }}
+            />
+          ))}
+        </div>
         <div className="hero-overlay" />
         <div className="hero-content">
           <div className="container">
@@ -107,6 +116,15 @@ const Home = () => {
               </button>
             </div>
           </div>
+        </div>
+        <div className="hero-indicators">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              className={`hero-indicator ${index === currentSlide ? 'active' : ''}`}
+              onClick={() => setCurrentSlide(index)}
+            />
+          ))}
         </div>
       </section>
 
