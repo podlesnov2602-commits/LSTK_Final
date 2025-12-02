@@ -100,22 +100,20 @@
 }
 
 .hero-text {
-  max-width: 800px;
+  max-width: 900px;
   animation: fade-in-up 0.8s ease-out;
 }
 
 .hero-title {
   color: #FFFFFF;
-  margin-bottom: 24px;
-  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
+  margin-bottom: 32px;
+  text-shadow: 0 6px 32px rgba(0, 0, 0, 0.9);
 }
 
 .hero-subtitle {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.hero-subtitle {
-  margin-bottom: 40px;
+  color: #E5E5E5;
+  margin-bottom: 48px;
+  font-size: 20px;
 }
 
 /* Sections */
