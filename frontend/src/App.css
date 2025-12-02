@@ -1,29 +1,29 @@
 /* Premium Dark Theme with Green Accent - Fabrika Karkasov Alatau */
 
 :root {
-  /* Premium Dark Graphite Theme */
-  --bg-primary: #0F1011;
-  --bg-secondary: #16181A;
-  --bg-tertiary: #1C1E20;
-  --bg-header: #0A0B0C;
-  --bg-footer: #0A0B0C;
+  /* Premium Dark Architecture Theme */
+  --bg-primary: #1A1D21;
+  --bg-secondary: #1F2226;
+  --bg-tertiary: #202426;
+  --bg-header: #1A1D21;
+  --bg-footer: #1A1D21;
   
   /* Text Hierarchy */
   --text-primary: #FFFFFF;
-  --text-secondary: rgba(255, 255, 255, 0.8);
-  --text-muted: #9FA4A7;
-  --text-links: #BFC4C7;
+  --text-secondary: #D7D7D7;
+  --text-muted: #D7D7D7;
+  --text-links: #FFFFFF;
   
-  /* Border System */
-  --border-primary: rgba(255, 255, 255, 0.1);
-  --border-subtle: rgba(255, 255, 255, 0.05);
+  /* Border System - Subtle & Elegant */
+  --border-primary: rgba(255, 255, 255, 0.25);
+  --border-subtle: rgba(255, 255, 255, 0.2);
   
-  /* Premium Brand Green */
-  --accent-primary: #0A8F68;
-  --accent-hover: #0CB67F;
-  --accent-pressed: #087A57;
-  --accent-bg: rgba(10, 143, 104, 0.1);
-  --accent-glow: rgba(10, 143, 104, 0.15);
+  /* Logo Emerald Green - Deep & Premium */
+  --accent-primary: #0E6A4C;
+  --accent-hover: #147A58;
+  --accent-pressed: #0C5C41;
+  --accent-bg: rgba(14, 106, 76, 0.1);
+  --accent-glow: rgba(14, 106, 76, 0.15);
 }
 
 * {
