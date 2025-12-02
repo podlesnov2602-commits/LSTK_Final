@@ -138,10 +138,10 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  color: var(--text-links);
+  color: #D7D7D7;
   font-size: 15px;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: color 0.3s ease;
   line-height: 1.7;
 }
 
