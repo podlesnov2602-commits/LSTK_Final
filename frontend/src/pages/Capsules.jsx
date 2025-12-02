@@ -93,11 +93,12 @@ const Capsules = () => {
       {/* Configurations */}
       <section className="configurations-section">
         <div className="container">
-          <h2 className="section-title display-md">Варианты комплектаций</h2>
+          <h2 className="section-title display-md">Комплектации</h2>
           <div className="configurations-grid">
             {configurations.map((config, index) => (
               <div key={index} className="config-card">
                 <h3 className="h2">{config.title}</h3>
+                <p className="config-subtitle">{config.subtitle}</p>
                 <ul className="config-features">
                   {config.features.map((feature, idx) => (
                     <li key={idx}>
@@ -108,6 +109,32 @@ const Capsules = () => {
                 </ul>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Advantages */}
+      <section className="advantages-section-product">
+        <div className="container">
+          <h2 className="section-title display-md">Преимущества</h2>
+          <div className="advantages-grid-product">
+            {advantages.map((advantage, index) => (
+              <div key={index} className="advantage-card-product">
+                <h3 className="h3">{advantage.title}</h3>
+                <p className="body-md">{advantage.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="pricing-section">
+        <div className="container">
+          <div className="pricing-card">
+            <h2 className="display-md">{pricing.title}</h2>
+            <div className="pricing-amount">{pricing.price}</div>
+            <p className="pricing-note">{pricing.note}</p>
           </div>
         </div>
       </section>
