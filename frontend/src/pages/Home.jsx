@@ -134,17 +134,19 @@ const Home = () => {
           <h2 className="section-title display-md">Выберите направление</h2>
           <div className="directions-grid">
             {directions.map((direction, index) => (
-              <div key={index} className="direction-card">
-                <div className="direction-image" style={{ backgroundImage: `url(${direction.image})` }} />
-                <div className="direction-content">
-                  <h3 className="h2">{direction.title}</h3>
-                  <p className="body-md">{direction.description}</p>
-                  <Link to={direction.link} className="btn-primary">
-                    Подробнее
-                    <ArrowRight size={18} />
-                  </Link>
+              <Link key={index} to={direction.link} className="direction-card-link">
+                <div className="direction-card">
+                  <div className="direction-image" style={{ backgroundImage: `url(${direction.image})` }} />
+                  <div className="direction-content">
+                    <h3 className="h2">{direction.title}</h3>
+                    <p className="body-md">{direction.description}</p>
+                    <span className="btn-primary">
+                      Подробнее
+                      <ArrowRight size={18} />
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
