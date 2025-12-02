@@ -43,7 +43,6 @@ const Header = () => {
         <div className="header-content">
           <Link to="/" className="logo">
             <img src={siteConfig.company.logo} alt={siteConfig.company.name} className="logo-icon" />
-            <span className="logo-text">{siteConfig.company.name}</span>
           </Link>
 
           <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
