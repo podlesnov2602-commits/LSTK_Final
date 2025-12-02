@@ -131,29 +131,31 @@ body::after {
   color: var(--text-secondary);
 }
 
-/* Buttons - Strict Geometric Style */
+/* Buttons - Premium Architectural Style */
 .btn-primary {
   background: var(--accent-primary);
   color: #FFFFFF;
   border: none;
-  border-radius: 4px;
-  padding: 14px 28px;
+  border-radius: 2px;
+  padding: 16px 32px;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  letter-spacing: 0.02em;
 }
 
 .btn-primary:hover {
   background: var(--accent-hover);
+  transform: translateY(-1px);
 }
 
 .btn-primary:active {
-  transform: scale(0.98);
+  transform: translateY(0);
   background: var(--accent-pressed);
 }
 
@@ -161,21 +163,23 @@ body::after {
   background: transparent;
   color: var(--text-primary);
   border: 1px solid var(--border-primary);
-  border-radius: 4px;
-  padding: 14px 28px;
+  border-radius: 2px;
+  padding: 15px 31px;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  letter-spacing: 0.02em;
 }
 
 .btn-secondary:hover {
   border-color: var(--accent-primary);
   color: var(--accent-primary);
+  background: rgba(14, 106, 76, 0.05);
 }
 
 /* Container */
