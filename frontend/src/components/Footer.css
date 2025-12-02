@@ -139,11 +139,12 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  color: #C9D0D3;
+  color: #E5E5E5;
   font-size: 15px;
   text-decoration: none;
   transition: color 0.3s ease;
   line-height: 1.7;
+  font-weight: 500;
 }
 
 .footer-contact-item svg {
