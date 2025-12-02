@@ -24,20 +24,14 @@ const Home = () => {
 
   const directions = [
     {
-      title: 'Капсулы',
-      description: 'Модульные конструкции для жилья, офисов и бизнеса',
+      title: 'Дом-капсулы',
+      description: 'Модульные дома из ЛСТК для комфортного проживания',
       link: '/capsules',
       image: 'https://images.unsplash.com/photo-1623731389652-079c8732ed34?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxjb250YWluZXIlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzY0MzIzODU5fDA&ixlib=rb-4.1.0&q=85'
     },
     {
-      title: 'Ангары',
-      description: 'Промышленные ангары и складские помещения',
-      link: '/hangars',
-      image: 'https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85'
-    },
-    {
-      title: 'Гаражи',
-      description: 'Надёжные металлические гаражи и боксы',
+      title: 'Гаражи и навесы',
+      description: 'Надёжные металлоконструкции для хранения и защиты',
       link: '/garages',
       image: 'https://images.unsplash.com/photo-1635961179148-3d886568775c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHw0fHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85'
     }
