@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, ArrowRight, Wrench, Package, Tractor } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import './ProductPage.css';
 
@@ -7,83 +7,44 @@ const Hangars = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    area: '',
-    purpose: ''
+    message: ''
   });
 
-  const targetAudience = [
+  const gallery = [
+    'https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
+    'https://images.unsplash.com/photo-1720036237334-9263cd28c3d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
+    'https://images.unsplash.com/photo-1669003152237-7bd1ac4c13f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx3YXJlaG91c2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQzMjM4OTJ8MA&ixlib=rb-4.1.0&q=85',
+    'https://images.unsplash.com/photo-1635961179148-3d886568775c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHw0fHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
+    'https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
+    'https://images.unsplash.com/photo-1669003152237-7bd1ac4c13f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx3YXJlaG91c2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQzMjM4OTJ8MA&ixlib=rb-4.1.0&q=85'
+  ];
+
+  const configurations = [
     {
-      icon: Wrench,
-      title: 'СТО / автомойки',
-      description: 'Просторные помещения с удобным заездом для автомобилей'
+      title: 'Складской',
+      features: ['Каркас из ЛСТК', 'Профнастил', 'Ворота', 'Освещение']
     },
     {
-      icon: Package,
-      title: 'Склады / логистика',
-      description: 'Надёжные складские здания для хранения и логистики'
+      title: 'Производственный',
+      features: ['Всё из складского', 'Утепление', 'Вентиляция', 'Отопление']
     },
     {
-      icon: Tractor,
-      title: 'Фермерские ангары',
-      description: 'Специализированные помещения для сельского хозяйства'
+      title: 'Логистический',
+      features: ['Всё из производственного', 'Подъёмная техника', 'Рампы', 'Офисные помещения']
     }
   ];
 
-  const typicalSolutions = [
-    {
-      title: 'Ангар 150 м²',
-      price: 'от 3 500 000 ₸',
-      features: ['Каркас ЛСТК', 'Профнастил', 'Ворота секционные', 'Освещение базовое']
-    },
-    {
-      title: 'Ангар 200 м²',
-      price: 'от 4 500 000 ₸',
-      features: ['Каркас ЛСТК усиленный', 'Профнастил + утепление', 'Ворота автоматические', 'Освещение + вентиляция']
-    },
-    {
-      title: 'Ангар 300 м²',
-      price: 'от 6 200 000 ₸',
-      features: ['Полный комплекс ЛСТК', 'Утепление 100мм', 'Двое ворот', 'Полная инженерия']
-    },
-    {
-      title: 'Павильон / СТО',
-      price: 'по запросу',
-      features: ['Индивидуальный проект', 'Все коммуникации', 'Офисные помещения', 'Специальное оборудование']
-    }
-  ];
-
-  const advantages = [
-    {
-      title: 'Быстрый монтаж',
-      description: 'Готовое здание от 14 дней'
-    },
-    {
-      title: 'Снижение стоимости',
-      description: 'До 40% дешевле капитального строительства'
-    },
-    {
-      title: 'Мобильность',
-      description: 'Можно демонтировать и перенести на новое место'
-    },
-    {
-      title: 'Надёжность',
-      description: 'Срок службы более 50 лет'
-    }
-  ];
-
-  const processSteps = [
-    { number: '01', title: 'Заявка', description: 'Оставляете запрос на сайте' },
-    { number: '02', title: 'Техзадание', description: 'Уточняем детали проекта' },
-    { number: '03', title: 'Смета', description: 'Готовим точный расчёт' },
-    { number: '04', title: 'Договор', description: 'Заключаем официальный договор' },
-    { number: '05', title: 'Производство', description: 'Изготовление конструкций' },
-    { number: '06', title: 'Монтаж', description: 'Сборка на вашем участке' }
+  const steps = [
+    { number: '01', title: 'Консультация', description: 'Обсуждаем ваши требования' },
+    { number: '02', title: 'Проектирование', description: 'Создаём 3D-модель' },
+    { number: '03', title: 'Производство', description: 'Изготовление на заводе' },
+    { number: '04', title: 'Монтаж', description: 'Установка за 2-5 дней' }
   ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const message = encodeURIComponent(
-      `Запрос КП: Ангары\nИмя: ${formData.name}\nТелефон: ${formData.phone}\nПлощадь: ${formData.area}\nНазначение: ${formData.purpose}`
+      `Запрос на расчёт: Ангары\nИмя: ${formData.name}\nТелефон: ${formData.phone}\nСообщение: ${formData.message}`
     );
     window.open(`${siteConfig.social.whatsapp}?text=${message}`, '_blank');
   };
