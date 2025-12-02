@@ -85,36 +85,36 @@
   box-shadow: 0 0 8px var(--accent-glow);
 }
 
-/* Premium Phone Link - Emerald Accent */
+/* Premium Phone Link - Industrial Green */
 .phone-link {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 24px;
-  background: transparent;
-  border: 1px solid var(--accent-primary);
-  border-radius: 2px;
+  padding: 14px 28px;
+  background: var(--accent-primary);
+  border: none;
+  border-radius: 0;
   color: #FFFFFF;
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
-  margin-left: auto;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  box-shadow: 0 2px 8px rgba(15, 106, 74, 0.3);
 }
 
 .phone-link:hover {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-  transform: translateY(-1px);
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(15, 106, 74, 0.4);
 }
 
 .phone-link svg {
   width: 18px;
   height: 18px;
-  color: var(--accent-primary);
-  transition: color 0.3s ease;
+  color: #FFFFFF;
 }
 
 .phone-link:hover svg {
