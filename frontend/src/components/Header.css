@@ -141,22 +141,15 @@
 
 @media (max-width: 768px) {
   .site-header {
-    height: 70px;
+    height: 64px;
   }
   
   .header-content {
-    height: 70px;
-  }
-  
-  .logo-text {
-    font-size: 16px;
-    max-width: 150px;
+    height: 64px;
   }
   
   .logo-icon {
-    width: 44px;
-    height: 44px;
-    font-size: 18px;
+    height: 48px;
   }
   
   .mobile-menu-toggle {
