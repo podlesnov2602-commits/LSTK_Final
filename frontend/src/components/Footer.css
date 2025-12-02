@@ -99,7 +99,7 @@
 }
 
 .footer-link {
-  color: var(--text-secondary);
+  color: var(--text-links);
   text-decoration: none;
   font-size: 15px;
   font-weight: 400;
