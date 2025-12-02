@@ -147,17 +147,17 @@
 
 .direction-card {
   background: var(--bg-primary);
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
   overflow: hidden;
-  transition: all 0.4s ease;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .direction-card-link:hover .direction-card {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   border-color: var(--accent-primary);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--accent-primary);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
 }
 
 .direction-image {
