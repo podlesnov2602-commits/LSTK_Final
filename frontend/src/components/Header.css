@@ -1,13 +1,12 @@
-/* Premium Industrial Header */
+/* Premium Clean Header */
 .site-header {
-  background: rgba(27, 29, 30, 0.98);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--accent-primary);
+  background: rgba(14, 15, 16, 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 90px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  height: 85px;
 }
 
 .header-content {
