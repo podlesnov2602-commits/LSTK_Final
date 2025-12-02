@@ -133,30 +133,27 @@ body::after {
   color: var(--text-secondary);
 }
 
-/* Buttons - Premium Industrial Style */
+/* Buttons - Premium Clean Style */
 .btn-primary {
   background: var(--accent-primary);
   color: #FFFFFF;
   border: none;
-  border-radius: 0;
-  padding: 18px 36px;
+  border-radius: 8px;
+  padding: 16px 32px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  box-shadow: 0 4px 12px rgba(15, 106, 74, 0.25);
+  gap: 10px;
+  letter-spacing: 0.02em;
 }
 
 .btn-primary:hover {
   background: var(--accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(15, 106, 74, 0.35);
 }
 
 .btn-primary:active {
@@ -167,19 +164,18 @@ body::after {
 .btn-secondary {
   background: transparent;
   color: var(--text-primary);
-  border: 2px solid var(--border-primary);
-  border-radius: 0;
-  padding: 16px 34px;
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  padding: 15px 31px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.3s ease;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  gap: 10px;
+  letter-spacing: 0.02em;
 }
 
 .btn-secondary:hover {
