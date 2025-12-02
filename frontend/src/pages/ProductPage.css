@@ -339,6 +339,61 @@
 .pricing-note {
   color: var(--text-secondary);
   font-size: 15px;
+
+
+/* Typical Sizes Section */
+.typical-sizes-section {
+  padding: 120px 0;
+  background: var(--bg-primary);
+}
+
+.sizes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.size-card {
+  padding: 40px 32px;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.size-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+}
+
+.size-card h3 {
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.size-price {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent-primary);
+}
+
+.sizes-note {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .sizes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
   font-weight: 500;
   margin-top: 16px;
 }
