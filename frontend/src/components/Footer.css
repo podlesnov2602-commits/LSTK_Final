@@ -1,11 +1,10 @@
-/* Premium Industrial Footer */
+/* Premium Clean Footer */
 .site-footer {
   background: var(--bg-footer);
-  border-top: 2px solid var(--accent-primary);
-  padding: 120px 0 56px;
-  margin-top: 180px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 100px 0 48px;
+  margin-top: 160px;
   position: relative;
-  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.5);
 }
 
 .footer-grid {
