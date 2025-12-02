@@ -69,7 +69,7 @@ const Header = () => {
           </nav>
 
           <a href={`tel:${siteConfig.contact.phoneRaw}`} className="phone-link">
-            <Phone size={20} />
+            <span>Горячая линия:</span>
             <span>{siteConfig.contact.phone}</span>
           </a>
 
