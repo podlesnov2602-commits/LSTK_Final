@@ -2,28 +2,27 @@
 
 :root {
   /* Premium Industrial Dark Theme */
-  --bg-primary: #0C0C0C;
-  --bg-secondary: #111111;
-  --bg-tertiary: #1A1A1A;
-  --bg-header: #141414;
-  --bg-footer: #0E0E0E;
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #0F0F0F;
+  --bg-tertiary: #141414;
+  --bg-header: #0D0D0D;
+  --bg-footer: linear-gradient(180deg, #0A0A0A 0%, #060606 100%);
   
   /* Text Hierarchy */
   --text-primary: #FFFFFF;
-  --text-secondary: rgba(255, 255, 255, 0.9);
-  --text-muted: rgba(255, 255, 255, 0.6);
+  --text-secondary: #D1D1D1;
+  --text-muted: #808080;
   
   /* Border System */
-  --border-primary: rgba(255, 255, 255, 0.15);
-  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-primary: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.06);
   
-  /* Premium Dark Green Accent */
-  --accent-primary: #0BB879;
-  --accent-hover: #0DD48C;
-  --accent-pressed: #009F52;
-  --accent-bg: rgba(11, 184, 121, 0.1);
-  --accent-glow: rgba(11, 184, 121, 0.15);
-  --accent-glow-strong: rgba(11, 184, 121, 0.3);
+  /* Premium Deep Green Accent */
+  --accent-primary: #0C5A3C;
+  --accent-hover: #0F7549;
+  --accent-pressed: #094631;
+  --accent-bg: rgba(12, 90, 60, 0.1);
+  --accent-glow: rgba(12, 90, 60, 0.2);
 }
 
 * {
