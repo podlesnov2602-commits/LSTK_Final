@@ -82,8 +82,11 @@ const Hangars = () => {
         <div className="container">
           <h2 className="section-title display-md">Галерея проектов</h2>
           <div className="gallery-grid">
-            {gallery.map((image, index) => (
-              <div key={index} className="gallery-item" style={{ backgroundImage: `url(${image})` }} />
+            {gallery.map((item, index) => (
+              <div key={index} className="gallery-item-wrapper">
+                <div className="gallery-item" style={{ backgroundImage: `url(${item.image})` }} />
+                <p className="gallery-caption">{item.caption}</p>
+              </div>
             ))}
           </div>
         </div>
