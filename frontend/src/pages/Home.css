@@ -127,16 +127,17 @@
 }
 
 .direction-content {
-  padding: 32px;
+  padding: 36px;
 }
 
 .direction-content h3 {
-  margin-bottom: 12px;
-  color: var(--text-primary);
+  margin-bottom: 14px;
+  color: #FFFFFF;
 }
 
 .direction-content p {
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+  color: var(--text-muted);
 }
 
 /* Advantages Section */
