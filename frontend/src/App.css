@@ -2,28 +2,28 @@
 
 :root {
   /* Premium Dark Graphite Theme */
-  --bg-primary: #1A1D21;
-  --bg-secondary: #22252A;
-  --bg-tertiary: #2A2E33;
-  --bg-header: #1A1D21;
-  --bg-footer: #1A1D21;
+  --bg-primary: #0F1011;
+  --bg-secondary: #16181A;
+  --bg-tertiary: #1C1E20;
+  --bg-header: #0A0B0C;
+  --bg-footer: #0A0B0C;
   
   /* Text Hierarchy */
   --text-primary: #FFFFFF;
-  --text-secondary: #E5E5E5;
-  --text-muted: #D9D9D9;
-  --text-links: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-muted: #9FA4A7;
+  --text-links: #BFC4C7;
   
   /* Border System */
-  --border-primary: rgba(255, 255, 255, 0.08);
-  --border-subtle: rgba(255, 255, 255, 0.03);
+  --border-primary: rgba(255, 255, 255, 0.1);
+  --border-subtle: rgba(255, 255, 255, 0.05);
   
   /* Premium Brand Green */
-  --accent-primary: #8CC63F;
-  --accent-hover: #A5DB55;
-  --accent-pressed: #7AB32E;
-  --accent-bg: rgba(140, 198, 63, 0.1);
-  --accent-glow: rgba(140, 198, 63, 0.15);
+  --accent-primary: #0A8F68;
+  --accent-hover: #0CB67F;
+  --accent-pressed: #087A57;
+  --accent-bg: rgba(10, 143, 104, 0.1);
+  --accent-glow: rgba(10, 143, 104, 0.15);
 }
 
 * {
