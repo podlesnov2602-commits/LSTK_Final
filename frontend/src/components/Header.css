@@ -86,27 +86,32 @@
 .phone-link {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 16px;
+  gap: 10px;
+  padding: 10px 20px;
   background: transparent;
-  border: 1px solid rgba(12, 90, 60, 0.4);
-  border-radius: 4px;
-  color: var(--text-secondary);
+  border: 1px solid var(--accent-primary);
+  border-radius: 6px;
+  color: #FFFFFF;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .phone-link:hover {
+  background: var(--accent-primary);
   border-color: var(--accent-primary);
-  color: var(--text-primary);
 }
 
 .phone-link svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
+  color: var(--accent-primary);
+}
+
+.phone-link:hover svg {
+  color: #FFFFFF;
 }
 
 /* Mobile Toggle */
