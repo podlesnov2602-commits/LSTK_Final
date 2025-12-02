@@ -10,8 +10,8 @@
 .footer-grid {
   display: grid;
   grid-template-columns: 2.5fr 1fr 1fr 1.5fr;
-  gap: 80px;
-  margin-bottom: 60px;
+  gap: 96px;
+  margin-bottom: 72px;
 }
 
 .footer-column {
