@@ -1,28 +1,29 @@
 /* Premium Dark Theme with Green Accent - Fabrika Karkasov Alatau */
 
 :root {
-  /* Premium Industrial Dark Theme */
-  --bg-primary: #0A0A0A;
-  --bg-secondary: #0F0F0F;
-  --bg-tertiary: #141414;
-  --bg-header: #0D0D0D;
-  --bg-footer: linear-gradient(180deg, #0A0A0A 0%, #060606 100%);
+  /* Premium Dark Graphite Theme */
+  --bg-primary: #1F2224;
+  --bg-secondary: #26292C;
+  --bg-tertiary: #2D3033;
+  --bg-header: #1B1D1F;
+  --bg-footer: #1B1D1F;
   
   /* Text Hierarchy */
   --text-primary: #FFFFFF;
-  --text-secondary: #D1D1D1;
-  --text-muted: #808080;
+  --text-secondary: rgba(255, 255, 255, 0.8);
+  --text-muted: #9FA4A7;
+  --text-links: #BFC4C7;
   
   /* Border System */
-  --border-primary: rgba(255, 255, 255, 0.12);
-  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-primary: rgba(255, 255, 255, 0.1);
+  --border-subtle: rgba(255, 255, 255, 0.05);
   
-  /* Premium Deep Green Accent */
-  --accent-primary: #0C5A3C;
-  --accent-hover: #0F7549;
-  --accent-pressed: #094631;
-  --accent-bg: rgba(12, 90, 60, 0.1);
-  --accent-glow: rgba(12, 90, 60, 0.2);
+  /* Premium Brand Green */
+  --accent-primary: #0A8F68;
+  --accent-hover: #0CB67F;
+  --accent-pressed: #087A57;
+  --accent-bg: rgba(10, 143, 104, 0.1);
+  --accent-glow: rgba(10, 143, 104, 0.15);
 }
 
 * {
