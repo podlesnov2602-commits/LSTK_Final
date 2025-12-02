@@ -5,6 +5,23 @@ import { siteConfig } from '../config/siteConfig';
 import './Home.css';
 
 const Home = () => {
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+
+  const heroImages = [
+    'https://images.unsplash.com/photo-1649587345666-0f4ad68aa723?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwyfHxzdGVlbCUyMGZyYW1lJTIwY29uc3RydWN0aW9ufGVufDB8fHx8MTc2NDY1NjgwOXww&ixlib=rb-4.1.0&q=85',
+    'https://images.unsplash.com/photo-1739599211500-74e04a9ca175?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxpbmR1c3RyaWFsJTIwc3RlZWwlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQ2NTY4MTV8MA&ixlib=rb-4.1.0&q=85',
+    'https://images.unsplash.com/photo-1679430786992-8bb54d023e2f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwzfHxzdGVlbCUyMGZyYW1lJTIwY29uc3RydWN0aW9ufGVufDB8fHx8MTc2NDY1NjgwOXww&ixlib=rb-4.1.0&q=85',
+    'https://images.unsplash.com/photo-1655936072893-921e69ae9038?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGZyYW1lJTIwY29uc3RydWN0aW9ufGVufDB8fHx8MTc2NDY1NjgwOXww&ixlib=rb-4.1.0&q=85',
+    'https://images.unsplash.com/photo-1515100665905-d66c4dea74ae?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwxfHxpbmR1c3RyaWFsJTIwc3RlZWwlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQ2NTY4MTV8MA&ixlib=rb-4.1.0&q=85'
+  ];
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
+
   const directions = [
     {
       title: 'Капсулы',
