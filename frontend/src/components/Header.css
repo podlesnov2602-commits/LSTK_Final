@@ -1,13 +1,12 @@
-/* Premium Header */
+/* Premium Architectural Header */
 .site-header {
-  background: var(--bg-header);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(26, 29, 33, 0.98);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 68px;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+  height: 80px;
 }
 
 .header-content {
