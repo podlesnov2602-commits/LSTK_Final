@@ -5,7 +5,7 @@
 /* Product Hero */
 .product-hero {
   position: relative;
-  min-height: 60vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   background-image: url('https://images.unsplash.com/photo-1496247749665-49cf5b1022e9');
