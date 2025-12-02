@@ -130,44 +130,40 @@ body::after {
   color: var(--text-secondary);
 }
 
-/* Buttons */
+/* Buttons - Strict Geometric Style */
 .btn-primary {
   background: var(--accent-primary);
-  color: var(--bg-primary);
+  color: #FFFFFF;
   border: none;
-  border-radius: 12px;
-  padding: 16px 32px;
-  font-size: 16px;
-  font-weight: 600;
+  border-radius: 4px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  position: relative;
-  overflow: hidden;
 }
 
 .btn-primary:hover {
   background: var(--accent-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px var(--accent-glow);
 }
 
 .btn-primary:active {
-  transform: translateY(0);
+  transform: scale(0.98);
   background: var(--accent-pressed);
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--text-primary);
-  border: 2px solid var(--border-primary);
-  border-radius: 12px;
-  padding: 14px 30px;
-  font-size: 16px;
-  font-weight: 600;
+  border: 1px solid var(--border-primary);
+  border-radius: 4px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
   text-decoration: none;
@@ -179,8 +175,6 @@ body::after {
 .btn-secondary:hover {
   border-color: var(--accent-primary);
   color: var(--accent-primary);
-  background: var(--accent-bg);
-  transform: translateY(-2px);
 }
 
 /* Container */
