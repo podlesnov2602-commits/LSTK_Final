@@ -1,22 +1,22 @@
 /* Premium Footer */
 .site-footer {
-  background: var(--bg-footer);
-  border-top: 2px solid var(--accent-primary);
+  background: linear-gradient(180deg, #0A0A0A 0%, #060606 100%);
+  border-top: 1px solid var(--accent-primary);
   padding: 80px 0 40px;
   margin-top: 120px;
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.6);
   position: relative;
 }
 
 .site-footer::before {
   content: '';
   position: absolute;
-  top: 2px;
+  top: 1px;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 80px;
   background: linear-gradient(180deg, var(--accent-glow) 0%, transparent 100%);
-  opacity: 0.08;
+  opacity: 0.06;
   pointer-events: none;
 }
 
