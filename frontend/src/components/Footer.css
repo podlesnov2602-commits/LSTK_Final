@@ -84,34 +84,33 @@
 
 /* Column Headings */
 .footer-heading {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #FFFFFF;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 4px;
+  letter-spacing: 0.05em;
 }
 
 /* Navigation Links */
 .footer-nav {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .footer-link {
-  color: #E5E5E5;
+  color: var(--text-links);
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   padding-left: 0;
   position: relative;
 }
 
 .footer-link:hover {
   color: var(--accent-primary);
-  padding-left: 10px;
+  padding-left: 8px;
 }
 
 .footer-link::before {
@@ -123,11 +122,11 @@
   width: 0;
   height: 2px;
   background: var(--accent-primary);
-  transition: width 0.3s ease;
+  transition: width 0.2s ease;
 }
 
 .footer-link:hover::before {
-  width: 5px;
+  width: 4px;
 }
 
 /* Contact Items */
