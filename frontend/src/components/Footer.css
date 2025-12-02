@@ -76,9 +76,8 @@
 .footer-social-link:hover {
   background: var(--accent-primary);
   border-color: var(--accent-primary);
-  color: #0A0A0A;
+  color: #FFFFFF;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(18, 164, 91, 0.3);
 }
 
 /* Column Headings */
