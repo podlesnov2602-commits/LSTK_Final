@@ -80,66 +80,37 @@
   background: var(--accent-primary);
 }
 
-/* Premium Phone Link - Like Sample with Icon */
+/* Premium Phone Link - Brand Green */
 .phone-link {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
-  padding: 0;
-  background: transparent;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: var(--accent-primary);
   border: none;
-  border-radius: 0;
+  border-radius: 8px;
   color: #FFFFFF;
   text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
   transition: all 0.3s ease;
   white-space: nowrap;
-  position: relative;
-}
-
-.phone-link::before {
-  content: '';
-  position: absolute;
-  left: -48px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 36px;
-  height: 36px;
-  border: 2px solid var(--accent-primary);
-  border-radius: 50%;
-  background: transparent;
-}
-
-.phone-link::after {
-  content: '☀';
-  position: absolute;
-  left: -40px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-  color: var(--accent-primary);
-}
-
-.phone-link:hover {
-  color: var(--accent-primary);
-}
-
-.phone-link span:first-of-type {
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  opacity: 0.8;
-}
-
-.phone-link span:last-of-type {
-  font-size: 16px;
-  font-weight: 600;
   letter-spacing: 0.02em;
 }
 
+.phone-link:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
 .phone-link svg {
-  display: none;
+  width: 18px;
+  height: 18px;
+  color: #FFFFFF;
+}
+
+.phone-link:hover svg {
+  color: #FFFFFF;
 }
 
 /* Mobile Toggle */
