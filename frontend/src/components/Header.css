@@ -1,12 +1,31 @@
-/* Premium Clean Header */
+/* Premium Header with Photo Background */
 .site-header {
-  background: rgba(14, 15, 16, 0.98);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(rgba(14, 15, 16, 0.92), rgba(14, 15, 16, 0.92)),
+    url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(8px);
+  border-bottom: none;
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 85px;
+  height: 90px;
+  animation: headerBgChange 20s infinite;
+}
+
+@keyframes headerBgChange {
+  0%, 100% {
+    background-image: linear-gradient(rgba(14, 15, 16, 0.92), rgba(14, 15, 16, 0.92)),
+      url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80');
+  }
+  33% {
+    background-image: linear-gradient(rgba(14, 15, 16, 0.92), rgba(14, 15, 16, 0.92)),
+      url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80');
+  }
+  66% {
+    background-image: linear-gradient(rgba(14, 15, 16, 0.92), rgba(14, 15, 16, 0.92)),
+      url('https://images.unsplash.com/photo-1513828583688-c52646db42da?w=1920&q=80');
+  }
 }
 
 .header-content {
