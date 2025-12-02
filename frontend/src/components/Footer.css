@@ -33,23 +33,24 @@
 }
 
 .footer-logo-icon {
-  height: 80px;
+  height: 72px;
   width: auto;
   display: block;
 }
 
 .footer-title {
-  font-size: 22px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 600;
   color: #FFFFFF;
   line-height: 1.3;
 }
 
 .footer-description {
-  color: #C9D0D3;
+  color: #E5E5E5;
   font-size: 15px;
   line-height: 1.8;
-  max-width: 380px;
+  max-width: 360px;
+  font-weight: 500;
 }
 
 /* Social Links */
