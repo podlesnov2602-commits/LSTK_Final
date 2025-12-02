@@ -2,19 +2,19 @@
 .site-header {
   background: var(--bg-header);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--border-subtle);
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 75px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  height: 64px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
 }
 
 .header-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 75px;
+  height: 64px;
   gap: 64px;
 }
 
