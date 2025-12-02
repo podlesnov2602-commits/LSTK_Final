@@ -3,7 +3,7 @@ export const siteConfig = {
   company: {
     name: 'Фабрика Каркасов Алатау',
     shortName: 'ФКА',
-    logo: 'https://customer-assets.emergentagent.com/job_alatau-frames-1/artifacts/kq13dqbo_ChatGPT_Image_2_%D0%B4%D0%B5%D0%BA._2025_%D0%B3.__10_35_07-removebg-preview.png',
+    logo: 'https://customer-assets.emergentagent.com/job_alatau-frames-1/artifacts/clajmzjg_ChatGPT_Image_2_%D0%B4%D0%B5%D0%BA._2025_%D0%B3.__10_35_07-removebg-preview.png',
     description: 'Производство ЛСТК конструкций в Казахстане'
   },
   contact: {
