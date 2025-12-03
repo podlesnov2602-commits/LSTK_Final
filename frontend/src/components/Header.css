@@ -25,8 +25,8 @@
 .logo:hover { opacity: 0.9; }
 
 .logo-icon {
-  height: 80px;
-  width: auto;
+    height: 100px !important;
+    width: auto !important;
 }
 
 /* NAVIGATION */
@@ -96,14 +96,19 @@
       MOBILE
 =============================== */
 @media (max-width: 768px) {
-  .site-header { height: 64px; }
-  .header-content { height: 64px; justify-content: space-between; }
-  .logo-icon { height: 56px; }
+  .site-header { height: 80px !important; }           /* увеличил высоту шапки */
+  .header-content { height: 80px !important; justify-content: space-between; }
+
+  .logo-icon {
+    height: 80px !important;                          /* логотип больше */
+    width: auto !important;
+  }
 
   .mobile-menu-toggle {
     display: block;
     margin-left: auto;
   }
+}
 
   /* MOBILE MENU — ПОЛНЫЙ ЭКРАН, ЧЁРНЫЙ */
   .main-nav {
