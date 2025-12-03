@@ -175,7 +175,8 @@
     bottom: 0;
     width: 100%;
     max-width: 320px;
-    background: rgb(14, 15, 16);
+    background: #0E0F10;
+    background-color: #0E0F10;
     flex-direction: column;
     padding: 90px 32px 100px 32px;
     gap: 0;
@@ -186,6 +187,7 @@
     align-items: flex-start;
     z-index: 999;
     justify-content: space-between;
+    opacity: 1;
   }
   
   .main-nav.mobile-open {
