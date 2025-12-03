@@ -41,10 +41,10 @@ const Garages = () => {
   ];
 
   const advantages = [
-    { title: 'Быстро', description: 'Монтаж 3-5 дней' },
-    { title: 'Дешево', description: 'Доступные цены' },
-    { title: 'Аккуратно', description: 'Качественная сборка' },
-    { title: 'Не требует разрешений', description: 'Легкие конструкции' }
+    { icon: Zap, title: 'Быстро', description: 'Монтаж 3-5 дней' },
+    { icon: DollarSign, title: 'Дешево', description: 'Доступные цены' },
+    { icon: Shield, title: 'Аккуратно', description: 'Качественная сборка' },
+    { icon: Clock, title: 'Не требует разрешений', description: 'Легкие конструкции' }
   ];
 
   const steps = [
