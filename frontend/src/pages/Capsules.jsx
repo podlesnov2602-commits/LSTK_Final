@@ -157,16 +157,11 @@ const Capsules = () => {
       {/* Pricing */}
       <section className="pricing-section">
         <div className="container">
-          <h2 className="section-title display-md">Типовые размеры и цены</h2>
-          <div className="pricing-grid">
-            {pricingOptions.map((option, index) => (
-              <div key={index} className="pricing-card">
-                <h2>{option.size}</h2>
-                <div className="pricing-amount">{option.price}</div>
-              </div>
-            ))}
+          <div className="pricing-card">
+            <h2 className="display-md">{pricing.title}</h2>
+            <div className="pricing-amount">{pricing.price}</div>
+            <p className="pricing-note">{pricing.note}</p>
           </div>
-          <p className="pricing-note">{pricingNote}</p>
         </div>
       </section>
 
