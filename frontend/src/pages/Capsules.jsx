@@ -56,10 +56,10 @@ const Capsules = () => {
   ];
 
   const advantages = [
-    { title: 'Ровная геометрия', description: 'Точность до миллиметра' },
-    { title: 'Лёгкий каркас', description: 'Не требует мощного фундамента' },
-    { title: 'Долговечность', description: 'Срок службы более 50 лет' },
-    { title: 'Мобильность', description: 'Можно разобрать и переместить' }
+    { icon: Ruler, title: 'Ровная геометрия', description: 'Точность до миллиметра' },
+    { icon: Feather, title: 'Лёгкий каркас', description: 'Не требует мощного фундамента' },
+    { icon: Infinity, title: 'Долговечность', description: 'Срок службы более 50 лет' },
+    { icon: Move, title: 'Мобильность', description: 'Можно разобрать и переместить' }
   ];
 
   const pricing = {
