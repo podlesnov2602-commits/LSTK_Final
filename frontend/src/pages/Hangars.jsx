@@ -92,6 +92,21 @@ const Hangars = () => {
         </div>
       </section>
 
+      {/* Advantages */}
+      <section className="advantages-section-product">
+        <div className="container">
+          <h2 className="section-title display-md">Преимущества</h2>
+          <div className="advantages-grid-product">
+            {advantages.map((advantage, index) => (
+              <div key={index} className="advantage-card-product">
+                <h3 className="h3">{advantage.title}</h3>
+                <p className="body-md">{advantage.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Typical Sizes */}
       <section className="typical-sizes-section">
         <div className="container">
@@ -105,21 +120,6 @@ const Hangars = () => {
             ))}
           </div>
           <p className="sizes-note">Индивидуальные размеры по запросу</p>
-        </div>
-      </section>
-
-      {/* Advantages */}
-      <section className="advantages-section-product">
-        <div className="container">
-          <h2 className="section-title display-md">Преимущества</h2>
-          <div className="advantages-grid-product">
-            {advantages.map((advantage, index) => (
-              <div key={index} className="advantage-card-product">
-                <h3 className="h3">{advantage.title}</h3>
-                <p className="body-md">{advantage.description}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
