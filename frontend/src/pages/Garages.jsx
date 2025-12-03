@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, ArrowRight } from 'lucide-react';
+import { Check, ArrowRight, Zap, DollarSign, Shield, Clock } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import './ProductPage.css';
 
