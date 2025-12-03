@@ -43,7 +43,7 @@ const Contacts = () => {
   return (
     <div className="contacts-page">
       {/* Hero */}
-      <section className="contacts-hero" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070)' }}>
+      <section className="contacts-hero" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=2070)' }}>
         <div className="contacts-hero-overlay" />
         <div className="container">
           <div className="contacts-hero-content">
