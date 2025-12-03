@@ -59,7 +59,18 @@ const About = () => {
                 Наше производство оборудовано высокоточными станками с ЧПУ европейского производства, что гарантирует идеальную геометрию каждого элемента. Мы используем только сертифицированную сталь и современные технологии защиты от коррозии.
               </p>
             </div>
-            <div className="story-image" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1745448797900-35d08e85e9db)' }} />
+            <div className="story-video">
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+                className="story-video-player"
+              >
+                <source src="https://videos.pexels.com/video-files/5752729/5752729-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+                Ваш браузер не поддерживает видео.
+              </video>
+            </div>
           </div>
         </div>
       </section>
