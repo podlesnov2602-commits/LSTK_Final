@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Download, FileText } from 'lucide-react';
 import './Documents.css';
 
 const Documents = () => {
+  useEffect(() => {
+    // Scroll to top on page load
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   const documents = [
     {
       title: 'Сертификат соответствия',
