@@ -175,8 +175,7 @@
     bottom: 0;
     width: 100%;
     max-width: 320px;
-    background: #000000 !important;
-    background-color: #000000 !important;
+    background: rgb(0, 0, 0) !important;
     flex-direction: column;
     padding: 90px 32px 100px 32px;
     gap: 0;
@@ -187,8 +186,6 @@
     align-items: flex-start;
     z-index: 10000;
     justify-content: space-between;
-    opacity: 1 !important;
-    box-shadow: 0 0 0 1000px #000000 inset;
   }
   
   .main-nav.mobile-open {
