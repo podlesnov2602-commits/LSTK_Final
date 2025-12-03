@@ -598,4 +598,13 @@
   .pricing-section {
     padding: 60px 0;
   }
+  
+  .steps-grid-horizontal {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .steps-section-horizontal {
+    padding: 60px 0;
+  }
 }
