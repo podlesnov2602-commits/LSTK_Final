@@ -175,8 +175,8 @@
     bottom: 0;
     width: 100%;
     max-width: 320px;
-    background: #0E0F10 !important;
-    background-color: #0E0F10 !important;
+    background: #000000 !important;
+    background-color: #000000 !important;
     flex-direction: column;
     padding: 90px 32px 100px 32px;
     gap: 0;
@@ -198,19 +198,21 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #0E0F10;
+    background: #000000 !important;
     z-index: -1;
+    opacity: 1 !important;
   }
   
   .main-nav.mobile-open {
     transform: translateX(0);
     pointer-events: all;
-    background: rgb(0, 0, 0) !important;
-    background-color: rgb(0, 0, 0) !important;
+    background: #000000 !important;
+    background-color: #000000 !important;
   }
   
   .main-nav.mobile-open::before {
-    background: rgb(0, 0, 0) !important;
+    background: #000000 !important;
+    opacity: 1 !important;
   }
   
   .nav-link {
