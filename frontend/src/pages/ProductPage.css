@@ -176,6 +176,62 @@
   color: var(--text-secondary);
 }
 
+/* Horizontal Steps Section for Hangars */
+.steps-section-horizontal {
+  padding: 80px 0;
+  background: rgba(220, 240, 235, 0.3);
+}
+
+.steps-grid-horizontal {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.step-card-horizontal {
+  background: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 32px 20px;
+  text-align: left;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.step-card-horizontal:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.step-number-horizontal {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-primary);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.step-card-horizontal h3 {
+  color: #1a1a1a;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.step-card-horizontal p {
+  color: #4a5568;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+}
+
 /* Form Section */
 .form-section {
   padding: 120px 0;
