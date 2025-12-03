@@ -191,8 +191,7 @@
   .main-nav.mobile-open {
     transform: translateX(0);
     pointer-events: all;
-    background: #FFFFFF !important;
-    background-color: #FFFFFF !important;
+    background: rgb(0, 0, 0) !important;
   }
   
   .nav-link {
