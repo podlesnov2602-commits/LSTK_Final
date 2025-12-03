@@ -91,6 +91,11 @@
   background: var(--bg-secondary);
 }
 
+/* Configurations Section - Alternative background */
+.configurations-section.alt-bg {
+  background: var(--bg-primary);
+}
+
 .configurations-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
