@@ -15,12 +15,12 @@
   align-items: center;
   height: 90px !important;
   justify-content: flex-start;
-  padding: 0 20px !important;
-  gap: 40px;
+  padding: 0 6px !important;          /* МАКСИМАЛЬНО ВЛЕВО */
+  gap: 32px;
 }
 
 /* ============================
-   ЛОГОТИП — крупный и максимально слева
+   ЛОГОТИП — УВЕЛИЧЕН В 2 РАЗА
 =============================== */
 .logo {
   display: flex;
@@ -28,21 +28,22 @@
 }
 
 .logo-icon {
-  height: 60px !important;       /* реальная высота */
+  height: 60px !important;            /* реальная высота */
   width: auto !important;
-  transform: scale(2.1);         /* визуальное увеличение */
-  transform-origin: left center; /* увеличение влево, не вправо */
+  transform: scale(2.4);              /* УВЕЛИЧЕНО В 2 РАЗА */
+  transform-origin: left center;      /* чтобы рос влево, а не вправо */
 }
 
+
 /* ============================
-   МЕНЮ
+   МЕНЮ — отодвигаем, чтобы не налезало
 =============================== */
 .main-nav {
   display: flex;
   align-items: center;
   gap: 40px;
   flex: 1;
-  margin-left: 110px !important;   /* ОТДВИГАЕМ меню — чтобы не лезло на логотип */
+  margin-left: 150px !important;    /* ОТСТУП ДЛЯ БОЛЬШОГО ЛОГОТИПА */
 }
 
 .nav-link {
@@ -58,8 +59,9 @@
   transition: 0.3s ease;
 }
 
+
 /* ============================
-   КНОПКА ТЕЛЕФОНА (desktop)
+   КНОПКА ТЕЛЕФОНА
 =============================== */
 .phone-link {
   display: flex;
@@ -74,18 +76,22 @@
   margin-left: auto;
 }
 
+
 /* ============================
       TABLET
 =============================== */
 @media (max-width: 1024px) {
-  .header-content {
+
+  .main-nav {
+    margin-left: 110px !important;
     gap: 24px;
   }
-  .main-nav {
-    margin-left: 60px !important;
-    gap: 24px;
+
+  .logo-icon {
+    transform: scale(1.9);
   }
 }
+
 
 /* ============================
       MOBILE
@@ -97,7 +103,7 @@
   .header-content {
     height: 64px !important;
     justify-content: space-between;
-    padding: 0 16px !important;
+    padding: 0 14px !important;
     gap: 16px !important;
   }
 
@@ -113,52 +119,4 @@
     color: #FFF;
     cursor: pointer;
     padding: 8px;
-    margin-left: auto;
-  }
-
-  /* ============================
-       MOBILE MENU FULLSCREEN
-  =============================== */
-  .main-nav {
-    display: flex;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    width: 100% !important;
-    background: #000 !important;
-    flex-direction: column;
-    padding: 90px 32px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    pointer-events: none;
-    align-items: flex-start;
-    height: 100vh;
-    z-index: 99999;
-    gap: 0;
-    margin-left: 0 !important;
-  }
-
-  .main-nav.mobile-open {
-    transform: translateX(0);
-    pointer-events: all;
-  }
-
-  .nav-link {
-    width: 100%;
-    padding: 20px 0;
-    font-size: 18px;
-  }
-
-  .phone-link {
-    display: none;
-  }
-}
-
-/* ============================
-   Overlay отключён
-=============================== */
-.mobile-menu-overlay {
-  display: none !important;
-}
+    margin-left:
