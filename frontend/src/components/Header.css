@@ -1,4 +1,6 @@
-/* HEADER — компактная, премиальная */
+/* ============================
+   HEADER — компактный, премиальный
+=============================== */
 .site-header {
   background: #000000 !important;
   border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -8,36 +10,39 @@
   height: 90px !important;
 }
 
-/* Весь контент в шапке */
 .header-content {
   display: flex;
   align-items: center;
   height: 90px !important;
   justify-content: flex-start;
+  padding: 0 20px !important;
   gap: 40px;
-  padding: 0 8px !important;        /* максимально влево */
 }
 
-/* ЛОГОТИП — большой и максимально слева */
+/* ============================
+   ЛОГОТИП — крупный и максимально слева
+=============================== */
 .logo {
   display: flex;
   align-items: center;
 }
 
 .logo-icon {
-  height: 60px !important;           /* базовая физическая высота */
+  height: 60px !important;       /* реальная высота */
   width: auto !important;
-  transform: scale(2.2);             /* ВОТ ЗДЕСЬ ЛОГОТИП СТАНОВИТСЯ БОЛЬШИМ */
-  transform-origin: left center;     /* чтобы увеличивался влево, а не вправо */
+  transform: scale(2.1);         /* визуальное увеличение */
+  transform-origin: left center; /* увеличение влево, не вправо */
 }
 
-/* НАВИГАЦИЯ */
+/* ============================
+   МЕНЮ
+=============================== */
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 32px;                          /* не прилипает, но стоит рядом */
-  margin-left: 15px !important;       /* маленький отступ от логотипа */
+  gap: 40px;
   flex: 1;
+  margin-left: 110px !important;   /* ОТДВИГАЕМ меню — чтобы не лезло на логотип */
 }
 
 .nav-link {
@@ -53,7 +58,9 @@
   transition: 0.3s ease;
 }
 
-/* КНОПКА С ТЕЛЕФОНОМ (desktop) */
+/* ============================
+   КНОПКА ТЕЛЕФОНА (desktop)
+=============================== */
 .phone-link {
   display: flex;
   align-items: center;
@@ -64,9 +71,21 @@
   color: #FFF;
   font-size: 14px;
   font-weight: 600;
-  margin-left: auto; /* она справа */
+  margin-left: auto;
 }
 
+/* ============================
+      TABLET
+=============================== */
+@media (max-width: 1024px) {
+  .header-content {
+    gap: 24px;
+  }
+  .main-nav {
+    margin-left: 60px !important;
+    gap: 24px;
+  }
+}
 
 /* ============================
       MOBILE
@@ -79,10 +98,9 @@
     height: 64px !important;
     justify-content: space-between;
     padding: 0 16px !important;
-    gap: 16px;
+    gap: 16px !important;
   }
 
-  /* ЛОГОТИП НА МОБИЛЬНОМ */
   .logo-icon {
     height: 48px !important;
     transform: scale(1.35);
@@ -98,7 +116,9 @@
     margin-left: auto;
   }
 
-  /* МОБИЛЬНОЕ МЕНЮ */
+  /* ============================
+       MOBILE MENU FULLSCREEN
+  =============================== */
   .main-nav {
     display: flex;
     position: fixed;
@@ -116,6 +136,8 @@
     align-items: flex-start;
     height: 100vh;
     z-index: 99999;
+    gap: 0;
+    margin-left: 0 !important;
   }
 
   .main-nav.mobile-open {
@@ -134,7 +156,9 @@
   }
 }
 
-/* ОТКЛЮЧЕНИЕ OVERLAY */
+/* ============================
+   Overlay отключён
+=============================== */
 .mobile-menu-overlay {
   display: none !important;
 }
