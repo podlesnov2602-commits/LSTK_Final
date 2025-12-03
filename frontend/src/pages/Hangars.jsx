@@ -113,7 +113,7 @@ const Hangars = () => {
       </section>
 
       {/* Typical Sizes */}
-      <section className="pricing-section">
+      <section className="pricing-section alt-bg">
         <div className="container">
           <h2 className="section-title display-md">Типовые размеры и цены</h2>
           <div className="pricing-grid">
