@@ -437,6 +437,12 @@
   margin-top: 16px;
 }
 
+@media (max-width: 1024px) {
+  .advantages-grid-product {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .advantages-grid-product {
     grid-template-columns: 1fr;
@@ -444,5 +450,20 @@
   
   .pricing-amount {
     font-size: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .advantages-grid-horizontal {
+    grid-template-columns: 1fr;
+  }
+  
+  .advantages-grid-product {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .advantages-section-product {
+    padding: 60px 0;
   }
 }
