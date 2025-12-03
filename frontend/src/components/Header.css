@@ -180,12 +180,14 @@
     padding: 90px 32px 100px 32px;
     gap: 0;
     border-left: 1px solid rgba(255, 255, 255, 0.1);
-    transform: translateX(100%);
+    transform: translateX(100%) translateZ(0);
     pointer-events: none;
     transition: transform 0.3s ease;
     align-items: flex-start;
     z-index: 10000;
     justify-content: space-between;
+    will-change: transform;
+    backface-visibility: hidden;
   }
   
   .main-nav.mobile-open {
