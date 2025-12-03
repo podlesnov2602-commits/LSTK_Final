@@ -197,11 +197,6 @@
     background-color: #000000 !important;
   }
   
-  .main-nav.mobile-open::before {
-    background: #000000 !important;
-    opacity: 1 !important;
-  }
-  
   .nav-link {
     width: 100%;
     text-align: left;
