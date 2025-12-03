@@ -1,40 +1,40 @@
-/* HEADER — ЧИСТЫЙ, БЕЗ ПРОЗРАЧНОСТИ */
+/* HEADER — компактный, премиальный */
 .site-header {
   background: #000000 !important;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 140px !important; /* увеличенная шапка под большой логотип */
+  height: 90px !important; /* уменьшенная нормальная высота */
 }
 
 .header-content {
   display: flex;
   align-items: center;
-  height: 140px !important; /* подгоняем под логотип */
-  gap: 64px;
-  justify-content: space-between;
-  padding: 0 40px;
+  height: 90px !important;
+  justify-content: flex-start;     /* всё сдвинули влево */
+  gap: 36px;                       /* меньше воздуха */
+  padding: 0 24px !important;
 }
 
-/* LOGO */
+/* LOGO — делаем визуально гораздо больше */
 .logo {
-  text-decoration: none;
   display: flex;
   align-items: center;
 }
 
 .logo-icon {
-  height: 140px !important;  /* большой логотип */
+  height: 58px !important;        /* реальная высота */
   width: auto !important;
+  transform: scale(1.65);         /* визуальное увеличение */
+  transform-origin: left center;
 }
 
 /* NAVIGATION */
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 40px;
-  height: 100%;
+  gap: 28px;        /* меньше расстояние между пунктами */
   flex: 1;
 }
 
@@ -45,10 +45,10 @@
   font-weight: 500;
   display: flex;
   align-items: center;
-  height: 140px !important;  /* выравниваем по высоте логотипа */
-  transition: all 0.3s ease;
+  height: 90px !important;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  transition: 0.3s ease;
 }
 
 /* PHONE BUTTON (desktop) */
@@ -56,13 +56,13 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 24px;
+  padding: 12px 20px;
   background: var(--accent-primary);
   border-radius: 8px;
   color: #FFF;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  margin-left: auto; /* кнопка справа */
 }
 
 /* MOBILE TOGGLE */
@@ -79,8 +79,8 @@
       TABLET
 =============================== */
 @media (max-width: 1024px) {
-  .header-content { gap: 32px; }
-  .main-nav { gap: 32px; }
+  .header-content { gap: 20px; }
+  .main-nav { gap: 18px; }
 }
 
 /* ============================
@@ -88,12 +88,12 @@
 =============================== */
 @media (max-width: 768px) {
 
-  .site-header { height: 80px !important; }
-  .header-content { height: 80px !important; justify-content: space-between; padding: 0 20px; }
+  .site-header { height: 64px !important; }
+  .header-content { height: 64px !important; justify-content: space-between; padding: 0 20px !important; }
 
   .logo-icon {
-    height: 70px !important;
-    width: auto !important;
+    height: 48px !important;
+    transform: scale(1.35);
   }
 
   .mobile-menu-toggle {
