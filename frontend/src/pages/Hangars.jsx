@@ -44,10 +44,10 @@ const Hangars = () => {
   ];
 
   const advantages = [
-    { title: '30% дешевле капитального', description: 'Экономия на строительстве' },
-    { title: 'Лёгкий фундамент', description: 'Не требует глубокого основания' },
-    { title: 'Быстрый монтаж', description: 'Готовность за 2-4 недели' },
-    { title: 'Возможность демонтажа', description: 'Можно разобрать и переместить' }
+    { icon: DollarSign, title: '30% дешевле капитального', description: 'Экономия на строительстве' },
+    { icon: Layers, title: 'Лёгкий фундамент', description: 'Не требует глубокого основания' },
+    { icon: Zap, title: 'Быстрый монтаж', description: 'Готовность за 2-4 недели' },
+    { icon: RefreshCw, title: 'Возможность демонтажа', description: 'Можно разобрать и переместить' }
   ];
 
   const steps = [
