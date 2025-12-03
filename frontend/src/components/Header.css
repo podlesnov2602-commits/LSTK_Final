@@ -197,6 +197,10 @@
     border-bottom: none;
   }
   
+  .nav-link.active::after {
+    display: none;
+  }
+  
   .phone-link {
     display: none;
   }
