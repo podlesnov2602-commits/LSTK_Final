@@ -357,6 +357,11 @@
   background: var(--bg-secondary);
 }
 
+/* Advantages Section - Alternative background for Hangars */
+.advantages-section-product.alt-bg {
+  background: var(--bg-primary);
+}
+
 .advantages-grid-product {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
