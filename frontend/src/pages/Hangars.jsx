@@ -129,15 +129,15 @@ const Hangars = () => {
       </section>
 
       {/* Process */}
-      <section className="steps-section">
+      <section className="steps-section-horizontal">
         <div className="container">
           <h2 className="section-title display-md">Процесс работы</h2>
-          <div className="steps-grid">
+          <div className="steps-grid-horizontal">
             {steps.map((step, index) => (
-              <div key={index} className="step-card">
-                <div className="step-number">{step.number}</div>
-                <h3 className="h3">{step.title}</h3>
-                <p className="body-md">{step.description}</p>
+              <div key={index} className="step-card-horizontal">
+                <div className="step-number-horizontal">{step.number}</div>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
               </div>
             ))}
           </div>
