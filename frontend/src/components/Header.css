@@ -162,19 +162,20 @@
   
   .main-nav {
     position: fixed;
-    top: 70px;
+    top: 64px;
     left: 0;
     right: 0;
     background: rgba(10, 10, 10, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
-    padding: 32px 24px;
-    gap: 24px;
+    padding: 24px 24px;
+    gap: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     transform: translateX(0) translateY(-100%);
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
+    align-items: flex-start;
   }
   
   .main-nav.mobile-open {
@@ -185,9 +186,15 @@
   
   .nav-link {
     width: 100%;
-    text-align: center;
-    padding: 12px 0;
+    text-align: left;
+    padding: 16px 0;
     font-size: 16px;
+    height: auto;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .nav-link:last-child {
+    border-bottom: none;
   }
   
   .phone-link {
