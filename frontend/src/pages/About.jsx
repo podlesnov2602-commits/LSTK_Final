@@ -33,7 +33,7 @@ const About = () => {
   return (
     <div className="about-page">
       {/* Hero */}
-      <section className="about-hero" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070)' }}>
+      <section className="about-hero" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2115)' }}>
         <div className="about-hero-overlay" />
         <div className="container">
           <div className="about-hero-content">
