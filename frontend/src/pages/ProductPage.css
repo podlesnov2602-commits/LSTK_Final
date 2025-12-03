@@ -355,7 +355,7 @@
 /* Pricing Section */
 .pricing-section {
   padding: 80px 0;
-  background: rgba(220, 240, 235, 0.3);
+  background: var(--bg-primary);
 }
 
 .pricing-grid {
@@ -367,22 +367,22 @@
 }
 
 .pricing-card {
-  background: #ffffff;
-  border: none;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(10, 122, 95, 0.2);
   border-radius: 12px;
   padding: 32px 24px;
   text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .pricing-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 4px 16px rgba(10, 122, 95, 0.2);
 }
 
 .pricing-card h2 {
-  color: #1a1a1a;
+  color: var(--text-primary);
   font-size: 28px;
   font-weight: 700;
   margin: 0 0 12px 0;
@@ -396,7 +396,7 @@
 }
 
 .pricing-section .pricing-note {
-  color: #4a5568;
+  color: var(--text-secondary);
   font-size: 15px;
   text-align: center;
   margin: 0;
