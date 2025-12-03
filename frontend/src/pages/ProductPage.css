@@ -179,7 +179,7 @@
 /* Horizontal Steps Section for Hangars */
 .steps-section-horizontal {
   padding: 80px 0;
-  background: rgba(220, 240, 235, 0.3);
+  background: var(--bg-primary);
 }
 
 .steps-grid-horizontal {
@@ -190,23 +190,24 @@
 }
 
 .step-card-horizontal {
-  background: #ffffff;
-  border: none;
+  background: var(--bg-secondary);
+  border: 1px solid rgba(10, 122, 95, 0.2);
   border-radius: 12px;
   padding: 32px 20px;
-  text-align: left;
+  text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .step-card-horizontal:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border-color: var(--accent-primary);
+  box-shadow: 0 4px 16px rgba(10, 122, 95, 0.2);
 }
 
 .step-number-horizontal {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -215,21 +216,20 @@
   font-size: 20px;
   font-weight: 700;
   border-radius: 50%;
-  margin-bottom: 20px;
 }
 
 .step-card-horizontal h3 {
-  color: #1a1a1a;
-  font-size: 18px;
+  color: var(--text-primary);
+  font-size: 17px;
   font-weight: 700;
-  margin: 0 0 8px 0;
+  margin: 0 0 10px 0;
 }
 
 .step-card-horizontal p {
-  color: #4a5568;
+  color: var(--text-secondary);
   font-size: 14px;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* Form Section */
