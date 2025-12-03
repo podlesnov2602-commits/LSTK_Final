@@ -176,6 +176,7 @@
     transition: transform 0.3s ease;
     align-items: flex-start;
     overflow-y: auto;
+    z-index: 999;
   }
   
   .main-nav.mobile-open {
