@@ -140,7 +140,7 @@ const Garages = () => {
       </section>
 
       {/* Configurations with Prices */}
-      <section className="configurations-section">
+      <section className="configurations-section alt-bg">
         <div className="container">
           <h2 className="section-title display-md">Типовые проекты</h2>
           <div className="configurations-grid">
