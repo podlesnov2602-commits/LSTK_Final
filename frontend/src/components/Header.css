@@ -177,7 +177,7 @@
     max-width: 320px;
     background: rgb(14, 15, 16);
     flex-direction: column;
-    padding: 80px 24px 24px 24px;
+    padding: 100px 24px 40px 24px;
     gap: 0;
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     transform: translateX(100%);
@@ -185,7 +185,7 @@
     transition: transform 0.3s ease;
     align-items: flex-start;
     z-index: 999;
-    justify-content: flex-start;
+    justify-content: center;
   }
   
   .main-nav.mobile-open {
@@ -196,10 +196,11 @@
   .nav-link {
     width: 100%;
     text-align: left;
-    padding: 20px 0;
+    padding: 24px 0;
     font-size: 18px;
     height: auto;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-weight: 500;
   }
   
   .nav-link:last-child {
