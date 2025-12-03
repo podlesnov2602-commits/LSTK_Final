@@ -182,6 +182,11 @@
   background: var(--bg-primary);
 }
 
+/* Horizontal Steps Section - Alternative background */
+.steps-section-horizontal.alt-bg {
+  background: var(--bg-secondary);
+}
+
 .steps-grid-horizontal {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
