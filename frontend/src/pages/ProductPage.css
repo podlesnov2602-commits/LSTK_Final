@@ -493,4 +493,13 @@
   .advantages-section-product {
     padding: 60px 0;
   }
+  
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  .pricing-section {
+    padding: 60px 0;
+  }
 }
