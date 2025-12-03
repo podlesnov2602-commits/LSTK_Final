@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
-        <main style={{ flex: 1 }}>
+        <main style={{ flex: 1, position: 'relative', zIndex: 1 }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/capsules" element={<Capsules />} />
