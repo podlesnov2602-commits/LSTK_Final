@@ -62,13 +62,11 @@ const Capsules = () => {
     { icon: Move, title: 'Мобильность', description: 'Можно разобрать и переместить' }
   ];
 
-  const pricingOptions = [
-    { size: '18 м²', price: 'от 4.5 млн ₽' },
-    { size: '21 м²', price: 'от 5.5 млн ₽' },
-    { size: '24 м²', price: 'от 5.9 млн ₽' }
-  ];
-
-  const pricingNote = 'Точная цена рассчитывается индивидуально';
+  const pricing = {
+    title: 'Капсула 18–24 м²',
+    price: 'от 5.9 млн ₽',
+    note: 'Точная цена рассчитывается индивидуально'
+  };
 
   const steps = [
     { number: '01', title: 'Консультация', description: 'Обсуждаем ваши требования' },
