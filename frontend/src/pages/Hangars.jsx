@@ -113,18 +113,18 @@ const Hangars = () => {
       </section>
 
       {/* Typical Sizes */}
-      <section className="typical-sizes-section">
+      <section className="pricing-section">
         <div className="container">
           <h2 className="section-title display-md">Типовые размеры и цены</h2>
-          <div className="sizes-grid">
+          <div className="pricing-grid">
             {typicalSizes.map((item, index) => (
-              <div key={index} className="size-card">
-                <h3 className="h2">{item.size}</h3>
-                <div className="size-price">{item.price}</div>
+              <div key={index} className="pricing-card">
+                <h2>{item.size}</h2>
+                <div className="pricing-amount">{item.price}</div>
               </div>
             ))}
           </div>
-          <p className="sizes-note">Индивидуальные размеры по запросу</p>
+          <p className="pricing-note">Индивидуальные размеры по запросу</p>
         </div>
       </section>
 
