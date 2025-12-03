@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Check, ArrowRight, Zap, DollarSign, Shield, Clock } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import './ProductPage.css';
@@ -9,6 +9,19 @@ const Garages = () => {
     phone: '',
     message: ''
   });
+
+  useEffect(() => {
+    // Scroll to gallery section on page load
+    const timer = setTimeout(() => {
+      const gallerySection = document.querySelector('.gallery-section');
+      if (gallerySection) {
+        const yOffset = -100; // Offset for header
+        const y = gallerySection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   const gallery = [
     { 
