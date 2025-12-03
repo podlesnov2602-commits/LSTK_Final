@@ -142,22 +142,6 @@ const Garages = () => {
         </div>
       </section>
 
-      {/* Process */}
-      <section className="steps-section">
-        <div className="container">
-          <h2 className="section-title display-md">Как мы работаем</h2>
-          <div className="steps-grid">
-            {steps.map((step, index) => (
-              <div key={index} className="step-card">
-                <div className="step-number">{step.number}</div>
-                <h3 className="h3">{step.title}</h3>
-                <p className="body-md">{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="form-section">
         <div className="container">
           <div className="form-container">
