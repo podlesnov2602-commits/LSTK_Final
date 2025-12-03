@@ -395,9 +395,12 @@
   margin: 0;
 }
 
-.pricing-note {
+.pricing-section .pricing-note {
   color: #4a5568;
   font-size: 15px;
+  text-align: center;
+  margin: 0;
+  font-weight: 500;
 
 
 /* Typical Sizes Section */
