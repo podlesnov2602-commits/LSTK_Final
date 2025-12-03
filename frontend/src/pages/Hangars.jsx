@@ -97,12 +97,17 @@ const Hangars = () => {
         <div className="container">
           <h2 className="section-title display-md">Преимущества</h2>
           <div className="advantages-grid-product">
-            {advantages.map((advantage, index) => (
-              <div key={index} className="advantage-card-product">
-                <h3 className="h3">{advantage.title}</h3>
-                <p className="body-md">{advantage.description}</p>
-              </div>
-            ))}
+            {advantages.map((advantage, index) => {
+              const IconComponent = advantage.icon;
+              return (
+                <div key={index} className="advantage-card-product">
+                  <div className="advantage-icon-circle">
+                    <IconComponent size={28} className="advantage-icon" />
+                  </div>
+                  <h3>{advantage.title}</h3>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
