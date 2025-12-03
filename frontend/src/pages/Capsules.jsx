@@ -134,6 +134,17 @@ const Capsules = () => {
         </div>
       </section>
 
+      {/* Pricing */}
+      <section className="pricing-section">
+        <div className="container">
+          <div className="pricing-card">
+            <h2 className="display-md">{pricing.title}</h2>
+            <div className="pricing-amount">{pricing.price}</div>
+            <p className="pricing-note">{pricing.note}</p>
+          </div>
+        </div>
+      </section>
+
       {/* Advantages */}
       <section className="advantages-section-product">
         <div className="container">
@@ -145,17 +156,6 @@ const Capsules = () => {
                 <p className="body-md">{advantage.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing */}
-      <section className="pricing-section">
-        <div className="container">
-          <div className="pricing-card">
-            <h2 className="display-md">{pricing.title}</h2>
-            <div className="pricing-amount">{pricing.price}</div>
-            <p className="pricing-note">{pricing.note}</p>
           </div>
         </div>
       </section>
