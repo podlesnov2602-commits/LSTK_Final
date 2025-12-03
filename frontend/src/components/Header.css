@@ -5,14 +5,15 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 90px;
+  height: 140px !important; /* увеличенная шапка под большой логотип */
 }
 
 .header-content {
   display: flex;
   align-items: center;
-  height: 90px;
+  height: 140px !important; /* подгоняем под логотип */
   gap: 64px;
+  justify-content: space-between;
 }
 
 /* LOGO */
@@ -20,11 +21,10 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-  transition: all 0.3s ease;
 }
 
 .logo-icon {
-  height: 100px !important;
+  height: 140px !important;  /* размер, который ты хотел */
   width: auto !important;
 }
 
@@ -44,7 +44,7 @@
   font-weight: 500;
   display: flex;
   align-items: center;
-  height: 90px;
+  height: 140px !important;  /* выравниваем по высоте логотипа */
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -90,7 +90,7 @@
   .header-content { height: 80px !important; justify-content: space-between; }
 
   .logo-icon {
-    height: 80px !important;
+    height: 80px !important; /* оптимально для мобильной */
     width: auto !important;
   }
 
@@ -130,6 +130,7 @@
     padding: 20px 0;
     font-size: 18px;
     letter-spacing: 0.08em;
+    height: auto !important;
   }
 
   .phone-link {
