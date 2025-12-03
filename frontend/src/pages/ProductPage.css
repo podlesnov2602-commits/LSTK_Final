@@ -419,6 +419,11 @@
   background: var(--bg-primary);
 }
 
+/* Pricing Section - Alternative background */
+.pricing-section.alt-bg {
+  background: var(--bg-secondary);
+}
+
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
