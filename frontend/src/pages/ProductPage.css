@@ -359,24 +359,36 @@
 }
 
 .pricing-card {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 60px 48px;
-  background: var(--bg-secondary);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 14px;
+  background: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 32px 24px;
   text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.pricing-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card h2 {
+  color: #1a1a1a;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
 }
 
 .pricing-amount {
-  font-size: 56px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 600;
   color: var(--accent-primary);
-  margin: 24px 0;
+  margin: 0;
 }
 
 .pricing-note {
-  color: var(--text-secondary);
+  color: #4a5568;
   font-size: 15px;
 
 
