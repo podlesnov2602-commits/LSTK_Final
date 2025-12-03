@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import './Contacts.css';
 
 const Contacts = () => {
+  useEffect(() => {
+    // Scroll to top on page load
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   const handleWhatsAppContact = () => {
     const message = encodeURIComponent('Здравствуйте! Хочу получить консультацию по продукции');
     window.open(`${siteConfig.social.whatsapp}?text=${message}`, '_blank');
