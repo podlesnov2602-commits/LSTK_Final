@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Award, Users, Factory, Target } from 'lucide-react';
 import './About.css';
 
 const About = () => {
+  useEffect(() => {
+    // Scroll to top on page load
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   const values = [
     {
       icon: Award,
