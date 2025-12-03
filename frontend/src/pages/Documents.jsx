@@ -63,7 +63,7 @@ const Documents = () => {
   return (
     <div className="documents-page">
       {/* Hero */}
-      <section className="documents-hero" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070)' }}>
+      <section className="documents-hero" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1581092162384-8987c1d64718?q=80&w=2070)' }}>
         <div className="documents-hero-overlay" />
         <div className="container">
           <div className="documents-hero-content">
