@@ -38,50 +38,60 @@ const Header = () => {
   };
 
   return (
-    <header className="site-header">
-      <div className="container">
-        <div className="header-content">
-          <Link to="/" className="logo">
-            <img src={siteConfig.company.logo} alt={siteConfig.company.name} className="logo-icon" />
-          </Link>
+    <>
+      <header className="site-header">
+        <div className="container">
+          <div className="header-content">
+            <Link to="/" className="logo">
+              <img src={siteConfig.company.logo} alt={siteConfig.company.name} className="logo-icon" />
+            </Link>
 
-          <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-            {menuItems.map((item) => (
-              item.isAnchor ? (
-                <button
-                  key={item.path}
-                  className="nav-link"
-                  onClick={() => handleNavClick(item)}
-                >
-                  {item.label}
-                </button>
-              ) : (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              )
-            ))}
-          </nav>
+            <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+              {menuItems.map((item) => (
+                item.isAnchor ? (
+                  <button
+                    key={item.path}
+                    className="nav-link"
+                    onClick={() => handleNavClick(item)}
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              ))}
+            </nav>
 
-          <a href={`tel:${siteConfig.contact.phoneRaw}`} className="phone-link">
-            <Phone size={20} />
-            <span>{siteConfig.contact.phone}</span>
-          </a>
+            <a href={`tel:${siteConfig.contact.phoneRaw}`} className="phone-link">
+              <Phone size={20} />
+              <span>{siteConfig.contact.phone}</span>
+            </a>
 
-          <button 
-            className="mobile-menu-toggle"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            <button 
+              className="mobile-menu-toggle"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+      
+      {/* Mobile menu overlay */}
+      {mobileMenuOpen && (
+        <div 
+          className="mobile-menu-overlay"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+    </>
   );
 };
 
