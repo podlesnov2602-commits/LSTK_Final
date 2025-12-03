@@ -157,7 +157,7 @@ const Capsules = () => {
       {/* Pricing */}
       <section className="pricing-section">
         <div className="container">
-          <div className="pricing-card">
+          <div className="pricing-card-single">
             <h2 className="display-md">{pricing.title}</h2>
             <div className="pricing-amount">{pricing.price}</div>
             <p className="pricing-note">{pricing.note}</p>
