@@ -1,61 +1,54 @@
-/* HEADER — ПРЕМИУМ, ЧЕРНАЯ ПАНЕЛЬ */
+/* HEADER — ЧИСТЫЙ, БЕЗ ПРОЗРАЧНОСТИ */
 .site-header {
   background: #000000 !important;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 130px !important; /* премиальная высота */
+  height: 140px !important; /* увеличенная шапка под большой логотип */
 }
 
-/* Контейнер шапки */
 .header-content {
   display: flex;
   align-items: center;
-  height: 130px !important;
-  justify-content: space-between;
-  padding: 0 40px; /* увеличиваем “воздух”, премиум эффект */
+  height: 140px !important; /* подгоняем под логотип */
   gap: 64px;
+  justify-content: space-between;
+  padding: 0 40px;
 }
 
-/* LOGO — премиальная увеличенная зона */
+/* LOGO */
 .logo {
+  text-decoration: none;
   display: flex;
   align-items: center;
-  padding-left: 40px;   /* широкая бренд-зона */
-  padding-right: 40px;
 }
 
 .logo-icon {
-  height: 150px !important;  /* крупный статусный логотип */
+  height: 140px !important;  /* большой логотип */
   width: auto !important;
-  object-fit: contain;
 }
 
 /* NAVIGATION */
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 46px;  /* немного больше расстояние — премиум стиль */
+  gap: 40px;
+  height: 100%;
   flex: 1;
 }
 
 .nav-link {
   color: #FFF;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   display: flex;
   align-items: center;
-  height: 130px !important; /* выравнивание с большой шапкой */
-  transition: 0.25s ease;
+  height: 140px !important;  /* выравниваем по высоте логотипа */
+  transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-}
-
-.nav-link:hover {
-  color: var(--accent-primary);
-  opacity: 0.9;
+  letter-spacing: 0.05em;
 }
 
 /* PHONE BUTTON (desktop) */
@@ -63,18 +56,13 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 26px;
+  padding: 12px 24px;
   background: var(--accent-primary);
-  border-radius: 10px;
+  border-radius: 8px;
   color: #FFF;
   font-size: 15px;
   font-weight: 600;
-  transition: 0.25s ease;
-}
-
-.phone-link:hover {
-  background: var(--accent-hover);
-  transform: translateY(-2px);
+  transition: all 0.3s ease;
 }
 
 /* MOBILE TOGGLE */
@@ -92,7 +80,7 @@
 =============================== */
 @media (max-width: 1024px) {
   .header-content { gap: 32px; }
-  .main-nav { gap: 28px; }
+  .main-nav { gap: 32px; }
 }
 
 /* ============================
@@ -100,17 +88,9 @@
 =============================== */
 @media (max-width: 768px) {
 
-  /* Компактная мобильная шапка */
-  .site-header {
-    height: 80px !important;
-  }
+  .site-header { height: 80px !important; }
+  .header-content { height: 80px !important; justify-content: space-between; padding: 0 20px; }
 
-  .header-content {
-    height: 80px !important;
-    padding: 0 20px;
-  }
-
-  /* Логотип компактнее, но всё равно заметный */
   .logo-icon {
     height: 70px !important;
     width: auto !important;
@@ -121,7 +101,7 @@
     margin-left: auto;
   }
 
-  /* MOBILE MENU — ПОЛНЫЙ ЧЕРНЫЙ ЭКРАН */
+  /* MOBILE MENU — ПОЛНЫЙ ЭКРАН */
   .main-nav {
     display: flex;
     position: fixed;
@@ -132,11 +112,11 @@
     width: 100% !important;
     background: #000 !important;
     flex-direction: column;
-    padding: 90px 35px;
+    padding: 90px 32px;
     gap: 0;
     transform: translateX(100%);
     pointer-events: none;
-    transition: 0.3s ease;
+    transition: transform 0.3s ease;
     align-items: flex-start;
     z-index: 99999;
     height: 100vh;
@@ -148,16 +128,19 @@
   }
 
   .nav-link {
-    font-size: 20px;
-    padding: 22px 0;
-    letter-spacing: 0.1em;
+    width: 100%;
+    padding: 20px 0;
+    font-size: 18px;
+    letter-spacing: 0.08em;
     height: auto !important;
   }
 
-  .phone-link { display: none; }
+  .phone-link {
+    display: none;
+  }
 }
 
-/* отключаем overlay */
+/* ОТКЛЮЧАЕМ ПРОЗРАЧНЫЙ OVERLAY */
 .mobile-menu-overlay {
   display: none !important;
   background: #000 !important;
