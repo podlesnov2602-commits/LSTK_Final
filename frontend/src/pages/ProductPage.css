@@ -358,6 +358,14 @@
   background: rgba(220, 240, 235, 0.3);
 }
 
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+  margin-bottom: 32px;
+}
+
 .pricing-card {
   background: #ffffff;
   border: none;
