@@ -27,15 +27,13 @@
   gap: 24px;
 }
 
-/* — правим, чтобы логотип стоял ровно в линию с колонками */
 .footer-column:first-child {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* выравнивание по верхней линии */
+  justify-content: flex-start;
   gap: 28px;
 }
 
-/* ЛОГОТИП */
 .footer-logo {
   display: flex;
   align-items: center;
@@ -44,7 +42,7 @@
 }
 
 .footer-logo-icon {
-  height: 120px;   /* ⬅ вот этот размер точно выравнивает с меню */
+  height: 120px;
   width: auto;
   display: block;
 }
@@ -208,4 +206,11 @@
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 40
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .footer-logo-icon {
+    height: 64px;
+  }
+}
