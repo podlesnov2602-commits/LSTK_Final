@@ -9,24 +9,39 @@ const Footer = () => {
     <footer className="site-footer">
       <div className="container">
         <div className="footer-grid">
+
+          {/* КОЛОНКА 1 — ЛОГОТИП + СОЦ.СЕТИ */}
           <div className="footer-column">
             <div className="footer-logo">
-              <img src={siteConfig.company.logo} alt={siteConfig.company.name} className="footer-logo-icon" />
-              <h3 className="footer-title">{siteConfig.company.name}</h3>
+              <img 
+                src={siteConfig.company.logo} 
+                alt="Логотип" 
+                className="footer-logo-icon" 
+              />
             </div>
-            <p className="footer-description">
-              {siteConfig.company.description}
-            </p>
+
             <div className="footer-social">
-              <a href={siteConfig.social.instagram} className="footer-social-link" target="_blank" rel="noopener noreferrer">
+              <a 
+                href={siteConfig.social.instagram} 
+                className="footer-social-link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 <Instagram size={22} />
               </a>
-              <a href={siteConfig.social.facebook} className="footer-social-link" target="_blank" rel="noopener noreferrer">
+
+              <a 
+                href={siteConfig.social.facebook} 
+                className="footer-social-link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
                 <Facebook size={22} />
               </a>
             </div>
           </div>
 
+          {/* КОЛОНКА 2 */}
           <div className="footer-column">
             <h4 className="footer-heading">Продукция</h4>
             <nav className="footer-nav">
@@ -36,6 +51,7 @@ const Footer = () => {
             </nav>
           </div>
 
+          {/* КОЛОНКА 3 */}
           <div className="footer-column">
             <h4 className="footer-heading">Компания</h4>
             <nav className="footer-nav">
@@ -45,6 +61,7 @@ const Footer = () => {
             </nav>
           </div>
 
+          {/* КОЛОНКА 4 */}
           <div className="footer-column">
             <h4 className="footer-heading">Контакты</h4>
             <div className="footer-contact">
@@ -52,21 +69,25 @@ const Footer = () => {
                 <Phone size={16} />
                 {siteConfig.contact.phone}
               </a>
+
               <a href={`mailto:${siteConfig.contact.email}`} className="footer-contact-item">
                 <Mail size={16} />
                 {siteConfig.contact.email}
               </a>
+
               <div className="footer-contact-item">
                 <MapPin size={16} />
                 {siteConfig.contact.address}
               </div>
             </div>
           </div>
+
         </div>
 
+        {/* НИЗ ФУТЕРА */}
         <div className="footer-bottom">
           <p className="footer-copyright">
-            © 2025 {siteConfig.company.name}. Все права защищены.
+            © 2025. Все права защищены.
           </p>
         </div>
       </div>
