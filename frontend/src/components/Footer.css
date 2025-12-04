@@ -1,4 +1,7 @@
-/* Premium Clean Footer */
+/* =======================
+      PREMIUM FOOTER
+======================= */
+
 .site-footer {
   background: var(--bg-footer);
   border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -7,6 +10,7 @@
   position: relative;
 }
 
+/* GRID */
 .footer-grid {
   display: grid;
   grid-template-columns: 2.5fr 1fr 1fr 1.5fr;
@@ -14,16 +18,17 @@
   margin-bottom: 72px;
 }
 
+/* BASE COLUMN STYLE */
 .footer-column {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-/* Company Column with Large Logo */
+/* LEFT COLUMN WITH LOGO */
 .footer-column:first-child {
   gap: 20px;
-  transform: translateY(-120px); /* ← ПОДНИМАЕМ ЛОГО НА УРОВЕНЬ МЕНЮ */
+  transform: translateY(-180px); /* ← ПОДНЯТО В ЛИНИЮ */
 }
 
 .footer-logo {
@@ -39,11 +44,13 @@
   display: block;
 }
 
+/* TITLE */
 .footer-title {
   font-size: 20px;
   font-weight: 600;
   color: #FFFFFF;
   line-height: 1.3;
+  display: none; /* ← Название скрыто, оставляем только логотип */
 }
 
 .footer-description {
@@ -54,7 +61,7 @@
   font-weight: 500;
 }
 
-/* Social Links */
+/* SOCIAL */
 .footer-social {
   display: flex;
   gap: 16px;
@@ -82,7 +89,7 @@
   transform: translateY(-2px);
 }
 
-/* Column Headings */
+/* COLUMN HEADINGS */
 .footer-heading {
   font-size: 16px;
   font-weight: 600;
@@ -91,7 +98,7 @@
   letter-spacing: 0.08em;
 }
 
-/* Navigation Links */
+/* LINKS */
 .footer-nav {
   display: flex;
   flex-direction: column;
@@ -129,7 +136,7 @@
   width: 4px;
 }
 
-/* Contact Items */
+/* CONTACTS */
 .footer-contact {
   display: flex;
   flex-direction: column;
@@ -158,7 +165,7 @@
   color: var(--accent-primary);
 }
 
-/* Footer Bottom */
+/* BOTTOM */
 .footer-bottom {
   padding-top: 32px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -172,16 +179,15 @@
   opacity: 0.7;
 }
 
-/* Mobile Responsive */
+/* ADAPTIVE */
 @media (max-width: 1024px) {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 48px;
   }
 
-  /* На планшетах возвращаем логотип ниже */
   .footer-column:first-child {
-    transform: translateY(0);
+    transform: translateY(-80px);
   }
 }
 
@@ -190,29 +196,23 @@
     padding: 60px 0 32px;
     margin-top: 80px;
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 40px;
     margin-bottom: 40px;
   }
-  
+
   .footer-logo {
     gap: 16px;
   }
-  
+
   .footer-logo-icon {
-    width: 64px;
-    height: 64px;
-    font-size: 24px;
+    width: 160px;
+    height: auto;
   }
 
-  /* На мобильных логотип снова в нормальном положении */
   .footer-column:first-child {
     transform: translateY(0);
-  }
-  
-  .footer-title {
-    font-size: 20px;
   }
 }
