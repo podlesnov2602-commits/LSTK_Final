@@ -21,30 +21,27 @@
         LEFT COLUMN
 ======================= */
 
-.footer-column {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
+/* Левая колонка — лого слева, меню справа на одном уровне */
 .footer-column:first-child {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  gap: 28px;
+  justify-content: center; /* центр по вертикали */
+  gap: 20px;
+  padding-top: 25px;  /* ← выровняет в линию с меню */
 }
 
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 120px;
+  gap: 20px;
   margin-bottom: 0;
 }
 
 .footer-logo-icon {
-  height: 120px;
+  height: 220px;   /* ← твой большой размер */
   width: auto;
   display: block;
+  margin-top: -40px;  /* ← поднимает лого вверх */
 }
 
 /* =======================
