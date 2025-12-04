@@ -1,5 +1,5 @@
 /* =======================
-      PREMIUM FOOTER
+      PREMIUM CLEAN FOOTER
 ======================= */
 
 .site-footer {
@@ -10,7 +10,6 @@
   position: relative;
 }
 
-/* GRID */
 .footer-grid {
   display: grid;
   grid-template-columns: 2.5fr 1fr 1fr 1.5fr;
@@ -18,40 +17,41 @@
   margin-bottom: 72px;
 }
 
-/* BASE COLUMN STYLE */
+/* =======================
+        LEFT COLUMN
+======================= */
+
 .footer-column {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-/* LEFT COLUMN WITH LOGO */
+/* — правим, чтобы логотип стоял ровно в линию с колонками */
 .footer-column:first-child {
-  gap: 20px;
-  transform: translateY(-180px); /* ← ПОДНЯТО В ЛИНИЮ */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* выравнивание по верхней линии */
+  gap: 28px;
 }
 
+/* ЛОГОТИП */
 .footer-logo {
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 
 .footer-logo-icon {
-  height: 300px;
+  height: 120px;   /* ⬅ вот этот размер точно выравнивает с меню */
   width: auto;
   display: block;
 }
 
-/* TITLE */
-.footer-title {
-  font-size: 20px;
-  font-weight: 600;
-  color: #FFFFFF;
-  line-height: 1.3;
-  display: none; /* ← Название скрыто, оставляем только логотип */
-}
+/* =======================
+       TEXT & DESCRIPTION
+======================= */
 
 .footer-description {
   color: #E5E5E5;
@@ -61,11 +61,14 @@
   font-weight: 500;
 }
 
-/* SOCIAL */
+/* =======================
+      SOCIAL ICONS
+======================= */
+
 .footer-social {
   display: flex;
   gap: 16px;
-  margin-top: 8px;
+  margin-top: 12px;
 }
 
 .footer-social-link {
@@ -78,18 +81,21 @@
   align-items: center;
   justify-content: center;
   color: var(--text-primary);
-  transition: all 0.2s ease;
+  transition: .2s ease;
   text-decoration: none;
 }
 
 .footer-social-link:hover {
   background: var(--accent-primary);
   border-color: var(--accent-primary);
-  color: #FFFFFF;
+  color: #fff;
   transform: translateY(-2px);
 }
 
-/* COLUMN HEADINGS */
+/* =======================
+       NAVIGATION
+======================= */
+
 .footer-heading {
   font-size: 16px;
   font-weight: 600;
@@ -98,7 +104,6 @@
   letter-spacing: 0.08em;
 }
 
-/* LINKS */
 .footer-nav {
   display: flex;
   flex-direction: column;
@@ -107,11 +112,10 @@
 
 .footer-link {
   color: #E5E5E5;
-  text-decoration: none;
   font-size: 15px;
   font-weight: 500;
-  transition: all 0.3s ease;
-  padding-left: 0;
+  text-decoration: none;
+  transition: .3s ease;
   position: relative;
 }
 
@@ -125,18 +129,21 @@
   position: absolute;
   left: 0;
   top: 50%;
-  transform: translateY(-50%);
   width: 0;
   height: 2px;
   background: var(--accent-primary);
-  transition: width 0.3s ease;
+  transform: translateY(-50%);
+  transition: width .3s ease;
 }
 
 .footer-link:hover::before {
   width: 4px;
 }
 
-/* CONTACTS */
+/* =======================
+        CONTACTS
+======================= */
+
 .footer-contact {
   display: flex;
   flex-direction: column;
@@ -149,10 +156,10 @@
   gap: 12px;
   color: #E5E5E5;
   font-size: 15px;
-  text-decoration: none;
-  transition: color 0.3s ease;
   line-height: 1.7;
   font-weight: 500;
+  text-decoration: none;
+  transition: .3s ease;
 }
 
 .footer-contact-item svg {
@@ -165,7 +172,10 @@
   color: var(--accent-primary);
 }
 
-/* BOTTOM */
+/* =======================
+          BOTTOM
+======================= */
+
 .footer-bottom {
   padding-top: 32px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -179,15 +189,14 @@
   opacity: 0.7;
 }
 
-/* ADAPTIVE */
+/* =======================
+        RESPONSIVE
+======================= */
+
 @media (max-width: 1024px) {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 48px;
-  }
-
-  .footer-column:first-child {
-    transform: translateY(-80px);
   }
 }
 
@@ -199,20 +208,4 @@
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
-  }
-
-  .footer-logo {
-    gap: 16px;
-  }
-
-  .footer-logo-icon {
-    width: 160px;
-    height: auto;
-  }
-
-  .footer-column:first-child {
-    transform: translateY(0);
-  }
-}
+    gap: 40
