@@ -10,13 +10,14 @@
   position: relative;
 }
 
+/* Выровнять логотип по уровню остальных колонок */
 .footer-grid {
   display: grid;
   grid-template-columns: 2.5fr 1fr 1fr 1.5fr;
   gap: 96px;
   margin-bottom: 72px;
+  align-items: center;   /* ← КЛЮЧЕВЫЙ МОМЕНТ */
 }
-
 /* =======================
         LEFT COLUMN
 ======================= */
