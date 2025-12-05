@@ -6,8 +6,7 @@ import './Home.css';
 
 // 🔥 Локальные изображения
 import capsulesImg from '../assets/capsules.png';
-// import hangarImg from '../assets/hangars.png';
-// import garageImg from '../assets/garages.png';
+import hangarsImg from '../assets/Hangars.jpeg';   // ← ТВОЯ НОВАЯ КАРТИНКА
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -22,12 +21,12 @@ const Home = () => {
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+      setCurrentSlide((p) => (p + 1) % heroImages.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [heroImages.length]);
+  }, []);
 
-  // 🔥 Здесь заменена картинка КАПСУЛЫ
+  // 🔥 НАПРАВЛЕНИЯ (с локальными фото)
   const directions = [
     {
       title: 'Капсулы',
@@ -35,17 +34,17 @@ const Home = () => {
       link: '/capsules',
       image: capsulesImg,
     },
-  {
-  title: 'Ангары',
-  description: 'Промышленные ангары и складские помещения',
-  link: '/hangars',
-  image: hangarsImg,
-},
+    {
+      title: 'Ангары',
+      description: 'Промышленные ангары и складские помещения',
+      link: '/hangars',
+      image: hangarsImg,  // ← Используем локальную картинку
+    },
     {
       title: 'Гаражи',
       description: 'Надёжные металлические гаражи и боксы',
       link: '/garages',
-      image: 'https://images.unsplash.com/photo-1635961179148-3d886568775c?q=85'
+      image: 'https://images.unsplash.com/photo-1635961179148-3d886568775c?q=85',
     }
   ];
 
@@ -71,15 +70,15 @@ const Home = () => {
 
   return (
     <div className="home-page">
-
+      
       {/* HERO */}
       <section className="hero-section">
         <div className="hero-carousel">
-          {heroImages.map((image, idx) => (
+          {heroImages.map((img, i) => (
             <div
-              key={idx}
-              className={`hero-slide ${idx === currentSlide ? 'active' : ''}`}
-              style={{ backgroundImage: `url(${image})` }}
+              key={i}
+              className={`hero-slide ${i === currentSlide ? 'active' : ''}`}
+              style={{ backgroundImage: `url(${img})` }}
             />
           ))}
         </div>
@@ -92,9 +91,11 @@ const Home = () => {
               <h1 className="hero-title display-lg">
                 Производство ЛСТК<br />в Казахстане
               </h1>
+
               <p className="hero-subtitle body-lg">
                 Капсулы, ангары, гаражи — быстро, надёжно, заводское качество
               </p>
+
               <button
                 className="btn-primary"
                 onClick={() =>
@@ -109,11 +110,11 @@ const Home = () => {
         </div>
 
         <div className="hero-indicators">
-          {heroImages.map((_, idx) => (
+          {heroImages.map((_, i) => (
             <button
-              key={idx}
-              className={`hero-indicator ${idx === currentSlide ? 'active' : ''}`}
-              onClick={() => setCurrentSlide(idx)}
+              key={i}
+              className={`hero-indicator ${i === currentSlide ? 'active' : ''}`}
+              onClick={() => setCurrentSlide(i)}
             />
           ))}
         </div>
@@ -125,16 +126,16 @@ const Home = () => {
           <h2 className="section-title display-md">Выберите направление</h2>
 
           <div className="directions-grid">
-            {directions.map((direction, idx) => (
-              <Link key={idx} to={direction.link} className="direction-card-link">
+            {directions.map((item, i) => (
+              <Link key={i} to={item.link} className="direction-card-link">
                 <div className="direction-card">
                   <div
                     className="direction-image"
-                    style={{ backgroundImage: `url(${direction.image})` }}
+                    style={{ backgroundImage: `url(${item.image})` }}
                   />
                   <div className="direction-content">
-                    <h3 className="h2">{direction.title}</h3>
-                    <p className="body-md">{direction.description}</p>
+                    <h3 className="h2">{item.title}</h3>
+                    <p className="body-md">{item.description}</p>
                     <span className="btn-primary">
                       Подробнее <ArrowRight size={18} />
                     </span>
@@ -152,10 +153,10 @@ const Home = () => {
           <h2 className="section-title display-md">Почему ЛСТК от нашей фабрики</h2>
 
           <div className="advantages-grid">
-            {advantages.map((item, idx) => {
+            {advantages.map((item, i) => {
               const Icon = item.icon;
               return (
-                <div key={idx} className="advantage-card">
+                <div key={i} className="advantage-card">
                   <div className="advantage-icon">
                     <Icon size={28} />
                   </div>
@@ -183,11 +184,10 @@ const Home = () => {
             <div className="production-text">
               <h2 className="display-sm">О производстве</h2>
               <p className="body-lg">
-                Фабрика Каркасов Алатау — современное производство лёгких стальных
-                тонкостенных конструкций в Казахстане.
+                Фабрика Каркасов Алатау — современное производство лёгких стальных тонкостенных конструкций.
               </p>
               <p className="body-lg">
-                Используем высокоточное оборудование, качественный металл и строгий контроль.
+                Используем высокоточное оборудование и строгий контроль качества.
               </p>
 
               <Link to="/about" className="btn-primary">
@@ -204,15 +204,14 @@ const Home = () => {
           <h2 className="section-title display-md">Документы и сертификаты</h2>
 
           <div className="documents-grid">
-            {documents.map((doc, idx) => (
-              <div key={idx} className="document-card">
+            {documents.map((doc, i) => (
+              <div key={i} className="document-card">
                 <div className="document-icon">
                   <svg width="48" height="48" stroke="currentColor" strokeWidth="2" fill="none">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                     <polyline points="14 2 14 8 20 8"></polyline>
                   </svg>
                 </div>
-
                 <h3 className="h3">{doc.title}</h3>
               </div>
             ))}
@@ -234,7 +233,7 @@ const Home = () => {
             <div className="contact-info">
               <h2 className="display-sm">Свяжитесь с нами</h2>
               <p className="body-lg">
-                Готовы ответить на любые вопросы и помочь с выбором конструкции.
+                Готовы ответить на ваши вопросы и помочь с выбором конструкции.
               </p>
 
               <div className="contact-details">
@@ -269,6 +268,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
     </div>
   );
 };
