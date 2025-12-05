@@ -33,7 +33,7 @@ const Home = () => {
       title: 'Капсулы',
       description: 'Модульные конструкции для жилья, офисов и бизнеса',
       link: '/capsules',
-      image: capsulesImg
+      image: capsulesImg,
     },
     {
       title: 'Ангары',
