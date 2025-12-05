@@ -10,12 +10,12 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const menuItems = [
-  { path: '/', label: 'Главная' },
-  { path: '#directions', label: 'Каталог', isAnchor: true },
-  { path: '/about', label: 'О нас' },
-  { path: '/documents', label: 'Документы' },
-  { path: '/contacts', label: 'Контакты' }
-];
+    { path: '/', label: 'Главная' },
+    { path: '#directions', label: 'Каталог', isAnchor: true },
+    { path: '/about', label: 'О нас' },
+    { path: '/documents', label: 'Документы' },
+    { path: '/contacts', label: 'Контакты' }
+  ];
 
   const handleNavClick = (item) => {
     if (item.isAnchor) {
@@ -23,15 +23,11 @@ const Header = () => {
         navigate('/');
         setTimeout(() => {
           const element = document.getElementById('directions');
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-          }
-        }, 100);
+          if (element) element.scrollIntoView({ behavior: 'smooth' });
+        }, 120);
       } else {
         const element = document.getElementById('directions');
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
       }
     }
     setMobileMenuOpen(false);
@@ -42,12 +38,30 @@ const Header = () => {
       <header className="site-header">
         <div className="container">
           <div className="header-content">
+
+            {/* Логотип */}
             <Link to="/" className="logo">
-              <img src={siteConfig.company.logo} alt={siteConfig.company.name} className="logo-icon" />
+              <img 
+                src={siteConfig.company.logo} 
+                alt={siteConfig.company.name} 
+                className="logo-icon" 
+              />
             </Link>
 
+            {/* Навигация */}
             <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-              {menuItems.map((item) => (
+
+              {/* Крестик мобильного меню */}
+              {mobileMenuOpen && (
+                <button 
+                  className="mobile-close-btn"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <X size={32} />
+                </button>
+              )}
+
+              {menuItems.map((item) =>
                 item.isAnchor ? (
                   <button
                     key={item.path}
@@ -66,28 +80,31 @@ const Header = () => {
                     {item.label}
                   </Link>
                 )
-              ))}
+              )}
             </nav>
 
+            {/* Кнопка телефона */}
             <a href={`tel:${siteConfig.contact.phoneRaw}`} className="phone-link">
               <Phone size={20} />
               <span>{siteConfig.contact.phone}</span>
             </a>
 
-            <button 
+            {/* Бургер */}
+            <button
               className="mobile-menu-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Menu"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
+
           </div>
         </div>
       </header>
-      
-      {/* Mobile menu overlay */}
+
+      {/* Затемнение фона при открытом меню */}
       {mobileMenuOpen && (
-        <div 
+        <div
           className="mobile-menu-overlay"
           onClick={() => setMobileMenuOpen(false)}
         />
