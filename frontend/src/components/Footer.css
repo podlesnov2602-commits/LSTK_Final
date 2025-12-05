@@ -189,26 +189,106 @@
         RESPONSIVE
 ======================= */
 
-@media (max-width: 1024px) {
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 48px;
-  }
-}
+/* =======================
+   PREMIUM MOBILE FOOTER 
+   (Apple / Porsche Style)
+======================= */
 
 @media (max-width: 768px) {
+
+  /* Общий стиль */
   .site-footer {
-    padding: 60px 0 32px;
-    margin-top: 80px;
+    padding: 50px 0 30px;
+    margin-top: 60px;
+    text-align: center;
   }
 
+  /* 1 колонка, аккуратные отступы */
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
+    gap: 36px;
+    margin-bottom: 32px;
   }
 
+  /* Центрируем всё */
+  .footer-column {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* ЛОГО — видно, премиально */
   .footer-logo-icon {
-    height: 64px;
+    height: 110px;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  /* Текст под логотипом */
+  .footer-description {
+    max-width: 300px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.85;
+  }
+
+  /* Соцсети */
+  .footer-social {
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .footer-social-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  /* Навигация */
+  .footer-heading {
+    font-size: 15px;
+    letter-spacing: 0.06em;
+  }
+
+  .footer-nav {
+    gap: 12px;
+    align-items: center;
+  }
+
+  .footer-link {
+    font-size: 14px;
+    opacity: 0.85;
+  }
+
+  /* Контакты */
+  .footer-contact {
+    align-items: center;
+    gap: 14px;
+  }
+
+  .footer-contact-item {
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.9;
+  }
+
+  .footer-contact-item svg {
+    width: 18px;
+    height: 18px;
+    opacity: 0.9;
+  }
+
+  /* Нижняя строка */
+  .footer-bottom {
+    padding-top: 24px;
+  }
+
+  .footer-copyright {
+    font-size: 13px;
+    opacity: 0.6;
   }
 }
+
