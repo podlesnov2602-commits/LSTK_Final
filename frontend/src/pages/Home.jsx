@@ -6,7 +6,8 @@ import './Home.css';
 
 // 🔥 Локальные изображения
 import capsulesImg from '../assets/capsules.png';
-import hangarsImg from '../assets/Hangars.jpeg';   // ← ТВОЯ НОВАЯ КАРТИНКА
+import hangarsImg from '../assets/Hangars.jpeg';
+import garagesImg from '../assets/garages.jpeg';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -26,7 +27,7 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // 🔥 НАПРАВЛЕНИЯ (с локальными фото)
+  // 🔥 НАПРАВЛЕНИЯ (3 направления)
   const directions = [
     {
       title: 'Капсулы',
@@ -38,13 +39,13 @@ const Home = () => {
       title: 'Ангары',
       description: 'Промышленные ангары и складские помещения',
       link: '/hangars',
-      image: hangarsImg,  // ← Используем локальную картинку
+      image: hangarsImg,
     },
     {
       title: 'Гаражи',
       description: 'Надёжные металлические гаражи и боксы',
       link: '/garages',
-      image: 'https://images.unsplash.com/photo-1635961179148-3d886568775c?q=85',
+      image: garagesImg,
     }
   ];
 
