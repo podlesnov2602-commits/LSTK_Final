@@ -27,8 +27,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   gap: 20px;
-  padding-top: 25px;
+  padding-top: 0;
 }
 
 .footer-logo {
@@ -38,11 +39,13 @@
   margin-bottom: 0;
 }
 
+/* 🔥 Исправленный логотип футера */
 .footer-logo-icon {
-  height: 220px;
+  height: 140px;
   width: auto;
+  object-fit: contain;
   display: block;
-  margin-top: 20px;
+  margin: 0;
 }
 
 /* =======================
@@ -191,7 +194,7 @@
 
 @media (max-width: 768px) {
 
-  /* Общий стиль — плотнее, премиально */
+  /* Общий стиль — компактный */
   .site-footer {
     padding: 35px 0 22px;
     margin-top: 50px;
@@ -209,10 +212,10 @@
     text-align: center !important;
   }
 
-  /* ЛОГОТИП — идеальный размер */
+  /* 🔥 Исправленный мобильный логотип */
   .footer-logo-icon {
-    height: 150px !important;
-    margin: -30px 0 30px !important;
+    height: 110px !important;
+    margin: 0 0 20px !important;
   }
 
   .footer-description {
