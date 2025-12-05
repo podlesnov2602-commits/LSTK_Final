@@ -61,7 +61,7 @@
   flex-shrink: 0;
 }
 
-/* Тонкое премиальное меню */
+/* Премиальное меню */
 .nav-link {
   position: relative;
   color: #fff;
@@ -89,7 +89,7 @@
   border-radius: 999px;
 }
 
-/* Hover */
+/* Hover линия */
 .nav-link:hover::after {
   content: "";
   position: absolute;
@@ -131,7 +131,7 @@
 }
 
 /* =======================
-         MOBILE
+      MOBILE TOGGLE
 ======================= */
 
 .mobile-menu-toggle {
@@ -144,23 +144,23 @@
 /* Tablet */
 @media (max-width: 1024px) {
   .main-nav { gap: 22px; }
-  .logo-icon { height: 120px; } /* Чуть меньше, но солидно */
+  .logo-icon { height: 120px; }
 }
 
 /* =======================
-         MOBILE FIX
+      MOBILE VERSION
 ======================= */
 
 @media (max-width: 768px) {
 
   .site-header { height: 64px; }
+
   .header-content {
     height: 64px;
     padding: 0 16px;
     justify-content: space-between !important;
   }
 
-  /* Увеличенный премиум-логотип */
   .logo-icon {
     height: 54px !important;
     width: auto !important;
@@ -178,7 +178,7 @@
     top: 0; left: 0; right: 0; bottom: 0;
     background: #000;
     flex-direction: column;
-    padding-top: 100px;
+    padding-top: 120px;
     gap: 0;
     transform: translateX(100%);
     transition: .3s ease;
@@ -190,24 +190,47 @@
     transform: translateX(0);
   }
 
+  /* Ссылки в мобильном меню */
   .nav-link {
-    font-size: 18px;
+    font-size: 22px;
     padding: 18px 0;
     height: auto;
   }
 
-  /* Отключаем линии меню */
   .nav-link::after,
   .nav-link.active::after,
   .nav-link:hover::after {
     display: none !important;
   }
 
-  /* Телефон убираем на мобиле */
+  /* Убираем телефон */
   .phone-link {
     display: none;
   }
 }
 
-/* Отключаем странный overlay Emergent */
-.mobile-menu-overlay { display: none !important; }
+/* =======================
+  MOBILE CLOSE BUTTON
+======================= */
+
+.mobile-close-btn {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  z-index: 999999;
+}
+
+.mobile-close-btn svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* =======================
+  DISABLE emergent overlay
+======================= */
+.mobile-menu-overlay {
+  display: none !important;
+}
