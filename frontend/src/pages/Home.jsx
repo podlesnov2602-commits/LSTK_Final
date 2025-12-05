@@ -35,12 +35,12 @@ const Home = () => {
       link: '/capsules',
       image: capsulesImg,
     },
-    {
-      title: 'Ангары',
-      description: 'Промышленные ангары и складские помещения',
-      link: '/hangars',
-      image: 'https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?q=85'
-    },
+  {
+  title: 'Ангары',
+  description: 'Промышленные ангары и складские помещения',
+  link: '/hangars',
+  image: hangarsImg,
+},
     {
       title: 'Гаражи',
       description: 'Надёжные металлические гаражи и боксы',
