@@ -8,6 +8,7 @@ import './Home.css';
 import capsulesImg from '../assets/capsules.png';
 import hangarsImg from '../assets/Hangars.jpeg';
 import garagesImg from '../assets/garages.jpeg';
+import productionImg from '../assets/production.jpg';   // <— ВАЖНО: новый импорт
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -27,7 +28,6 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // 🔥 НАПРАВЛЕНИЯ (3 направления)
   const directions = [
     {
       title: 'Капсулы',
@@ -71,7 +71,7 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      
+
       {/* HERO */}
       <section className="hero-section">
         <div className="hero-carousel">
@@ -174,11 +174,11 @@ const Home = () => {
       <section className="production-section">
         <div className="container">
           <div className="production-content">
+
             <div
               className="production-image"
               style={{
-                backgroundImage:
-                  'url(https://images.unsplash.com/photo-1496247749665-49cf5b1022e9)'
+                backgroundImage: `url(${productionImg})`
               }}
             />
 
@@ -195,6 +195,7 @@ const Home = () => {
                 Узнать больше <ArrowRight size={20} />
               </Link>
             </div>
+
           </div>
         </div>
       </section>
@@ -254,7 +255,7 @@ const Home = () => {
               </button>
             </div>
 
-           <div className="contact-map">
+            <div className="contact-map">
               <iframe
                 title="Location Map"
                 src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.2524871691937!2d${siteConfig.location.lng}!3d${siteConfig.location.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDEzJzE5LjIiTiA3NsKwNTEnMDQuMyJF!5e0!3m2!1sen!2skz!4v1234567890123!5m2!1sen!2skz`}
