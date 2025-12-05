@@ -11,10 +11,10 @@ const Header = () => {
 
   const menuItems = [
     { path: '/', label: 'Главная' },
+    { path: '#directions', label: 'Каталог', isAnchor: true }
     { path: '/about', label: 'О нас' },
     { path: '/documents', label: 'Документы' },
     { path: '/contacts', label: 'Контакты' },
-    { path: '#directions', label: 'Каталог', isAnchor: true }
   ];
 
   const handleNavClick = (item) => {
