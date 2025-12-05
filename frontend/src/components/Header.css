@@ -44,9 +44,12 @@
   align-items: center;
 }
 
+/* 🔥 Исправленный размер логотипа */
 .logo-icon {
-  height: 200px;
+  height: 70px;           /* Было 200px – ломало всё */
   width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 /* =======================
@@ -144,7 +147,7 @@
 /* Tablet */
 @media (max-width: 1024px) {
   .main-nav { gap: 22px; }
-  .logo-icon { height: 120px; }
+  .logo-icon { height: 60px; }  /* компактно для планшетов */
 }
 
 /* =======================
@@ -161,9 +164,11 @@
     justify-content: space-between !important;
   }
 
+  /* 🔥 Мобильный логотип */
   .logo-icon {
-    height: 130px !important;
+    height: 55px !important;
     width: auto !important;
+    object-fit: contain !important;
   }
 
   /* Бургер справа */
