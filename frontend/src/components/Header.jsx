@@ -10,12 +10,12 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const menuItems = [
-    { path: '/', label: 'Главная' },
-    { path: '#directions', label: 'Каталог', isAnchor: true }
-    { path: '/about', label: 'О нас' },
-    { path: '/documents', label: 'Документы' },
-    { path: '/contacts', label: 'Контакты' },
-  ];
+  { path: '/', label: 'Главная' },
+  { path: '#directions', label: 'Каталог', isAnchor: true },
+  { path: '/about', label: 'О нас' },
+  { path: '/documents', label: 'Документы' },
+  { path: '/contacts', label: 'Контакты' }
+];
 
   const handleNavClick = (item) => {
     if (item.isAnchor) {
