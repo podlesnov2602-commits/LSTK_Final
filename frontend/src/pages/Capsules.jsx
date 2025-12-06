@@ -3,17 +3,6 @@ import { Check, ArrowRight, Ruler, Feather, Infinity, Move } from 'lucide-react'
 import { siteConfig } from '../config/siteConfig';
 import './ProductPage.css';
 
-// 🔥 Новый локальный фон
-import CapsulesHero from '../assets/CapsulesHero.png';
-
-// 🔥 Локальные изображения для галереи
-import img1 from '../assets/Capsules1.jpg';
-import img2 from '../assets/Capsules2.jpg';
-import img3 from '../assets/Capsules3.jpg';
-import img4 from '../assets/Capsules4.jpg';
-import img5 from '../assets/Capsules5.jpg';
-import img6 from '../assets/Capsules6.jpg';
-
 const Capsules = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -37,14 +26,31 @@ const Capsules = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // 🔥 ЛОКАЛЬНАЯ ГАЛЕРЕЯ
   const gallery = [
-    { image: img1, caption: 'Капсула 1' },
-    { image: img2, caption: 'Капсула 2' },
-    { image: img3, caption: 'Капсула 3' },
-    { image: img4, caption: 'Капсула 4' },
-    { image: img5, caption: 'Капсула 5' },
-    { image: img6, caption: 'Капсула 6' },
+    { 
+      image: 'https://images.unsplash.com/photo-1623731389652-079c8732ed34?crop=entropy&cs=srgb&fm=jpg&q=85',
+      caption: 'Модульная капсула 24 м²'
+    },
+    { 
+      image: 'https://images.unsplash.com/photo-1668508081712-89aeee56681e?crop=entropy&cs=srgb&fm=jpg&q=85',
+      caption: 'Офисное помещение из ЛСТК'
+    },
+    { 
+      image: 'https://images.unsplash.com/photo-1745566589290-d678de04f990?crop=entropy&cs=srgb&fm=jpg&q=85',
+      caption: 'Жилая капсула с террасой'
+    },
+    { 
+      image: 'https://images.unsplash.com/photo-1759647028384-1efcc6e0eff4?crop=entropy&cs=srgb&fm=jpg&q=85',
+      caption: 'Двухэтажная конструкция'
+    },
+    { 
+      image: 'https://images.unsplash.com/photo-1623731389652-079c8732ed34?crop=entropy&cs=srgb&fm=jpg&q=85',
+      caption: 'Капсула для бизнеса'
+    },
+    { 
+      image: 'https://images.unsplash.com/photo-1668508081712-89aeee56681e?crop=entropy&cs=srgb&fm=jpg&q=85',
+      caption: 'Готовое решение под ключ'
+    }
   ];
 
   const configurations = [
@@ -66,23 +72,23 @@ const Capsules = () => {
   ];
 
   const advantages = [
-    { icon: Ruler, title: 'Ровная геометрия', description: 'Точность до мм' },
-    { icon: Feather, title: 'Лёгкий каркас', description: 'Не требует фундамента' },
-    { icon: Infinity, title: 'Долговечность', description: 'Служит 50+ лет' },
-    { icon: Move, title: 'Мобильность', description: 'Можно перевозить' },
+    { icon: Ruler, title: 'Ровная геометрия', description: 'Точность до миллиметра' },
+    { icon: Feather, title: 'Лёгкий каркас', description: 'Не требует мощного фундамента' },
+    { icon: Infinity, title: 'Долговечность', description: 'Срок службы более 50 лет' },
+    { icon: Move, title: 'Мобильность', description: 'Можно разобрать и переместить' },
   ];
 
   const pricing = {
     title: 'Капсула 18–24 м²',
-    price: 'от 5.9 млн ₸',
+    price: 'от 5.9 млн ₽',
     note: 'Точная цена рассчитывается индивидуально',
   };
 
   const steps = [
-    { number: '01', title: 'Консультация', description: 'Обсуждаем проект' },
+    { number: '01', title: 'Консультация', description: 'Обсуждаем ваши требования' },
     { number: '02', title: 'Проектирование', description: 'Создаём 3D-модель' },
     { number: '03', title: 'Производство', description: 'Изготовление на заводе' },
-    { number: '04', title: 'Монтаж', description: 'Установка за 2–5 дней' },
+    { number: '04', title: 'Монтаж', description: 'Установка за 2-5 дней' },
   ];
 
   const handleSubmit = (e) => {
@@ -95,16 +101,9 @@ const Capsules = () => {
 
   return (
     <div className="product-page">
-      {/* HERO с локальным фоном */}
-      <section
-        className="product-hero"
-        style={{
-          backgroundImage: `url(${CapsulesHero})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
+
+      {/* HERO — СТАРЫЙ ВАРИАНТ (без локального фона) */}
+      <section className="product-hero">
         <div className="product-hero-overlay" />
         <div className="container">
           <div className="product-hero-content">
@@ -122,10 +121,7 @@ const Capsules = () => {
           <div className="gallery-grid">
             {gallery.map((item, index) => (
               <div key={index} className="gallery-item-wrapper">
-                <div
-                  className="gallery-item"
-                  style={{ backgroundImage: `url(${item.image})` }}
-                />
+                <div className="gallery-item" style={{ backgroundImage: `url(${item.image})` }} />
                 <p className="gallery-caption">{item.caption}</p>
               </div>
             ))}
@@ -133,7 +129,7 @@ const Capsules = () => {
         </div>
       </section>
 
-      {/* CONFIGURATIONS */}
+      {/* CONFIGS */}
       <section className="configurations-section">
         <div className="container">
           <h2 className="section-title display-md">Комплектации</h2>
@@ -163,14 +159,14 @@ const Capsules = () => {
           <h2 className="section-title display-md">Преимущества</h2>
 
           <div className="advantages-grid-product">
-            {advantages.map((adv, index) => {
-              const Icon = adv.icon;
+            {advantages.map((advantage, index) => {
+              const IconComponent = advantage.icon;
               return (
                 <div key={index} className="advantage-card-product">
                   <div className="advantage-icon-circle">
-                    <Icon size={28} className="advantage-icon" />
+                    <IconComponent size={28} className="advantage-icon" />
                   </div>
-                  <h3>{adv.title}</h3>
+                  <h3>{advantage.title}</h3>
                 </div>
               );
             })}
@@ -218,9 +214,7 @@ const Capsules = () => {
                 type="text"
                 placeholder="Ваше имя"
                 value={formData.name}
-                onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
                 className="form-input"
               />
@@ -229,9 +223,7 @@ const Capsules = () => {
                 type="tel"
                 placeholder="Телефон"
                 value={formData.phone}
-                onChange={(e) =>
-                  setFormData({ ...formData, phone: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 required
                 className="form-input"
               />
@@ -239,9 +231,7 @@ const Capsules = () => {
               <textarea
                 placeholder="Опишите ваш проект"
                 value={formData.message}
-                onChange={(e) =>
-                  setFormData({ ...formData, message: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="form-textarea"
                 rows="4"
               />
