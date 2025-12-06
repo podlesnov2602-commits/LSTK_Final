@@ -36,12 +36,12 @@ const Capsules = () => {
   }, []);
 
   const gallery = [
-  { image: img1, caption: 'Капсула 1' },
-  { image: img2, caption: 'Капсула 2' },
-  { image: img3, caption: 'Капсула 3' },
-  { image: img4, caption: 'Капсула 4' },
-  { image: img5, caption: 'Капсула 5' },
-  { image: img6, caption: 'Капсула 6' },
+  { image: img1, caption: 'Капсула' },
+  { image: img2, caption: 'БарнХаус' },
+  { image: img3, caption: 'Модульный дом 44м²' },
+  { image: img4, caption: 'Гостевой дом 29м²' },
+  { image: img5, caption: 'Модульный дом 29м²' },
+  { image: img6, caption: 'Гостевой дом 48м²' },
 ];
 
   const configurations = [
