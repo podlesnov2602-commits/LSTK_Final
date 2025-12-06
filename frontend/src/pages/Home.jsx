@@ -30,7 +30,7 @@ const Home = () => {
 
   const directions = [
     {
-      title: 'Капсулы',
+      title: 'Капсулы-модульные дома',
       description: 'Модульные конструкции для жилья, офисов и бизнеса',
       link: '/capsules',
       image: capsulesImg,
@@ -42,7 +42,7 @@ const Home = () => {
       image: hangarsImg,
     },
     {
-      title: 'Гаражи',
+      title: 'Гаражи-навесы',
       description: 'Надёжные металлические гаражи и боксы',
       link: '/garages',
       image: garagesImg,
