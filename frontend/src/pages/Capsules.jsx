@@ -3,8 +3,8 @@ import { Check, ArrowRight, Ruler, Feather, Infinity, Move } from 'lucide-react'
 import { siteConfig } from '../config/siteConfig';
 import './ProductPage.css';
 
-// 🔥 Новый фон для раздела "Капсулы"
-import capsulesHero from '../assets/capsules-hero.jpg';
+// ✔ Правильный импорт (точно совпадает с твоим файлом)
+import capsulesHero from '../assets/CapsulesHero.png';
 
 const Capsules = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +18,10 @@ const Capsules = () => {
       const gallerySection = document.querySelector('.gallery-section');
       if (gallerySection) {
         const yOffset = -100;
-        const y = gallerySection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        const y =
+          gallerySection.getBoundingClientRect().top +
+          window.pageYOffset +
+          yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
     }, 100);
@@ -28,27 +31,33 @@ const Capsules = () => {
 
   const gallery = [
     {
-      image: 'https://images.unsplash.com/photo-1623731389652-079c8732ed34?crop=entropy&cs=srgb&fm=jpg&q=85',
+      image:
+        'https://images.unsplash.com/photo-1623731389652-079c8732ed34?crop=entropy&cs=srgb&fm=jpg&q=85',
       caption: 'Модульная капсула 24 м²'
     },
     {
-      image: 'https://images.unsplash.com/photo-1668508081712-89aeee56681e?crop=entropy&cs=srgb&fm=jpg&q=85',
+      image:
+        'https://images.unsplash.com/photo-1668508081712-89aeee56681e?crop=entropy&cs=srgb&fm=jpg&q=85',
       caption: 'Офисное помещение из ЛСТК'
     },
     {
-      image: 'https://images.unsplash.com/photo-1745566589290-d678de04f990?crop=entropy&cs=srgb&fm=jpg&q=85',
+      image:
+        'https://images.unsplash.com/photo-1745566589290-d678de04f990?crop=entropy&cs=srgb&fm=jpg&q=85',
       caption: 'Жилая капсула с террасой'
     },
     {
-      image: 'https://images.unsplash.com/photo-1759647028384-1efcc6e0eff4?crop=entropy&cs=srgb&fm=jpg&q=85',
+      image:
+        'https://images.unsplash.com/photo-1759647028384-1efcc6e0eff4?crop=entropy&cs=srgb&fm=jpg&q=85',
       caption: 'Двухэтажная конструкция'
     },
     {
-      image: 'https://images.unsplash.com/photo-1623731389652-079c8732ed34?crop=entropy&cs=srgb&fm=jpg&q=85',
+      image:
+        'https://images.unsplash.com/photo-1623731389652-079c8732ed34?crop=entropy&cs=srgb&fm=jpg&q=85',
       caption: 'Капсула для бизнеса'
     },
     {
-      image: 'https://images.unsplash.com/photo-1668508081712-89aeee56681e?crop=entropy&cs=srgb&fm=jpg&q=85',
+      image:
+        'https://images.unsplash.com/photo-1668508081712-89aeee56681e?crop=entropy&cs=srgb&fm=jpg&q=85',
       caption: 'Готовое решение под ключ'
     }
   ];
@@ -102,7 +111,7 @@ const Capsules = () => {
   return (
     <div className="product-page">
 
-      {/* HERO (фон заменён) */}
+      {/* HERO с твоим фоном CapsulesHero.png */}
       <section
         className="product-hero"
         style={{
@@ -165,11 +174,11 @@ const Capsules = () => {
           <h2 className="section-title display-md">Преимущества</h2>
           <div className="advantages-grid-product">
             {advantages.map((advantage, index) => {
-              const IconComponent = advantage.icon;
+              const Icon = advantage.icon;
               return (
                 <div key={index} className="advantage-card-product">
                   <div className="advantage-icon-circle">
-                    <IconComponent size={28} className="advantage-icon" />
+                    <Icon size={28} className="advantage-icon" />
                   </div>
                   <h3>{advantage.title}</h3>
                 </div>
@@ -244,7 +253,6 @@ const Capsules = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };
