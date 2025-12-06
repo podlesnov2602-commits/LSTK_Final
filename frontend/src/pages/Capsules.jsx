@@ -3,7 +3,7 @@ import { Check, ArrowRight, Ruler, Feather, Infinity, Move } from 'lucide-react'
 import { siteConfig } from '../config/siteConfig';
 import './ProductPage.css';
 
-// ✔ Правильный импорт (точно совпадает с твоим файлом)
+// Локальные изображения
 import capsulesHero from '../assets/CapsulesHero.png';
 import img1 from '../assets/Capsules1.jpg';
 import img2 from '../assets/Capsules2.jpg';
@@ -36,13 +36,13 @@ const Capsules = () => {
   }, []);
 
   const gallery = [
-  { image: img1, caption: 'Капсула' },
-  { image: img2, caption: 'БарнХаус' },
-  { image: img3, caption: 'Модульный дом 44м²' },
-  { image: img4, caption: 'Гостевой дом 29м²' },
-  { image: img5, caption: 'Модульный дом 29м²' },
-  { image: img6, caption: 'Гостевой дом 48м²' },
-];
+    { image: img1, caption: 'Капсула' },
+    { image: img2, caption: 'БарнХаус' },
+    { image: img3, caption: 'Модульный дом 44м²' },
+    { image: img4, caption: 'Гостевой дом 29м²' },
+    { image: img5, caption: 'Модульный дом 29м²' },
+    { image: img6, caption: 'Гостевой дом 48м²' },
+  ];
 
   const configurations = [
     {
@@ -69,9 +69,15 @@ const Capsules = () => {
     { icon: Move, title: 'Мобильность', description: 'Можно разобрать и переместить' }
   ];
 
-   const pricing = {
+  // ✔ ПОЛНОСТЬЮ ИСПРАВЛЕННЫЙ pricing
+  const pricing = [
     {
-        title: 'Модульный дом',
+      title: 'Капсула 18–24 м²',
+      price: 'от 5.9 млн ₽',
+      note: 'Точная цена рассчитывается индивидуально'
+    },
+    {
+      title: 'Модульный дом',
       price: 'от 8.5 млн ₽',
       note: 'Стоимость зависит от площади и комплектации'
     }
@@ -81,7 +87,7 @@ const Capsules = () => {
     { number: '01', title: 'Консультация', description: 'Обсуждаем ваши требования' },
     { number: '02', title: 'Проектирование', description: 'Создаём 3D-модель' },
     { number: '03', title: 'Производство', description: 'Изготовление на заводе' },
-    { number: '04', title: 'Монтаж', description: 'Установка за 2-5 дней' }
+    { number: '04', title: 'Монтаж', description: 'Установка за 2–5 дней' }
   ];
 
   const handleSubmit = (e) => {
@@ -95,7 +101,7 @@ const Capsules = () => {
   return (
     <div className="product-page">
 
-      {/* HERO с твоим фоном CapsulesHero.png */}
+      {/* HERO */}
       <section
         className="product-hero"
         style={{
@@ -121,7 +127,10 @@ const Capsules = () => {
           <div className="gallery-grid">
             {gallery.map((item, index) => (
               <div key={index} className="gallery-item-wrapper">
-                <div className="gallery-item" style={{ backgroundImage: `url(${item.image})` }} />
+                <div
+                  className="gallery-item"
+                  style={{ backgroundImage: `url(${item.image})` }}
+                />
                 <p className="gallery-caption">{item.caption}</p>
               </div>
             ))}
@@ -175,17 +184,14 @@ const Capsules = () => {
       {/* Pricing */}
       <section className="pricing-section">
         <div className="container">
-          <div className="pricing-card-single">
-            <h2 className="display-md">{pricing.title}</h2>
-            <div className="pricing-amount">{pricing.price}</div>
-            <p className="pricing-note">{pricing.note}</p>
-            <h2 className=\"section-title display-md\">Цены</h2>
-          <div className=\"pricing-grid\">
+          <h2 className="section-title display-md">Цены</h2>
+
+          <div className="pricing-grid">
             {pricing.map((item, index) => (
-              <div key={index} className=\"pricing-card\">
-                <h3 className=\"h2\">{item.title}</h3>
-                <div className=\"pricing-amount\">{item.price}</div>
-                <p className=\"pricing-note\">{item.note}</p>
+              <div key={index} className="pricing-card">
+                <h3 className="h2">{item.title}</h3>
+                <div className="pricing-amount">{item.price}</div>
+                <p className="pricing-note">{item.note}</p>
               </div>
             ))}
           </div>
@@ -246,6 +252,7 @@ const Capsules = () => {
           </div>
         </div>
       </section>
+
     </div>
   );
 };
