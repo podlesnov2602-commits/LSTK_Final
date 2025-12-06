@@ -3,6 +3,9 @@ import { Check, ArrowRight, Ruler, Feather, Infinity, Move } from 'lucide-react'
 import { siteConfig } from '../config/siteConfig';
 import './ProductPage.css';
 
+// 🔥 Новый фон для раздела "Капсулы"
+import capsulesHero from '../assets/capsules-hero.jpg';
+
 const Capsules = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -11,41 +14,41 @@ const Capsules = () => {
   });
 
   useEffect(() => {
-    // Scroll to gallery section on page load
     const timer = setTimeout(() => {
       const gallerySection = document.querySelector('.gallery-section');
       if (gallerySection) {
-        const yOffset = -100; // Offset for header
+        const yOffset = -100;
         const y = gallerySection.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
     }, 100);
+
     return () => clearTimeout(timer);
   }, []);
 
   const gallery = [
-    { 
-      image: 'https://images.unsplash.com/photo-1623731389652-079c8732ed34?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxjb250YWluZXIlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzY0MzIzODU5fDA&ixlib=rb-4.1.0&q=85',
+    {
+      image: 'https://images.unsplash.com/photo-1623731389652-079c8732ed34?crop=entropy&cs=srgb&fm=jpg&q=85',
       caption: 'Модульная капсула 24 м²'
     },
-    { 
-      image: 'https://images.unsplash.com/photo-1668508081712-89aeee56681e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwyfHxjb250YWluZXIlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzY0MzIzODU5fDA&ixlib=rb-4.1.0&q=85',
+    {
+      image: 'https://images.unsplash.com/photo-1668508081712-89aeee56681e?crop=entropy&cs=srgb&fm=jpg&q=85',
       caption: 'Офисное помещение из ЛСТК'
     },
-    { 
-      image: 'https://images.unsplash.com/photo-1745566589290-d678de04f990?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwzfHxjb250YWluZXIlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzY0MzIzODU5fDA&ixlib=rb-4.1.0&q=85',
+    {
+      image: 'https://images.unsplash.com/photo-1745566589290-d678de04f990?crop=entropy&cs=srgb&fm=jpg&q=85',
       caption: 'Жилая капсула с террасой'
     },
-    { 
-      image: 'https://images.unsplash.com/photo-1759647028384-1efcc6e0eff4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHw0fHxtb2R1bGFyJTIwYnVpbGRpbmd8ZW58MHx8fHwxNzY0MzIzODQxfDA&ixlib=rb-4.1.0&q=85',
+    {
+      image: 'https://images.unsplash.com/photo-1759647028384-1efcc6e0eff4?crop=entropy&cs=srgb&fm=jpg&q=85',
       caption: 'Двухэтажная конструкция'
     },
-    { 
-      image: 'https://images.unsplash.com/photo-1623731389652-079c8732ed34?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxjb250YWluZXIlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzY0MzIzODU5fDA&ixlib=rb-4.1.0&q=85',
+    {
+      image: 'https://images.unsplash.com/photo-1623731389652-079c8732ed34?crop=entropy&cs=srgb&fm=jpg&q=85',
       caption: 'Капсула для бизнеса'
     },
-    { 
-      image: 'https://images.unsplash.com/photo-1668508081712-89aeee56681e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwyfHxjb250YWluZXIlMjBhcmNoaXRlY3R1cmV8ZW58MHx8fHwxNzY0MzIzODU5fDA&ixlib=rb-4.1.0&q=85',
+    {
+      image: 'https://images.unsplash.com/photo-1668508081712-89aeee56681e?crop=entropy&cs=srgb&fm=jpg&q=85',
       caption: 'Готовое решение под ключ'
     }
   ];
@@ -98,8 +101,17 @@ const Capsules = () => {
 
   return (
     <div className="product-page">
-      {/* Hero */}
-      <section className="product-hero">
+
+      {/* HERO (фон заменён) */}
+      <section
+        className="product-hero"
+        style={{
+          backgroundImage: `url(${capsulesHero})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
         <div className="product-hero-overlay" />
         <div className="container">
           <div className="product-hero-content">
@@ -232,6 +244,7 @@ const Capsules = () => {
           </div>
         </div>
       </section>
+
     </div>
   );
 };
