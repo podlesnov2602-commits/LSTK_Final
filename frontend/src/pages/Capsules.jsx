@@ -7,12 +7,12 @@ import './ProductPage.css';
 import CapsulesHero from '../assets/CapsulesHero.png';
 
 // 🔥 Локальные изображения для галереи
-import img1 from '../assets/capsules1.jpg';
-import img2 from '../assets/capsules2.jpg';
-import img3 from '../assets/capsules3.jpg';
-import img4 from '../assets/capsules4.jpg';
-import img5 from '../assets/capsules5.jpg';
-import img6 from '../assets/capsules6.jpg';
+import img1 from '../assets/Capsules1.jpg';
+import img2 from '../assets/Capsules2.jpg';
+import img3 from '../assets/Capsules3.jpg';
+import img4 from '../assets/Capsules4.jpg';
+import img5 from '../assets/Capsules5.jpg';
+import img6 from '../assets/Capsules6.jpg';
 
 const Capsules = () => {
   const [formData, setFormData] = useState({
