@@ -3,14 +3,22 @@ import { Check, ArrowRight, Ruler, Feather, Infinity, Move } from 'lucide-react'
 import { siteConfig } from '../config/siteConfig';
 import './ProductPage.css';
 
-// ✔ Правильный импорт (точно совпадает с твоим файлом)
-import capsulesHero from '../assets/CapsulesHero.png';
+// 🔥 Новый локальный фон
+import CapsulesHero from '../assets/CapsulesHero.png';
+
+// 🔥 Локальные изображения для галереи
+import img1 from '../assets/capsules1.jpg';
+import img2 from '../assets/capsules2.jpg';
+import img3 from '../assets/capsules3.jpg';
+import img4 from '../assets/capsules4.jpg';
+import img5 from '../assets/capsules5.jpg';
+import img6 from '../assets/capsules6.jpg';
 
 const Capsules = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    message: ''
+    message: '',
   });
 
   useEffect(() => {
@@ -29,75 +37,52 @@ const Capsules = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // 🔥 ЛОКАЛЬНАЯ ГАЛЕРЕЯ
   const gallery = [
-    {
-      image:
-        'https://images.unsplash.com/photo-1623731389652-079c8732ed34?crop=entropy&cs=srgb&fm=jpg&q=85',
-      caption: 'Модульная капсула 24 м²'
-    },
-    {
-      image:
-        'https://images.unsplash.com/photo-1668508081712-89aeee56681e?crop=entropy&cs=srgb&fm=jpg&q=85',
-      caption: 'Офисное помещение из ЛСТК'
-    },
-    {
-      image:
-        'https://images.unsplash.com/photo-1745566589290-d678de04f990?crop=entropy&cs=srgb&fm=jpg&q=85',
-      caption: 'Жилая капсула с террасой'
-    },
-    {
-      image:
-        'https://images.unsplash.com/photo-1759647028384-1efcc6e0eff4?crop=entropy&cs=srgb&fm=jpg&q=85',
-      caption: 'Двухэтажная конструкция'
-    },
-    {
-      image:
-        'https://images.unsplash.com/photo-1623731389652-079c8732ed34?crop=entropy&cs=srgb&fm=jpg&q=85',
-      caption: 'Капсула для бизнеса'
-    },
-    {
-      image:
-        'https://images.unsplash.com/photo-1668508081712-89aeee56681e?crop=entropy&cs=srgb&fm=jpg&q=85',
-      caption: 'Готовое решение под ключ'
-    }
+    { image: img1, caption: 'Капсула 1' },
+    { image: img2, caption: 'Капсула 2' },
+    { image: img3, caption: 'Капсула 3' },
+    { image: img4, caption: 'Капсула 4' },
+    { image: img5, caption: 'Капсула 5' },
+    { image: img6, caption: 'Капсула 6' },
   ];
 
   const configurations = [
     {
       title: 'Каркас',
       subtitle: 'Металлический каркас ЛСТК',
-      features: ['Профиль ЛСТК', 'Крепеж', 'Чертежи']
+      features: ['Профиль ЛСТК', 'Крепеж', 'Чертежи'],
     },
     {
       title: 'Каркас + оболочка',
       subtitle: 'Каркас с внешней отделкой',
-      features: ['Каркас ЛСТК', 'Сэндвич-панели', 'Кровля', 'Окна/двери']
+      features: ['Каркас ЛСТК', 'Сэндвич-панели', 'Кровля', 'Окна/двери'],
     },
     {
       title: 'Готовая капсула',
       subtitle: 'Под ключ с отделкой',
-      features: ['Каркас', 'Отделка', 'Коммуникации', 'Мебель']
-    }
+      features: ['Каркас', 'Отделка', 'Коммуникации', 'Мебель'],
+    },
   ];
 
   const advantages = [
-    { icon: Ruler, title: 'Ровная геометрия', description: 'Точность до миллиметра' },
-    { icon: Feather, title: 'Лёгкий каркас', description: 'Не требует мощного фундамента' },
-    { icon: Infinity, title: 'Долговечность', description: 'Срок службы более 50 лет' },
-    { icon: Move, title: 'Мобильность', description: 'Можно разобрать и переместить' }
+    { icon: Ruler, title: 'Ровная геометрия', description: 'Точность до мм' },
+    { icon: Feather, title: 'Лёгкий каркас', description: 'Не требует фундамента' },
+    { icon: Infinity, title: 'Долговечность', description: 'Служит 50+ лет' },
+    { icon: Move, title: 'Мобильность', description: 'Можно перевозить' },
   ];
 
   const pricing = {
     title: 'Капсула 18–24 м²',
-    price: 'от 5.9 млн ₽',
-    note: 'Точная цена рассчитывается индивидуально'
+    price: 'от 5.9 млн ₸',
+    note: 'Точная цена рассчитывается индивидуально',
   };
 
   const steps = [
-    { number: '01', title: 'Консультация', description: 'Обсуждаем ваши требования' },
+    { number: '01', title: 'Консультация', description: 'Обсуждаем проект' },
     { number: '02', title: 'Проектирование', description: 'Создаём 3D-модель' },
     { number: '03', title: 'Производство', description: 'Изготовление на заводе' },
-    { number: '04', title: 'Монтаж', description: 'Установка за 2-5 дней' }
+    { number: '04', title: 'Монтаж', description: 'Установка за 2–5 дней' },
   ];
 
   const handleSubmit = (e) => {
@@ -110,15 +95,14 @@ const Capsules = () => {
 
   return (
     <div className="product-page">
-
-      {/* HERO с твоим фоном CapsulesHero.png */}
+      {/* HERO с локальным фоном */}
       <section
         className="product-hero"
         style={{
-          backgroundImage: `url(${capsulesHero})`,
+          backgroundImage: `url(${CapsulesHero})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
         }}
       >
         <div className="product-hero-overlay" />
@@ -130,14 +114,18 @@ const Capsules = () => {
         </div>
       </section>
 
-      {/* Gallery */}
+      {/* GALLERY */}
       <section className="gallery-section">
         <div className="container">
           <h2 className="section-title display-md">Галерея проектов</h2>
+
           <div className="gallery-grid">
             {gallery.map((item, index) => (
               <div key={index} className="gallery-item-wrapper">
-                <div className="gallery-item" style={{ backgroundImage: `url(${item.image})` }} />
+                <div
+                  className="gallery-item"
+                  style={{ backgroundImage: `url(${item.image})` }}
+                />
                 <p className="gallery-caption">{item.caption}</p>
               </div>
             ))}
@@ -145,10 +133,11 @@ const Capsules = () => {
         </div>
       </section>
 
-      {/* Configurations */}
+      {/* CONFIGURATIONS */}
       <section className="configurations-section">
         <div className="container">
           <h2 className="section-title display-md">Комплектации</h2>
+
           <div className="configurations-grid">
             {configurations.map((config, index) => (
               <div key={index} className="config-card">
@@ -168,19 +157,20 @@ const Capsules = () => {
         </div>
       </section>
 
-      {/* Advantages */}
+      {/* ADVANTAGES */}
       <section className="advantages-section-product">
         <div className="container">
           <h2 className="section-title display-md">Преимущества</h2>
+
           <div className="advantages-grid-product">
-            {advantages.map((advantage, index) => {
-              const Icon = advantage.icon;
+            {advantages.map((adv, index) => {
+              const Icon = adv.icon;
               return (
                 <div key={index} className="advantage-card-product">
                   <div className="advantage-icon-circle">
                     <Icon size={28} className="advantage-icon" />
                   </div>
-                  <h3>{advantage.title}</h3>
+                  <h3>{adv.title}</h3>
                 </div>
               );
             })}
@@ -188,7 +178,7 @@ const Capsules = () => {
         </div>
       </section>
 
-      {/* Pricing */}
+      {/* PRICING */}
       <section className="pricing-section">
         <div className="container">
           <div className="pricing-card-single">
@@ -199,10 +189,11 @@ const Capsules = () => {
         </div>
       </section>
 
-      {/* Steps */}
+      {/* STEPS */}
       <section className="steps-section">
         <div className="container">
           <h2 className="section-title display-md">Как мы работаем</h2>
+
           <div className="steps-grid">
             {steps.map((step, index) => (
               <div key={index} className="step-card">
@@ -215,36 +206,46 @@ const Capsules = () => {
         </div>
       </section>
 
-      {/* Form */}
+      {/* FORM */}
       <section className="form-section">
         <div className="container">
           <div className="form-container">
             <h2 className="display-sm">Получить расчёт</h2>
-            <p className="body-lg">Оставьте заявку, и мы свяжемся с вами</p>
+            <p className="body-lg">Оставьте заявку</p>
+
             <form onSubmit={handleSubmit} className="contact-form">
               <input
                 type="text"
                 placeholder="Ваше имя"
                 value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
                 required
                 className="form-input"
               />
+
               <input
                 type="tel"
                 placeholder="Телефон"
                 value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, phone: e.target.value })
+                }
                 required
                 className="form-input"
               />
+
               <textarea
                 placeholder="Опишите ваш проект"
                 value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
                 className="form-textarea"
                 rows="4"
               />
+
               <button type="submit" className="btn-primary">
                 Отправить запрос
                 <ArrowRight size={20} />
