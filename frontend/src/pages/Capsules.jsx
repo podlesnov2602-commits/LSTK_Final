@@ -5,6 +5,12 @@ import './ProductPage.css';
 
 // ✔ Правильный импорт (точно совпадает с твоим файлом)
 import capsulesHero from '../assets/CapsulesHero.png';
+import img1 from '../assets/Capsules1.jpg';
+import img2 from '../assets/Capsules2.jpg';
+import img3 from '../assets/Capsules3.jpg';
+import img4 from '../assets/Capsules4.jpg';
+import img5 from '../assets/Capsules5.jpg';
+import img6 from '../assets/Capsules6.jpg';
 
 const Capsules = () => {
   const [formData, setFormData] = useState({
@@ -30,37 +36,13 @@ const Capsules = () => {
   }, []);
 
   const gallery = [
-    {
-      image:
-        'https://images.unsplash.com/photo-1623731389652-079c8732ed34?crop=entropy&cs=srgb&fm=jpg&q=85',
-      caption: 'Модульная капсула 24 м²'
-    },
-    {
-      image:
-        'https://images.unsplash.com/photo-1668508081712-89aeee56681e?crop=entropy&cs=srgb&fm=jpg&q=85',
-      caption: 'Офисное помещение из ЛСТК'
-    },
-    {
-      image:
-        'https://images.unsplash.com/photo-1745566589290-d678de04f990?crop=entropy&cs=srgb&fm=jpg&q=85',
-      caption: 'Жилая капсула с террасой'
-    },
-    {
-      image:
-        'https://images.unsplash.com/photo-1759647028384-1efcc6e0eff4?crop=entropy&cs=srgb&fm=jpg&q=85',
-      caption: 'Двухэтажная конструкция'
-    },
-    {
-      image:
-        'https://images.unsplash.com/photo-1623731389652-079c8732ed34?crop=entropy&cs=srgb&fm=jpg&q=85',
-      caption: 'Капсула для бизнеса'
-    },
-    {
-      image:
-        'https://images.unsplash.com/photo-1668508081712-89aeee56681e?crop=entropy&cs=srgb&fm=jpg&q=85',
-      caption: 'Готовое решение под ключ'
-    }
-  ];
+  { image: img1, caption: 'Капсула 1' },
+  { image: img2, caption: 'Капсула 2' },
+  { image: img3, caption: 'Капсула 3' },
+  { image: img4, caption: 'Капсула 4' },
+  { image: img5, caption: 'Капсула 5' },
+  { image: img6, caption: 'Капсула 6' },
+];
 
   const configurations = [
     {
