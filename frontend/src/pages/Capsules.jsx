@@ -63,13 +63,13 @@ const Capsules = () => {
   ];
 
   const advantages = [
-    { icon: Ruler, title: 'Ровная геометрия', description: 'Точность до миллиметра' },
-    { icon: Feather, title: 'Лёгкий каркас', description: 'Не требует мощного фундамента' },
-    { icon: Infinity, title: 'Долговечность', description: 'Срок службы более 50 лет' },
-    { icon: Move, title: 'Мобильность', description: 'Можно разобрать и переместить' }
+    { icon: Ruler, title: 'Ровная геометрия' },
+    { icon: Feather, title: 'Лёгкий каркас' },
+    { icon: Infinity, title: 'Долговечность' },
+    { icon: Move, title: 'Мобильность' }
   ];
 
-  // ✔ ПОЛНОСТЬЮ ИСПРАВЛЕННЫЙ pricing
+  // ✔ Pricing (3 пункта)
   const pricing = [
     {
       title: 'Капсула 18–24 м²',
@@ -80,6 +80,11 @@ const Capsules = () => {
       title: 'Модульный дом',
       price: 'от 8.5 млн ₽',
       note: 'Стоимость зависит от площади и комплектации'
+    },
+    {
+      title: 'Капсула PREMIUM 32 м²',
+      price: 'от 7.2 млн ₽',
+      note: 'Утепление, панорамное остекление, улучшенная отделка'
     }
   ];
 
@@ -166,14 +171,14 @@ const Capsules = () => {
         <div className="container">
           <h2 className="section-title display-md">Преимущества</h2>
           <div className="advantages-grid-product">
-            {advantages.map((advantage, index) => {
-              const Icon = advantage.icon;
+            {advantages.map((adv, index) => {
+              const Icon = adv.icon;
               return (
                 <div key={index} className="advantage-card-product">
                   <div className="advantage-icon-circle">
                     <Icon size={28} className="advantage-icon" />
                   </div>
-                  <h3>{advantage.title}</h3>
+                  <h3>{adv.title}</h3>
                 </div>
               );
             })}
