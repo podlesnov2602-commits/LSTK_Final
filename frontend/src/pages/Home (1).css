@@ -1,0 +1,526 @@
+.home-page {
+  width: 100%;
+  animation: page-fade 0.6s ease-out;
+}
+
+/* Глобально мягкий скролл */
+html, body {
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
+}
+
+/* Анимация появления всей страницы */
+@keyframes page-fade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =======================
+      HERO SECTION
+======================= */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Фон-карусель */
+.hero-carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  will-change: opacity, transform;
+  transform: scale(1.02);
+}
+
+/* Мягкий параллакс у активного слайда */
+.hero-slide.active {
+  opacity: 1;
+  animation: hero-parallax 18s ease-in-out infinite alternate;
+}
+
+@keyframes hero-parallax {
+  from {
+    transform: scale(1.02) translateY(0);
+  }
+  to {
+    transform: scale(1.07) translateY(-12px);
+  }
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(1px);
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 122, 95, 0.06) 0%,
+    transparent 50%,
+    rgba(10, 122, 95, 0.08) 100%
+  );
+  z-index: 2;
+}
+
+/* Индикаторы слайдов */
+.hero-indicators {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 3;
+}
+
+.hero-indicator {
+  width: 40px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.hero-indicator.active {
+  background: var(--accent-primary);
+  width: 60px;
+}
+
+.hero-indicator:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+}
+
+.hero-text {
+  max-width: 920px;
+  animation: fade-in-up 0.8s ease-out;
+}
+
+.hero-title {
+  color: #ffffff;
+  margin-bottom: 28px;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  color: #e5e5e5;
+  margin-bottom: 44px;
+  font-size: 19px;
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+/* =======================
+   GLOBAL SECTION SPACING
+======================= */
+
+.section-title {
+  text-align: center;
+  margin-bottom: 80px;
+  color: var(--text-primary);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Лёгкий fade-up для секций (без JS) */
+@keyframes section-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.directions-section,
+.advantages-section,
+.production-section,
+.documents-teaser,
+.contact-section {
+  animation: section-fade-up 0.8s ease-out forwards;
+}
+
+/* ступенчатая задержка, чтобы блоки «дышали» по очереди */
+.directions-section { animation-delay: 0.1s; }
+.advantages-section { animation-delay: 0.18s; }
+.production-section { animation-delay: 0.26s; }
+.documents-teaser   { animation-delay: 0.34s; }
+.contact-section     { animation-delay: 0.42s; }
+
+/* =======================
+      DIRECTIONS
+======================= */
+
+.directions-section {
+  padding: 160px 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+.directions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.direction-card-link {
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+/* убираем дешёвую постоянную тень, оставляем премиальный hover */
+.direction-card {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: none;
+}
+
+.direction-card-link:hover .direction-card {
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+}
+
+.direction-image {
+  width: 100%;
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: transform 0.6s ease;
+}
+
+.direction-card-link:hover .direction-image {
+  transform: scale(1.04);
+}
+
+.direction-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-primary);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.direction-card-link:hover .direction-image::after {
+  opacity: 1;
+}
+
+.direction-content {
+  padding: 36px;
+}
+
+.direction-content h3 {
+  margin-bottom: 14px;
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.direction-content p {
+  margin-bottom: 28px;
+  color: #e5e5e5;
+  font-weight: 500;
+}
+
+/* =======================
+      ADVANTAGES
+======================= */
+
+.advantages-section {
+  padding: 160px 0;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.advantage-card {
+  padding: 48px 40px;
+  background: var(--bg-primary);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  transition: all 0.4s ease;
+  text-align: center;
+  box-shadow: none;
+}
+
+.advantage-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+}
+
+.advantage-icon {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-bg);
+  color: var(--accent-primary);
+  border: none;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+
+.advantage-card:hover .advantage-icon {
+  background: var(--accent-primary);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.advantage-card h3 {
+  margin-bottom: 14px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.advantage-card p {
+  color: #e5e5e5;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+/* =======================
+      PRODUCTION
+======================= */
+
+.production-section {
+  padding: 160px 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+/* убрал линию-разделитель сверху, чтобы не было «полоски» */
+/* .production-section::before { ... } — удалено */
+
+.production-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.production-image {
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+}
+
+.production-text h2 {
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.production-text p {
+  margin-bottom: 20px;
+}
+
+/* =======================
+      DOCUMENTS
+======================= */
+
+.documents-teaser {
+  padding: 140px 0;
+  background: var(--bg-primary);
+  position: relative;
+}
+
+/* тоже убираем линию-разделитель */
+/* .documents-teaser::before { ... } — удалено */
+
+.documents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.document-card {
+  padding: 40px 32px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.document-card:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.document-icon {
+  color: var(--accent-primary);
+  margin-bottom: 20px;
+}
+
+.document-card h3 {
+  color: var(--text-primary);
+}
+
+.documents-cta {
+  text-align: center;
+}
+
+/* =======================
+      CONTACT
+======================= */
+
+.contact-section {
+  padding: 140px 0;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+/* убираем линию над блоком контактов, чтобы не было полоски */
+/* .contact-section::before { ... } — удалено */
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.contact-info h2 {
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.contact-info p {
+  margin-bottom: 32px;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.contact-item {
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.contact-item strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.contact-map iframe {
+  filter: grayscale(100%) invert(90%) brightness(0.7);
+}
+
+/* =======================
+      RESPONSIVE
+======================= */
+
+@media (max-width: 1024px) {
+  .production-content,
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .production-image {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 80vh;
+    background-attachment: scroll;
+  }
+
+  .directions-section,
+  .advantages-section,
+  .production-section,
+  .documents-teaser,
+  .contact-section {
+    padding: 80px 0;
+  }
+
+  .section-title {
+    margin-bottom: 48px;
+  }
+
+  .directions-grid,
+  .advantages-grid,
+  .documents-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .production-image {
+    height: 300px;
+  }
+}
