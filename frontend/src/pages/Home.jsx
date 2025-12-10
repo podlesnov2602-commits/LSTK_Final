@@ -1,14 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Shield, Clock, Award, Truck, CheckCircle } from 'lucide-react';
+import {
+  ArrowRight,
+  Zap,
+  Shield,
+  Clock,
+  Award,
+  Truck,
+  CheckCircle
+} from 'lucide-react';
+
 import { siteConfig } from '../config/siteConfig';
 import './Home.css';
 
-// 🔥 Локальные изображения
+// Изображения
 import capsulesImg from '../assets/capsules.png';
 import hangarsImg from '../assets/Hangars.jpeg';
 import garagesImg from '../assets/garages.jpeg';
-import productionImg from '../assets/production.jpg';   // <— ВАЖНО: новый импорт
+import productionImg from '../assets/production.jpg';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -21,9 +30,10 @@ const Home = () => {
     'https://images.unsplash.com/photo-1515100665905-d66c4dea74ae?crop=entropy&cs=srgb&fm=jpg&q=85'
   ];
 
+  // Автосмена слайдов
   React.useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentSlide((p) => (p + 1) % heroImages.length);
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
@@ -33,26 +43,26 @@ const Home = () => {
       title: 'Капсулы-модульные дома',
       description: 'Модульные конструкции для жилья, офисов и бизнеса',
       link: '/capsules',
-      image: capsulesImg,
+      image: capsulesImg
     },
     {
       title: 'Ангары',
       description: 'Промышленные ангары и складские помещения',
       link: '/hangars',
-      image: hangarsImg,
+      image: hangarsImg
     },
     {
       title: 'Гаражи-навесы',
       description: 'Надёжные металлические гаражи и боксы',
       link: '/garages',
-      image: garagesImg,
+      image: garagesImg
     }
   ];
 
   const advantages = [
-    { icon: Clock, title: 'Быстрый монтаж', description: 'Установка конструкции за 2-5 дней' },
+    { icon: Clock, title: 'Быстрый монтаж', description: 'Установка конструкции за 2–5 дней' },
     { icon: Shield, title: 'Заводское качество', description: 'Современное оборудование и контроль' },
-    { icon: Zap, title: 'Точная геометрия', description: 'Прецизионное производство на станках ЧПУ' },
+    { icon: Zap, title: 'Точная геометрия', description: 'Прецизионное производство на ЧПУ' },
     { icon: Award, title: 'Гарантия', description: 'Полная гарантия на все изделия' },
     { icon: Truck, title: 'Доставка', description: 'По всему Казахстану' },
     { icon: CheckCircle, title: 'Сертификация', description: 'Все необходимые документы' }
@@ -72,8 +82,10 @@ const Home = () => {
   return (
     <div className="home-page">
 
-      {/* HERO */}
+      {/* ================= HERO ================= */}
       <section className="hero-section">
+
+        {/* Фоновые слайды */}
         <div className="hero-carousel">
           {heroImages.map((img, i) => (
             <div
@@ -86,14 +98,14 @@ const Home = () => {
 
         <div className="hero-overlay" />
 
-        <div className="hero-content">
-          <div className="container">
+        <div className="container">
+          <div className="hero-content">
             <div className="hero-text">
-              <h1 className="hero-title display-lg">
+              <h1 className="hero-title">
                 Производство ЛСТК<br />в Казахстане
               </h1>
 
-              <p className="hero-subtitle body-lg">
+              <p className="hero-subtitle">
                 Капсулы, ангары, гаражи — быстро, надёжно, заводское качество
               </p>
 
@@ -110,6 +122,7 @@ const Home = () => {
           </div>
         </div>
 
+        {/* Индикаторы */}
         <div className="hero-indicators">
           {heroImages.map((_, i) => (
             <button
@@ -121,7 +134,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* DIRECTIONS */}
+      {/* ================= DIRECTIONS ================= */}
       <section id="directions" className="directions-section">
         <div className="container">
           <h2 className="section-title display-md">Выберите направление</h2>
@@ -137,6 +150,7 @@ const Home = () => {
                   <div className="direction-content">
                     <h3 className="h2">{item.title}</h3>
                     <p className="body-md">{item.description}</p>
+
                     <span className="btn-primary">
                       Подробнее <ArrowRight size={18} />
                     </span>
@@ -148,7 +162,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ADVANTAGES */}
+      {/* ================= ADVANTAGES ================= */}
       <section className="advantages-section">
         <div className="container">
           <h2 className="section-title display-md">Почему ЛСТК от нашей фабрики</h2>
@@ -170,23 +184,23 @@ const Home = () => {
         </div>
       </section>
 
-      {/* PRODUCTION */}
+      {/* ================= PRODUCTION ================= */}
       <section className="production-section">
         <div className="container">
           <div className="production-content">
 
             <div
               className="production-image"
-              style={{
-                backgroundImage: `url(${productionImg})`
-              }}
+              style={{ backgroundImage: `url(${productionImg})` }}
             />
 
             <div className="production-text">
               <h2 className="display-sm">О производстве</h2>
+
               <p className="body-lg">
                 Фабрика Каркасов Алатау — современное производство лёгких стальных тонкостенных конструкций.
               </p>
+
               <p className="body-lg">
                 Используем высокоточное оборудование и строгий контроль качества.
               </p>
@@ -195,12 +209,11 @@ const Home = () => {
                 Узнать больше <ArrowRight size={20} />
               </Link>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* DOCUMENTS */}
+      {/* ================= DOCUMENTS ================= */}
       <section className="documents-teaser">
         <div className="container">
           <h2 className="section-title display-md">Документы и сертификаты</h2>
@@ -214,6 +227,7 @@ const Home = () => {
                     <polyline points="14 2 14 8 20 8"></polyline>
                   </svg>
                 </div>
+
                 <h3 className="h3">{doc.title}</h3>
               </div>
             ))}
@@ -227,26 +241,32 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CONTACT */}
+      {/* ================= CONTACT ================= */}
       <section className="contact-section">
         <div className="container">
           <div className="contact-content">
 
             <div className="contact-info">
               <h2 className="display-sm">Свяжитесь с нами</h2>
+
               <p className="body-lg">
                 Готовы ответить на ваши вопросы и помочь с выбором конструкции.
               </p>
 
               <div className="contact-details">
                 <div className="contact-item">
-                  <strong>Телефон:</strong> {siteConfig.contact.phone}
+                  <strong>Телефон:</strong>
+                  {siteConfig.contact.phone}
                 </div>
+
                 <div className="contact-item">
-                  <strong>Адрес:</strong> {siteConfig.contact.address}
+                  <strong>Адрес:</strong>
+                  {siteConfig.contact.address}
                 </div>
+
                 <div className="contact-item">
-                  <strong>Режим работы:</strong> {siteConfig.contact.workingHours}
+                  <strong>Режим работы:</strong>
+                  {siteConfig.contact.workingHours}
                 </div>
               </div>
 
@@ -262,8 +282,8 @@ const Home = () => {
                 width="100%"
                 height="400"
                 style={{ border: 0, borderRadius: '16px' }}
-                allowFullScreen=""
                 loading="lazy"
+                allowFullScreen
               />
             </div>
 
