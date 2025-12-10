@@ -1,82 +1,54 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    darkMode: ["class"],
-    content: [
+  content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "./public/index.html"
   ],
+  darkMode: "class",
   theme: {
-  	extend: {
-  		borderRadius: {
-  			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
-  		},
-  		colors: {
-  			background: 'hsl(var(--background))',
-  			foreground: 'hsl(var(--foreground))',
-  			card: {
-  				DEFAULT: 'hsl(var(--card))',
-  				foreground: 'hsl(var(--card-foreground))'
-  			},
-  			popover: {
-  				DEFAULT: 'hsl(var(--popover))',
-  				foreground: 'hsl(var(--popover-foreground))'
-  			},
-  			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
-  			},
-  			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
-  			},
-  			muted: {
-  				DEFAULT: 'hsl(var(--muted))',
-  				foreground: 'hsl(var(--muted-foreground))'
-  			},
-  			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
-  				foreground: 'hsl(var(--accent-foreground))'
-  			},
-  			destructive: {
-  				DEFAULT: 'hsl(var(--destructive))',
-  				foreground: 'hsl(var(--destructive-foreground))'
-  			},
-  			border: 'hsl(var(--border))',
-  			input: 'hsl(var(--input))',
-  			ring: 'hsl(var(--ring))',
-  			chart: {
-  				'1': 'hsl(var(--chart-1))',
-  				'2': 'hsl(var(--chart-2))',
-  				'3': 'hsl(var(--chart-3))',
-  				'4': 'hsl(var(--chart-4))',
-  				'5': 'hsl(var(--chart-5))'
-  			}
-  		},
-  		keyframes: {
-  			'accordion-down': {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
-  			},
-  			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
-  			}
-  		},
-  		animation: {
-  			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
-  	}
+    extend: {
+      colors: {
+        // Фирменная палитра — САМЫЕ ВАЖНЫЕ 6 ЦВЕТОВ
+        "bg-primary": "#111415",
+        "bg-secondary": "#171A1C",
+
+        "text-primary": "#FFFFFF",
+        "text-secondary": "#D4D4D4",
+
+        "accent-primary": "#0A7A5F",
+        "accent-bg": "rgba(10,122,95,0.12)",
+
+        "border-subtle": "#1F2224",
+      },
+
+      // Радиусы карточек
+      borderRadius: {
+        card: "14px",
+      },
+
+      // Тени — премиальные, мягкие
+      boxShadow: {
+        card: "0 4px 16px rgba(0,0,0,0.25)",
+        cardHover: "0 18px 40px rgba(0,0,0,0.45)",
+      },
+
+      // Контейнеры и отступы секций
+      spacing: {
+        section: "120px",
+        sectionMd: "90px",
+        sectionSm: "70px",
+      },
+
+      // Типографика
+      fontSize: {
+        displayLg: ["68px", { lineHeight: "1.1" }],
+        displayMd: ["48px", { lineHeight: "1.2" }],
+        displaySm: ["32px", { lineHeight: "1.3" }],
+
+        bodyLg: ["20px", { lineHeight: "1.6" }],
+        bodyMd: ["16px", { lineHeight: "1.65" }],
+      },
+    },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 };
