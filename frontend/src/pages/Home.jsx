@@ -7,207 +7,141 @@ import {
   Clock,
   Award,
   Truck,
-  CheckCircle,
+  CheckCircle
 } from 'lucide-react';
+
 import { siteConfig } from '../config/siteConfig';
 import './Home.css';
 
+/* Локальные изображения */
 import capsulesImg from '../assets/capsules.png';
 import hangarsImg from '../assets/Hangars.jpeg';
 import garagesImg from '../assets/garages.jpeg';
 import productionImg from '../assets/production.jpg';
 
 const Home = () => {
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+
+  const heroImages = [
+    "https://images.unsplash.com/photo-1649587345666-0f4ad68aa723?q=85&fm=jpg",
+    "https://images.unsplash.com/photo-1679430786992-8bb54d023e2f?q=85&fm=jpg",
+    "https://images.unsplash.com/photo-1515100665905-d66c4dea74ae?q=85&fm=jpg",
+    "https://images.unsplash.com/photo-1655936072893-921e69ae9038?q=85&fm=jpg"
+  ];
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const directions = [
     {
-      title: 'Капсульные модульные дома',
-      description: 'Премиальные модульные решения для проживания, бизнеса и отдыха.',
-      link: '/capsules',
-      image: capsulesImg,
-      meta: 'Модульные решения',
+      title: "Капсульные модульные дома",
+      description: "Современные модульные здания для бизнеса и проживания.",
+      link: "/capsules",
+      image: capsulesImg
     },
     {
-      title: 'Ангары и склады',
-      description: 'Инженерные ЛСТК конструкции для промышленных и складских объектов.',
-      link: '/hangars',
-      image: hangarsImg,
-      meta: 'Промышленные объекты',
+      title: "Ангары и склады",
+      description: "Высокопрочные металлоконструкции промышленного назначения.",
+      link: "/hangars",
+      image: hangarsImg
     },
     {
-      title: 'Гаражи и навесы',
-      description: 'Надёжные металлические гаражи, навесы и каркасные решения.',
-      link: '/garages',
-      image: garagesImg,
-      meta: 'Частные и коммерческие объекты',
-    },
+      title: "Гаражи и навесы",
+      description: "Надёжные ЛСТК конструкции для автомобилей и спецтехники.",
+      link: "/garages",
+      image: garagesImg
+    }
   ];
 
   const advantages = [
-    {
-      icon: Clock,
-      title: 'Сжатые сроки',
-      description: 'Производство и монтаж в среднем за 2–5 рабочих дней.',
-    },
-    {
-      icon: Shield,
-      title: 'Заводское качество',
-      description: 'Современная линия ЛСТК и многоуровневый контроль.',
-    },
-    {
-      icon: Zap,
-      title: 'Точная геометрия',
-      description: 'ЧПУ-оборудование и инженерные расчеты под объект.',
-    },
-    {
-      icon: Award,
-      title: 'Гарантия',
-      description: 'Гарантийные обязательства на конструкции и монтаж.',
-    },
-    {
-      icon: Truck,
-      title: 'Логистика',
-      description: 'Организуем доставку и разгрузку по всему Казахстану.',
-    },
-    {
-      icon: CheckCircle,
-      title: 'Сертификация',
-      description: 'Сопроводительные документы, сертификаты и договорная база.',
-    },
+    { icon: Clock, title: "Быстрый монтаж", desc: "Установка конструкции за 2–5 дней" },
+    { icon: Shield, title: "Заводское качество", desc: "Современное оборудование и контроль" },
+    { icon: Zap, title: "Высокая точность", desc: "Производство на ЧПУ-станках" },
+    { icon: Award, title: "Гарантия", desc: "Полная гарантия на все изделия" },
+    { icon: Truck, title: "Доставка", desc: "По всему Казахстану" },
+    { icon: CheckCircle, title: "Сертификация", desc: "Нужные документы в наличии" }
   ];
 
   const documents = [
-    { title: 'Сертификат соответствия', file: '#' },
-    { title: 'Типовой договор поставки', file: '#' },
-    { title: 'Реквизиты фабрики', file: '#' },
+    { title: "Сертификат соответствия", file: "/documents" },
+    { title: "Договор поставки", file: "/documents" },
+    { title: "Реквизиты компании", file: "/documents" }
   ];
 
-  const handleScrollToDirections = () => {
-    const el = document.getElementById('directions');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const handleScrollToContacts = () => {
-    const el = document.getElementById('contacts');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const handleWhatsAppContact = () => {
-    const message = encodeURIComponent(
-      'Здравствуйте! Интересуюсь продукцией Фабрики Каркасов Алатау по ЛСТК.'
-    );
-    window.open(`${siteConfig.social.whatsapp}?text=${message}`, '_blank');
+  const openWhatsApp = () => {
+    const msg = encodeURIComponent("Здравствуйте! Интересуюсь продукцией Фабрика Каркасов Алатау.");
+    window.open(`${siteConfig.social.whatsapp}?text=${msg}`, "_blank");
   };
 
   return (
     <div className="home-page">
-      {/* HERO */}
+
+      {/* ========================= HERO ========================= */}
       <section className="hero-section">
-        <div className="container hero-inner">
-          <div className="hero-content">
-            {/* Левая колонка */}
-            <div className="hero-left">
-              <div className="hero-eyebrow">
-                <span className="hero-dot" />
-                <span>Фабрика Каркасов Алатау — ЛСТК инженерного уровня</span>
-              </div>
+        <div className="hero-carousel">
+          {heroImages.map((img, index) => (
+            <div
+              key={index}
+              className={`hero-slide ${index === currentSlide ? "active" : ""}`}
+              style={{ backgroundImage: `url(${img})` }}
+            />
+          ))}
+        </div>
 
-              <h1 className="hero-title display-xl">
-                Инженерные ЛСТК конструкции
-                <br />
-                для дома и промышленности
-              </h1>
+        <div className="hero-content">
+          <div className="container">
+            <h1 className="hero-title">
+              Производство ЛСТК<br />в Казахстане
+            </h1>
 
-              <p className="hero-subtitle body-lg">
-                Капсульные дома, ангары и гаражи из лёгких стальных конструкций. Заводская
-                геометрия, точные сроки и полный комплект документов.
-              </p>
+            <p className="hero-subtitle">
+              Капсулы, ангары, гаражи — современный промышленный стандарт
+            </p>
 
-              <div className="hero-cta">
-                <button className="btn-primary" onClick={handleScrollToContacts}>
-                  Получить предложение
-                  <ArrowRight size={18} />
-                </button>
-
-                <button className="btn-secondary" onClick={handleScrollToDirections}>
-                  Смотреть направления
-                </button>
-              </div>
-
-              <div>
-                <div className="hero-caption">Основные направления</div>
-                <div className="hero-directions-list">
-                  <span className="hero-pill">Капсульные модульные дома</span>
-                  <span className="hero-pill">Ангары и склады</span>
-                  <span className="hero-pill">Гаражи и навесы</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Правая колонка */}
-            <div className="hero-right">
-              <div className="hero-panel">
-                <div className="hero-metric-row">
-                  <div className="hero-metric">
-                    <div className="hero-metric-label">Опыт</div>
-                    <div className="hero-metric-value">10+ лет</div>
-                    <div className="hero-metric-note">проектирования и монтажа ЛСТК</div>
-                  </div>
-                  <div className="hero-metric">
-                    <div className="hero-metric-label">География</div>
-                    <div className="hero-metric-value">Казахстан</div>
-                    <div className="hero-metric-note">поставка и монтаж по регионам</div>
-                  </div>
-                </div>
-
-                <div className="hero-divider" />
-
-                <div className="hero-list">
-                  <div className="hero-list-item">
-                    <span className="hero-list-bullet">●</span>
-                    <span>
-                      Заводское производство ЛСТК с использованием современного оборудования.
-                    </span>
-                  </div>
-                  <div className="hero-list-item">
-                    <span className="hero-list-bullet">●</span>
-                    <span>
-                      Конструкции под ключ — от инженерного расчёта до готового объекта.
-                    </span>
-                  </div>
-                  <div className="hero-list-item">
-                    <span className="hero-list-bullet">●</span>
-                    <span>
-                      Прозрачная смета, договор, график работ и комплект документов для сдачи.
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <button
+              className="btn-primary"
+              onClick={() => document.getElementById("directions").scrollIntoView({ behavior: "smooth" })}
+            >
+              Выбрать направление <ArrowRight size={20} />
+            </button>
           </div>
+        </div>
+
+        <div className="hero-indicators">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              className={`hero-indicator ${index === currentSlide ? "active" : ""}`}
+              onClick={() => setCurrentSlide(index)}
+            />
+          ))}
         </div>
       </section>
 
-      {/* DIRECTIONS */}
+      {/* ========================= DIRECTIONS ========================= */}
       <section id="directions" className="directions-section">
         <div className="container">
-          <h2 className="section-title display-md">Направления ЛСТК</h2>
+          <h2 className="section-title">Выберите направление</h2>
 
           <div className="directions-grid">
-            {directions.map((item, i) => (
-              <Link key={i} to={item.link} className="direction-card-link">
+            {directions.map((item, index) => (
+              <Link key={index} to={item.link} className="direction-card-link">
                 <div className="direction-card">
                   <div
                     className="direction-image"
                     style={{ backgroundImage: `url(${item.image})` }}
                   />
                   <div className="direction-content">
-                    <div className="direction-meta">{item.meta}</div>
-                    <h3 className="h2">{item.title}</h3>
-                    <p className="body-md">{item.description}</p>
-                    <div className="direction-cta">
-                      Подробнее
-                      <ArrowRight size={16} />
-                    </div>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                    <span className="btn-secondary">
+                      Подробнее <ArrowRight size={18} />
+                    </span>
                   </div>
                 </div>
               </Link>
@@ -216,21 +150,21 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ADVANTAGES */}
+      {/* ========================= ADVANTAGES ========================= */}
       <section className="advantages-section">
         <div className="container">
-          <h2 className="section-title display-md">Почему выбирают нашу фабрику</h2>
+          <h2 className="section-title">Почему ЛСТК от нашей фабрики</h2>
 
           <div className="advantages-grid">
-            {advantages.map((item, i) => {
+            {advantages.map((item, index) => {
               const Icon = item.icon;
               return (
-                <div key={i} className="advantage-card">
+                <div key={index} className="advantage-card">
                   <div className="advantage-icon">
-                    <Icon size={22} />
+                    <Icon size={28} />
                   </div>
-                  <h3 className="h3">{item.title}</h3>
-                  <p className="body-md">{item.description}</p>
+                  <h3>{item.title}</h3>
+                  <p>{item.desc}</p>
                 </div>
               );
             })}
@@ -238,116 +172,105 @@ const Home = () => {
         </div>
       </section>
 
-      {/* PRODUCTION */}
+      {/* ========================= PRODUCTION ========================= */}
       <section className="production-section">
         <div className="container">
           <div className="production-content">
             <div
               className="production-image"
-              style={{
-                backgroundImage: `url(${productionImg})`,
-              }}
+              style={{ backgroundImage: `url(${productionImg})` }}
             />
+
             <div className="production-text">
-              <h2 className="display-sm">Производство ЛСТК под задачи объекта</h2>
-              <p className="body-lg">
-                Фабрика Каркасов Алатау — это производственная площадка, специализирующаяся
-                на лёгких стальных тонкостенных конструкциях для частных и промышленных
-                объектов.
+              <h2>О производстве</h2>
+
+              <p>
+                Фабрика Каркасов Алатау — современный комплекс по производству  
+                лёгких стальных конструкций с высокой точностью и надёжностью.
               </p>
-              <p className="body-lg">
-                Используем инженерные расчёты, металлопрокат проверенных поставщиков и
-                современное оборудование. Контролируем геометрию каждой партии, чтобы
-                монтаж на площадке проходил максимально быстро и предсказуемо.
+
+              <p>
+                Высокая геометрия достигается благодаря использованию
+                профессионального ЧПУ оборудования.
               </p>
+
               <Link to="/about" className="btn-primary">
-                О фабрике
-                <ArrowRight size={18} />
+                Узнать больше <ArrowRight size={20} />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* DOCUMENTS */}
+      {/* ========================= DOCUMENTS ========================= */}
       <section className="documents-teaser">
         <div className="container">
-          <h2 className="section-title display-md">Документы и сопровождение</h2>
+          <h2 className="section-title">Документы и сертификаты</h2>
 
           <div className="documents-grid">
-            {documents.map((doc, i) => (
-              <div key={i} className="document-card">
+            {documents.map((doc, index) => (
+              <div key={index} className="document-card">
                 <div className="document-icon">
-                  <svg
-                    width="40"
-                    height="40"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    fill="none"
-                  >
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                    <polyline points="14 2 14 8 20 8" />
+                  <svg width="40" height="40" stroke="currentColor" fill="none" strokeWidth="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
                   </svg>
                 </div>
-                <h3 className="h3">{doc.title}</h3>
+                <h3>{doc.title}</h3>
               </div>
             ))}
           </div>
 
           <div className="documents-cta">
             <Link to="/documents" className="btn-secondary">
-              Перейти в раздел документов
-              <ArrowRight size={16} />
+              Перейти в раздел документов <ArrowRight size={18} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="contacts" className="contact-section">
+      {/* ========================= CONTACT ========================= */}
+      <section className="contact-section">
         <div className="container">
           <div className="contact-content">
             <div className="contact-info">
-              <h2 className="display-sm">Связаться с фабрикой</h2>
-              <p className="body-lg">
-                Расскажите, какой объект вы планируете — подберём решение из ЛСТК, подготовим
-                ориентировочную смету и предложим оптимальную конфигурацию по срокам и бюджету.
-              </p>
+              <h2>Свяжитесь с нами</h2>
+              <p>Поможем подобрать оптимальное решение под вашу задачу.</p>
 
               <div className="contact-details">
                 <div className="contact-item">
-                  <strong>Телефон</strong>
-                  {siteConfig.contact.phone}
+                  <strong>Телефон:</strong> {siteConfig.contact.phone}
                 </div>
+
                 <div className="contact-item">
-                  <strong>Адрес</strong>
-                  {siteConfig.contact.address}
+                  <strong>Адрес:</strong> {siteConfig.contact.address}
                 </div>
+
                 <div className="contact-item">
-                  <strong>Режим работы</strong>
-                  {siteConfig.contact.workingHours}
+                  <strong>Режим работы:</strong> {siteConfig.contact.workingHours}
                 </div>
               </div>
 
-              <button className="btn-primary" onClick={handleWhatsAppContact}>
+              <button className="btn-primary" onClick={openWhatsApp}>
                 Написать в WhatsApp
               </button>
             </div>
 
             <div className="contact-map">
               <iframe
-                title="Location Map"
-                src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.2524871691937!2d${siteConfig.location.lng}!3d${siteConfig.location.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDEzJzE5LjIiTiA3NsKwNTEnMDQuMyJF!5e0!3m2!1sen!2skz!4v1234567890123!5m2!1sen!2skz`}
+                title="map"
                 width="100%"
                 height="400"
-                style={{ border: 0, borderRadius: '16px' }}
-                allowFullScreen=""
+                style={{ border: 0, borderRadius: "16px" }}
                 loading="lazy"
+                allowFullScreen
+                src={`https://www.google.com/maps?q=${siteConfig.location.lat},${siteConfig.location.lng}&hl=ru&z=14&output=embed`}
               />
             </div>
           </div>
         </div>
       </section>
+
     </div>
   );
 };
