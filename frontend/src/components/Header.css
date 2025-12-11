@@ -7,10 +7,10 @@
   height: 86px;
   display: flex;
   align-items: center;
-  background: rgba(12, 22, 23, 0.55);
-  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .site-header .container {
@@ -36,7 +36,7 @@
   height: 62px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 14px var(--brand-green-glow));
+  filter: drop-shadow(0 0 10px var(--brand-green-glow));
 }
 
 .main-nav {
@@ -74,7 +74,7 @@
 }
 
 .nav-link.active::after {
-  width: 22px;
+  width: 26px;
   opacity: 1;
 }
 
@@ -83,8 +83,8 @@
 }
 
 .nav-link:hover::after {
-  width: 22px;
-  opacity: 0.7;
+  width: 26px;
+  opacity: 0.8;
 }
 
 .nav-link.active {
@@ -96,7 +96,7 @@
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid var(--brand-green);
   backdrop-filter: blur(8px);
-  box-shadow: inset 0 0 8px var(--brand-green-glow), 0 8px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: none;
   color: var(--brand-green);
 }
 
@@ -117,8 +117,8 @@
 
 .phone-link:hover {
   transform: translateY(-1px);
-  box-shadow: inset 0 0 10px var(--brand-green-glow), 0 12px 28px rgba(0, 0, 0, 0.45);
-  background: rgba(23, 231, 164, 0.15);
+  box-shadow: 0 0 18px var(--brand-green-glow);
+  background: rgba(0, 0, 0, 0.45);
 }
 
 .mobile-menu-toggle {
@@ -186,7 +186,7 @@
     position: relative;
     width: min(420px, 88%);
     margin-left: auto;
-    background: rgba(12, 22, 23, 0.86);
+    background: rgba(10, 22, 20, 0.92);
     box-shadow: -12px 0 30px rgba(0, 0, 0, 0.35), -2px 0 0 rgba(255, 255, 255, 0.04);
     border-left: 1px solid rgba(255, 255, 255, 0.06);
     display: flex;
@@ -217,7 +217,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(12, 22, 23, 0.6);
+    background: rgba(10, 22, 20, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
@@ -270,7 +270,7 @@
   }
 
   .mobile-menu-phone:hover {
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), 0 0 18px var(--brand-green-glow);
+    box-shadow: 0 0 18px var(--brand-green-glow);
   }
 
   .mobile-menu-overlay {
