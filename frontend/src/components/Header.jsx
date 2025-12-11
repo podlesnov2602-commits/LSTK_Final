@@ -11,7 +11,7 @@ const Header = () => {
 
   const menuItems = [
     { path: '/', label: 'Главная' },
-    { path: '#directions', label: 'Каталог', isAnchor: true },
+    { path: '#premium-directions', label: 'Каталог', isAnchor: true },
     { path: '/about', label: 'О нас' },
     { path: '/documents', label: 'Документы' },
     { path: '/contacts', label: 'Контакты' }
@@ -19,14 +19,16 @@ const Header = () => {
 
   const handleNavClick = (item) => {
     if (item.isAnchor) {
+      const anchorId = 'premium-directions';
+
       if (location.pathname !== '/') {
         navigate('/');
         setTimeout(() => {
-          const element = document.getElementById('directions');
+          const element = document.getElementById(anchorId);
           if (element) element.scrollIntoView({ behavior: 'smooth' });
         }, 120);
       } else {
-        const element = document.getElementById('directions');
+        const element = document.getElementById(anchorId);
         if (element) element.scrollIntoView({ behavior: 'smooth' });
       }
     }

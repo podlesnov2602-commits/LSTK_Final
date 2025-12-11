@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { MessageCircle, X } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { MessageCircle } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import './WhatsAppButton.css';
 
