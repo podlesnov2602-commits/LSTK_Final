@@ -475,4 +475,51 @@ section::before {
   .hero-inner {
     padding: 88px 0 120px;
   }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .production-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .production-visual {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  section {
+    padding: 80px 0;
+  }
+
+  .hero-section {
+    min-height: 80vh;
+  }
+
+  .hero-inner {
+    padding: 72px 0 96px;
+    gap: 14px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .directions-grid,
+  .premium-grid,
+  .production-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .direction-card,
+  .premium-card,
+  .contact-card {
+    min-height: 0;
+  }
 }
