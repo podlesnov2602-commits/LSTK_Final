@@ -1,287 +1,195 @@
-/* =======================
-      PREMIUM CLEAN FOOTER
-======================= */
+/* Premium Metal Footer */
 
 .site-footer {
-  background: var(--bg-footer);
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: #0a0a0a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 100px 0 48px;
-  margin-top: 0; /* ← УБРАЛ */
   position: relative;
 }
 
-/* Выровнять логотип по уровню остальных колонок */
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2.5fr 1fr 1fr 1.5fr;
-  gap: 96px;
-  margin-bottom: 72px;
-  align-items: center;
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(14, 191, 142, 0.6), transparent);
+  opacity: 0.6;
 }
 
-/* =======================
-        LEFT COLUMN
-======================= */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
+  gap: 72px;
+  margin-bottom: 64px;
+}
 
 .footer-column:first-child {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
-  padding-top: 0;
+  gap: 18px;
 }
 
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 0;
+  gap: 16px;
 }
 
-/* 🔥 Исправленный логотип футера */
 .footer-logo-icon {
-  height: 140px;
+  height: 120px;
   width: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0;
+  filter: drop-shadow(0 0 18px rgba(14, 191, 142, 0.16));
 }
-
-/* =======================
-       DESCRIPTION
-======================= */
 
 .footer-description {
-  color: #E5E5E5;
+  color: #d9d9d9;
   font-size: 15px;
-  line-height: 1.8;
+  line-height: 1.7;
   max-width: 360px;
-  font-weight: 500;
 }
-
-/* =======================
-      SOCIAL ICONS
-======================= */
 
 .footer-social {
   display: flex;
-  gap: 16px;
-  margin-top: 12px;
+  gap: 12px;
 }
 
 .footer-social-link {
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
-  background: transparent;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-primary);
-  transition: .2s ease;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  transition: 0.25s ease;
   text-decoration: none;
 }
 
 .footer-social-link:hover {
-  background: var(--accent-primary);
-  border-color: var(--accent-primary);
-  color: #fff;
-  transform: translateY(-2px);
+  border-color: rgba(14, 191, 142, 0.7);
+  box-shadow: 0 10px 26px rgba(14, 191, 142, 0.25);
+  color: #0ebf8e;
 }
 
-/* =======================
-       NAVIGATION
-======================= */
-
 .footer-heading {
-  font-size: 16px;
-  font-weight: 600;
-  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
 }
 
 .footer-nav {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
 }
 
 .footer-link {
-  color: #E5E5E5;
+  color: #d9d9d9;
   font-size: 15px;
   font-weight: 500;
   text-decoration: none;
-  transition: .3s ease;
   position: relative;
-}
-
-.footer-link:hover {
-  color: var(--accent-primary);
-  padding-left: 8px;
+  transition: 0.2s ease;
 }
 
 .footer-link::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--accent-primary);
-  transform: translateY(-50%);
-  transition: width .3s ease;
+  bottom: -4px;
+  width: 18px;
+  height: 1.5px;
+  background: #0ebf8e;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+  opacity: 0.75;
+}
+
+.footer-link:hover {
+  color: #0ebf8e;
 }
 
 .footer-link:hover::before {
-  width: 4px;
+  transform: scaleX(1);
 }
-
-/* =======================
-        CONTACTS
-======================= */
 
 .footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .footer-contact-item {
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  color: #E5E5E5;
+  color: #d9d9d9;
   font-size: 15px;
-  line-height: 1.7;
-  font-weight: 500;
   text-decoration: none;
-  transition: .3s ease;
+  transition: 0.2s ease;
 }
 
 .footer-contact-item svg {
-  color: var(--accent-primary);
+  color: #0ebf8e;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
 .footer-contact-item:hover {
-  color: var(--accent-primary);
+  color: #0ebf8e;
 }
 
-/* =======================
-          BOTTOM
-======================= */
-
 .footer-bottom {
-  padding-top: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
   text-align: center;
 }
 
 .footer-copyright {
-  color: #E5E5E5;
+  color: #d9d9d9;
   font-size: 14px;
-  font-weight: 500;
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
-/* =======================
-   PREMIUM MOBILE FOOTER
-======================= */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+  }
+}
 
 @media (max-width: 768px) {
-
-  /* Общий стиль — компактный */
   .site-footer {
-    padding: 35px 0 22px;
-    margin-top: 50px;
-    text-align: center;
+    padding: 56px 0 28px;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   .footer-column {
-    align-items: center !important;
-    text-align: center !important;
+    text-align: center;
+    align-items: center;
   }
 
-  /* 🔥 Исправленный мобильный логотип */
   .footer-logo-icon {
-    height: 110px !important;
-    margin: 0 0 20px !important;
+    height: 100px;
   }
 
   .footer-description {
-    max-width: 280px;
-    margin: 0 auto;
-    font-size: 13.5px;
-    line-height: 1.6;
-    opacity: 0.85;
+    max-width: 300px;
   }
 
-  /* Соцсети */
   .footer-social {
     justify-content: center;
-    gap: 10px;
-    margin-top: 6px;
-  }
-
-  .footer-social-link {
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.15);
-  }
-
-  /* Навигация */
-  .footer-heading {
-    font-size: 14px;
-    letter-spacing: 0.05em;
-  }
-
-  .footer-nav {
-    gap: 10px;
-    align-items: center;
-  }
-
-  .footer-link {
-    font-size: 14px;
-    opacity: 0.85;
-  }
-
-  /* Контакты */
-  .footer-contact {
-    align-items: center;
-    gap: 12px;
-  }
-
-  .footer-contact-item {
-    justify-content: center;
-    text-align: center;
-    font-size: 13.5px;
-    opacity: 0.9;
-  }
-
-  .footer-contact-item svg {
-    width: 18px;
-    height: 18px;
-    opacity: 0.9;
-  }
-
-  /* Нижняя строка */
-  .footer-bottom {
-    padding-top: 18px;
-  }
-
-  .footer-copyright {
-    font-size: 12.5px;
-    opacity: 0.6;
   }
 }
