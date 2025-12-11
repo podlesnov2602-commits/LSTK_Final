@@ -52,37 +52,52 @@ const Header = () => {
 
             {/* Навигация */}
             <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-
-              {/* Крестик мобильного меню */}
-              {mobileMenuOpen && (
-                <button 
-                  className="mobile-close-btn"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <X size={32} />
-                </button>
-              )}
-
-              {menuItems.map((item) =>
-                item.isAnchor ? (
+              <div className="mobile-menu-card">
+                {/* Крестик мобильного меню */}
+                {mobileMenuOpen && (
                   <button
-                    key={item.path}
-                    className="nav-link"
-                    onClick={() => handleNavClick(item)}
-                  >
-                    {item.label}
-                  </button>
-                ) : (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
+                    className="mobile-close-btn"
                     onClick={() => setMobileMenuOpen(false)}
+                    aria-label="Закрыть меню"
                   >
-                    {item.label}
-                  </Link>
-                )
-              )}
+                    <X size={32} />
+                  </button>
+                )}
+
+                <div className="nav-links">
+                  {menuItems.map((item) =>
+                    item.isAnchor ? (
+                      <button
+                        key={item.path}
+                        className="nav-link"
+                        onClick={() => handleNavClick(item)}
+                      >
+                        {item.label}
+                      </button>
+                    ) : (
+                      <Link
+                        key={item.path}
+                        to={item.path}
+                        className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    )
+                  )}
+                </div>
+
+                <div className="mobile-contacts">
+                  <p className="mobile-contacts__caption">Свяжитесь с нами</p>
+                  <a
+                    href={`tel:${siteConfig.contact.phoneRaw}`}
+                    className="phone-link mobile-menu-phone"
+                  >
+                    <Phone size={20} />
+                    <span>{siteConfig.contact.phone}</span>
+                  </a>
+                </div>
+              </div>
             </nav>
 
             {/* Кнопка телефона */}
