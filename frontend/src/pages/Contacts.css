@@ -18,7 +18,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(13, 13, 13, 0.9) 0%, rgba(13, 166, 111, 0.15) 100%);
+  background: linear-gradient(135deg, rgba(7, 16, 17, 0.85) 0%, rgba(0, 255, 157, 0.18) 100%);
 }
 
 .contacts-hero-content {
@@ -40,8 +40,8 @@
 
 /* Contact Info Section */
 .contact-info-section {
-  padding: 120px 0;
-  background: var(--bg-primary);
+  padding: 100px 0;
+  background: transparent;
 }
 
 .contact-info-grid {
@@ -51,20 +51,22 @@
 }
 
 .contact-info-card {
-  background: var(--bg-secondary);
+  background: rgba(12, 22, 23, 0.65);
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
-  padding: 40px 32px;
+  padding: 32px 28px;
   display: flex;
   align-items: center;
   gap: 24px;
   transition: all 0.3s ease;
   text-decoration: none;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .contact-info-card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent-primary);
+  border-color: rgba(0, 255, 157, 0.5);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
@@ -74,16 +76,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-bg);
-  color: var(--accent-primary);
+  background: rgba(12, 22, 23, 0.45);
+  color: var(--green);
   border-radius: 12px;
   flex-shrink: 0;
   transition: all 0.3s ease;
+  box-shadow: inset 0 0 8px rgba(0, 255, 157, 0.15);
 }
 
 .contact-info-card:hover .contact-info-icon {
-  background: var(--accent-primary);
-  color: var(--bg-primary);
+  background: var(--green);
+  color: #031915;
 }
 
 .contact-info-text h3 {
@@ -97,14 +100,16 @@
 
 /* Map Section */
 .map-section {
-  padding: 120px 0;
-  background: var(--bg-secondary);
+  padding: 100px 0;
+  background: transparent;
 }
 
 .map-container {
   border: 1px solid var(--border-subtle);
   border-radius: 16px;
   overflow: hidden;
+  background: rgba(12, 22, 23, 0.45);
+  backdrop-filter: blur(6px);
 }
 
 .map-container iframe {
@@ -113,8 +118,8 @@
 
 /* CTA Section */
 .contacts-cta-section {
-  padding: 120px 0;
-  background: var(--bg-primary);
+  padding: 100px 0;
+  background: transparent;
 }
 
 .contacts-cta-content {
