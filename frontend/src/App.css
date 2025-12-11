@@ -1,19 +1,20 @@
 /* Premium Monolithic Theme */
 
 :root {
-  --green: #00ff9d;
-  --green-dark: #009f66;
-  --bg-main: #071011;
-  --bg-secondary: #0a1b1d;
+  --brand-green: #17e7a4;
+  --brand-green-dark: #0f9e72;
+  --brand-green-glow: rgba(23, 231, 164, 0.35);
+  --bg-main: #020b0a;
+  --bg-secondary: #031715;
   --bg-primary: transparent;
   --bg-tertiary: transparent;
-  --accent-primary: var(--green);
+  --accent-primary: var(--brand-green);
   --accent-bg: rgba(12, 22, 23, 0.45);
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.75);
   --text-muted: rgba(255, 255, 255, 0.6);
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --accent-gradient: linear-gradient(135deg, var(--green), var(--green-dark));
+  --accent-gradient: linear-gradient(135deg, var(--brand-green), var(--brand-green-dark));
 }
 
 * {
@@ -26,7 +27,7 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(180deg, #071011 0%, #0a1b1d 100%);
+  background: linear-gradient(180deg, #020b0a 0%, #031715 100%);
   background-attachment: fixed;
   color: var(--text-primary);
   line-height: 1.55;
@@ -106,8 +107,8 @@ h3,
 .h1,
 .h2,
 .h3 {
-  color: #ffffff;
-  text-shadow: 0 0 6px rgba(0, 255, 157, 0.3);
+  color: var(--brand-green);
+  text-shadow: 0 0 12px var(--brand-green-glow);
 }
 
 p,
@@ -122,8 +123,8 @@ div {
 .btn-primary,
 .btn-ghost,
 .btn-secondary {
-  background: var(--accent-gradient);
-  color: #000;
+  background: var(--brand-green);
+  color: #00110a;
   padding: 14px 24px;
   border-radius: 12px;
   font-size: 15px;
@@ -135,7 +136,7 @@ div {
   align-items: center;
   gap: 10px;
   letter-spacing: 0.04em;
-  box-shadow: 0 4px 16px rgba(0, 255, 157, 0.35);
+  box-shadow: 0 0 24px var(--brand-green-glow);
   border: none;
 }
 
@@ -143,14 +144,15 @@ div {
 .btn-ghost:hover,
 .btn-secondary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(0, 255, 157, 0.55);
+  background: var(--brand-green-dark);
+  box-shadow: 0 0 32px var(--brand-green-glow);
 }
 
 .phone-link {
-  background: rgba(12, 22, 23, 0.55);
-  color: #fff;
-  border-radius: 12px;
-  padding: 14px 24px;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--brand-green);
+  border-radius: 14px;
+  padding: 10px 16px;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
@@ -160,14 +162,15 @@ div {
   align-items: center;
   gap: 10px;
   letter-spacing: 0.04em;
-  box-shadow: inset 0 0 8px rgba(0, 255, 157, 0.12), 0 8px 24px rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 0 8px var(--brand-green-glow), 0 8px 24px rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--brand-green);
   backdrop-filter: blur(8px);
 }
 
 .phone-link:hover {
   transform: translateY(-1px);
-  box-shadow: inset 0 0 8px rgba(0, 255, 157, 0.18), 0 12px 28px rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0 0 10px var(--brand-green-glow), 0 12px 28px rgba(0, 0, 0, 0.45);
+  background: rgba(23, 231, 164, 0.15);
 }
 
 /* Container */
@@ -232,7 +235,7 @@ section::after {
   background: rgba(12, 22, 23, 0.45) !important;
   padding: 16px !important;
   border-radius: 12px !important;
-  box-shadow: inset 0 0 8px rgba(0, 255, 157, 0.15) !important;
+  box-shadow: inset 0 0 8px var(--brand-green-glow) !important;
 }
 
 .grid-spacing {
