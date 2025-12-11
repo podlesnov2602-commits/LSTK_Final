@@ -1,21 +1,10 @@
 /* Premium Metal Footer */
 
 .site-footer {
-  background: #0a0a0a;
+  background: var(--bg-footer);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 100px 0 48px;
   position: relative;
-}
-
-.site-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(14, 191, 142, 0.6), transparent);
-  opacity: 0.6;
 }
 
 .footer-grid {
@@ -58,8 +47,8 @@
 .footer-social-link {
   width: 46px;
   height: 46px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  background: rgba(12, 22, 23, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.08);
   display: grid;
   place-items: center;
@@ -69,9 +58,9 @@
 }
 
 .footer-social-link:hover {
-  border-color: rgba(14, 191, 142, 0.7);
-  box-shadow: 0 10px 26px rgba(14, 191, 142, 0.25);
-  color: #0ebf8e;
+  border-color: rgba(0, 255, 157, 0.6);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 16px rgba(0, 255, 157, 0.3);
+  color: var(--accent-primary);
 }
 
 .footer-heading {
@@ -105,7 +94,7 @@
   bottom: -4px;
   width: 18px;
   height: 1.5px;
-  background: #0ebf8e;
+  background: var(--accent-primary);
   transform-origin: left;
   transform: scaleX(0);
   transition: transform 0.2s ease;
@@ -113,7 +102,7 @@
 }
 
 .footer-link:hover {
-  color: #0ebf8e;
+  color: var(--accent-primary);
 }
 
 .footer-link:hover::before {
@@ -137,7 +126,7 @@
 }
 
 .footer-contact-item svg {
-  color: #0ebf8e;
+  color: var(--accent-primary);
   flex-shrink: 0;
   margin-top: 1px;
 }
