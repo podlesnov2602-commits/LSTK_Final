@@ -24,9 +24,9 @@ const Home = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
 
   const heroImages = [
-    'https://images.unsplash.com/photo-1563453392212-326f5e854473?q=80&fm=jpg',
-    'https://images.unsplash.com/photo-1529429617124-aee0bd45f6c0?q=80&fm=jpg',
-    'https://images.unsplash.com/photo-1503389152951-9f343605f61e?q=80&fm=jpg'
+    'linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(26,26,26,0.9) 40%, rgba(13,95,70,0.65) 100%)',
+    'radial-gradient(circle at 20% 30%, rgba(20,153,110,0.18), transparent 38%), linear-gradient(120deg, rgba(10,10,10,0.94) 10%, rgba(30,30,30,0.9) 55%, rgba(20,153,110,0.32) 100%)',
+    'linear-gradient(120deg, rgba(10,10,10,0.96) 0%, rgba(20,20,20,0.9) 35%, rgba(14,191,142,0.28) 100%)'
   ];
 
   React.useEffect(() => {

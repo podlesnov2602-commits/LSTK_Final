@@ -1,29 +1,25 @@
-/* Premium Dark Theme with Green Accent - Fabrika Karkasov Alatau */
+/* Premium Metalworks Core Theme */
 
 :root {
-  /* Premium Dark Theme - Brand Colors */
-  --bg-primary: #0E0F10;
-  --bg-secondary: #141618;
-  --bg-tertiary: #1A1C1E;
-  --bg-header: #0E0F10;
-  --bg-footer: #0E0F10;
-  
-  /* Text Hierarchy */
-  --text-primary: #FFFFFF;
-  --text-secondary: #E5E5E5;
-  --text-muted: #E5E5E5;
-  --text-links: #E5E5E5;
-  
-  /* Border System */
-  --border-primary: rgba(255, 255, 255, 0.08);
-  --border-subtle: rgba(255, 255, 255, 0.05);
-  
-  /* Brand Green - Premium */
-  --accent-primary: #0A7A5F;
-  --accent-hover: #0C8D6E;
-  --accent-pressed: #08664F;
-  --accent-bg: rgba(10, 122, 95, 0.1);
-  --accent-glow: rgba(10, 122, 95, 0.2);
+  /* Brand palette */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #2e2e2e;
+  --bg-header: rgba(10, 10, 10, 0.92);
+  --bg-footer: #0a0a0a;
+
+  --text-primary: #ffffff;
+  --text-secondary: #d9d9d9;
+  --text-muted: #b8b8b8;
+  --text-links: #ffffff;
+
+  --border-primary: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+
+  --accent-primary: #0ebf8e;
+  --accent-secondary: #14996e;
+  --accent-gradient: linear-gradient(135deg, #0d5f46, #14996e);
+  --accent-glow: rgba(14, 191, 142, 0.35);
 }
 
 * {
@@ -36,36 +32,31 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--bg-primary);
+  background: radial-gradient(circle at 20% 20%, rgba(20, 153, 110, 0.12), transparent 30%),
+    radial-gradient(circle at 80% 0%, rgba(14, 191, 142, 0.1), transparent 28%),
+    linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 50%, #0a0a0a 100%);
   color: var(--text-primary);
   line-height: 1.7;
   position: relative;
 }
 
-/* Premium Noise Texture - 4% */
+/* Industrial film grain */
 body::before {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.28'/%3E%3C/svg%3E");
   opacity: 0.04;
   pointer-events: none;
   z-index: 1;
 }
 
-/* Subtle Vignette */
 body::after {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.3) 100%);
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.32) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -78,44 +69,44 @@ body::after {
   z-index: 2;
 }
 
-/* Typography - Premium Clean */
+/* Typography */
 .display-lg {
   font-size: 74px;
-  font-weight: 600;
-  line-height: 1.1;
+  font-weight: 700;
+  line-height: 1.05;
   letter-spacing: -0.02em;
 }
 
 .display-md {
   font-size: 58px;
-  font-weight: 600;
-  line-height: 1.15;
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: -0.015em;
 }
 
 .display-sm {
   font-size: 50px;
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 1.18;
   letter-spacing: -0.01em;
 }
 
 .h1 {
   font-size: 36px;
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 700;
+  line-height: 1.2;
   letter-spacing: -0.01em;
 }
 
 .h2 {
   font-size: 26px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.35;
 }
 
 .h3 {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.4;
 }
 
@@ -133,58 +124,61 @@ body::after {
   color: var(--text-secondary);
 }
 
-/* Buttons - Premium Clean Style */
+/* Buttons */
 .btn-primary {
-  background: var(--accent-primary);
-  color: #FFFFFF;
-  border: none;
-  border-radius: 8px;
+  background: var(--accent-gradient);
+  color: #0a0a0a;
+  border: 1px solid var(--border-primary);
+  border-radius: 38px;
   padding: 16px 32px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.28s ease;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   letter-spacing: 0.02em;
+  box-shadow: 0 14px 36px rgba(20, 153, 110, 0.22), 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
   transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(20, 153, 110, 0.26), 0 1px 0 rgba(255, 255, 255, 0.08);
+  filter: saturate(1.1);
 }
 
 .btn-primary:active {
   transform: translateY(0);
-  background: var(--accent-pressed);
+  box-shadow: 0 10px 28px rgba(20, 153, 110, 0.16);
 }
 
 .btn-secondary {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.04);
   color: var(--text-primary);
   border: 1px solid var(--border-primary);
-  border-radius: 8px;
+  border-radius: 38px;
   padding: 15px 31px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.28s ease;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   letter-spacing: 0.02em;
+  backdrop-filter: blur(6px);
 }
 
 .btn-secondary:hover {
-  border-color: var(--accent-primary);
+  border-color: rgba(14, 191, 142, 0.6);
   color: var(--accent-primary);
-  background: var(--accent-bg);
+  box-shadow: 0 10px 30px rgba(14, 191, 142, 0.2);
 }
 
-/* Container - Premium Grid */
+/* Container */
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -195,37 +189,20 @@ body::after {
   .container {
     padding: 0 16px;
   }
-  
+
   .display-lg {
     font-size: 36px;
   }
-  
+
   .display-md {
     font-size: 32px;
   }
-  
+
   .display-sm {
     font-size: 28px;
   }
-}
 
-/* Animations */
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fade-in-up 0.6s ease-out;
-}
-
-/* Smooth scroll */
-html {
-  scroll-behavior: smooth;
+  .h1 { font-size: 30px; }
+  .h2 { font-size: 24px; }
+  .h3 { font-size: 20px; }
 }

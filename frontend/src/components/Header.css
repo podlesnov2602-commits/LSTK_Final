@@ -1,241 +1,203 @@
-/* =======================
-      PREMIUM HEADER
-======================= */
+/* Premium Metal Header */
 
 .site-header {
-  background: #000;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: 88px;
+  height: 90px;
   display: flex;
   align-items: center;
+  background: var(--bg-header);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
 }
 
-/* Контейнер */
 .site-header .container {
-  max-width: 1750px;
+  max-width: 1400px;
   width: 100%;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
   margin: 0 auto;
+  padding: 0 32px;
 }
-
-/* =======================
-      HEADER CONTENT
-======================= */
 
 .header-content {
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 88px;
-  gap: 40px;
-  padding: 0 24px;
+  gap: 36px;
+  height: 90px;
 }
-
-/* =======================
-          LOGO
-======================= */
 
 .logo {
   display: flex;
   align-items: center;
 }
 
-/* 🔥 Исправленный размер логотипа */
 .logo-icon {
-  height: 70px;           /* Было 200px – ломало всё */
+  height: 68px;
   width: auto;
   object-fit: contain;
-  display: block;
+  filter: drop-shadow(0 0 18px rgba(14, 191, 142, 0.18));
 }
-
-/* =======================
-       NAVIGATION
-======================= */
 
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
-  margin-left: -20px;
-  flex-shrink: 0;
+  gap: 28px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* Премиальное меню */
 .nav-link {
   position: relative;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: .05em;
-  height: 88px;
-  display: flex;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  height: 90px;
+  display: inline-flex;
   align-items: center;
-  cursor: pointer;
-  transition: color .25s ease;
+  padding: 0 2px;
+  transition: color 0.2s ease;
 }
 
-/* Активная линия */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #0ebf8e;
+  border-radius: 999px;
+  transition: width 0.2s ease, opacity 0.2s ease;
+  opacity: 0;
+}
+
 .nav-link.active::after {
-  content: "";
-  position: absolute;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 28px;
-  height: 3px;
-  background: var(--accent-primary);
-  border-radius: 999px;
-}
-
-/* Hover линия */
-.nav-link:hover::after {
-  content: "";
-  position: absolute;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 26px;
-  height: 3px;
-  background: var(--accent-primary);
-  opacity: .45;
-  border-radius: 999px;
+  width: 22px;
+  opacity: 1;
 }
 
 .nav-link:hover {
-  color: var(--accent-primary);
+  color: #0ebf8e;
 }
 
-/* =======================
-     PHONE BUTTON (RIGHT)
-======================= */
+.nav-link:hover::after {
+  width: 22px;
+  opacity: 0.7;
+}
 
 .phone-link {
   margin-left: auto;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 24px;
-  background: var(--accent-primary);
-  border-radius: 10px;
-  color: #fff;
-  font-size: 15px;
-  font-weight: 600;
-  transition: .25s ease;
+  padding: 12px 22px;
+  border-radius: 38px;
+  background: var(--accent-gradient);
+  color: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: 0 12px 28px rgba(20, 153, 110, 0.24);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  text-decoration: none;
 }
 
 .phone-link:hover {
-  background: var(--accent-hover);
   transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(20, 153, 110, 0.3);
 }
-
-/* =======================
-      MOBILE TOGGLE
-======================= */
 
 .mobile-menu-toggle {
   display: none;
   background: none;
   border: none;
-  color: #fff;
+  color: #ffffff;
 }
 
-/* Tablet */
 @media (max-width: 1024px) {
-  .main-nav { gap: 22px; }
-  .logo-icon { height: 60px; }  /* компактно для планшетов */
-}
+  .header-content {
+    gap: 18px;
+  }
 
-/* =======================
-      MOBILE VERSION
-======================= */
+  .main-nav {
+    gap: 18px;
+  }
+
+  .logo-icon {
+    height: 62px;
+  }
+}
 
 @media (max-width: 768px) {
-
-  .site-header { height: 64px; }
+  .site-header {
+    height: 72px;
+  }
 
   .header-content {
-    height: 64px;
-    padding: 0 16px;
-    justify-content: space-between !important;
+    height: 72px;
+    padding: 0 8px;
+    justify-content: space-between;
   }
 
-  /* 🔥 Мобильный логотип */
   .logo-icon {
-    height: 55px !important;
-    width: auto !important;
-    object-fit: contain !important;
+    height: 58px;
   }
 
-  /* Бургер справа */
+  .phone-link {
+    display: none;
+  }
+
   .mobile-menu-toggle {
     display: block;
-    margin-left: auto !important;
+    margin-left: auto;
   }
 
-  /* Мобильное меню */
   .main-nav {
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: #000;
+    inset: 0;
     flex-direction: column;
     padding-top: 120px;
+    background: rgba(10, 10, 10, 0.96);
+    backdrop-filter: blur(6px);
     gap: 0;
     transform: translateX(100%);
-    transition: .3s ease;
+    transition: transform 0.3s ease;
     height: 100vh;
-    z-index: 99999;
+    z-index: 1200;
   }
 
   .main-nav.mobile-open {
     transform: translateX(0);
   }
 
-  /* Ссылки в мобильном меню */
   .nav-link {
-    font-size: 22px;
-    padding: 18px 0;
     height: auto;
+    padding: 18px 0;
+    font-size: 18px;
   }
 
   .nav-link::after,
-  .nav-link.active::after,
-  .nav-link:hover::after {
-    display: none !important;
-  }
-
-  /* Убираем телефон */
-  .phone-link {
+  .nav-link.active::after {
     display: none;
   }
-}
 
-/* =======================
-  MOBILE CLOSE BUTTON
-======================= */
+  .mobile-close-btn {
+    position: absolute;
+    top: 28px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    z-index: 1300;
+  }
 
-.mobile-close-btn {
-  position: absolute;
-  top: 28px;
-  right: 28px;
-  background: none;
-  border: none;
-  color: #fff;
-  z-index: 999999;
-}
-
-.mobile-close-btn svg {
-  width: 32px;
-  height: 32px;
-}
-
-/* =======================
-  DISABLE emergent overlay
-======================= */
-.mobile-menu-overlay {
-  display: none !important;
+  .mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    z-index: 1100;
+  }
 }
