@@ -1,130 +1,196 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Shield, Clock, Award, Truck, CheckCircle } from 'lucide-react';
+import {
+  ArrowRight,
+  Zap,
+  Shield,
+  Clock,
+  Award,
+  Truck,
+  CheckCircle,
+} from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import './Home.css';
 
-// 🔥 Локальные изображения
 import capsulesImg from '../assets/capsules.png';
 import hangarsImg from '../assets/Hangars.jpeg';
 import garagesImg from '../assets/garages.jpeg';
-import productionImg from '../assets/production.jpg';   // <— ВАЖНО: новый импорт
+import productionImg from '../assets/production.jpg';
 
 const Home = () => {
-  const [currentSlide, setCurrentSlide] = React.useState(0);
-
-  const heroImages = [
-    'https://images.unsplash.com/photo-1649587345666-0f4ad68aa723?crop=entropy&cs=srgb&fm=jpg&q=85',
-    'https://images.unsplash.com/photo-1739599211500-74e04a9ca175?crop=entropy&cs=srgb&fm=jpg&q=85',
-    'https://images.unsplash.com/photo-1679430786992-8bb54d023e2f?crop=entropy&cs=srgb&fm=jpg&q=85',
-    'https://images.unsplash.com/photo-1655936072893-921e69ae9038?crop=entropy&cs=srgb&fm=jpg&q=85',
-    'https://images.unsplash.com/photo-1515100665905-d66c4dea74ae?crop=entropy&cs=srgb&fm=jpg&q=85'
-  ];
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((p) => (p + 1) % heroImages.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
   const directions = [
     {
-      title: 'Капсулы-модульные дома',
-      description: 'Модульные конструкции для жилья, офисов и бизнеса',
+      title: 'Капсульные модульные дома',
+      description: 'Премиальные модульные решения для проживания, бизнеса и отдыха.',
       link: '/capsules',
       image: capsulesImg,
+      meta: 'Модульные решения',
     },
     {
-      title: 'Ангары',
-      description: 'Промышленные ангары и складские помещения',
+      title: 'Ангары и склады',
+      description: 'Инженерные ЛСТК конструкции для промышленных и складских объектов.',
       link: '/hangars',
       image: hangarsImg,
+      meta: 'Промышленные объекты',
     },
     {
-      title: 'Гаражи-навесы',
-      description: 'Надёжные металлические гаражи и боксы',
+      title: 'Гаражи и навесы',
+      description: 'Надёжные металлические гаражи, навесы и каркасные решения.',
       link: '/garages',
       image: garagesImg,
-    }
+      meta: 'Частные и коммерческие объекты',
+    },
   ];
 
   const advantages = [
-    { icon: Clock, title: 'Быстрый монтаж', description: 'Установка конструкции за 2-5 дней' },
-    { icon: Shield, title: 'Заводское качество', description: 'Современное оборудование и контроль' },
-    { icon: Zap, title: 'Точная геометрия', description: 'Прецизионное производство на станках ЧПУ' },
-    { icon: Award, title: 'Гарантия', description: 'Полная гарантия на все изделия' },
-    { icon: Truck, title: 'Доставка', description: 'По всему Казахстану' },
-    { icon: CheckCircle, title: 'Сертификация', description: 'Все необходимые документы' }
+    {
+      icon: Clock,
+      title: 'Сжатые сроки',
+      description: 'Производство и монтаж в среднем за 2–5 рабочих дней.',
+    },
+    {
+      icon: Shield,
+      title: 'Заводское качество',
+      description: 'Современная линия ЛСТК и многоуровневый контроль.',
+    },
+    {
+      icon: Zap,
+      title: 'Точная геометрия',
+      description: 'ЧПУ-оборудование и инженерные расчеты под объект.',
+    },
+    {
+      icon: Award,
+      title: 'Гарантия',
+      description: 'Гарантийные обязательства на конструкции и монтаж.',
+    },
+    {
+      icon: Truck,
+      title: 'Логистика',
+      description: 'Организуем доставку и разгрузку по всему Казахстану.',
+    },
+    {
+      icon: CheckCircle,
+      title: 'Сертификация',
+      description: 'Сопроводительные документы, сертификаты и договорная база.',
+    },
   ];
 
   const documents = [
     { title: 'Сертификат соответствия', file: '#' },
-    { title: 'Договор поставки', file: '#' },
-    { title: 'Реквизиты компании', file: '#' }
+    { title: 'Типовой договор поставки', file: '#' },
+    { title: 'Реквизиты фабрики', file: '#' },
   ];
 
+  const handleScrollToDirections = () => {
+    const el = document.getElementById('directions');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleScrollToContacts = () => {
+    const el = document.getElementById('contacts');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const handleWhatsAppContact = () => {
-    const message = encodeURIComponent('Здравствуйте! Интересуюсь продукцией Фабрика Каркасов Алатау');
+    const message = encodeURIComponent(
+      'Здравствуйте! Интересуюсь продукцией Фабрики Каркасов Алатау по ЛСТК.'
+    );
     window.open(`${siteConfig.social.whatsapp}?text=${message}`, '_blank');
   };
 
   return (
     <div className="home-page">
-
       {/* HERO */}
       <section className="hero-section">
-        <div className="hero-carousel">
-          {heroImages.map((img, i) => (
-            <div
-              key={i}
-              className={`hero-slide ${i === currentSlide ? 'active' : ''}`}
-              style={{ backgroundImage: `url(${img})` }}
-            />
-          ))}
-        </div>
+        <div className="container hero-inner">
+          <div className="hero-content">
+            {/* Левая колонка */}
+            <div className="hero-left">
+              <div className="hero-eyebrow">
+                <span className="hero-dot" />
+                <span>Фабрика Каркасов Алатау — ЛСТК инженерного уровня</span>
+              </div>
 
-        <div className="hero-overlay" />
-
-        <div className="hero-content">
-          <div className="container">
-            <div className="hero-text">
-              <h1 className="hero-title display-lg">
-                Производство ЛСТК<br />в Казахстане
+              <h1 className="hero-title display-xl">
+                Инженерные ЛСТК конструкции
+                <br />
+                для дома и промышленности
               </h1>
 
               <p className="hero-subtitle body-lg">
-                Капсулы, ангары, гаражи — быстро, надёжно, заводское качество
+                Капсульные дома, ангары и гаражи из лёгких стальных конструкций. Заводская
+                геометрия, точные сроки и полный комплект документов.
               </p>
 
-              <button
-                className="btn-primary"
-                onClick={() =>
-                  document.getElementById('directions').scrollIntoView({ behavior: 'smooth' })
-                }
-              >
-                Выбрать направление
-                <ArrowRight size={20} />
-              </button>
+              <div className="hero-cta">
+                <button className="btn-primary" onClick={handleScrollToContacts}>
+                  Получить предложение
+                  <ArrowRight size={18} />
+                </button>
+
+                <button className="btn-secondary" onClick={handleScrollToDirections}>
+                  Смотреть направления
+                </button>
+              </div>
+
+              <div>
+                <div className="hero-caption">Основные направления</div>
+                <div className="hero-directions-list">
+                  <span className="hero-pill">Капсульные модульные дома</span>
+                  <span className="hero-pill">Ангары и склады</span>
+                  <span className="hero-pill">Гаражи и навесы</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Правая колонка */}
+            <div className="hero-right">
+              <div className="hero-panel">
+                <div className="hero-metric-row">
+                  <div className="hero-metric">
+                    <div className="hero-metric-label">Опыт</div>
+                    <div className="hero-metric-value">10+ лет</div>
+                    <div className="hero-metric-note">проектирования и монтажа ЛСТК</div>
+                  </div>
+                  <div className="hero-metric">
+                    <div className="hero-metric-label">География</div>
+                    <div className="hero-metric-value">Казахстан</div>
+                    <div className="hero-metric-note">поставка и монтаж по регионам</div>
+                  </div>
+                </div>
+
+                <div className="hero-divider" />
+
+                <div className="hero-list">
+                  <div className="hero-list-item">
+                    <span className="hero-list-bullet">●</span>
+                    <span>
+                      Заводское производство ЛСТК с использованием современного оборудования.
+                    </span>
+                  </div>
+                  <div className="hero-list-item">
+                    <span className="hero-list-bullet">●</span>
+                    <span>
+                      Конструкции под ключ — от инженерного расчёта до готового объекта.
+                    </span>
+                  </div>
+                  <div className="hero-list-item">
+                    <span className="hero-list-bullet">●</span>
+                    <span>
+                      Прозрачная смета, договор, график работ и комплект документов для сдачи.
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div className="hero-indicators">
-          {heroImages.map((_, i) => (
-            <button
-              key={i}
-              className={`hero-indicator ${i === currentSlide ? 'active' : ''}`}
-              onClick={() => setCurrentSlide(i)}
-            />
-          ))}
         </div>
       </section>
 
       {/* DIRECTIONS */}
       <section id="directions" className="directions-section">
         <div className="container">
-          <h2 className="section-title display-md">Выберите направление</h2>
+          <h2 className="section-title display-md">Направления ЛСТК</h2>
 
           <div className="directions-grid">
             {directions.map((item, i) => (
@@ -135,11 +201,13 @@ const Home = () => {
                     style={{ backgroundImage: `url(${item.image})` }}
                   />
                   <div className="direction-content">
+                    <div className="direction-meta">{item.meta}</div>
                     <h3 className="h2">{item.title}</h3>
                     <p className="body-md">{item.description}</p>
-                    <span className="btn-primary">
-                      Подробнее <ArrowRight size={18} />
-                    </span>
+                    <div className="direction-cta">
+                      Подробнее
+                      <ArrowRight size={16} />
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -151,7 +219,7 @@ const Home = () => {
       {/* ADVANTAGES */}
       <section className="advantages-section">
         <div className="container">
-          <h2 className="section-title display-md">Почему ЛСТК от нашей фабрики</h2>
+          <h2 className="section-title display-md">Почему выбирают нашу фабрику</h2>
 
           <div className="advantages-grid">
             {advantages.map((item, i) => {
@@ -159,7 +227,7 @@ const Home = () => {
               return (
                 <div key={i} className="advantage-card">
                   <div className="advantage-icon">
-                    <Icon size={28} />
+                    <Icon size={22} />
                   </div>
                   <h3 className="h3">{item.title}</h3>
                   <p className="body-md">{item.description}</p>
@@ -174,28 +242,29 @@ const Home = () => {
       <section className="production-section">
         <div className="container">
           <div className="production-content">
-
             <div
               className="production-image"
               style={{
-                backgroundImage: `url(${productionImg})`
+                backgroundImage: `url(${productionImg})`,
               }}
             />
-
             <div className="production-text">
-              <h2 className="display-sm">О производстве</h2>
+              <h2 className="display-sm">Производство ЛСТК под задачи объекта</h2>
               <p className="body-lg">
-                Фабрика Каркасов Алатау — современное производство лёгких стальных тонкостенных конструкций.
+                Фабрика Каркасов Алатау — это производственная площадка, специализирующаяся
+                на лёгких стальных тонкостенных конструкциях для частных и промышленных
+                объектов.
               </p>
               <p className="body-lg">
-                Используем высокоточное оборудование и строгий контроль качества.
+                Используем инженерные расчёты, металлопрокат проверенных поставщиков и
+                современное оборудование. Контролируем геометрию каждой партии, чтобы
+                монтаж на площадке проходил максимально быстро и предсказуемо.
               </p>
-
               <Link to="/about" className="btn-primary">
-                Узнать больше <ArrowRight size={20} />
+                О фабрике
+                <ArrowRight size={18} />
               </Link>
             </div>
-
           </div>
         </div>
       </section>
@@ -203,15 +272,21 @@ const Home = () => {
       {/* DOCUMENTS */}
       <section className="documents-teaser">
         <div className="container">
-          <h2 className="section-title display-md">Документы и сертификаты</h2>
+          <h2 className="section-title display-md">Документы и сопровождение</h2>
 
           <div className="documents-grid">
             {documents.map((doc, i) => (
               <div key={i} className="document-card">
                 <div className="document-icon">
-                  <svg width="48" height="48" stroke="currentColor" strokeWidth="2" fill="none">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                    <polyline points="14 2 14 8 20 8"></polyline>
+                  <svg
+                    width="40"
+                    height="40"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    fill="none"
+                  >
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
                   </svg>
                 </div>
                 <h3 className="h3">{doc.title}</h3>
@@ -221,32 +296,36 @@ const Home = () => {
 
           <div className="documents-cta">
             <Link to="/documents" className="btn-secondary">
-              Перейти в раздел документов <ArrowRight size={18} />
+              Перейти в раздел документов
+              <ArrowRight size={16} />
             </Link>
           </div>
         </div>
       </section>
 
       {/* CONTACT */}
-      <section className="contact-section">
+      <section id="contacts" className="contact-section">
         <div className="container">
           <div className="contact-content">
-
             <div className="contact-info">
-              <h2 className="display-sm">Свяжитесь с нами</h2>
+              <h2 className="display-sm">Связаться с фабрикой</h2>
               <p className="body-lg">
-                Готовы ответить на ваши вопросы и помочь с выбором конструкции.
+                Расскажите, какой объект вы планируете — подберём решение из ЛСТК, подготовим
+                ориентировочную смету и предложим оптимальную конфигурацию по срокам и бюджету.
               </p>
 
               <div className="contact-details">
                 <div className="contact-item">
-                  <strong>Телефон:</strong> {siteConfig.contact.phone}
+                  <strong>Телефон</strong>
+                  {siteConfig.contact.phone}
                 </div>
                 <div className="contact-item">
-                  <strong>Адрес:</strong> {siteConfig.contact.address}
+                  <strong>Адрес</strong>
+                  {siteConfig.contact.address}
                 </div>
                 <div className="contact-item">
-                  <strong>Режим работы:</strong> {siteConfig.contact.workingHours}
+                  <strong>Режим работы</strong>
+                  {siteConfig.contact.workingHours}
                 </div>
               </div>
 
@@ -266,11 +345,9 @@ const Home = () => {
                 loading="lazy"
               />
             </div>
-
           </div>
         </div>
       </section>
-
     </div>
   );
 };
