@@ -1,16 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
-  --bg-0: #0a0f10;
-  --bg-1: #0f1719;
-  --card: #111a1c;
-  --card-2: #152024;
-  --border: rgba(255, 255, 255, 0.08);
-  --text: #e7f0ec;
-  --muted: #9db2ac;
+  --bg-main: #0b1112;
+  --bg-surface: #0f181a;
+  --card: #121d20;
+  --card-2: #152226;
+  --border: rgba(231, 240, 236, 0.08);
+
+  --text: #e6eeea;
+  --text-primary: var(--text);
+  --text-secondary: #95a69f;
+  --muted: var(--text-secondary);
+
   --accent: #0ea273;
-  --accent-2: #0c8d63;
-  --accent-glow: 0 0 0 1px rgba(14, 162, 115, 0.28), 0 10px 30px rgba(14, 162, 115, 0.14);
+  --accent-glow: 0 0 0 1px rgba(14, 162, 115, 0.26), 0 10px 30px rgba(14, 162, 115, 0.14);
+  --brand-green: var(--accent);
+  --brand-green-dark: var(--accent);
+  --brand-green-soft: rgba(14, 162, 115, 0.16);
 
   --radius-lg: 14px;
   --radius-xl: 18px;
@@ -30,9 +36,9 @@
 body {
   margin: 0;
   font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at 18% 10%, rgba(36, 64, 60, 0.12), transparent 28%),
-    radial-gradient(circle at 78% 8%, rgba(30, 74, 66, 0.16), transparent 32%),
-    linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 100%);
+  background: radial-gradient(circle at 18% 10%, rgba(14, 162, 115, 0.08), transparent 26%),
+    radial-gradient(circle at 74% 12%, rgba(10, 33, 29, 0.32), transparent 36%),
+    linear-gradient(180deg, var(--bg-main) 0%, var(--bg-surface) 100%);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -103,7 +109,8 @@ p, span, li, label {
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
-  background: var(--accent-2);
+  background: var(--accent);
+  filter: brightness(1.02);
   box-shadow: 0 0 0 1px rgba(14, 162, 115, 0.55), 0 12px 32px rgba(14, 162, 115, 0.24);
   transform: translateY(-2px);
 }
