@@ -108,6 +108,20 @@
   transform: translateY(-1px);
 }
 
+.phone-icon-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(14, 162, 115, 0.12);
+  border: 1px solid rgba(14, 162, 115, 0.5);
+  color: var(--brand-green);
+  text-decoration: none;
+  box-shadow: none;
+}
+
 .mobile-menu-toggle {
   display: none;
   background: none;
@@ -144,6 +158,11 @@
     display: none;
   }
 
+  .phone-icon-button {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
   .mobile-menu-toggle {
     display: block;
     margin-left: auto;
@@ -153,9 +172,9 @@
     position: fixed;
     inset: 0;
     display: flex;
-    justify-content: flex-end;
-    align-items: stretch;
-    padding: 0;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 0 32px;
     background: transparent;
     height: 100vh;
     z-index: 1200;
@@ -171,34 +190,37 @@
 
   .mobile-menu-card {
     position: relative;
-    width: min(420px, 88%);
-    margin-left: auto;
-    background: rgba(0, 0, 0, 0.72);
-    box-shadow: -12px 0 30px rgba(0, 0, 0, 0.35), -2px 0 0 rgba(255, 255, 255, 0.04);
+    width: min(520px, 100%);
+    margin: 0;
+    background: linear-gradient(180deg, rgba(5, 9, 9, 0.9), rgba(5, 8, 8, 0.86));
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.38);
     border-left: 1px solid rgba(255, 255, 255, 0.06);
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    padding: 28px 24px 32px;
+    gap: 16px;
+    padding: 96px 20px 32px;
     height: 100%;
-    transform: translateX(100%);
-    transition: transform 0.32s ease;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.28s ease, opacity 0.28s ease;
   }
 
   .main-nav.mobile-open .mobile-menu-card {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 
   .nav-links {
     flex-direction: column;
     align-items: stretch;
-    gap: 6px;
+    gap: 14px;
+    width: 100%;
   }
 
   .nav-link {
     height: auto;
-    padding: 16px 14px;
-    font-size: 17px;
+    padding: 18px 14px;
+    font-size: 18px;
     letter-spacing: 0.08em;
     border-radius: 14px;
     display: flex;
@@ -222,8 +244,8 @@
 
   .mobile-close-btn {
     position: absolute;
-    top: 18px;
-    right: 14px;
+    top: 20px;
+    right: 16px;
     background: none;
     border: none;
     color: #ffffff;
@@ -234,7 +256,7 @@
     margin-top: auto;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     padding-top: 8px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }

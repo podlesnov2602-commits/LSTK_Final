@@ -106,6 +106,11 @@ const Header = () => {
               <span>{siteConfig.contact.phone}</span>
             </a>
 
+            {/* Компактная кнопка звонка для мобилы */}
+            <a href={`tel:${siteConfig.contact.phoneRaw}`} className="phone-icon-button" aria-label="Позвонить">
+              <Phone size={18} />
+            </a>
+
             {/* Бургер */}
             <button
               className="mobile-menu-toggle"

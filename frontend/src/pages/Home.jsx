@@ -9,7 +9,8 @@ import {
   Sparkles,
   Timer,
   Building2,
-  PhoneCall
+  PhoneCall,
+  MessageCircle
 } from 'lucide-react';
 
 import { siteConfig } from '../config/siteConfig';
@@ -117,8 +118,8 @@ const Home = () => {
             >
               Запросить расчёт <ArrowRight size={20} />
             </button>
-            <button className="btn-ghost" onClick={openWhatsApp}>
-              Консультация <PhoneCall size={18} />
+            <button className="btn-ghost hero-whatsapp" onClick={openWhatsApp}>
+              WhatsApp <MessageCircle size={18} />
             </button>
           </div>
 
@@ -267,7 +268,7 @@ const Home = () => {
             </div>
 
             <div className="contact-actions">
-              <button className="btn-primary" onClick={openWhatsApp}>
+              <button className="btn-primary contact-whatsapp" onClick={openWhatsApp}>
                 WhatsApp — ответим в течение 15 минут
               </button>
               <Link to="/contacts" className="btn-ghost">
