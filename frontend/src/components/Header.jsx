@@ -9,6 +9,15 @@ const Header = () => {
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const catalogLabels = {
+    '/capsules': 'Капсулы',
+    '/hangars': 'Ангары',
+    '/garages': 'Гаражи'
+  };
+
+  const isCatalogPage = Object.keys(catalogLabels).some((path) => location.pathname.startsWith(path));
+  const currentCatalog = Object.entries(catalogLabels).find(([path]) => location.pathname.startsWith(path))?.[1];
+
   const menuItems = [
     { path: '/', label: 'Главная' },
     { path: '#premium-directions', label: 'Каталог', isAnchor: true },
@@ -86,6 +95,16 @@ const Header = () => {
                     )
                   )}
                 </div>
+
+                {isCatalogPage && (
+                  <div className="catalog-indicator" aria-label="Вы в каталоге">
+                    <span className="catalog-dot" />
+                    <div className="catalog-meta">
+                      <span className="catalog-label">Каталог</span>
+                      <span className="catalog-current">{currentCatalog || 'Раздел продукции'}</span>
+                    </div>
+                  </div>
+                )}
 
                 <div className="mobile-contacts">
                   <p className="mobile-contacts__caption">Свяжитесь с нами</p>

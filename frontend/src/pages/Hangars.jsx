@@ -94,6 +94,12 @@ const Hangars = () => {
     window.open(`${siteConfig.social.whatsapp}?text=${message}`, '_blank');
   };
 
+  const handleEmailRequest = () => {
+    const subject = encodeURIComponent('КП по ангарам и складам');
+    const body = encodeURIComponent('Укажите габариты, пролёт, нагрузки и регион — вышлем КП с расчётом.');
+    window.location.href = `mailto:${siteConfig.contact.email}?subject=${subject}&body=${body}`;
+  };
+
   return (
     <div className="product-page">
       <section className="product-hero product-hero-hangar">
@@ -168,6 +174,8 @@ const Hangars = () => {
         text="Обсудим размеры, пролёты и нагрузки — инженер ответит напрямую"
         primaryLabel="Написать в WhatsApp"
         primaryAction={handleWhatsAppClick}
+        secondaryLabel="Получить КП на почту"
+        secondaryAction={handleEmailRequest}
       />
     </div>
   );
