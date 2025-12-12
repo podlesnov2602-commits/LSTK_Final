@@ -88,10 +88,6 @@
   transition: transform 0.3s ease;
 }
 
-.gallery-item:hover {
-  transform: scale(1.03);
-}
-
 .gallery-caption {
   color: var(--text-primary);
   font-size: 15px;
@@ -130,11 +126,6 @@
   transition: all 0.3s ease;
   backdrop-filter: blur(8px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-}
-
-.config-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--brand-green);
 }
 
 .config-card h3 {
@@ -199,7 +190,9 @@
 /* Advantages */
 .advantages-section-product {
   padding: 60px 0;
-  background: transparent;
+  background: linear-gradient(180deg, rgba(11, 18, 19, 0.94) 0%, rgba(12, 22, 23, 0.96) 100%);
+  position: relative;
+  isolation: isolate;
 }
 
 .advantages-grid-product {
@@ -218,11 +211,6 @@
   border: 1px solid var(--card-border);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
   backdrop-filter: none;
-}
-
-.advantage-card-product:hover {
-  transform: translateY(-2px);
-  border-color: var(--brand-green);
 }
 
 .advantage-icon-circle {
@@ -252,26 +240,6 @@
   margin: 0;
 }
 
-.advantage-card-featured {
-  padding: 26px 22px;
-  border-color: rgba(55, 184, 155, 0.4);
-  background: linear-gradient(160deg, rgba(20, 42, 40, 0.85), rgba(13, 32, 33, 0.92));
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-}
-
-.advantage-card-featured h3 {
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.advantage-card-supporting {
-  opacity: 0.96;
-}
-
-.advantage-card-supporting h3 {
-  opacity: 0.9;
-}
-
 /* Pricing Section */
 .pricing-section {
   padding: 60px 0;
@@ -280,9 +248,10 @@
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
   margin-top: 32px;
+  justify-items: center;
 }
 
 .pricing-card {
@@ -292,12 +261,9 @@
   padding: 32px 24px;
   text-align: center;
   transition: 0.25s;
-}
-
-.pricing-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--brand-green);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
 .pricing-amount {
@@ -325,6 +291,14 @@
 .steps-section {
   padding: 64px 0 60px 0;
   background: transparent;
+}
+
+.steps-section .section-title {
+  color: var(--text-primary);
+}
+
+.steps-section .h3 {
+  color: var(--text-primary);
 }
 
 .steps-grid {
@@ -374,6 +348,10 @@
   gap: 18px;
 }
 
+.form-section .display-sm {
+  color: var(--text-primary);
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -393,6 +371,28 @@
 
 .form-textarea {
   resize: vertical;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .gallery-item:hover {
+    transform: scale(1.03);
+  }
+
+  .config-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--brand-green);
+  }
+
+  .advantage-card-product:hover {
+    transform: translateY(-2px);
+    border-color: var(--brand-green);
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--brand-green);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  }
 }
 
 /* Responsive */
