@@ -28,8 +28,8 @@
   border-radius: 12px;
   padding: 16px;
   cursor: pointer;
-  box-shadow: 0 0 24px var(--brand-green-glow);
-  transition: all 0.3s ease;
+  box-shadow: 0 0 12px var(--brand-green-soft);
+  transition: all 0.25s ease;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -40,7 +40,7 @@
 
 .whatsapp-float-btn:hover {
   background: var(--brand-green-dark);
-  box-shadow: 0 0 32px var(--brand-green-glow);
+  box-shadow: 0 0 18px var(--brand-green-soft);
   transform: translateY(-2px);
 }
 

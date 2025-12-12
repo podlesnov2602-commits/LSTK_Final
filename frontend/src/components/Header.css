@@ -1,4 +1,4 @@
-/* Premium Metal Header */
+/* Industrial Premium Header */
 
 .site-header {
   position: sticky;
@@ -7,10 +7,10 @@
   height: 86px;
   display: flex;
   align-items: center;
-  background: rgba(12, 22, 23, 0.55);
+  background: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  box-shadow: none;
 }
 
 .site-header .container {
@@ -36,7 +36,7 @@
   height: 62px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 14px var(--brand-green-glow));
+  filter: none;
 }
 
 .main-nav {
@@ -63,7 +63,7 @@
   content: '';
   position: absolute;
   left: 50%;
-  bottom: 16px;
+  bottom: 12px;
   transform: translateX(-50%);
   width: 0;
   height: 2px;
@@ -93,11 +93,19 @@
 
 .phone-link {
   margin-left: auto;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--brand-green);
-  backdrop-filter: blur(8px);
-  box-shadow: inset 0 0 8px var(--brand-green-glow), 0 8px 24px rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  padding: 10px 18px;
   color: var(--brand-green);
+  font-weight: 600;
+  transition: 0.25s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.02em;
+  box-shadow: none;
 }
 
 .nav-links {
@@ -116,9 +124,9 @@
 }
 
 .phone-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 14px var(--brand-green-soft);
   transform: translateY(-1px);
-  box-shadow: inset 0 0 10px var(--brand-green-glow), 0 12px 28px rgba(0, 0, 0, 0.45);
-  background: rgba(23, 231, 164, 0.15);
 }
 
 .mobile-menu-toggle {
@@ -186,7 +194,7 @@
     position: relative;
     width: min(420px, 88%);
     margin-left: auto;
-    background: rgba(12, 22, 23, 0.86);
+    background: rgba(0, 0, 0, 0.72);
     box-shadow: -12px 0 30px rgba(0, 0, 0, 0.35), -2px 0 0 rgba(255, 255, 255, 0.04);
     border-left: 1px solid rgba(255, 255, 255, 0.06);
     display: flex;
@@ -217,15 +225,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(12, 22, 23, 0.6);
+    background: rgba(0, 0, 0, 0.45);
     border: 1px solid rgba(255, 255, 255, 0.06);
   }
 
   .nav-link.active,
   .nav-link:hover {
     color: var(--brand-green);
-    background: rgba(23, 231, 164, 0.08);
-    border-color: rgba(23, 231, 164, 0.18);
+    background: var(--brand-green-soft);
+    border-color: rgba(255, 255, 255, 0.12);
   }
 
   .nav-link::after,
@@ -264,19 +272,19 @@
     justify-content: center;
     width: 100%;
     margin-left: 0;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--brand-green);
     color: var(--brand-green);
   }
 
   .mobile-menu-phone:hover {
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), 0 0 18px var(--brand-green-glow);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), 0 0 14px var(--brand-green-soft);
   }
 
   .mobile-menu-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(7, 16, 17, 0.6);
+    background: rgba(2, 10, 9, 0.7);
     backdrop-filter: blur(8px);
     z-index: 1100;
   }
