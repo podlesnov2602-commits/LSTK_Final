@@ -176,7 +176,7 @@
     padding: 0 0 32px;
     background: transparent;
     height: 100vh;
-    z-index: 1200;
+    z-index: 2000;
     pointer-events: none;
     visibility: hidden;
     filter: none;
@@ -211,6 +211,7 @@
     font-family: inherit;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    pointer-events: auto;
   }
 
   .main-nav.mobile-open .mobile-menu-card {
@@ -300,6 +301,7 @@
     inset: 0;
     background: rgba(8, 16, 14, 0.48);
     backdrop-filter: none;
-    z-index: 1180;
+    z-index: 1400;
+    pointer-events: none;
   }
 }
