@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Check, ArrowRight, Ruler, Feather, Infinity, Move } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import './ProductPage.css';
@@ -13,12 +13,6 @@ import img5 from '../assets/Capsules5.jpg';
 import img6 from '../assets/Capsules6.jpg';
 
 const Capsules = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    message: ''
-  });
-
   useEffect(() => {
     const timer = setTimeout(() => {
       const gallerySection = document.querySelector('.gallery-section');
@@ -36,55 +30,48 @@ const Capsules = () => {
   }, []);
 
   const gallery = [
-    { image: img1, caption: 'Капсула' },
-    { image: img2, caption: 'БарнХаус' },
-    { image: img3, caption: 'Модульный дом 44м²' },
-    { image: img4, caption: 'Гостевой дом 29м²' },
-    { image: img5, caption: 'Модульный дом 29м²' },
-    { image: img6, caption: 'Гостевой дом 48м²' },
+    { image: img1, caption: 'Капсула', usage: 'под аренду' },
+    { image: img2, caption: 'БарнХаус', usage: 'под глэмпинг' },
+    { image: img3, caption: 'Модульный дом 44м²', usage: 'офис продаж / ресепшн' },
+    { image: img4, caption: 'Гостевой дом 29м²', usage: 'под глэмпинг' },
+    { image: img5, caption: 'Модульный дом 29м²', usage: 'под аренду' },
+    { image: img6, caption: 'Гостевой дом 48м²', usage: 'офис продаж / ресепшн' },
   ];
 
   const configurations = [
     {
       title: 'Каркас',
       subtitle: 'Металлический каркас ЛСТК',
-      features: ['Профиль ЛСТК', 'Крепеж', 'Чертежи']
+      features: ['Профиль ЛСТК', 'Крепеж', 'Чертежи'],
+      description: 'для тиража и самостоятельной отделки'
     },
     {
       title: 'Каркас + оболочка',
       subtitle: 'Каркас с внешней отделкой',
-      features: ['Каркас ЛСТК', 'Сэндвич-панели', 'Кровля', 'Окна/двери']
+      features: ['Каркас ЛСТК', 'Сэндвич-панели', 'Кровля', 'Окна/двери'],
+      description: 'быстрый запуск с гибкой начинкой'
     },
     {
       title: 'Готовая капсула',
       subtitle: 'Под ключ с отделкой',
-      features: ['Каркас', 'Отделка', 'Коммуникации', 'Мебель']
+      features: ['Каркас', 'Отделка', 'Коммуникации', 'Мебель'],
+      description: 'под ключ, установка и запуск'
     }
   ];
 
   const advantages = [
-    { icon: Ruler, title: 'Ровная геометрия' },
-    { icon: Feather, title: 'Лёгкий каркас' },
-    { icon: Infinity, title: 'Долговечность' },
-    { icon: Move, title: 'Мобильность' }
+    { icon: Infinity, title: 'Повторяемость и тираж' },
+    { icon: Move, title: 'Стабильные сроки' },
+    { icon: Ruler, title: 'Единый стандарт качества' },
+    { icon: Feather, title: 'Производственный контроль' }
   ];
 
   // ✔ Pricing (3 пункта)
   const pricing = [
     {
-      title: 'Капсула 18–24 м²',
-      price: 'от 5.9 млн ₽',
-      note: 'Точная цена рассчитывается индивидуально'
-    },
-    {
-      title: 'Модульный дом',
-      price: 'от 8.5 млн ₽',
-      note: 'Стоимость зависит от площади и комплектации'
-    },
-    {
-      title: 'Капсула PREMIUM 32 м²',
-      price: 'от 7.2 млн ₽',
-      note: 'Утепление, панорамное остекление, улучшенная отделка'
+      title: 'Расчёт стоимости',
+      price: 'Стоимость зависит от комплектации, тиража и задач проекта',
+      note: 'Соберём предложение под ваш сценарий использования'
     }
   ];
 
@@ -95,11 +82,8 @@ const Capsules = () => {
     { number: '04', title: 'Монтаж', description: 'Установка за 2–5 дней' }
   ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const message = encodeURIComponent(
-      `Запрос на расчёт: Капсулы\nИмя: ${formData.name}\nТелефон: ${formData.phone}\nСообщение: ${formData.message}`
-    );
+  const handleCtaClick = () => {
+    const message = encodeURIComponent('Запрос на расчёт: Капсулы — нужна консультация по проекту');
     window.open(`${siteConfig.social.whatsapp}?text=${message}`, '_blank');
   };
 
@@ -120,7 +104,7 @@ const Capsules = () => {
         <div className="container">
           <div className="product-hero-content">
             <h1 className="display-lg">Капсулы</h1>
-            <p className="body-lg">Модульные конструкции для жилья, офисов и бизнеса</p>
+            <p className="body-lg">Модульные решения для бизнеса и инвестиций</p>
           </div>
         </div>
       </section>
@@ -137,6 +121,7 @@ const Capsules = () => {
                   style={{ backgroundImage: `url(${item.image})` }}
                 />
                 <p className="gallery-caption">{item.caption}</p>
+                <p className="gallery-usage">{item.usage}</p>
               </div>
             ))}
           </div>
@@ -152,6 +137,7 @@ const Capsules = () => {
               <div key={index} className="config-card">
                 <h3 className="h2">{config.title}</h3>
                 <p className="config-subtitle">{config.subtitle}</p>
+                <p className="config-description">{config.description}</p>
                 <ul className="config-features">
                   {config.features.map((feature, idx) => (
                     <li key={idx}>
@@ -226,38 +212,13 @@ const Capsules = () => {
       {/* Form */}
       <section className="form-section">
         <div className="container">
-          <div className="form-container">
-            <h2 className="display-sm">Получить расчёт</h2>
-            <p className="body-lg">Оставьте заявку, и мы свяжемся с вами</p>
-            <form onSubmit={handleSubmit} className="contact-form">
-              <input
-                type="text"
-                placeholder="Ваше имя"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                required
-                className="form-input"
-              />
-              <input
-                type="tel"
-                placeholder="Телефон"
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                required
-                className="form-input"
-              />
-              <textarea
-                placeholder="Опишите ваш проект"
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="form-textarea"
-                rows="4"
-              />
-              <button type="submit" className="btn-primary">
-                Отправить запрос
-                <ArrowRight size={20} />
-              </button>
-            </form>
+          <div className="form-container compact-form">
+            <h2 className="display-sm">Запросить расчёт</h2>
+            <p className="body-lg">Выберите тип капсулы и цель — уточним детали в чате</p>
+            <button type="button" className="btn-primary" onClick={handleCtaClick}>
+              Запросить расчёт
+              <ArrowRight size={20} />
+            </button>
           </div>
         </div>
       </section>
