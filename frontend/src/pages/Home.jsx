@@ -24,9 +24,9 @@ const Home = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
 
   const heroImages = [
-    'linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(26,26,26,0.9) 40%, rgba(23,231,164,0.32) 100%)',
-    'radial-gradient(circle at 20% 30%, rgba(23,231,164,0.18), transparent 38%), linear-gradient(120deg, rgba(10,10,10,0.94) 10%, rgba(30,30,30,0.9) 55%, rgba(23,231,164,0.32) 100%)',
-    'linear-gradient(120deg, rgba(10,10,10,0.96) 0%, rgba(20,20,20,0.9) 35%, rgba(23,231,164,0.28) 100%)'
+    'linear-gradient(140deg, rgba(2,10,9,0.96) 0%, rgba(7,21,18,0.94) 55%, rgba(14,162,115,0.18) 100%)',
+    'radial-gradient(circle at 18% 28%, rgba(20,215,154,0.16), transparent 40%), linear-gradient(125deg, rgba(2,10,9,0.95) 12%, rgba(7,21,18,0.9) 64%, rgba(20,215,154,0.18) 100%)',
+    'linear-gradient(120deg, rgba(2,10,9,0.95) 0%, rgba(7,21,18,0.92) 40%, rgba(20,215,154,0.16) 100%)'
   ];
 
   React.useEffect(() => {

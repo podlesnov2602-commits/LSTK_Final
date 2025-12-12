@@ -1,7 +1,7 @@
-/* Premium Metal Footer */
+/* Industrial Premium Footer */
 
 .site-footer {
-  background: transparent;
+  background: var(--bg-primary);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: 64px 0 32px;
   position: relative;
@@ -30,11 +30,11 @@
 .footer-logo-icon {
   height: 88px;
   width: auto;
-  filter: drop-shadow(0 0 18px var(--brand-green-glow));
+  filter: none;
 }
 
 .footer-description {
-  color: #d9d9d9;
+  color: var(--text-secondary);
   font-size: 15px;
   line-height: 1.7;
   max-width: 360px;
@@ -49,18 +49,18 @@
   width: 46px;
   height: 46px;
   border-radius: 16px;
-  background: rgba(12, 22, 23, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--card-border);
   display: grid;
   place-items: center;
-  color: #ffffff;
+  color: var(--brand-green);
   transition: 0.25s ease;
   text-decoration: none;
 }
 
 .footer-social-link:hover {
   border-color: var(--brand-green);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35), 0 0 16px var(--brand-green-glow);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
   color: var(--brand-green);
 }
 
@@ -80,7 +80,7 @@
 }
 
 .footer-link {
-  color: #d9d9d9;
+  color: var(--text-secondary);
   font-size: 15px;
   font-weight: 500;
   text-decoration: none;
@@ -94,7 +94,7 @@
   left: 0;
   bottom: -4px;
   width: 18px;
-  height: 1.5px;
+  height: 2px;
   background: var(--brand-green);
   transform-origin: left;
   transform: scaleX(0);
@@ -120,7 +120,7 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  color: #d9d9d9;
+  color: var(--text-secondary);
   font-size: 15px;
   text-decoration: none;
   transition: 0.2s ease;
@@ -143,7 +143,7 @@
 }
 
 .footer-copyright {
-  color: #d9d9d9;
+  color: var(--text-secondary);
   font-size: 14px;
   opacity: 0.65;
 }

@@ -152,14 +152,14 @@
 }
 
 .advantage-card-product {
-  background: rgba(12, 22, 23, 0.65);
+  background: var(--card-bg);
   border-radius: 16px;
   padding: 24px 20px;
   text-align: center;
-  transition: 0.3s;
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(8px);
+  transition: 0.25s;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  backdrop-filter: none;
 }
 
 .advantage-card-product:hover {
@@ -170,14 +170,14 @@
 .advantage-icon-circle {
   width: 56px;
   height: 56px;
-  background: rgba(12, 22, 23, 0.45);
+  background: rgba(255, 255, 255, 0.04);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 0 8px var(--brand-green-glow);
+  border: 1px solid var(--card-border);
+  box-shadow: none;
 }
 
 .advantage-card-product h3 {
@@ -200,18 +200,18 @@
 }
 
 .pricing-card {
-  background: rgba(12, 22, 23, 0.65);
-  border: 1px solid var(--brand-green);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 16px;
   padding: 32px 24px;
   text-align: center;
-  transition: 0.3s;
+  transition: 0.25s;
 }
 
 .pricing-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   border-color: var(--brand-green);
-  box-shadow: 0 4px 16px var(--brand-green-glow);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
 }
 
 .pricing-amount {
