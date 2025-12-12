@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
-import { ArrowRight, DollarSign, Layers, Zap, RefreshCw } from 'lucide-react';
+import { DollarSign, Layers, Zap, RefreshCw } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
+import PriceAnchor from '../components/PriceAnchor';
+import LeadCTA from '../components/LeadCTA';
 import './ProductPage.css';
 
 const Hangars = () => {
@@ -135,32 +137,11 @@ const Hangars = () => {
         </div>
       </section>
 
-      {/* Typical Sizes */}
-      <section className="pricing-section alt-bg">
-        <div className="container">
-          <h2 className="section-title display-md">Типовые размеры и цены</h2>
-          <p className="pricing-subtitle">
-            Стоимость зависит от пролёта, высоты, региона и комплектации. Цены указаны ориентировочно
-          </p>
-          <div className="pricing-grid">
-            {typicalSizes.map((item, index) => (
-              <div key={index} className="pricing-card">
-                <h2>{item.size}</h2>
-                <div className="pricing-amount">{item.price}</div>
-                <p className="pricing-description">{item.note}</p>
-                <div className="pricing-markers">
-                  {item.markers.map((marker, markerIndex) => (
-                    <span key={markerIndex} className="pricing-marker">
-                      {marker}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="pricing-note">Индивидуальные размеры по запросу</p>
-        </div>
-      </section>
+      <PriceAnchor
+        title="Типовые размеры и цены"
+        subtitle="Стоимость зависит от пролёта, высоты, региона и комплектации. Цены указаны ориентировочно"
+        cards={typicalSizes}
+      />
 
       {/* Process */}
       <section className="steps-section-horizontal">
@@ -178,20 +159,12 @@ const Hangars = () => {
         </div>
       </section>
 
-      <section className="form-section cta-section">
-        <div className="container">
-          <div className="form-container form-container-soft cta-container">
-            <h2 className="display-sm">Рассчитать ангар под вашу задачу</h2>
-            <p className="body-lg cta-subtext">
-              Обсудим размеры, пролёты и нагрузки — инженер свяжется с вами напрямую
-            </p>
-            <button type="button" className="btn-primary btn-light cta-button" onClick={handleWhatsAppClick}>
-              Написать в WhatsApp
-              <ArrowRight size={20} />
-            </button>
-          </div>
-        </div>
-      </section>
+      <LeadCTA
+        title="Рассчитать ангар под вашу задачу"
+        text="Обсудим размеры, пролёты и нагрузки — инженер ответит напрямую"
+        primaryLabel="Написать в WhatsApp"
+        primaryAction={handleWhatsAppClick}
+      />
     </div>
   );
 };

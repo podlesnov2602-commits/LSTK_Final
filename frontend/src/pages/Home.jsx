@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 
 import { siteConfig } from '../config/siteConfig';
+import LeadCTA from '../components/LeadCTA';
 import './Home.css';
 
 import capsulesImg from '../assets/capsules.png';
@@ -298,6 +299,13 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <LeadCTA
+        title="Обсудить проект и получить расчёт"
+        text="Ответим и предложим решение под задачу"
+        primaryLabel="Написать в WhatsApp"
+        primaryAction={openWhatsApp}
+      />
     </div>
   );
 };
