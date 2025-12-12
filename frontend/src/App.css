@@ -219,7 +219,7 @@ section {
   background: transparent !important;
   border: none;
   box-shadow: none;
-  padding: 100px 0;
+  padding: 96px 0;
 }
 
 .block,
@@ -297,6 +297,6 @@ section::after {
   .h3 { font-size: 22px; }
 
   section {
-    padding: 70px 0;
+    padding: 64px 0;
   }
 }
