@@ -126,10 +126,7 @@ const Header = () => {
 
       {/* Затемнение фона при открытом меню */}
       {mobileMenuOpen && (
-        <div
-          className="mobile-menu-overlay"
-          onClick={() => setMobileMenuOpen(false)}
-        />
+        <div className="mobile-menu-overlay" />
       )}
     </>
   );
