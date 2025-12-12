@@ -14,9 +14,13 @@ const PriceAnchor = ({ title, subtitle, cards }) => {
           {cards.map((card, index) => (
             <div className="price-anchor-card" key={index}>
               <div className="price-anchor-top">
-                <span className="price-anchor-size">{card.title}</span>
+                <div className="price-anchor-heading">
+                  <span className="price-anchor-size">{card.title}</span>
+                  {card.metric && <span className="price-anchor-metric">{card.metric}</span>}
+                </div>
                 <div className="price-anchor-price">{card.price}</div>
               </div>
+              {card.scenario && <div className="price-anchor-scenario">{card.scenario}</div>}
               <p className="price-anchor-note">{card.note}</p>
               <div className="price-anchor-markers">
                 {card.markers.map((marker, markerIndex) => (
@@ -28,6 +32,9 @@ const PriceAnchor = ({ title, subtitle, cards }) => {
             </div>
           ))}
         </div>
+        <p className="price-anchor-footnote">
+          Цена ориентировочная и зависит от комплектации, региона и задачи
+        </p>
       </div>
     </section>
   );

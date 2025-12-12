@@ -1,13 +1,13 @@
 .lead-cta-section {
-  padding: 72px 0;
+  padding: 58px 0;
 }
 
 .lead-cta-card {
-  background: var(--surface-2);
-  border: 1px solid var(--card-border);
-  box-shadow: var(--card-shadow);
+  background: linear-gradient(160deg, rgba(12, 20, 21, 0.94) 0%, rgba(10, 16, 17, 0.94) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35);
   border-radius: 16px;
-  padding: 32px 36px;
+  padding: 28px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,9 +42,9 @@
 }
 
 .lead-cta-actions .btn-secondary {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.06);
   color: var(--text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: none;
 }
 
