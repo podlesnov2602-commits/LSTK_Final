@@ -26,15 +26,13 @@
 
 .product-hero-hangar {
   min-height: 260px;
-  padding: 68px 0;
+  padding: 62px 0;
   background:
-    linear-gradient(130deg, rgba(5, 12, 12, 0.94) 0%, rgba(10, 20, 21, 0.9) 36%, rgba(8, 26, 25, 0.86) 64%, rgba(4, 12, 14, 0.9) 100%),
-    radial-gradient(circle at 18% 32%, rgba(20, 146, 118, 0.18), transparent 30%),
-    radial-gradient(circle at 84% 18%, rgba(72, 108, 118, 0.22), transparent 38%),
-    linear-gradient(160deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 38%),
-    url('https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?auto=format&fit=crop&w=1600&q=80');
-  background-size: cover, 100% 100%, 100% 100%, 100% 100%, cover;
-  background-blend-mode: normal, screen, overlay, soft-light, normal;
+    linear-gradient(135deg, #080f11 0%, #0c171a 44%, #091214 100%),
+    radial-gradient(circle at 22% 30%, rgba(40, 120, 110, 0.16), transparent 34%),
+    radial-gradient(circle at 80% 18%, rgba(76, 118, 126, 0.2), transparent 40%),
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.04) 0, rgba(255, 255, 255, 0.04) 4px, transparent 4px, transparent 12px);
+  background-blend-mode: normal, screen, overlay, soft-light;
 }
 
 .product-hero-garage {
@@ -76,6 +74,14 @@
   color: var(--text-secondary);
 }
 
+.hero-subline {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
 /* Gallery Section */
 .gallery-section {
   padding: 64px 0;
@@ -103,13 +109,13 @@
 }
 
 .gallery-caption {
-  color: var(--text-primary);
+  color: var(--text-secondary);
   font-size: 15px;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: 0.01em;
   text-align: center;
   margin: 0;
-  opacity: 0.9;
+  opacity: 0.82;
   text-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
 }
 
@@ -205,7 +211,7 @@
 
 /* Advantages */
 .advantages-section-product {
-  padding: 60px 0;
+  padding: 54px 0;
   background: linear-gradient(180deg, rgba(11, 18, 19, 0.94) 0%, rgba(12, 22, 23, 0.96) 100%);
   position: relative;
   isolation: isolate;
@@ -219,14 +225,20 @@
 }
 
 .advantage-card-product {
-  background: var(--card-bg);
+  background: linear-gradient(180deg, rgba(16, 26, 28, 0.9) 0%, rgba(11, 20, 21, 0.94) 100%);
   border-radius: 16px;
-  padding: 22px 18px;
+  padding: 24px 20px;
   text-align: center;
   transition: 0.25s;
-  border: 1px solid var(--card-border);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.42);
   backdrop-filter: none;
+}
+
+.advantage-card-emphasis {
+  padding: 26px 22px;
+  border-color: rgba(14, 162, 115, 0.3);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.48);
 }
 
 .advantage-icon-circle {
@@ -243,22 +255,21 @@
 }
 
 .advantage-icon {
-  color: var(--text-primary);
-  stroke-width: 1.6;
-  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.82);
+  stroke-width: 1.5;
 }
 
 .advantage-card-product h3 {
   color: var(--text-primary);
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 650;
   letter-spacing: 0.01em;
   margin: 0;
 }
 
 /* Pricing Section */
 .pricing-section {
-  padding: 60px 0;
+  padding: 54px 0;
   background: transparent;
 }
 
@@ -282,11 +293,12 @@
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 16px;
-  padding: 32px 24px;
+  padding: 36px 28px;
   text-align: center;
   transition: 0.25s;
   width: 100%;
-  max-width: 680px;
+  max-width: 520px;
+  min-height: 180px;
   margin: 0 auto;
 }
 
@@ -299,7 +311,8 @@
 .pricing-note {
   color: var(--text-secondary);
   font-size: 15px;
-  margin: 0;
+  margin: 10px 0 0;
+  text-align: center;
 }
 
 /* DIVIDER BETWEEN SECTIONS */
@@ -323,7 +336,7 @@
 
 /* Horizontal Steps */
 .steps-section-horizontal {
-  padding: 72px 0;
+  padding: 62px 0;
   background: linear-gradient(180deg, rgba(8, 14, 15, 0.96) 0%, rgba(7, 14, 15, 0.9) 100%);
   position: relative;
   isolation: isolate;
@@ -348,17 +361,18 @@
 
 .step-card-horizontal h3 {
   color: var(--text-primary);
-  margin: 8px 0 10px 0;
-  line-height: 1.4;
-  font-size: 17px;
+  margin: 8px 0 12px 0;
+  line-height: 1.35;
+  font-size: 18px;
   letter-spacing: 0.01em;
+  font-weight: 700;
 }
 
 .step-card-horizontal p {
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.78);
   margin: 0;
-  line-height: 1.7;
-  font-size: 14px;
+  line-height: 1.75;
+  font-size: 15px;
 }
 
 .step-number-horizontal {
@@ -411,7 +425,7 @@
 
 /* Form Section */
 .form-section {
-  padding: 64px 0;
+  padding: 52px 0;
   background: transparent;
 }
 
@@ -430,6 +444,30 @@
   background: linear-gradient(160deg, rgba(9, 16, 17, 0.75) 0%, rgba(14, 26, 26, 0.7) 100%);
   border-color: rgba(14, 162, 115, 0.35);
   box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3);
+}
+
+.cta-section {
+  margin-top: -4px;
+}
+
+.cta-container {
+  text-align: center;
+  padding: 40px 32px;
+}
+
+.cta-subtext {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  font-weight: 700;
 }
 
 .compact-form {
