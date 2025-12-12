@@ -163,9 +163,9 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="premium-section">
+      <section className="aesthetic-section">
         <div className="container">
-          <div className="section-header">
+          <div className="section-header aesthetic-header">
             <div>
               <p className="eyebrow">Премиальный стандарт</p>
               <h2>Архитектурная эстетика и технологичность</h2>
@@ -175,51 +175,47 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="premium-grid">
-            {premiumBenefits.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div key={idx} className="premium-card">
-                  <div className="premium-icon">
-                    <Icon size={26} />
-                  </div>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
+          <div className="aesthetic-grid">
+            <div
+              className="factory-card"
+              style={{ backgroundImage: `linear-gradient(140deg, rgba(6, 10, 9, 0.82) 0%, rgba(9, 15, 13, 0.9) 60%, rgba(10, 22, 19, 0.94) 100%), url(${productionImg})` }}
+            >
+              <div className="factory-layer">
+                <div className="factory-badge">
+                  <Sparkles size={16} /> Фабрика Каркасов Алатау
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+                <h3>Технологичная фабрика полного цикла</h3>
+                <p>
+                  От проектирования до монтажа — мы управляем всей цепочкой, гарантируя предсказуемые сроки и премиальное исполнение конструкций.
+                </p>
+                <div className="production-highlights">
+                  {productionHighlights.map((item, index) => (
+                    <div key={index} className="highlight-item">
+                      <CheckCircle2 size={18} /> {item}
+                    </div>
+                  ))}
+                </div>
 
-      <section className="production-section">
-        <div className="container production-grid">
-          <div className="production-visual" style={{ backgroundImage: `url(${productionImg})` }}>
-            <div className="production-overlay">
-              <div className="production-badge">
-                <Sparkles size={16} /> Инновационное производство
+                <Link to="/about" className="btn-primary factory-action">
+                  Как мы производим <ArrowRight size={18} />
+                </Link>
               </div>
-              <div className="production-title">Фабрика Каркасов Алатау</div>
-              <p>Современные линии и цифровой контроль качества на каждом этапе.</p>
-            </div>
-          </div>
-
-          <div className="production-content">
-            <h2>Технологичная фабрика полного цикла</h2>
-            <p>
-              От проектирования до монтажа — мы управляем всей цепочкой, гарантируя предсказуемые сроки и премиальное исполнение конструкций.
-            </p>
-            <div className="production-highlights">
-              {productionHighlights.map((item, index) => (
-                <div key={index} className="highlight-item">
-                  <CheckCircle2 size={18} /> {item}
-                </div>
-              ))}
             </div>
 
-            <Link to="/about" className="btn-primary">
-              Как мы производим <ArrowRight size={18} />
-            </Link>
+            <div className="premium-quad">
+              {premiumBenefits.map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div key={idx} className="premium-card">
+                    <div className="premium-icon">
+                      <Icon size={26} />
+                    </div>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
