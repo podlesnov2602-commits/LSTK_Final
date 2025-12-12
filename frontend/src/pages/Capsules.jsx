@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
-import { Check, ArrowRight, Ruler, Feather, Infinity, Move } from 'lucide-react';
+import { Check, Ruler, Feather, Infinity, Move } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
+import PriceAnchor from '../components/PriceAnchor';
+import LeadCTA from '../components/LeadCTA';
 import './ProductPage.css';
 
 // Локальные изображения
@@ -65,12 +67,24 @@ const Capsules = () => {
     { icon: Feather, title: 'Производственный контроль' }
   ];
 
-  // ✔ Pricing (3 пункта)
-  const pricing = [
+  const pricingCards = [
     {
-      title: 'Расчёт стоимости',
-      price: 'Типовые проекты начинаются от ориентировочного бюджета в ₸',
-      note: 'Точная стоимость рассчитывается под комплектацию, тираж и сценарий использования'
+      title: 'Капсула 18–24 м²',
+      price: 'от 6.8 млн ₸',
+      note: 'Базовая конфигурация под глэмпинг и аренду',
+      markers: ['Тёплый контур + инженерия', 'Тираж для быстрой окупаемости', 'Монтаж за 2–5 дней']
+    },
+    {
+      title: 'Капсула 29–32 м²',
+      price: 'от 9.4 млн ₸',
+      note: 'Базовая комплектация под офис/аренду',
+      markers: ['Панорамное остекление и отделка', 'Готовность к подключению', 'Подходит для круглогодичной эксплуатации']
+    },
+    {
+      title: 'Модуль 44–48 м²',
+      price: 'от 13.5 млн ₸',
+      note: 'Расширенная комплектация под офис или ресепшн',
+      markers: ['Полный комплект инженерии', 'Свободная планировка под задачу', 'Поставим и запустим под ключ']
     }
   ];
 
@@ -84,6 +98,12 @@ const Capsules = () => {
   const handleCtaClick = () => {
     const message = encodeURIComponent('Запрос на расчёт: Капсулы — нужна консультация по проекту');
     window.open(`${siteConfig.social.whatsapp}?text=${message}`, '_blank');
+  };
+
+  const handleEmailRequest = () => {
+    const subject = encodeURIComponent('КП по капсулам');
+    const body = encodeURIComponent('Опишите сценарий (аренда/глэмпинг/офис) и желаемую комплектацию.');
+    window.location.href = `mailto:${siteConfig.contact.email}?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -163,22 +183,11 @@ const Capsules = () => {
         </div>
       </section>
 
-      {/* Pricing */}
-      <section className="pricing-section">
-        <div className="container">
-          <h2 className="section-title display-md">Цены</h2>
-
-          <div className="pricing-grid">
-            {pricing.map((item, index) => (
-              <div key={index} className="pricing-card">
-                <h3 className="h2">{item.title}</h3>
-                <div className="pricing-amount">{item.price}</div>
-                <p className="pricing-note">{item.note}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PriceAnchor
+        title="Цены"
+        subtitle="Цены ориентировочные — считаем под комплектацию, тираж и сценарий использования"
+        cards={pricingCards}
+      />
 
       {/* Steps */}
       <section className="steps-section">
@@ -196,19 +205,14 @@ const Capsules = () => {
         </div>
       </section>
 
-      {/* Form */}
-      <section className="form-section">
-        <div className="container">
-          <div className="form-container compact-form">
-            <h2 className="display-sm">Запросить расчёт</h2>
-            <p className="body-lg">Выберите тип капсулы — уточним детали в чате</p>
-            <button type="button" className="btn-primary" onClick={handleCtaClick}>
-              Запросить расчёт
-              <ArrowRight size={20} />
-            </button>
-          </div>
-        </div>
-      </section>
+      <LeadCTA
+        title="Подобрать капсулу и рассчитать стоимость"
+        text="Уточним сценарий (аренда/глэмпинг/офис) и комплектацию"
+        primaryLabel="Написать в WhatsApp"
+        primaryAction={handleCtaClick}
+        secondaryLabel="Получить КП на почту"
+        secondaryAction={handleEmailRequest}
+      />
 
     </div>
   );

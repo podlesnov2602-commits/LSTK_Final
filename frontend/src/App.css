@@ -1,19 +1,23 @@
 /* Industrial Premium Theme */
 
 :root {
-  --brand-green: #0ea273; /* фирменный зелёный из логотипа (не ярче) */
-  --brand-green-dark: #0ea273; /* дублируем для совместимости старых стилей */
-  --brand-green-strong: #14d79a; /* акцент для свечения, не используем как основной фон */
-  --brand-green-soft: rgba(20, 215, 154, 0.14);
+  --brand-green: #0ea273; /* единый акцент */
+  --brand-green-dark: #0ea273; /* для совместимости старых стилей */
+  --brand-green-strong: #0ea273;
+  --brand-green-soft: rgba(14, 162, 115, 0.14);
 
-  --text-primary: #e6ecea;
-  --text-secondary: #9fafb0;
+  --text-primary: #e9f1ee;
+  --text-secondary: #a3b4b0;
 
-  --bg-primary: #0b1110; /* глубокий графитовый тон */
-  --bg-secondary: #0f1a17; /* плавный градиент вниз */
+  --bg-primary: #0b1110;
+  --bg-secondary: #0f1a17;
 
-  --card-bg: rgba(14, 24, 22, 0.72); /* матовое стекло на общем фоне */
-  --card-border: rgba(255, 255, 255, 0.06);
+  --surface-1: #0d1513; /* базовые карточки */
+  --surface-2: #131f1c; /* акцентные CTA контейнеры (светлее ~6%) */
+
+  --card-bg: var(--surface-1);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -59,7 +63,7 @@ body::before {
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.02em;
-  color: var(--brand-green-dark);
+  color: var(--text-primary);
 }
 
 .display-md {
@@ -67,7 +71,7 @@ body::before {
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.015em;
-  color: var(--brand-green-dark);
+  color: var(--text-primary);
 }
 
 .display-sm {
@@ -75,7 +79,7 @@ body::before {
   font-weight: 700;
   line-height: 1.18;
   letter-spacing: -0.01em;
-  color: var(--brand-green-dark);
+  color: var(--text-primary);
 }
 
 .h1 {
@@ -83,21 +87,21 @@ body::before {
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.01em;
-  color: var(--brand-green-dark);
+  color: var(--text-primary);
 }
 
 .h2 {
   font-size: 26px;
   font-weight: 700;
   line-height: 1.35;
-  color: var(--brand-green-dark);
+  color: var(--text-primary);
 }
 
 .h3 {
   font-size: 22px;
   font-weight: 700;
   line-height: 1.4;
-  color: var(--brand-green-dark);
+  color: var(--text-primary);
 }
 
 .body-lg {
@@ -219,7 +223,7 @@ section {
   background: transparent !important;
   border: none;
   box-shadow: none;
-  padding: 96px 0;
+  padding: 72px 0;
 }
 
 .block,
@@ -254,7 +258,7 @@ section::after {
 .faq-card {
   background: var(--card-bg) !important;
   border-radius: 14px !important;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+  box-shadow: var(--card-shadow) !important;
   border: 1px solid var(--card-border) !important;
   padding: 28px !important;
   min-height: 100%;
