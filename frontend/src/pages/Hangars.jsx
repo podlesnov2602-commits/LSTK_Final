@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Check, ArrowRight, DollarSign, Layers, Zap, RefreshCw } from 'lucide-react';
+import { ArrowRight, DollarSign, Layers, Zap, RefreshCw } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import './ProductPage.css';
 
@@ -24,29 +24,29 @@ const Hangars = () => {
   }, []);
 
   const gallery = [
-    { 
+    {
       image: 'https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Складской ангар 200 м²'
+      caption: 'Ангар 700 м² · склад и логистика'
     },
-    { 
+    {
       image: 'https://images.unsplash.com/photo-1720036237334-9263cd28c3d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Производственный цех'
+      caption: 'Ангар 1200 м² · производство и сборка'
     },
-    { 
+    {
       image: 'https://images.unsplash.com/photo-1669003152237-7bd1ac4c13f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx3YXJlaG91c2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQzMjM4OTJ8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Логистический комплекс'
+      caption: 'Комплекс 2400 м² · кросс-докинг'
     },
-    { 
+    {
       image: 'https://images.unsplash.com/photo-1635961179148-3d886568775c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHw0fHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Ангар 300 м²'
+      caption: 'Ангар 300 м² · локальный склад'
     },
-    { 
+    {
       image: 'https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Промышленное здание'
+      caption: 'Индустриальный корпус · логистика 24/7'
     },
-    { 
+    {
       image: 'https://images.unsplash.com/photo-1669003152237-7bd1ac4c13f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx3YXJlaG91c2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQzMjM4OTJ8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Склад под ключ'
+      caption: 'Складской модуль · FMCG'
     }
   ];
 
@@ -57,18 +57,17 @@ const Hangars = () => {
   ];
 
   const advantages = [
-    { icon: DollarSign, title: '30% дешевле капитального', description: 'Экономия на строительстве' },
-    { icon: Layers, title: 'Лёгкий фундамент', description: 'Не требует глубокого основания' },
-    { icon: Zap, title: 'Быстрый монтаж', description: 'Готовность за 2-4 недели' },
-    { icon: RefreshCw, title: 'Возможность демонтажа', description: 'Можно разобрать и переместить' }
+    { icon: Layers, title: 'Большие пролёты без внутренних опор' },
+    { icon: DollarSign, title: 'Снижение стоимости фундамента' },
+    { icon: Zap, title: 'Быстрый монтаж и масштабируемость' },
+    { icon: RefreshCw, title: 'Расчёт под снеговые и ветровые нагрузки' }
   ];
 
   const steps = [
-    { number: '01', title: 'Заявка', description: 'Оставьте заявку на сайте' },
-    { number: '02', title: 'ТЗ', description: 'Обсуждаем техническое задание' },
-    { number: '03', title: 'Смета', description: 'Составляем смету проекта' },
-    { number: '04', title: 'Производство', description: 'Изготовление на заводе' },
-    { number: '05', title: 'Монтаж', description: 'Сборка на вашем участке' }
+    { number: '01', title: 'Консультация и ТЗ', description: 'Фиксируем параметры ангара и участка' },
+    { number: '02', title: 'Инженерный расчёт', description: 'Прорабатываем пролёты, нагрузки и узлы' },
+    { number: '03', title: 'Производство', description: 'Запускаем металлокаркас и ограждения' },
+    { number: '04', title: 'Монтаж и сдача', description: 'Собираем, проверяем и передаём объект' }
   ];
 
   const handleSubmit = (e) => {
@@ -86,7 +85,7 @@ const Hangars = () => {
         <div className="container">
           <div className="product-hero-content">
             <h1 className="display-lg">Ангары</h1>
-            <p className="body-lg">Промышленные ангары и складские помещения</p>
+            <p className="body-lg">Промышленные ангары и склады под логистику, производство и хранение</p>
           </div>
         </div>
       </section>
@@ -129,6 +128,9 @@ const Hangars = () => {
       <section className="pricing-section alt-bg">
         <div className="container">
           <h2 className="section-title display-md">Типовые размеры и цены</h2>
+          <p className="pricing-subtitle">
+            Стоимость зависит от пролёта, высоты, региона и комплектации. Цены указаны ориентировочно
+          </p>
           <div className="pricing-grid">
             {typicalSizes.map((item, index) => (
               <div key={index} className="pricing-card">
@@ -159,9 +161,9 @@ const Hangars = () => {
 
       <section className="form-section">
         <div className="container">
-          <div className="form-container">
+          <div className="form-container form-container-soft">
             <h2 className="display-sm">Получить расчёт</h2>
-            <p className="body-lg">Оставьте заявку, и мы свяжемся с вами</p>
+            <p className="body-lg">Рассчитаем ангар под ваши размеры и задачу</p>
             <form onSubmit={handleSubmit} className="contact-form">
               <input
                 type="text"
@@ -186,8 +188,8 @@ const Hangars = () => {
                 className="form-textarea"
                 rows="4"
               />
-              <button type="submit" className="btn-primary">
-                Отправить запрос
+              <button type="submit" className="btn-primary btn-light">
+                Получить расчёт
                 <ArrowRight size={20} />
               </button>
             </form>

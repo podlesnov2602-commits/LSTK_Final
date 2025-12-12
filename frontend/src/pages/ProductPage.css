@@ -25,7 +25,16 @@
 }
 
 .product-hero-hangar {
-  background-image: url('https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85');
+  min-height: 260px;
+  padding: 68px 0;
+  background:
+    linear-gradient(130deg, rgba(5, 12, 12, 0.94) 0%, rgba(10, 20, 21, 0.9) 36%, rgba(8, 26, 25, 0.86) 64%, rgba(4, 12, 14, 0.9) 100%),
+    radial-gradient(circle at 18% 32%, rgba(20, 146, 118, 0.18), transparent 30%),
+    radial-gradient(circle at 84% 18%, rgba(72, 108, 118, 0.22), transparent 38%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0) 38%),
+    url('https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?auto=format&fit=crop&w=1600&q=80');
+  background-size: cover, 100% 100%, 100% 100%, 100% 100%, cover;
+  background-blend-mode: normal, screen, overlay, soft-light, normal;
 }
 
 .product-hero-garage {
@@ -39,6 +48,11 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(135deg, rgba(7, 16, 17, 0.85) 0%, rgba(23, 231, 164, 0.18) 100%);
+}
+
+.product-hero-hangar .product-hero-overlay {
+  background: linear-gradient(140deg, rgba(5, 10, 11, 0.9) 4%, rgba(8, 18, 19, 0.74) 34%, rgba(13, 36, 32, 0.55) 86%);
+  mix-blend-mode: multiply;
 }
 
 .capsules-hero .product-hero-overlay {
@@ -91,10 +105,12 @@
 .gallery-caption {
   color: var(--text-primary);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 650;
+  letter-spacing: 0.01em;
   text-align: center;
   margin: 0;
-  opacity: 0.86;
+  opacity: 0.9;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
 }
 
 .gallery-usage {
@@ -254,6 +270,14 @@
   justify-items: center;
 }
 
+.pricing-subtitle {
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 14px auto 6px auto;
+  max-width: 740px;
+  line-height: 1.6;
+}
+
 .pricing-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -295,6 +319,67 @@
 
 .steps-section .section-title {
   color: var(--text-primary);
+}
+
+/* Horizontal Steps */
+.steps-section-horizontal {
+  padding: 72px 0;
+  background: linear-gradient(180deg, rgba(8, 14, 15, 0.96) 0%, rgba(7, 14, 15, 0.9) 100%);
+  position: relative;
+  isolation: isolate;
+}
+
+.steps-grid-horizontal {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.step-card-horizontal {
+  background: rgba(11, 20, 21, 0.78);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 20px 18px 24px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.42);
+  height: 100%;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.step-card-horizontal h3 {
+  color: var(--text-primary);
+  margin: 8px 0 10px 0;
+  line-height: 1.4;
+  font-size: 17px;
+  letter-spacing: 0.01em;
+}
+
+.step-card-horizontal p {
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.step-number-horizontal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(14, 162, 115, 0.6);
+  color: var(--text-primary);
+  background: rgba(14, 162, 115, 0.12);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .step-card-horizontal:hover {
+    transform: translateY(-2px);
+    border-color: var(--brand-green);
+  }
 }
 
 .steps-section .h3 {
@@ -341,6 +426,12 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
+.form-container-soft {
+  background: linear-gradient(160deg, rgba(9, 16, 17, 0.75) 0%, rgba(14, 26, 26, 0.7) 100%);
+  border-color: rgba(14, 162, 115, 0.35);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.3);
+}
+
 .compact-form {
   text-align: center;
   display: flex;
@@ -367,6 +458,12 @@
   font-size: 16px;
   border: 1px solid var(--border-subtle);
   color: var(--text-primary);
+}
+
+.btn-light {
+  background: linear-gradient(135deg, rgba(14, 162, 115, 0.9), rgba(12, 148, 107, 0.82));
+  color: #011510;
+  box-shadow: 0 12px 28px rgba(14, 162, 115, 0.2);
 }
 
 .form-textarea {
@@ -403,6 +500,10 @@
   .steps-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .steps-grid-horizontal {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -415,5 +516,9 @@
 
   .pricing-section {
     padding-bottom: 80px;
+  }
+
+  .steps-grid-horizontal {
+    grid-template-columns: 1fr;
   }
 }
