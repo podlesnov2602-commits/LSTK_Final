@@ -141,10 +141,10 @@ div {
 .btn-secondary {
   background: var(--brand-green);
   color: #001a13;
-  padding: 14px 26px;
-  min-height: 48px;
-  border-radius: 12px;
-  font-size: 15px;
+  padding: 16px 28px;
+  min-height: 52px;
+  border-radius: 14px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   transition: 0.25s ease;
@@ -153,16 +153,16 @@ div {
   align-items: center;
   gap: 10px;
   letter-spacing: 0.04em;
-  box-shadow: 0 12px 32px rgba(14, 162, 115, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(20, 215, 154, 0.22);
+  box-shadow: 0 16px 38px rgba(14, 162, 115, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(20, 215, 154, 0.26);
 }
 
 .btn-primary:hover,
 .btn-ghost:hover,
 .btn-secondary:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px) scale(1.01);
   background: linear-gradient(135deg, #0ea273, #0c8b63);
-  box-shadow: 0 16px 36px rgba(14, 162, 115, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: 0 20px 42px rgba(14, 162, 115, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .btn-ghost {

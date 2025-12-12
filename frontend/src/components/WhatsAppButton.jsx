@@ -29,16 +29,19 @@ const WhatsAppButton = () => {
   if (!isVisible) return null;
 
   return (
-    <div 
+    <div
       className={`whatsapp-float ${isExpanded ? 'expanded' : ''}`}
       onMouseEnter={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
     >
       <button className="whatsapp-float-btn" onClick={handleClick}>
-        <MessageCircle size={28} />
-        {isExpanded && (
+        <div className="whatsapp-icon-wrap">
+          <MessageCircle size={26} />
+        </div>
+        <div className="whatsapp-labels">
           <span className="whatsapp-float-text">Написать в WhatsApp</span>
-        )}
+          <span className="whatsapp-float-sub">Ответим в течение 15 минут</span>
+        </div>
       </button>
     </div>
   );

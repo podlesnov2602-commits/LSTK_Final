@@ -97,12 +97,14 @@ const Home = () => {
         </div>
 
         <div className="hero-overlay" />
+        <div className="hero-vignette" />
 
         <div className="container hero-inner">
           <div className="hero-badge">Industrial premium • ЛСТК</div>
           <h1 className="hero-title">
-            Стальные <span className="accent">решения</span>
-            <span>для масштабных проектов</span>
+            <span className="hero-word steel">Стальные</span>
+            <span className="hero-word accent">решения</span>
+            <span className="hero-word subtitle-line">для масштабных проектов</span>
           </h1>
           <p className="hero-subtitle">
             Заводские металлокаркасы, инженерный контроль на каждом этапе и архитектурная эстетика без компромиссов.
