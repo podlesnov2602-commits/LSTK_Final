@@ -179,20 +179,19 @@
     height: 100vh;
     z-index: 1200;
     pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.25s ease;
+    visibility: hidden;
   }
 
   .main-nav.mobile-open {
-    opacity: 1;
     pointer-events: auto;
+    visibility: visible;
   }
 
   .mobile-menu-card {
     position: relative;
     width: min(520px, 100%);
     margin: 0;
-    background: linear-gradient(180deg, rgba(5, 9, 9, 0.9), rgba(5, 8, 8, 0.86));
+    background: #0a1210;
     box-shadow: 0 14px 32px rgba(0, 0, 0, 0.38);
     border-left: 1px solid rgba(255, 255, 255, 0.06);
     display: flex;
@@ -200,14 +199,12 @@
     gap: 16px;
     padding: 96px 20px 32px;
     height: 100%;
-    transform: translateY(-20px);
-    opacity: 0;
-    transition: transform 0.28s ease, opacity 0.28s ease;
+    transform: translateY(-8px);
+    transition: transform 0.26s ease;
   }
 
   .main-nav.mobile-open .mobile-menu-card {
     transform: translateY(0);
-    opacity: 1;
   }
 
   .nav-links {
@@ -220,14 +217,17 @@
   .nav-link {
     height: auto;
     padding: 18px 14px;
-    font-size: 18px;
+    font-size: 15px;
     letter-spacing: 0.08em;
     border-radius: 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: #0f1816;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-family: inherit;
+    font-weight: 500;
+    text-transform: uppercase;
   }
 
   .nav-link.active,
