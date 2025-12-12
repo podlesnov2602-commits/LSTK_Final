@@ -20,6 +20,7 @@ import capsulesImg from '../assets/capsules.png';
 import hangarsImg from '../assets/Hangars.jpeg';
 import garagesImg from '../assets/garages.jpeg';
 import productionImg from '../assets/production.jpg';
+import factoryDiagram from '../assets/factory-diagram.svg';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -177,10 +178,7 @@ const Home = () => {
           </div>
 
           <div className="aesthetic-grid">
-            <div
-              className="factory-card"
-              style={{ backgroundImage: `linear-gradient(140deg, rgba(6, 10, 9, 0.82) 0%, rgba(9, 15, 13, 0.9) 60%, rgba(10, 22, 19, 0.94) 100%), url(${productionImg})` }}
-            >
+            <div className="factory-card">
               <div className="factory-layer">
                 <div className="factory-badge">
                   <Sparkles size={16} /> Фабрика Каркасов Алатау
@@ -189,12 +187,22 @@ const Home = () => {
                 <p>
                   От проектирования до монтажа — мы управляем всей цепочкой, гарантируя предсказуемые сроки и премиальное исполнение конструкций.
                 </p>
-                <div className="production-highlights">
-                  {productionHighlights.map((item, index) => (
-                    <div key={index} className="highlight-item">
-                      <CheckCircle2 size={18} /> {item}
+
+                <div className="factory-body">
+                  <div className="production-highlights">
+                    {productionHighlights.map((item, index) => (
+                      <div key={index} className="highlight-item">
+                        <CheckCircle2 size={18} /> {item}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="factory-visual">
+                    <div className="visual-frame">
+                      <img src={factoryDiagram} alt="Схема потоков фабрики от расчёта до монтажа" />
+                      <div className="visual-caption">Реальный поток работ: расчёт → ЧПУ → сборка → контроль → монтаж</div>
                     </div>
-                  ))}
+                  </div>
                 </div>
 
                 <Link to="/about" className="btn-primary factory-action">
