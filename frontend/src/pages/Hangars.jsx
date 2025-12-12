@@ -45,9 +45,24 @@ const Hangars = () => {
   ];
 
   const typicalSizes = [
-    { size: '150 м²', price: 'от 4.5 млн ₸' },
-    { size: '200 м²', price: 'от 6 млн ₸' },
-    { size: '300 м²', price: 'от 9 млн ₸' }
+    {
+      size: '150 м²',
+      price: 'от 4.5 млн ₸',
+      note: 'Базовая конфигурация',
+      markers: ['Компактный склад и сервис', 'Пролёт 12–15 м', 'Высота до 6 м']
+    },
+    {
+      size: '200 м²',
+      price: 'от 6 млн ₸',
+      note: 'Типовой пролёт',
+      markers: ['Логистические узлы', 'Пролёт 16–18 м', 'Высота до 7.5 м']
+    },
+    {
+      size: '300 м²',
+      price: 'от 9 млн ₸',
+      note: 'Производственные задачи',
+      markers: ['Лёгкое производство и сборка', 'Пролёт 18–21 м', 'Высота до 9 м']
+    }
   ];
 
   const advantages = [
@@ -132,6 +147,14 @@ const Hangars = () => {
               <div key={index} className="pricing-card">
                 <h2>{item.size}</h2>
                 <div className="pricing-amount">{item.price}</div>
+                <p className="pricing-description">{item.note}</p>
+                <div className="pricing-markers">
+                  {item.markers.map((marker, markerIndex) => (
+                    <span key={markerIndex} className="pricing-marker">
+                      {marker}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>

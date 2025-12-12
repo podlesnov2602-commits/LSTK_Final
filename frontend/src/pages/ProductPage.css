@@ -308,6 +308,27 @@
   font-size: 20px;
 }
 
+.pricing-description {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 10px 0 14px;
+  letter-spacing: 0.01em;
+}
+
+.pricing-markers {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.pricing-marker {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
 .pricing-note {
   color: var(--text-secondary);
   font-size: 15px;
