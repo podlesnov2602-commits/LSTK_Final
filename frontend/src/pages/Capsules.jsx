@@ -125,10 +125,13 @@ const Capsules = () => {
           />
           <div className="gallery-grid">
             {gallery.map((item, index) => (
-              <div key={index} className="gallery-item-wrapper">
-                <div className="gallery-item" style={{ backgroundImage: `url(${item.image})` }} />
-                <p className="gallery-caption">{item.caption}</p>
-                <p className="gallery-usage">{item.usage}</p>
+              <div key={index} className="project-card">
+                <div className="project-visual" style={{ backgroundImage: `url(${item.image})` }}>
+                  <div className="project-overlay">
+                    <p className="project-caption">{item.caption}</p>
+                    {item.usage && <span className="project-meta">{item.usage}</span>}
+                  </div>
+                </div>
               </div>
             ))}
           </div>

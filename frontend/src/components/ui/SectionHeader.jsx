@@ -1,15 +1,14 @@
 import React from 'react';
 import './SectionHeader.css';
 
-const SectionHeader = ({ title, subtitle, eyebrow }) => {
+const SectionHeader = ({ title, subtitle, eyebrow, level = 'h2' }) => {
+  const HeadingTag = level;
+
   return (
     <div className="section-header">
       {eyebrow && <div className="section-eyebrow">{eyebrow}</div>}
-      <div className="section-title-row">
-        <h2 className="display-sm">{title}</h2>
-        <div className="section-title-line" />
-      </div>
-      {subtitle && <p className="body-lg">{subtitle}</p>}
+      <HeadingTag className="section-header__title">{title}</HeadingTag>
+      {subtitle && <p className="section-header__subtitle body-lg">{subtitle}</p>}
     </div>
   );
 };

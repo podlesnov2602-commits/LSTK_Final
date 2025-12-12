@@ -9,14 +9,21 @@
   align-items: center;
   background: linear-gradient(180deg, rgba(7, 12, 11, 0.9) 0%, rgba(7, 12, 11, 0.72) 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.38);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
+  transition: background 0.25s ease, backdrop-filter 0.25s ease, box-shadow 0.25s ease;
+}
+
+.site-header.is-scrolled {
+  background: rgba(6, 12, 11, 0.88);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32);
 }
 
 .site-header .container {
-  max-width: 1400px;
+  max-width: var(--container-width);
   width: 100%;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 28px;
 }
 
 .header-content {

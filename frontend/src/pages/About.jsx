@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { Award, Users, Factory, Target } from 'lucide-react';
+import PageHero from '../components/ui/PageHero';
+import SectionHeader from '../components/ui/SectionHeader';
 import './About.css';
 
 const About = () => {
@@ -32,26 +34,24 @@ const About = () => {
 
   return (
     <div className="about-page">
-      {/* Hero */}
-      <section className="about-hero" style={{ backgroundImage: 'url(https://customer-assets.emergentagent.com/job_metal-builder/artifacts/6umjvmc1_zensiny-inzenery-rabotaut.jpg)' }}>
-        <div className="about-hero-overlay" />
-        <div className="container">
-          <div className="about-hero-content">
-            <h1 className="display-lg">О компании</h1>
-            <p className="body-lg">Производство ЛСТК конструкций в Казахстане</p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="О компании"
+        subtitle="Производство ЛСТК конструкций в Казахстане"
+        meta="Industrial Premium • О компании"
+        image="https://customer-assets.emergentagent.com/job_metal-builder/artifacts/6umjvmc1_zensiny-inzenery-rabotaut.jpg"
+      />
 
       {/* Story */}
       <section className="story-section">
         <div className="container">
           <div className="story-content">
             <div className="story-text">
-              <h2 className="display-md">Наша история</h2>
-              <p className="body-lg">
-                <strong>Фабрика Каркасов Алатау</strong> — ведущий производитель легких стальных тонкостенных конструкций в Казахстане с опытом работы более 15 лет.
-              </p>
+              <SectionHeader
+                eyebrow="Компания"
+                title="Наша история"
+                subtitle={<strong>Фабрика Каркасов Алатау</strong>}
+              />
+              <p className="body-lg">Ведущий производитель легких стальных тонкостенных конструкций в Казахстане с опытом работы более 15 лет.</p>
               <p className="body-lg">
                 Мы специализируемся на полном цикле производства ЛСТК: от инженерного проектирования до финальной сборки. Наша продукция охватывает модульные капсулы для жилья и бизнеса, промышленные ангары и склады, а также металлические гаражи премиум-класса.
               </p>
@@ -78,7 +78,11 @@ const About = () => {
       {/* Values */}
       <section className="values-section">
         <div className="container">
-          <h2 className="section-title display-md">Наши ценности</h2>
+          <SectionHeader
+            eyebrow="Подход"
+            title="Наши ценности"
+            subtitle="Команда, производство и надёжность, объединённые единым стандартом"
+          />
           <div className="values-grid">
             {values.map((value, index) => {
               const Icon = value.icon;
@@ -99,7 +103,11 @@ const About = () => {
       {/* Production */}
       <section className="production-details-section">
         <div className="container">
-          <h2 className="section-title display-md">Производство</h2>
+          <SectionHeader
+            eyebrow="Производство"
+            title="Производство"
+            subtitle="Цифры подтверждают масштаб и стабильность"
+          />
           <div className="production-grid">
             <div className="production-item">
               <div className="production-number">5000+</div>
@@ -125,10 +133,11 @@ const About = () => {
       <section className="mission-section">
         <div className="container">
           <div className="mission-content">
-            <h2 className="display-md">Наша миссия</h2>
-            <p className="body-lg">
-              Создавать инновационные металлоконструкции премиум-класса, которые сочетают надёжность промышленных стандартов с эстетикой современной архитектуры. Мы стремимся быть лидером индустрии ЛСТК в Центральной Азии.
-            </p>
+            <SectionHeader
+              eyebrow="Миссия"
+              title="Наша миссия"
+              subtitle="Создавать инновационные металлоконструкции премиум-класса, которые сочетают надёжность промышленных стандартов с эстетикой современной архитектуры"
+            />
             <p className="body-lg">
               Наша цель — предоставить каждому клиенту не просто металлический каркас, а комплексное инженерное решение с полным сопровождением от проекта до монтажа. Мы инвестируем в передовые технологии и непрерывное обучение команды.
             </p>

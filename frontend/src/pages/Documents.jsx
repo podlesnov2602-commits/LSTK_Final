@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { Download, FileText } from 'lucide-react';
+import PageHero from '../components/ui/PageHero';
+import SectionHeader from '../components/ui/SectionHeader';
 import './Documents.css';
 
 const Documents = () => {
@@ -62,20 +64,21 @@ const Documents = () => {
 
   return (
     <div className="documents-page">
-      {/* Hero */}
-      <section className="documents-hero" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070)' }}>
-        <div className="documents-hero-overlay" />
-        <div className="container">
-          <div className="documents-hero-content">
-            <h1 className="display-lg">Документы</h1>
-            <p className="body-lg">Все необходимые сертификаты и документы</p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Документы"
+        subtitle="Все необходимые сертификаты и документы"
+        meta="Industrial Premium • Документы"
+        image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070"
+      />
 
       {/* Documents Grid */}
       <section className="documents-grid-section">
         <div className="container">
+          <SectionHeader
+            eyebrow="Прозрачность"
+            title="Документы"
+            subtitle="Готовые к загрузке сертификаты, договоры и каталоги"
+          />
           <div className="documents-grid">
             {documents.map((doc, index) => (
               <div key={index} className="document-card">
@@ -103,10 +106,11 @@ const Documents = () => {
       <section className="documents-info-section">
         <div className="container">
           <div className="documents-info-content">
-            <h2 className="display-sm">Официальные документы</h2>
-            <p className="body-lg">
-              Все наши продукты имеют необходимые сертификаты соответствия и отвечают всем стандартам качества.
-            </p>
+            <SectionHeader
+              eyebrow="Стандарты"
+              title="Официальные документы"
+              subtitle="Все наши продукты имеют необходимые сертификаты соответствия и отвечают всем стандартам качества"
+            />
             <p className="body-lg">
               Мы обеспечиваем полную прозрачность нашей деятельности и предоставляем все необходимые документы для оформления сотрудничества.
             </p>
