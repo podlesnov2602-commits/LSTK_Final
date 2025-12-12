@@ -150,12 +150,8 @@ const Capsules = () => {
           <div className="advantages-grid-product">
             {advantages.map((adv, index) => {
               const Icon = adv.icon;
-              const cardClass = index === 0
-                ? 'advantage-card-product advantage-card-featured'
-                : 'advantage-card-product advantage-card-supporting';
-
               return (
-                <div key={index} className={cardClass}>
+                <div key={index} className="advantage-card-product">
                   <div className="advantage-icon-circle">
                     <Icon size={24} className="advantage-icon" />
                   </div>
