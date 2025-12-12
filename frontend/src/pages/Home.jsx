@@ -24,9 +24,9 @@ const Home = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
 
   const heroImages = [
-    'linear-gradient(140deg, rgba(2,10,9,0.96) 0%, rgba(7,21,18,0.94) 55%, rgba(14,162,115,0.18) 100%)',
-    'radial-gradient(circle at 18% 28%, rgba(20,215,154,0.16), transparent 40%), linear-gradient(125deg, rgba(2,10,9,0.95) 12%, rgba(7,21,18,0.9) 64%, rgba(20,215,154,0.18) 100%)',
-    'linear-gradient(120deg, rgba(2,10,9,0.95) 0%, rgba(7,21,18,0.92) 40%, rgba(20,215,154,0.16) 100%)'
+    `linear-gradient(120deg, rgba(11,17,16,0.86) 0%, rgba(12,24,21,0.9) 40%, rgba(14,162,115,0.22) 100%), url(${productionImg})`,
+    `linear-gradient(115deg, rgba(11,17,16,0.9) 18%, rgba(12,24,21,0.92) 58%, rgba(14,162,115,0.18) 100%), url(${hangarsImg})`,
+    `linear-gradient(120deg, rgba(11,17,16,0.88) 0%, rgba(12,24,21,0.9) 42%, rgba(14,162,115,0.2) 100%), url(${capsulesImg})`
   ];
 
   React.useEffect(() => {
@@ -91,7 +91,7 @@ const Home = () => {
             <div
               key={index}
               className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
-              style={{ backgroundImage: `url(${img})` }}
+              style={{ backgroundImage: img }}
             />
           ))}
         </div>
@@ -99,13 +99,13 @@ const Home = () => {
         <div className="hero-overlay" />
 
         <div className="container hero-inner">
-          <div className="hero-badge">Премиальные металлоконструкции</div>
+          <div className="hero-badge">Industrial premium • ЛСТК</div>
           <h1 className="hero-title">
-            Стальные решения
-            <span>для бизнеса и архитектуры</span>
+            Стальные <span className="accent">решения</span>
+            <span>для масштабных проектов</span>
           </h1>
           <p className="hero-subtitle">
-            Заводское производство ЛСТК, авторский дизайн и сопровождение проектов класса «премиум» по всему Казахстану.
+            Заводские металлокаркасы, инженерный контроль на каждом этапе и архитектурная эстетика без компромиссов.
           </p>
 
           <div className="hero-actions">
@@ -113,7 +113,7 @@ const Home = () => {
               className="btn-primary"
               onClick={() => document.getElementById('premium-directions').scrollIntoView({ behavior: 'smooth' })}
             >
-              Выбрать направление <ArrowRight size={20} />
+              Запросить расчёт <ArrowRight size={20} />
             </button>
             <button className="btn-ghost" onClick={openWhatsApp}>
               Консультация <PhoneCall size={18} />
@@ -146,7 +146,7 @@ const Home = () => {
 
           <div className="directions-grid">
             {categories.map((item, index) => (
-              <Link key={index} to={item.link} className="direction-card">
+              <Link key={index} to={item.link} className={`direction-card ${index === 0 ? 'featured-card' : ''}`}>
                 <div className="direction-image" style={{ backgroundImage: `url(${item.image})` }} />
                 <div className="direction-body">
                   <div className="direction-top">
@@ -216,7 +216,7 @@ const Home = () => {
             </div>
 
             <Link to="/about" className="btn-primary">
-              Узнать о производстве <ArrowRight size={18} />
+              Как мы производим <ArrowRight size={18} />
             </Link>
           </div>
         </div>
@@ -243,7 +243,7 @@ const Home = () => {
 
           <div className="documents-cta">
             <Link to="/documents" className="btn-ghost">
-              Перейти в раздел документов <ArrowRight size={16} />
+              Смотреть все документы <ArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -270,7 +270,7 @@ const Home = () => {
 
             <div className="contact-actions">
               <button className="btn-primary" onClick={openWhatsApp}>
-                Написать в WhatsApp
+                WhatsApp — ответим в течение 15 минут
               </button>
               <Link to="/contacts" className="btn-ghost">
                 Все контакты

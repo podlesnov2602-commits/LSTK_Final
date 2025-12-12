@@ -1,18 +1,19 @@
 /* Industrial Premium Theme */
 
 :root {
-  --brand-green: #14D79A; /* фирменный зеленый, мягкий, нe кислотный */
-  --brand-green-dark: #0EA273;
-  --brand-green-soft: rgba(20, 215, 154, 0.12); /* мягкое премиальное свечение */
+  --brand-green: #0ea273; /* фирменный зелёный из логотипа (не ярче) */
+  --brand-green-dark: #0ea273; /* дублируем для совместимости старых стилей */
+  --brand-green-strong: #14d79a; /* акцент для свечения, не используем как основной фон */
+  --brand-green-soft: rgba(20, 215, 154, 0.14);
 
-  --text-primary: #E1EFEA;
-  --text-secondary: #9EB3AD;
+  --text-primary: #e6ecea;
+  --text-secondary: #9fafb0;
 
-  --bg-primary: #020A09; /* глубокий матовый тёмный зеленовато-чёрный */
-  --bg-secondary: #071512; /* холодный металлический подтон */
+  --bg-primary: #0b1110; /* глубокий графитовый тон */
+  --bg-secondary: #0f1a17; /* плавный градиент вниз */
 
-  --card-bg: #0A1412; /* матовый металл */
-  --card-border: rgba(255, 255, 255, 0.05);
+  --card-bg: rgba(14, 24, 22, 0.72); /* матовое стекло на общем фоне */
+  --card-border: rgba(255, 255, 255, 0.06);
 }
 
 * {
@@ -33,12 +34,23 @@ body {
   overflow-x: hidden;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E%0A");
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: soft-light;
+}
+
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
 /* Typography */
@@ -123,15 +135,17 @@ div {
 }
 
 /* Buttons */
+
 .btn-primary,
 .btn-ghost,
 .btn-secondary {
   background: var(--brand-green);
-  color: #002318;
-  padding: 16px 28px;
+  color: #001a13;
+  padding: 14px 26px;
+  min-height: 48px;
   border-radius: 12px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: 0.25s ease;
   text-decoration: none;
@@ -139,16 +153,36 @@ div {
   align-items: center;
   gap: 10px;
   letter-spacing: 0.04em;
-  box-shadow: 0 0 12px var(--brand-green-soft);
-  border: none;
+  box-shadow: 0 12px 32px rgba(14, 162, 115, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(20, 215, 154, 0.22);
 }
 
 .btn-primary:hover,
 .btn-ghost:hover,
 .btn-secondary:hover {
   transform: translateY(-2px);
-  background: var(--brand-green-dark);
-  box-shadow: 0 0 18px var(--brand-green-soft);
+  background: linear-gradient(135deg, #0ea273, #0c8b63);
+  box-shadow: 0 16px 36px rgba(14, 162, 115, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.btn-ghost {
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: none;
+}
+
+.btn-ghost:hover {
+  background: rgba(14, 162, 115, 0.12);
+  color: var(--text-primary);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.26);
 }
 
 .phone-link {
