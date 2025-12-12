@@ -1,0 +1,70 @@
+.pricing-shell {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+}
+
+.pricing-grid {
+  display: grid;
+  gap: 22px;
+}
+
+@media (min-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 100%;
+}
+
+.pricing-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pricing-meta {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.pricing-price {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: var(--radius-lg);
+  background: rgba(14, 162, 115, 0.12);
+  border: 1px solid rgba(14, 162, 115, 0.28);
+}
+
+.pricing-markers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.pricing-marker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+}
+
+.pricing-hint {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.pricing-footnote {
+  margin-top: 24px;
+}

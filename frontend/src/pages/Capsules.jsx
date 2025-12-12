@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { Check, Ruler, Feather, Infinity, Move } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
-import PriceAnchor from '../components/PriceAnchor';
-import LeadCTA from '../components/LeadCTA';
 import './ProductPage.css';
+import PageHero from '../components/ui/PageHero';
+import SectionHeader from '../components/ui/SectionHeader';
+import PricingCards from '../components/ui/PricingCards';
+import LeadBar from '../components/ui/LeadBar';
 
-// Локальные изображения
 import img1 from '../assets/Capsules1.jpg';
 import img2 from '../assets/Capsules2.jpg';
 import img3 from '../assets/Capsules3.jpg';
@@ -19,10 +20,7 @@ const Capsules = () => {
       const gallerySection = document.querySelector('.gallery-section');
       if (gallerySection) {
         const yOffset = -100;
-        const y =
-          gallerySection.getBoundingClientRect().top +
-          window.pageYOffset +
-          yOffset;
+        const y = gallerySection.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }
     }, 100);
@@ -36,7 +34,7 @@ const Capsules = () => {
     { image: img3, caption: 'Модульный дом 44м²', usage: 'офис продаж / ресепшн' },
     { image: img4, caption: 'Гостевой дом 29м²', usage: 'под глэмпинг' },
     { image: img5, caption: 'Модульный дом 29м²', usage: 'под аренду' },
-    { image: img6, caption: 'Гостевой дом 48м²', usage: 'офис продаж / ресепшн' },
+    { image: img6, caption: 'Гостевой дом 48м²', usage: 'офис продаж / ресепшн' }
   ];
 
   const configurations = [
@@ -69,28 +67,25 @@ const Capsules = () => {
 
   const pricingCards = [
     {
+      meta: 'Глэмпинг / аренда',
       title: 'Капсула 18–24 м²',
       price: 'от 6.8 млн ₸',
-      scenario: 'Глэмпинг / аренда — быстрый запуск без сложной инженерии',
-      metric: 'Пролёт 3.4–3.8 м · площадь 18–24 м²',
-      note: 'Базовая комплектация под сезон и межсезонье',
-      markers: ['Тёплый контур + инженерия', 'Тираж для быстрой окупаемости', 'Монтаж за 2–5 дней']
+      description: 'Быстрый запуск без сложной инженерии. Комфортный контур под сезон и межсезонье.',
+      markers: ['Пролёт 3.4–3.8 м', 'Тёплый контур + инженерия', 'Монтаж за 2–5 дней']
     },
     {
+      meta: 'Офис продаж / премиум аренда',
       title: 'Капсула 29–32 м²',
       price: 'от 9.4 млн ₸',
-      scenario: 'Офис продаж / премиальная аренда',
-      metric: 'Пролёт 3.8–4.2 м · площадь 29–32 м²',
-      note: 'Оптимальный баланс площади и отделки',
-      markers: ['Панорамное остекление и отделка', 'Готовность к подключению', 'Подходит для круглогодичной эксплуатации']
+      description: 'Баланс площади и отделки: панорамное остекление, готовность к подключению.',
+      markers: ['Пролёт 3.8–4.2 м', 'Круглогодичная эксплуатация', 'Тираж для сети']
     },
     {
+      meta: 'Ресепшн / управляющая компания',
       title: 'Модуль 44–48 м²',
       price: 'от 13.5 млн ₸',
-      scenario: 'Ресепшн / офис / управляющая компания',
-      metric: 'Пролёт 4.2–4.6 м · площадь 44–48 м²',
-      note: 'Расширенная комплектация с инженерией',
-      markers: ['Полный комплект инженерии', 'Свободная планировка под задачу', 'Поставим и запустим под ключ']
+      description: 'Свободная планировка под задачу. Полный комплект инженерии и отделки.',
+      markers: ['Пролёт 4.2–4.6 м', 'Инженерия и мебель', 'Запуск под ключ']
     }
   ];
 
@@ -114,29 +109,24 @@ const Capsules = () => {
 
   return (
     <div className="product-page">
+      <PageHero
+        title="Капсулы"
+        subtitle="Модульные решения для бизнеса и инвестиций"
+        meta="Industrial Premium • Капсулы"
+        image={img4}
+      />
 
-      {/* HERO */}
-      <section className="product-hero capsules-hero">
-        <div className="product-hero-overlay" />
-        <div className="container">
-          <div className="product-hero-content">
-            <h1 className="display-lg">Капсулы</h1>
-            <p className="body-lg">Модульные решения для бизнеса и инвестиций</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery */}
       <section className="gallery-section">
         <div className="container">
-          <h2 className="section-title display-md">Галерея проектов</h2>
+          <SectionHeader
+            title="Галерея проектов"
+            subtitle="Тиражируемые решения под аренду, глэмпинг и корпоративные резиденции"
+            eyebrow="Проекты"
+          />
           <div className="gallery-grid">
             {gallery.map((item, index) => (
               <div key={index} className="gallery-item-wrapper">
-                <div
-                  className="gallery-item"
-                  style={{ backgroundImage: `url(${item.image})` }}
-                />
+                <div className="gallery-item" style={{ backgroundImage: `url(${item.image})` }} />
                 <p className="gallery-caption">{item.caption}</p>
                 <p className="gallery-usage">{item.usage}</p>
               </div>
@@ -145,10 +135,12 @@ const Capsules = () => {
         </div>
       </section>
 
-      {/* Configurations */}
       <section className="configurations-section">
         <div className="container">
-          <h2 className="section-title display-md">Комплектации</h2>
+          <SectionHeader
+            title="Комплектации"
+            subtitle="Выбирайте глубину поставки: каркас для своей отделки или капсула под ключ"
+          />
           <div className="configurations-grid">
             {configurations.map((config, index) => (
               <div key={index} className="config-card">
@@ -169,10 +161,9 @@ const Capsules = () => {
         </div>
       </section>
 
-      {/* Advantages */}
       <section className="advantages-section-product">
         <div className="container">
-          <h2 className="section-title display-md">Преимущества</h2>
+          <SectionHeader title="Преимущества" subtitle="Повторяемость, контроль качества, стабильные сроки производства" />
           <div className="advantages-grid-product">
             {advantages.map((adv, index) => {
               const Icon = adv.icon;
@@ -189,16 +180,16 @@ const Capsules = () => {
         </div>
       </section>
 
-      <PriceAnchor
-        title="Цены"
-        subtitle="Цены ориентировочные — считаем под комплектацию, тираж и сценарий использования"
-        cards={pricingCards}
+      <PricingCards
+        title="Типовые размеры и цены"
+        subtitle="Цены ориентировочные — считаем под комплектацию, тираж и сценарий"
+        items={pricingCards}
+        footnote="Индивидуальный расчёт — по ТЗ (пролёт/высота/нагрузки/регион)"
       />
 
-      {/* Steps */}
       <section className="steps-section">
         <div className="container">
-          <h2 className="section-title display-md">Как мы работаем</h2>
+          <SectionHeader title="Как мы работаем" subtitle="Короткий путь от задачи до монтажа" />
           <div className="steps-grid">
             {steps.map((step, index) => (
               <div key={index} className="step-card">
@@ -211,15 +202,12 @@ const Capsules = () => {
         </div>
       </section>
 
-      <LeadCTA
+      <LeadBar
         title="Подобрать капсулу и рассчитать стоимость"
-        text="Уточним сценарий (аренда/глэмпинг/офис) и комплектацию"
-        primaryLabel="Написать в WhatsApp"
+        description="Уточним сценарий (аренда/глэмпинг/офис) и комплектацию"
         primaryAction={handleCtaClick}
-        secondaryLabel="Получить КП на почту"
         secondaryAction={handleEmailRequest}
       />
-
     </div>
   );
 };
