@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { DollarSign, Layers, Zap, RefreshCw } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
-import PriceAnchor from '../components/PriceAnchor';
 import LeadCTA from '../components/LeadCTA';
+import PageHero from '../components/ui/PageHero';
+import SectionHeader from '../components/ui/SectionHeader';
+import PricingCards from '../components/ui/PricingCards';
 import './ProductPage.css';
 
 const Hangars = () => {
@@ -73,6 +75,14 @@ const Hangars = () => {
     }
   ];
 
+  const pricingCards = typicalSizes.map((item) => ({
+    meta: item.scenario,
+    title: item.title,
+    price: item.price,
+    description: item.note,
+    markers: [item.metric, ...item.markers]
+  }));
+
   const advantages = [
     { icon: Layers, title: 'Большие пролёты без внутренних опор' },
     { icon: DollarSign, title: 'Снижение стоимости фундамента' },
@@ -102,25 +112,29 @@ const Hangars = () => {
 
   return (
     <div className="product-page">
-      <section className="product-hero product-hero-hangar">
-        <div className="product-hero-overlay" />
-        <div className="container">
-          <div className="product-hero-content">
-            <h1 className="display-lg">Ангары</h1>
-            <p className="body-lg">Промышленные ангары и склады под логистику, производство и хранение</p>
-            <p className="hero-subline">Проектирование • производство • монтаж</p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Ангары"
+        subtitle="Промышленные ангары и склады под логистику, производство и хранение"
+        meta="Industrial Premium • Ангары"
+        image={gallery[0].image}
+      />
 
       <section className="gallery-section">
         <div className="container">
-          <h2 className="section-title display-md">Галерея проектов</h2>
+          <SectionHeader
+            eyebrow="Проекты"
+            title="Галерея проектов"
+            subtitle="Решения для логистики, производства и локальных складских задач"
+          />
           <div className="gallery-grid">
             {gallery.map((item, index) => (
-              <div key={index} className="gallery-item-wrapper">
-                <div className="gallery-item" style={{ backgroundImage: `url(${item.image})` }} />
-                <p className="gallery-caption">{item.caption}</p>
+              <div key={index} className="project-card">
+                <div className="project-visual" style={{ backgroundImage: `url(${item.image})` }}>
+                  <div className="project-overlay">
+                    <p className="project-caption">{item.caption}</p>
+                    <span className="project-meta">Ангар</span>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -130,7 +144,11 @@ const Hangars = () => {
       {/* Advantages */}
       <section className="advantages-section-product">
         <div className="container">
-          <h2 className="section-title display-md">Преимущества</h2>
+          <SectionHeader
+            eyebrow="Технология"
+            title="Преимущества"
+            subtitle="Инженерные пролёты, расчёт нагрузок и аккуратный монтаж под вашу задачу"
+          />
           <div className="advantages-grid-product">
             {advantages.map((advantage, index) => {
               const IconComponent = advantage.icon;
@@ -147,22 +165,26 @@ const Hangars = () => {
         </div>
       </section>
 
-      <PriceAnchor
+      <PricingCards
         title="Типовые размеры и цены"
         subtitle="Стоимость зависит от пролёта, высоты, региона и комплектации. Цены указаны ориентировочно"
-        cards={typicalSizes}
+        items={pricingCards}
+        footnote="Цена уточняется после фиксации нагрузки, региона и комплектации"
       />
 
-      {/* Process */}
-      <section className="steps-section-horizontal">
+      <section className="steps-section">
         <div className="container">
-          <h2 className="section-title display-md">Процесс работы</h2>
-          <div className="steps-grid-horizontal">
+          <SectionHeader
+            eyebrow="Процесс"
+            title="Процесс работы"
+            subtitle="Чёткая последовательность действий от инженерии до монтажа"
+          />
+          <div className="steps-grid">
             {steps.map((step, index) => (
-              <div key={index} className="step-card-horizontal">
-                <div className="step-number-horizontal">{step.number}</div>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
+              <div key={index} className="step-card">
+                <div className="step-number">{step.number}</div>
+                <h3 className="h3">{step.title}</h3>
+                <p className="body-md">{step.description}</p>
               </div>
             ))}
           </div>

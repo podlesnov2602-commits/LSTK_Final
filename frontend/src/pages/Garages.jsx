@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Check, ArrowRight, Zap, DollarSign, Shield, Clock } from 'lucide-react';
+import { ArrowRight, Zap, DollarSign, Shield, Clock } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
+import PageHero from '../components/ui/PageHero';
+import SectionHeader from '../components/ui/SectionHeader';
+import PricingCards from '../components/ui/PricingCards';
 import './ProductPage.css';
 
 const Garages = () => {
@@ -9,6 +12,7 @@ const Garages = () => {
     phone: '',
     message: ''
   });
+  const [formStatus, setFormStatus] = useState('idle');
 
   useEffect(() => {
     // Scroll to gallery section on page load
@@ -89,6 +93,14 @@ const Garages = () => {
     }
   ];
 
+  const pricingCards = configurations.map((config) => ({
+    meta: config.subtitle,
+    title: config.title,
+    price: config.price,
+    description: 'Готовое решение в единой архитектуре',
+    markers: config.features
+  }));
+
   const advantages = [
     { icon: Zap, title: 'Быстро', description: 'Монтаж 3-5 дней' },
     { icon: DollarSign, title: 'Дешево', description: 'Доступные цены' },
@@ -106,32 +118,46 @@ const Garages = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormStatus('loading');
     const message = encodeURIComponent(
       `Запрос на расчёт: Гаражи\nИмя: ${formData.name}\nТелефон: ${formData.phone}\nСообщение: ${formData.message}`
     );
-    window.open(`${siteConfig.social.whatsapp}?text=${message}`, '_blank');
+    setTimeout(() => {
+      try {
+        window.open(`${siteConfig.social.whatsapp}?text=${message}`, '_blank');
+        setFormStatus('success');
+        setFormData({ name: '', phone: '', message: '' });
+      } catch (error) {
+        setFormStatus('error');
+      }
+    }, 350);
   };
 
   return (
     <div className="product-page">
-      <section className="product-hero product-hero-garage">
-        <div className="product-hero-overlay" />
-        <div className="container">
-          <div className="product-hero-content">
-            <h1 className="display-lg">Гаражи</h1>
-            <p className="body-lg">Надёжные металлические гаражи и боксы</p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Гаражи"
+        subtitle="Надёжные металлические гаражи и боксы в едином индустриальном стиле"
+        meta="Industrial Premium • Гаражи"
+        image={gallery[0].image}
+      />
 
       <section className="gallery-section">
         <div className="container">
-          <h2 className="section-title display-md">Галерея проектов</h2>
+          <SectionHeader
+            eyebrow="Проекты"
+            title="Галерея проектов"
+            subtitle="Тиражируемые решения для частных и коммерческих задач"
+          />
           <div className="gallery-grid">
             {gallery.map((item, index) => (
-              <div key={index} className="gallery-item-wrapper">
-                <div className="gallery-item" style={{ backgroundImage: `url(${item.image})` }} />
-                <p className="gallery-caption">{item.caption}</p>
+              <div key={index} className="project-card">
+                <div className="project-visual" style={{ backgroundImage: `url(${item.image})` }}>
+                  <div className="project-overlay">
+                    <p className="project-caption">{item.caption}</p>
+                    <span className="project-meta">Гараж</span>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -141,7 +167,11 @@ const Garages = () => {
       {/* Advantages */}
       <section className="advantages-section-product">
         <div className="container">
-          <h2 className="section-title display-md">Преимущества</h2>
+          <SectionHeader
+            eyebrow="Технология"
+            title="Преимущества"
+            subtitle="Быстрый монтаж, аккуратные фасады и стабильный бюджет"
+          />
           <div className="advantages-grid-product">
             {advantages.map((advantage, index) => {
               const IconComponent = advantage.icon;
@@ -158,24 +188,26 @@ const Garages = () => {
         </div>
       </section>
 
-      {/* Configurations with Prices */}
-      <section className="configurations-section alt-bg">
+      <PricingCards
+        title="Типовые проекты"
+        subtitle="Опции для одного или двух авто, утеплённые решения и интеграция с навесами"
+        items={pricingCards}
+        footnote="Стоимость рассчитываем под комплектацию, регион и сроки монтажа"
+      />
+
+      <section className="steps-section">
         <div className="container">
-          <h2 className="section-title display-md">Типовые проекты</h2>
-          <div className="configurations-grid">
-            {configurations.map((config, index) => (
-              <div key={index} className="config-card">
-                <h3 className="h2">{config.title}</h3>
-                <p className="config-subtitle">{config.subtitle}</p>
-                <div className="config-price">{config.price}</div>
-                <ul className="config-features">
-                  {config.features.map((feature, idx) => (
-                    <li key={idx}>
-                      <Check size={20} />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+          <SectionHeader
+            eyebrow="Процесс"
+            title="Как мы работаем"
+            subtitle="От заявки до монтажа — последовательные шаги без задержек"
+          />
+          <div className="steps-grid">
+            {steps.map((step, index) => (
+              <div key={index} className="step-card">
+                <div className="step-number">{step.number}</div>
+                <h3 className="h3">{step.title}</h3>
+                <p className="body-md">{step.description}</p>
               </div>
             ))}
           </div>
@@ -184,37 +216,54 @@ const Garages = () => {
 
       <section className="form-section">
         <div className="container">
-          <div className="form-container">
-            <h2 className="display-sm">Получить расчёт</h2>
-            <p className="body-lg">Оставьте заявку, и мы свяжемся с вами</p>
+          <div className="form-container form-container-soft">
+            <SectionHeader
+              eyebrow="Заявка"
+              title="Получить расчёт"
+              subtitle="Оставьте контакты и опишите проект — вернёмся с расчётом или уточняющими вопросами"
+              level="h3"
+            />
             <form onSubmit={handleSubmit} className="contact-form">
-              <input
-                type="text"
-                placeholder="Ваше имя"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                required
-                className="form-input"
-              />
-              <input
-                type="tel"
-                placeholder="Телефон"
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                required
-                className="form-input"
-              />
-              <textarea
-                placeholder="Опишите ваш проект"
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="form-textarea"
-                rows="4"
-              />
-              <button type="submit" className="btn-primary">
-                Отправить запрос
-                <ArrowRight size={20} />
-              </button>
+              <label className="form-label">Ваше имя
+                <input
+                  type="text"
+                  placeholder="Имя"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  required
+                  className="form-input"
+                />
+              </label>
+              <label className="form-label">Телефон
+                <input
+                  type="tel"
+                  placeholder="+7 (___) ___-__-__"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  required
+                  className="form-input"
+                />
+              </label>
+              <label className="form-label">Комментарий
+                <textarea
+                  placeholder="Опишите задачу или желаемые размеры"
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  className="form-textarea"
+                  rows="4"
+                />
+              </label>
+              <div className="form-actions">
+                <button type="submit" className="btn-primary" disabled={formStatus === 'loading'}>
+                  {formStatus === 'loading' ? 'Отправляем...' : 'Отправить запрос'}
+                  <ArrowRight size={20} />
+                </button>
+                <span className={`form-status form-status--${formStatus}`}>
+                  {formStatus === 'success' && 'Заявка отправлена — ждём подтверждения в WhatsApp.'}
+                  {formStatus === 'error' && 'Не удалось открыть WhatsApp. Попробуйте ещё раз.'}
+                  {formStatus === 'loading' && 'Готовим сообщение для WhatsApp...'}
+                </span>
+              </div>
             </form>
           </div>
         </div>

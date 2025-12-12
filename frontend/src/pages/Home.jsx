@@ -15,6 +15,7 @@ import {
 
 import { siteConfig } from '../config/siteConfig';
 import LeadCTA from '../components/LeadCTA';
+import SectionHeader from '../components/ui/SectionHeader';
 import './Home.css';
 
 import capsulesImg from '../assets/capsules.png';
@@ -120,8 +121,8 @@ const Home = () => {
             >
               Запросить расчёт <ArrowRight size={20} />
             </button>
-            <button className="btn-ghost hero-whatsapp" onClick={openWhatsApp}>
-              WhatsApp <MessageCircle size={18} />
+            <button className="btn-secondary hero-whatsapp" onClick={openWhatsApp}>
+              Написать в WhatsApp <MessageCircle size={18} />
             </button>
           </div>
 
@@ -139,15 +140,11 @@ const Home = () => {
 
       <section id="premium-directions" className="directions-section">
         <div className="container">
-          <div className="section-header">
-            <div>
-              <p className="eyebrow">Линейка решений</p>
-              <h2>Выберите формат металлоконструкции</h2>
-            </div>
-            <p className="section-lead">
-              От модульных капсул до масштабных ангаров — каждая конструкция создаётся с акцентом на эстетику, долговечность и точность геометрии.
-            </p>
-          </div>
+          <SectionHeader
+            eyebrow="Линейка решений"
+            title="Выберите формат металлоконструкции"
+            subtitle="От модульных капсул до масштабных ангаров — каждая конструкция создаётся с акцентом на эстетику, долговечность и точность геометрии."
+          />
 
           <div className="directions-grid">
             {categories.map((item, index) => (
@@ -168,15 +165,11 @@ const Home = () => {
 
       <section className="aesthetic-section">
         <div className="container">
-          <div className="section-header aesthetic-header">
-            <div>
-              <p className="eyebrow">Премиальный стандарт</p>
-              <h2>Архитектурная эстетика и технологичность</h2>
-            </div>
-            <p className="section-lead">
-              Мы объединяем инженерную точность ЛСТК с дизайнерским подходом: строгие формы, акцентные линии и комфорт для повседневной эксплуатации.
-            </p>
-          </div>
+          <SectionHeader
+            eyebrow="Премиальный стандарт"
+            title="Архитектурная эстетика и технологичность"
+            subtitle="Мы объединяем инженерную точность ЛСТК с дизайнерским подходом: строгие формы, акцентные линии и комфорт для повседневной эксплуатации."
+          />
 
           <div className="aesthetic-grid">
             <div className="factory-card">
@@ -232,13 +225,11 @@ const Home = () => {
 
       <section className="documents-section">
         <div className="container">
-          <div className="documents-header">
-            <div>
-              <p className="eyebrow">Документы</p>
-              <h2>Прозрачность и готовность к тендерам</h2>
-            </div>
-            <p className="section-lead">Все подтверждающие документы доступны онлайн и предоставляются по запросу.</p>
-          </div>
+          <SectionHeader
+            eyebrow="Документы"
+            title="Прозрачность и готовность к тендерам"
+            subtitle="Все подтверждающие документы доступны онлайн и предоставляются по запросу."
+          />
 
           <div className="documents-grid">
             {documents.map((doc, index) => (
@@ -260,9 +251,11 @@ const Home = () => {
       <section className="contact-section">
         <div className="container contact-grid">
           <div className="contact-card">
-            <p className="eyebrow">Контакты</p>
-            <h2>Обсудим ваш проект</h2>
-            <p className="section-lead">Ответим в течение рабочего дня и предложим готовые решения под ваши задачи.</p>
+            <SectionHeader
+              eyebrow="Контакты"
+              title="Обсудим ваш проект"
+              subtitle="Ответим в течение рабочего дня и предложим готовые решения под ваши задачи."
+            />
 
             <div className="contact-details">
               <div className="contact-item">

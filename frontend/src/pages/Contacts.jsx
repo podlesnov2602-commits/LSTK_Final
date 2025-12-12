@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
+import PageHero from '../components/ui/PageHero';
+import SectionHeader from '../components/ui/SectionHeader';
 import './Contacts.css';
 
 const Contacts = () => {
@@ -42,20 +44,21 @@ const Contacts = () => {
 
   return (
     <div className="contacts-page">
-      {/* Hero */}
-      <section className="contacts-hero" style={{ backgroundImage: 'url(https://customer-assets.emergentagent.com/job_metal-builder/artifacts/4t51ec3s_1764756420383-019ae3ad-9634-7630-8426-e44060d6f5c2.png)' }}>
-        <div className="contacts-hero-overlay" />
-        <div className="container">
-          <div className="contacts-hero-content">
-            <h1 className="display-lg">Контакты</h1>
-            <p className="body-lg">Свяжитесь с нами удобным способом</p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Контакты"
+        subtitle="Свяжитесь с нами удобным способом"
+        meta="Industrial Premium • Контакты"
+        image="https://customer-assets.emergentagent.com/job_metal-builder/artifacts/4t51ec3s_1764756420383-019ae3ad-9634-7630-8426-e44060d6f5c2.png"
+      />
 
       {/* Contact Info */}
       <section className="contact-info-section">
         <div className="container">
+          <SectionHeader
+            eyebrow="Связь"
+            title="Мы всегда на линии"
+            subtitle="Команда ответит в рабочие часы и направит к нужному специалисту"
+          />
           <div className="contact-info-grid">
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
@@ -88,7 +91,11 @@ const Contacts = () => {
       {/* Map Section */}
       <section className="map-section">
         <div className="container">
-          <h2 className="section-title display-md">Мы на карте</h2>
+          <SectionHeader
+            eyebrow="Локация"
+            title="Мы на карте"
+            subtitle="Производственная площадка и офис на одной оси"
+          />
           <div className="map-container">
             <iframe
               title="Company Location"
@@ -107,10 +114,11 @@ const Contacts = () => {
       <section className="contacts-cta-section">
         <div className="container">
           <div className="contacts-cta-content">
-            <h2 className="display-md">Готовы ответить на ваши вопросы</h2>
-            <p className="body-lg">
-              Напишите нам в WhatsApp и получите подробную консультацию по любому вопросу
-            </p>
+            <SectionHeader
+              eyebrow="Поддержка"
+              title="Готовы ответить на ваши вопросы"
+              subtitle="Напишите нам в WhatsApp и получите подробную консультацию"
+            />
             <button className="btn-primary" onClick={handleWhatsAppContact}>
               Написать в WhatsApp
             </button>
