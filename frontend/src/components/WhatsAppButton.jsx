@@ -22,6 +22,11 @@ const WhatsAppButton = () => {
   }, []);
 
   const handleClick = () => {
+    if (window.innerWidth <= 768 && !isExpanded) {
+      setIsExpanded(true);
+      return;
+    }
+
     const message = encodeURIComponent('Здравствуйте! Хочу получить консультацию по продукции Фабрика Каркасов Алатау');
     window.open(`${siteConfig.social.whatsapp}?text=${message}`, '_blank');
   };
