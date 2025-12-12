@@ -4,7 +4,6 @@ import { siteConfig } from '../config/siteConfig';
 import './ProductPage.css';
 
 // Локальные изображения
-import capsulesHero from '../assets/CapsulesHero.png';
 import img1 from '../assets/Capsules1.jpg';
 import img2 from '../assets/Capsules2.jpg';
 import img3 from '../assets/Capsules3.jpg';
@@ -70,8 +69,8 @@ const Capsules = () => {
   const pricing = [
     {
       title: 'Расчёт стоимости',
-      price: 'Стоимость зависит от комплектации, тиража и задач проекта',
-      note: 'Соберём предложение под ваш сценарий использования'
+      price: 'Типовые проекты начинаются от ориентировочного бюджета в ₸',
+      note: 'Точная стоимость рассчитывается под комплектацию, тираж и сценарий использования'
     }
   ];
 
@@ -91,15 +90,7 @@ const Capsules = () => {
     <div className="product-page">
 
       {/* HERO */}
-      <section
-        className="product-hero"
-        style={{
-          backgroundImage: `url(${capsulesHero})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
+      <section className="product-hero capsules-hero">
         <div className="product-hero-overlay" />
         <div className="container">
           <div className="product-hero-content">
@@ -135,7 +126,7 @@ const Capsules = () => {
           <div className="configurations-grid">
             {configurations.map((config, index) => (
               <div key={index} className="config-card">
-                <h3 className="h2">{config.title}</h3>
+                <h3 className="config-title">{config.title}</h3>
                 <p className="config-subtitle">{config.subtitle}</p>
                 <p className="config-description">{config.description}</p>
                 <ul className="config-features">
@@ -214,7 +205,7 @@ const Capsules = () => {
         <div className="container">
           <div className="form-container compact-form">
             <h2 className="display-sm">Запросить расчёт</h2>
-            <p className="body-lg">Выберите тип капсулы и цель — уточним детали в чате</p>
+            <p className="body-lg">Выберите тип капсулы — уточним детали в чате</p>
             <button type="button" className="btn-primary" onClick={handleCtaClick}>
               Запросить расчёт
               <ArrowRight size={20} />
