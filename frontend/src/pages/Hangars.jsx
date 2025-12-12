@@ -48,22 +48,28 @@ const Hangars = () => {
 
   const typicalSizes = [
     {
-      size: '150 м²',
+      title: '150 м²',
       price: 'от 4.5 млн ₸',
-      note: 'Базовая конфигурация',
-      markers: ['Компактный склад и сервис', 'Пролёт 12–15 м', 'Высота до 6 м']
+      scenario: 'Компактный склад и сервис в небольших городах',
+      metric: 'Пролёт 12–15 м · высота до 6 м',
+      note: 'Базовая конфигурация для хранения и сервиса',
+      markers: ['Быстрая сборка и доставка', 'Пролёт без внутренних опор', 'Оптимален для локальной логистики']
     },
     {
-      size: '200 м²',
+      title: '200 м²',
       price: 'от 6 млн ₸',
-      note: 'Типовой пролёт',
-      markers: ['Логистические узлы', 'Пролёт 16–18 м', 'Высота до 7.5 м']
+      scenario: 'Логистические узлы и сервисные станции',
+      metric: 'Пролёт 16–18 м · высота до 7.5 м',
+      note: 'Типовой пролёт для складов и цехов',
+      markers: ['Гибкая планировка под стеллажи', 'Усиление под снег/ветер', 'Подвод коммуникаций под задачу']
     },
     {
-      size: '300 м²',
+      title: '300 м²',
       price: 'от 9 млн ₸',
-      note: 'Производственные задачи',
-      markers: ['Лёгкое производство и сборка', 'Пролёт 18–21 м', 'Высота до 9 м']
+      scenario: 'Лёгкое производство и сборка с техникой',
+      metric: 'Пролёт 18–21 м · высота до 9 м',
+      note: 'Производственные задачи с кран-балкой',
+      markers: ['Закладка под мостовые краны', 'Технологические ворота и доки', 'Запуск под ключ с монтажом']
     }
   ];
 
@@ -91,6 +97,7 @@ const Hangars = () => {
   return (
     <div className="product-page">
       <section className="product-hero product-hero-hangar">
+        <div className="product-hero-overlay" />
         <div className="container">
           <div className="product-hero-content">
             <h1 className="display-lg">Ангары</h1>
@@ -122,10 +129,7 @@ const Hangars = () => {
             {advantages.map((advantage, index) => {
               const IconComponent = advantage.icon;
               return (
-                <div
-                  key={index}
-                  className={`advantage-card-product ${index === 0 ? 'advantage-card-emphasis' : ''}`}
-                >
+                <div key={index} className="advantage-card-product">
                   <div className="advantage-icon-circle">
                     <IconComponent size={28} className="advantage-icon" />
                   </div>
