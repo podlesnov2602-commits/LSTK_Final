@@ -1,6 +1,8 @@
 .contacts-page {
   width: 100%;
   background: transparent;
+  position: relative;
+  isolation: isolate;
 }
 
 /* Contacts Hero */
@@ -40,9 +42,37 @@
 }
 
 /* Contact Info Section */
-.contact-info-section {
+.contact-info-section,
+.map-section,
+.contacts-cta-section {
   padding: 100px 0;
   background: transparent;
+  position: relative;
+  isolation: isolate;
+}
+
+.contact-info-section::before,
+.map-section::before,
+.contacts-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 10, 11, 0.6) 0%,
+    rgba(6, 10, 11, 0.34) 46%,
+    rgba(6, 10, 11, 0.12) 100%
+  );
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-info-section .container,
+.map-section .container,
+.contacts-cta-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .contact-info-grid {
@@ -52,8 +82,8 @@
 }
 
 .contact-info-card {
-  background: rgba(12, 22, 23, 0.65);
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(180deg, rgba(12, 18, 18, 0.96) 0%, rgba(10, 15, 15, 0.94) 100%);
+  border: 1px solid var(--card-border);
   border-radius: 16px;
   padding: 32px 28px;
   display: flex;
@@ -61,15 +91,15 @@
   gap: 24px;
   transition: all 0.25s ease;
   text-decoration: none;
-  backdrop-filter: none;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  box-shadow: var(--shadow-soft);
   text-align: left;
 }
 
 .contact-info-card:hover {
   transform: translateY(-4px);
   border-color: var(--brand-green);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  box-shadow: var(--accent-glow);
 }
 
 .contact-info-icon {
@@ -78,17 +108,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(14, 162, 115, 0.12);
   color: var(--brand-green);
   border-radius: 12px;
   flex-shrink: 0;
   transition: all 0.25s ease;
-  box-shadow: none;
+  border: 1px solid rgba(14, 162, 115, 0.32);
+  box-shadow: var(--shadow-soft);
 }
 
 .contact-info-card:hover .contact-info-icon {
   background: var(--brand-green);
   color: #031915;
+  box-shadow: var(--accent-glow);
 }
 
 .contact-info-text h3 {
@@ -100,28 +132,17 @@
   color: var(--text-secondary);
 }
 
-/* Map Section */
-.map-section {
-  padding: 100px 0;
-  background: transparent;
-}
-
 .map-container {
   border: 1px solid var(--card-border);
   border-radius: 16px;
   overflow: hidden;
-  background: rgba(12, 22, 23, 0.45);
-  backdrop-filter: none;
+  background: linear-gradient(180deg, rgba(12, 18, 18, 0.96) 0%, rgba(10, 15, 15, 0.94) 100%);
+  backdrop-filter: blur(2px);
+  box-shadow: var(--shadow-soft);
 }
 
 .map-container iframe {
   filter: grayscale(100%) invert(90%) brightness(0.7);
-}
-
-/* CTA Section */
-.contacts-cta-section {
-  padding: 100px 0;
-  background: transparent;
 }
 
 .contacts-cta-content {
