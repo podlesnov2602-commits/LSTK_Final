@@ -36,9 +36,10 @@
 body {
   margin: 0;
   font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at 18% 10%, rgba(14, 162, 115, 0.08), transparent 26%),
-    radial-gradient(circle at 74% 12%, rgba(10, 33, 29, 0.32), transparent 36%),
-    linear-gradient(180deg, var(--bg-main) 0%, var(--bg-surface) 100%);
+  background:
+    radial-gradient(circle at 20% 18%, rgba(14, 162, 115, 0.08), transparent 28%),
+    linear-gradient(115deg, rgba(8, 18, 16, 0.9), rgba(7, 14, 13, 0.86)),
+    linear-gradient(180deg, #0b1415 0%, #0a1213 100%);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

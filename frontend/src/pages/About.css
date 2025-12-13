@@ -1,7 +1,7 @@
 /* Premium About Page */
 .about-page {
   width: 100%;
-  background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-surface) 100%);
+  background: transparent;
 }
 
 /* About Hero - Premium Style */
