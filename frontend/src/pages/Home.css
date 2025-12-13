@@ -1,5 +1,5 @@
 .home-page {
-  background: transparent;
+  background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-surface) 100%);
   color: var(--text-primary);
   min-height: 100vh;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
