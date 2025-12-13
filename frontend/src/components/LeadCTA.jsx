@@ -1,7 +1,7 @@
 import React from 'react';
 import './LeadCTA.css';
 
-const LeadCTA = ({ title, text, primaryLabel, primaryAction, secondaryLabel, secondaryAction }) => {
+const LeadCTA = ({ title, text, guarantee, primaryLabel, primaryAction, secondaryLabel, secondaryAction }) => {
   return (
     <section className="lead-cta-section">
       <div className="container">
@@ -9,6 +9,7 @@ const LeadCTA = ({ title, text, primaryLabel, primaryAction, secondaryLabel, sec
           <div className="lead-cta-text">
             <h2>{title}</h2>
             <p>{text}</p>
+            {guarantee && <div className="lead-cta-guarantee">{guarantee}</div>}
           </div>
           <div className="lead-cta-actions">
             <button type="button" className="btn-primary" onClick={primaryAction}>

@@ -45,18 +45,21 @@ const Home = () => {
     {
       title: 'Капсульные модульные дома',
       description: 'Премиальные капсулы с панорамным остеклением и заводской чистотой сборки.',
+      audience: 'Для частных и коммерческих проектов',
       image: capsulesImg,
       link: '/capsules'
     },
     {
       title: 'Ангары и склады',
       description: 'Индустриальные решения с высоким ресурсом и идеальной геометрией ЛСТК.',
+      audience: 'Для складов, производств и логистики',
       image: hangarsImg,
       link: '/hangars'
     },
     {
       title: 'Гаражи и навесы',
       description: 'Элегантные и надёжные конструкции для автомобилей и спецтехники.',
+      audience: 'Для бизнеса и частных участков',
       image: garagesImg,
       link: '/garages'
     }
@@ -76,15 +79,41 @@ const Home = () => {
     'Доставка и сервис по всему Казахстану'
   ];
 
-  const documents = [
-    { title: 'Сертификат соответствия', file: '/documents' },
-    { title: 'Договор поставки', file: '/documents' },
-    { title: 'Реквизиты компании', file: '/documents' }
+  const productionStats = [
+    'Производство: X м²/мес — вставить фактические данные',
+    'Срок изготовления: от X дней — вставить фактические данные',
+    'Толщины/профиль: X–X мм — вставить фактические данные',
+    'География: Алматы / Казахстан'
   ];
 
-  const openWhatsApp = () => {
-    const msg = encodeURIComponent('Здравствуйте! Интересуюсь металлоконструкциями Фабрика Каркасов Алатау.');
+  const documents = [
+    { title: 'Сертификат соответствия', file: '/documents', result: 'Ускоряет согласование' },
+    { title: 'Договор поставки', file: '/documents', result: 'Снижает риски для заказчика' },
+    { title: 'Реквизиты компании', file: '/documents', result: 'Подходит для закупок/тендеров' }
+  ];
+
+  const trustReasons = [
+    'Заводская точность и контроль качества',
+    'Понятная смета и спецификация',
+    'ЛСТК-геометрия без “сюрпризов” на монтаже',
+    'Документы и готовность к тендерам'
+  ];
+
+  const heroBadges = [
+    'X+ лет опыта',
+    'X+ объектов',
+    'Сроки по договору / контроль качества'
+  ];
+
+  const openWhatsApp = (message) => {
+    const defaultMsg = 'Здравствуйте! Интересуюсь металлоконструкциями Фабрика Каркасов Алатау.';
+    const msg = encodeURIComponent(message || defaultMsg);
     window.open(`${siteConfig.social.whatsapp}?text=${msg}`, '_blank');
+  };
+
+  const handleQuoteRequest = (category) => {
+    const message = `Здравствуйте! Хочу рассчитать стоимость: ${category}. Подскажите ближайшие сроки и КП.`;
+    openWhatsApp(message);
   };
 
   return (
@@ -110,8 +139,9 @@ const Home = () => {
             <span className="hero-word accent">решения</span>
             <span className="hero-word subtitle-line">для масштабных проектов</span>
           </h1>
+          <p className="hero-positioning">ЛСТК-конструкции под ключ: расчёт, производство, доставка и монтаж по Казахстану</p>
           <p className="hero-subtitle">
-            Заводские металлокаркасы, инженерный контроль на каждом этапе и архитектурная эстетика без компромиссов.
+            Заводские металлокаркасы с инженерным контролем: точная геометрия, прогнозируемые сроки и эстетика без компромиссов.
           </p>
 
           <div className="hero-actions">
@@ -119,11 +149,22 @@ const Home = () => {
               className="btn-primary"
               onClick={() => document.getElementById('premium-directions').scrollIntoView({ behavior: 'smooth' })}
             >
-              Запросить расчёт <ArrowRight size={20} />
+              Получить расчёт за 15 минут <ArrowRight size={20} />
             </button>
-            <button className="btn-secondary hero-whatsapp" onClick={openWhatsApp}>
-              Написать в WhatsApp <MessageCircle size={18} />
+            <button className="btn-secondary hero-whatsapp" onClick={() => openWhatsApp('Здравствуйте! Нужен расчёт по ЛСТК.')}>
+              Написать инженеру в WhatsApp <MessageCircle size={18} />
             </button>
+          </div>
+
+          <div className="hero-meta">
+            <div className="hero-meta__note">Ответим в течение 15 минут в рабочее время</div>
+            <div className="hero-trust">
+              {heroBadges.map((item, idx) => (
+                <div key={idx} className="hero-trust-card">
+                  <CheckCircle2 size={18} /> {item}
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="hero-indicators">
@@ -133,6 +174,24 @@ const Home = () => {
                 className={`hero-indicator ${index === currentSlide ? 'active' : ''}`}
                 onClick={() => setCurrentSlide(index)}
               />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="trust-section">
+        <div className="container">
+          <SectionHeader
+            eyebrow="Почему нам доверяют"
+            title="Закрываем ключевые риски на старте"
+            subtitle="Показываем прозрачные цифры, геометрию и документы, чтобы монтаж проходил без остановок."
+          />
+          <div className="trust-grid">
+            {trustReasons.map((item, index) => (
+              <div key={index} className="trust-card">
+                <CheckCircle2 size={18} />
+                <p>{item}</p>
+              </div>
             ))}
           </div>
         </div>
@@ -148,16 +207,25 @@ const Home = () => {
 
           <div className="directions-grid">
             {categories.map((item, index) => (
-              <Link key={index} to={item.link} className={`direction-card ${index === 0 ? 'featured-card' : ''}`}>
+              <div key={index} className={`direction-card ${index === 0 ? 'featured-card' : ''}`}>
                 <div className="direction-image" style={{ backgroundImage: `url(${item.image})` }} />
                 <div className="direction-body">
                   <div className="direction-top">
                     <h3>{item.title}</h3>
                     <ArrowRight size={18} />
                   </div>
+                  <p className="direction-audience">{item.audience}</p>
                   <p>{item.description}</p>
+                  <div className="direction-actions">
+                    <button className="btn-primary ghost" onClick={() => handleQuoteRequest(item.title)}>
+                      Рассчитать стоимость
+                    </button>
+                    <Link to={item.link} className="btn-ghost compact">
+                      Посмотреть примеры / Подробнее
+                    </Link>
+                  </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
@@ -179,8 +247,16 @@ const Home = () => {
                 </div>
                 <h3>Технологичная фабрика полного цикла</h3>
                 <p>
-                  От проектирования до монтажа — мы управляем всей цепочкой, гарантируя предсказуемые сроки и премиальное исполнение конструкций.
+                  От проектирования до монтажа — управляем всей цепочкой, чтобы сохранить точную геометрию ЛСТК и сроки, закреплённые в договоре.
                 </p>
+
+                <div className="factory-stats">
+                  {productionStats.map((item, idx) => (
+                    <div key={idx} className="stat-pill">
+                      <Timer size={16} /> {item}
+                    </div>
+                  ))}
+                </div>
 
                 <div className="factory-body">
                   <div className="production-highlights">
@@ -228,7 +304,7 @@ const Home = () => {
           <SectionHeader
             eyebrow="Документы"
             title="Прозрачность и готовность к тендерам"
-            subtitle="Все подтверждающие документы доступны онлайн и предоставляются по запросу."
+            subtitle="Предоставляем пакет документов по запросу — для тендеров и закупок"
           />
 
           <div className="documents-grid">
@@ -236,6 +312,7 @@ const Home = () => {
               <div key={index} className="document-card">
                 <Building2 size={28} />
                 <h3>{doc.title}</h3>
+                <span className="document-result">{doc.result}</span>
               </div>
             ))}
           </div>
@@ -244,6 +321,7 @@ const Home = () => {
             <Link to="/documents" className="btn-ghost">
               Смотреть все документы <ArrowRight size={16} />
             </Link>
+            <button className="btn-secondary" onClick={() => openWhatsApp('Прошу отправить пакет документов для тендера/закупки.')}>Запросить пакет документов</button>
           </div>
         </div>
       </section>
@@ -256,6 +334,11 @@ const Home = () => {
               title="Обсудим ваш проект"
               subtitle="Ответим в течение рабочего дня и предложим готовые решения под ваши задачи."
             />
+
+            <div className="contact-badges">
+              <span className="contact-badge">Инженер на связи</span>
+              <span className="contact-response">Ответ в течение 15 минут</span>
+            </div>
 
             <div className="contact-details">
               <div className="contact-item">
@@ -271,7 +354,7 @@ const Home = () => {
 
             <div className="contact-actions">
               <button className="btn-primary contact-whatsapp" onClick={openWhatsApp}>
-                WhatsApp — ответим в течение 15 минут
+                Написать в WhatsApp и получить расчёт
               </button>
               <Link to="/contacts" className="btn-ghost">
                 Все контакты
@@ -294,10 +377,11 @@ const Home = () => {
       </section>
 
       <LeadCTA
-        title="Обсудить проект и получить расчёт"
-        text="Ответим и предложим решение под задачу"
-        primaryLabel="Написать в WhatsApp"
-        primaryAction={openWhatsApp}
+        title="Обсудим проект и сделаем предварительный расчёт"
+        text="КП на WhatsApp / почту. Ответим сегодня в рабочее время."
+        guarantee="Без обязательств. 1–2 уточняющих вопроса — и дадим предварительную стоимость."
+        primaryLabel="Получить расчёт и КП"
+        primaryAction={() => openWhatsApp('Хочу получить расчёт и КП по проекту. Ответьте, пожалуйста, сегодня.')}
       />
     </div>
   );

@@ -38,6 +38,19 @@
   max-width: 640px;
 }
 
+.lead-cta-guarantee {
+  margin-top: 10px;
+  color: #d6e2dd;
+  font-size: 15px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .lead-cta-actions {
   display: flex;
   align-items: center;
