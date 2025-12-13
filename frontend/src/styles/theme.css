@@ -6,6 +6,8 @@
   --bg-alt: #111c1b;
   --card: #0f1617;
   --card-2: #121c1d;
+  --card-bg: var(--card);
+  --card-border: var(--border);
   --border: rgba(214, 226, 222, 0.08);
 
   --text: #e6eeea;

@@ -1,6 +1,8 @@
 .documents-page {
   width: 100%;
   background: transparent;
+  position: relative;
+  isolation: isolate;
 }
 
 /* Documents Hero */
@@ -40,9 +42,34 @@
 }
 
 /* Documents Grid Section */
-.documents-grid-section {
+.documents-grid-section,
+.documents-info-section {
   padding: 100px 0;
   background: transparent;
+  position: relative;
+  isolation: isolate;
+}
+
+.documents-grid-section::before,
+.documents-info-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 10, 11, 0.6) 0%,
+    rgba(6, 10, 11, 0.34) 46%,
+    rgba(6, 10, 11, 0.12) 100%
+  );
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.documents-grid-section .container,
+.documents-info-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .documents-grid {
@@ -52,7 +79,7 @@
 }
 
 .document-card {
-  background: var(--card-bg);
+  background: linear-gradient(180deg, rgba(12, 18, 18, 0.96) 0%, rgba(10, 15, 15, 0.94) 100%);
   border: 1px solid var(--card-border);
   border-radius: 16px;
   padding: 32px;
@@ -60,14 +87,14 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  backdrop-filter: none;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  box-shadow: var(--shadow-soft);
 }
 
 .document-card:hover {
   transform: translateY(-3px);
   border-color: var(--brand-green);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  box-shadow: var(--accent-glow);
 }
 
 .document-icon-wrapper {
@@ -76,16 +103,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(14, 162, 115, 0.12);
   color: var(--brand-green);
   border-radius: 12px;
   transition: all 0.25s ease;
-  box-shadow: none;
+  border: 1px solid rgba(14, 162, 115, 0.32);
+  box-shadow: var(--shadow-soft);
 }
 
 .document-card:hover .document-icon-wrapper {
   background: var(--brand-green);
   color: #031915;
+  box-shadow: var(--accent-glow);
 }
 
 .document-info h3 {
@@ -101,12 +130,6 @@
   margin-top: auto;
   width: 100%;
   justify-content: center;
-}
-
-/* Documents Info Section */
-.documents-info-section {
-  padding: 100px 0;
-  background: transparent;
 }
 
 .documents-info-content {
