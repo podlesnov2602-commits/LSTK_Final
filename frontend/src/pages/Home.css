@@ -797,20 +797,19 @@
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--card-border);
-  background: rgba(10, 16, 16, 0.78);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.32);
+  background: #f4f8f6;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
 }
 
 .contact-map::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(4, 6, 6, 0.38), rgba(6, 10, 10, 0.6));
-  pointer-events: none;
+  display: none;
 }
 
 .contact-map iframe {
-  filter: grayscale(0.8) brightness(0.64) contrast(1.06) saturate(1.02);
+  filter: grayscale(0.08) brightness(1.05) contrast(1.02) saturate(1.05);
 }
 
 @media (max-width: 1024px) {

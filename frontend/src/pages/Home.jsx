@@ -111,11 +111,6 @@ const Home = () => {
     window.open(`${siteConfig.social.whatsapp}?text=${msg}`, '_blank');
   };
 
-  const handleQuoteRequest = (category) => {
-    const message = `Здравствуйте! Хочу рассчитать стоимость: ${category}. Подскажите ближайшие сроки и КП.`;
-    openWhatsApp(message);
-  };
-
   return (
     <div className="home-page">
       <section className="hero-section">
@@ -198,13 +193,13 @@ const Home = () => {
         <div className="container">
           <SectionHeader
             eyebrow="Линейка решений"
-            title="Выберите формат металлоконструкции"
+            title="КАТЕГОРИИ"
             subtitle="От модульных капсул до масштабных ангаров — каждая конструкция создаётся с акцентом на эстетику, долговечность и точность геометрии."
           />
 
           <div className="directions-grid">
             {categories.map((item, index) => (
-              <div key={index} className={`direction-card ${index === 0 ? 'featured-card' : ''}`}>
+              <Link key={index} to={item.link} className={`direction-card ${index === 0 ? 'featured-card' : ''}`}>
                 <div className="direction-image" style={{ backgroundImage: `url(${item.image})` }} />
                 <div className="direction-body">
                   <div className="direction-top">
@@ -214,12 +209,10 @@ const Home = () => {
                   <p className="direction-audience">{item.audience}</p>
                   <p>{item.description}</p>
                   <div className="direction-actions">
-                    <button className="btn-primary ghost" onClick={() => handleQuoteRequest(item.title)}>
-                      Получить расчёт
-                    </button>
+                    <span className="btn-primary ghost">Подробнее</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
