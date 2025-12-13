@@ -1,12 +1,8 @@
 .home-page {
-  --layer-hero: #050808;
-  --layer-core: #0a1011;
-  --layer-alt: #0d1516;
-  --layer-deep: #0f191b;
-  background: linear-gradient(180deg, var(--layer-hero) 0%, var(--layer-core) 26%, var(--layer-alt) 58%, var(--layer-deep) 92%);
   color: var(--text-primary);
   min-height: 100vh;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: transparent;
 }
 
 /* HERO */
@@ -19,7 +15,7 @@
   overflow: hidden;
   border: none;
   isolation: isolate;
-  background: linear-gradient(180deg, #040707 0%, #060c0d 56%, #070f10 100%);
+  background: transparent;
 }
 
 .hero-carousel,
@@ -222,8 +218,9 @@
 /* Directions */
 .directions-section {
   position: relative;
-  background: linear-gradient(180deg, #0a1112 0%, #0b1314 100%);
   overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.028) 0%, rgba(255, 255, 255, 0.014) 100%);
+  backdrop-filter: saturate(104%);
 }
 
 .directions-section::before,
@@ -316,8 +313,8 @@
 .aesthetic-section {
   position: relative;
   padding: 120px 0 112px;
-  background: linear-gradient(180deg, #0c1516 0%, #0e191a 100%);
   overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.022) 0%, rgba(255, 255, 255, 0.01) 100%);
 }
 
 .aesthetic-section::before {
@@ -505,8 +502,8 @@
 
 .documents-section {
   position: relative;
-  background: linear-gradient(180deg, #0f1a1c 0%, #111f21 100%);
   overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.024) 0%, rgba(255, 255, 255, 0.012) 100%);
 }
 
 .documents-section::before,
@@ -566,8 +563,8 @@
 /* Contact */
 .contact-section {
   position: relative;
-  background: linear-gradient(180deg, #101c1e 0%, #0c1415 100%);
   overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
 }
 
 .contact-section::before {
