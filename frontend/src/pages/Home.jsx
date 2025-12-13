@@ -66,43 +66,43 @@ const Home = () => {
   ];
 
   const premiumBenefits = [
-    { icon: Gem, title: 'Премиальные материалы', text: 'Оцинкованный металл и профессиональные покрытия, созданные служить десятилетиями.' },
-    { icon: Layers, title: 'Инженерная точность', text: 'Собственное производство на ЧПУ: каждая деталь безупречно повторяет проект.' },
-    { icon: ShieldCheck, title: 'Гарантированная безопасность', text: 'Строгий контроль качества, соответствие нормативам и необходимые сертификаты.' },
-    { icon: Timer, title: 'Сроки без компромиссов', text: 'Оптимизированная логистика и монтаж под ключ в заранее согласованные сроки.' }
+    { icon: Gem, title: 'Материалы для длительной эксплуатации', text: 'Металл и покрытия подобраны под срок службы объекта и климатические нагрузки.' },
+    { icon: Layers, title: 'Повторяемая геометрия без отклонений', text: 'ЧПУ-резка и шаблоны контроля обеспечивают точность монтажа на площадке.' },
+    { icon: ShieldCheck, title: 'Контроль качества на каждом этапе', text: 'От проектирования до отгрузки фиксируем допуски и выдаём подтверждающие документы.' },
+    { icon: Timer, title: 'Сроки закреплены договором', text: 'Производственный график и монтаж привязаны к этапам, отражённым в договоре.' }
   ];
 
   const productionHighlights = [
-    'Единый стандарт качества от расчёта до монтажа',
+    'Единый стандарт качества: расчёт → ЧПУ → сборка → монтаж',
     'Собственный инжиниринг и дизайн-поддержка проектов',
     'Полный пакет документов для коммерческих объектов',
-    'Доставка и сервис по всему Казахстану'
+    'Доставка и сопровождение по всему Казахстану'
   ];
 
   const productionStats = [
-    'Производство: X м²/мес — вставить фактические данные',
-    'Срок изготовления: от X дней — вставить фактические данные',
-    'Толщины/профиль: X–X мм — вставить фактические данные',
-    'География: Алматы / Казахстан'
+    'Производственные мощности под задачи проекта',
+    'Сроки изготовления и монтажа — фиксируются в договоре',
+    'Контроль геометрии и качества на производстве',
+    'Локация: Алматы, поставляем по Казахстану'
   ];
 
   const documents = [
-    { title: 'Сертификат соответствия', file: '/documents', result: 'Ускоряет согласование' },
-    { title: 'Договор поставки', file: '/documents', result: 'Снижает риски для заказчика' },
-    { title: 'Реквизиты компании', file: '/documents', result: 'Подходит для закупок/тендеров' }
+    { title: 'Подтверждение соответствия', file: '/documents', result: 'Сокращает время согласования' },
+    { title: 'Фиксация сроков и объёма', file: '/documents', result: 'Закрепляет этапы и ответственность сторон' },
+    { title: 'Реквизиты для закупок', file: '/documents', result: 'Работаем с юрлицами и тендерами' }
   ];
 
   const trustReasons = [
-    'Заводская точность и контроль качества',
-    'Понятная смета и спецификация',
-    'ЛСТК-геометрия без “сюрпризов” на монтаже',
+    'Смета и спецификация без скрытых работ',
+    'Контроль геометрии и качества на производстве',
+    'Сроки и этапы зафиксированы в договоре',
     'Документы и готовность к тендерам'
   ];
 
   const heroBadges = [
-    'X+ лет опыта',
-    'X+ объектов',
-    'Сроки по договору / контроль качества'
+    'Опытные инженеры ЛСТК',
+    'Реализованные объекты по Казахстану',
+    'Сроки и контроль качества закреплены договором'
   ];
 
   const openWhatsApp = (message) => {
@@ -149,7 +149,7 @@ const Home = () => {
               className="btn-primary"
               onClick={() => document.getElementById('premium-directions').scrollIntoView({ behavior: 'smooth' })}
             >
-              Получить расчёт за 15 минут <ArrowRight size={20} />
+              Получить расчёт и КП <ArrowRight size={20} />
             </button>
             <button className="btn-secondary hero-whatsapp" onClick={() => openWhatsApp('Здравствуйте! Нужен расчёт по ЛСТК.')}>
               Написать инженеру в WhatsApp <MessageCircle size={18} />
@@ -184,7 +184,7 @@ const Home = () => {
           <SectionHeader
             eyebrow="Почему нам доверяют"
             title="Закрываем ключевые риски на старте"
-            subtitle="Показываем прозрачные цифры, геометрию и документы, чтобы монтаж проходил без остановок."
+            subtitle="Закрепляем условия до старта, чтобы монтаж прошёл без сюрпризов."
           />
           <div className="trust-grid">
             {trustReasons.map((item, index) => (
@@ -207,21 +207,22 @@ const Home = () => {
 
           <div className="directions-grid">
             {categories.map((item, index) => (
-              <div key={index} className={`direction-card ${index === 0 ? 'featured-card' : ''}`}>
+              <div key={index} className={`direction-card ${index === 1 ? 'featured-card' : ''}`}>
                 <div className="direction-image" style={{ backgroundImage: `url(${item.image})` }} />
                 <div className="direction-body">
                   <div className="direction-top">
                     <h3>{item.title}</h3>
+                    {index === 1 && <span className="contact-badge">Для бизнеса</span>}
                     <ArrowRight size={18} />
                   </div>
-                  <p className="direction-audience">{item.audience}</p>
+                  <p className="direction-audience">Кому подходит: {item.audience}</p>
                   <p>{item.description}</p>
                   <div className="direction-actions">
                     <button className="btn-primary ghost" onClick={() => handleQuoteRequest(item.title)}>
                       Рассчитать стоимость
                     </button>
                     <Link to={item.link} className="btn-ghost compact">
-                      Посмотреть примеры / Подробнее
+                      Посмотреть примеры
                     </Link>
                   </div>
                 </div>
@@ -304,7 +305,7 @@ const Home = () => {
           <SectionHeader
             eyebrow="Документы"
             title="Прозрачность и готовность к тендерам"
-            subtitle="Предоставляем пакет документов по запросу — для тендеров и закупок"
+            subtitle="Предоставляем пакет документов для закупок и тендеров по запросу"
           />
 
           <div className="documents-grid">
@@ -335,11 +336,6 @@ const Home = () => {
               subtitle="Ответим в течение рабочего дня и предложим готовые решения под ваши задачи."
             />
 
-            <div className="contact-badges">
-              <span className="contact-badge">Инженер на связи</span>
-              <span className="contact-response">Ответ в течение 15 минут</span>
-            </div>
-
             <div className="contact-details">
               <div className="contact-item">
                 <strong>Телефон:</strong> {siteConfig.contact.phone}
@@ -353,6 +349,10 @@ const Home = () => {
             </div>
 
             <div className="contact-actions">
+              <div className="contact-badges">
+                <span className="contact-badge">Инженер на связи</span>
+                <span className="contact-response">Ответим за 15 минут в рабочее время</span>
+              </div>
               <button className="btn-primary contact-whatsapp" onClick={openWhatsApp}>
                 Написать в WhatsApp и получить расчёт
               </button>
@@ -378,8 +378,8 @@ const Home = () => {
 
       <LeadCTA
         title="Обсудим проект и сделаем предварительный расчёт"
-        text="КП на WhatsApp / почту. Ответим сегодня в рабочее время."
-        guarantee="Без обязательств. 1–2 уточняющих вопроса — и дадим предварительную стоимость."
+        text="КП на WhatsApp или почту. Без обязательств."
+        guarantee="1–2 уточняющих вопроса — и дадим ориентир по стоимости."
         primaryLabel="Получить расчёт и КП"
         primaryAction={() => openWhatsApp('Хочу получить расчёт и КП по проекту. Ответьте, пожалуйста, сегодня.')}
       />
