@@ -30,7 +30,7 @@
   opacity: 0;
   transform: scale(1.01);
   transition: opacity 1s ease, transform 1s ease;
-  filter: brightness(0.94) contrast(1.04) saturate(0.96);
+  filter: brightness(1.02) contrast(1.02) saturate(0.98);
 }
 
 .hero-slide.active {
@@ -42,9 +42,9 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(5, 9, 9, 0.7) 40%, rgba(6, 11, 11, 0.78) 100%),
-    linear-gradient(120deg, rgba(5, 8, 8, 0.58) 8%, rgba(5, 8, 8, 0.5) 52%, rgba(7, 11, 11, 0.7) 96%);
-  backdrop-filter: blur(1px);
+    linear-gradient(180deg, rgba(0, 0, 0, 0.42) 0%, rgba(5, 9, 9, 0.6) 42%, rgba(6, 11, 11, 0.68) 100%),
+    linear-gradient(120deg, rgba(5, 8, 8, 0.42) 8%, rgba(5, 8, 8, 0.36) 54%, rgba(7, 11, 11, 0.64) 96%);
+  backdrop-filter: blur(1px) brightness(1.04);
   z-index: 1;
 }
 
@@ -53,8 +53,8 @@
   inset: 0;
   pointer-events: none;
   box-shadow:
-    inset 0 0 180px rgba(0, 0, 0, 0.4),
-    inset 0 0 120px rgba(0, 0, 0, 0.3);
+    inset 0 0 180px rgba(0, 0, 0, 0.32),
+    inset 0 0 120px rgba(0, 0, 0, 0.24);
   z-index: 1;
 }
 
@@ -74,7 +74,7 @@
   gap: 10px;
   padding: 8px 14px;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(8, 12, 12, 0.78);
+  background: rgba(10, 16, 16, 0.82);
   border-radius: 10px;
   color: #d6dfdb;
   letter-spacing: 0.08em;
@@ -263,7 +263,7 @@
 
 /* Trust section */
 .trust-section {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.036) 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 
 .trust-grid {
@@ -279,9 +279,9 @@
   padding: 16px 18px;
   border-radius: 14px;
   border: 1px solid var(--card-border);
-  background: linear-gradient(150deg, rgba(12, 18, 18, 0.94), rgba(8, 13, 13, 0.92));
+  background: linear-gradient(150deg, rgba(14, 22, 22, 0.94), rgba(10, 16, 16, 0.92));
   color: var(--text-primary);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.26);
 }
 
 .trust-card p {
@@ -294,8 +294,8 @@
 .directions-section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.028) 0%, rgba(255, 255, 255, 0.014) 100%);
-  backdrop-filter: saturate(104%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: saturate(106%) brightness(1.02);
 }
 
 .directions-section::before,
@@ -326,13 +326,13 @@
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--card-border);
-  background: linear-gradient(180deg, rgba(12, 18, 18, 0.94) 0%, rgba(10, 15, 15, 0.94) 100%);
+  background: linear-gradient(180deg, rgba(14, 22, 22, 0.94) 0%, rgba(10, 16, 16, 0.92) 100%);
   display: grid;
   grid-template-rows: 240px 1fr;
   text-decoration: none;
   color: inherit;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
 }
 
 .featured-card {
@@ -344,14 +344,14 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  filter: brightness(0.9) contrast(1.02) saturate(0.94);
+  filter: brightness(0.98) contrast(1.04) saturate(0.96);
 }
 
 .direction-image::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(3, 5, 5, 0.08) 0%, rgba(5, 8, 8, 0.56) 70%, rgba(5, 8, 8, 0.78) 100%);
+  background: linear-gradient(180deg, rgba(3, 5, 5, 0.08) 0%, rgba(5, 8, 8, 0.48) 70%, rgba(5, 8, 8, 0.7) 100%);
 }
 
 .direction-body {
@@ -387,7 +387,7 @@
 .direction-actions {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 12px;
   margin-top: auto;
 }
 
@@ -797,20 +797,20 @@
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--card-border);
-  background: rgba(6, 10, 10, 0.72);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.34);
+  background: rgba(10, 16, 16, 0.78);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.32);
 }
 
 .contact-map::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(4, 6, 6, 0.52), rgba(6, 10, 10, 0.7));
+  background: linear-gradient(180deg, rgba(4, 6, 6, 0.38), rgba(6, 10, 10, 0.6));
   pointer-events: none;
 }
 
 .contact-map iframe {
-  filter: grayscale(1) brightness(0.5) contrast(1.08) saturate(0.96);
+  filter: grayscale(0.8) brightness(0.64) contrast(1.06) saturate(1.02);
 }
 
 @media (max-width: 1024px) {

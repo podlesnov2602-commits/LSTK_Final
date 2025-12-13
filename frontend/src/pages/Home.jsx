@@ -145,11 +145,8 @@ const Home = () => {
           </p>
 
           <div className="hero-actions">
-            <button
-              className="btn-primary"
-              onClick={() => document.getElementById('premium-directions').scrollIntoView({ behavior: 'smooth' })}
-            >
-              Получить расчёт за 15 минут <ArrowRight size={20} />
+            <button className="btn-primary" onClick={() => openWhatsApp('Хочу получить расчёт и КП по ЛСТК-проекту.')}>
+              Получить расчёт и КП <ArrowRight size={20} />
             </button>
             <button className="btn-secondary hero-whatsapp" onClick={() => openWhatsApp('Здравствуйте! Нужен расчёт по ЛСТК.')}>
               Написать инженеру в WhatsApp <MessageCircle size={18} />
@@ -218,11 +215,8 @@ const Home = () => {
                   <p>{item.description}</p>
                   <div className="direction-actions">
                     <button className="btn-primary ghost" onClick={() => handleQuoteRequest(item.title)}>
-                      Рассчитать стоимость
+                      Получить расчёт
                     </button>
-                    <Link to={item.link} className="btn-ghost compact">
-                      Посмотреть примеры / Подробнее
-                    </Link>
                   </div>
                 </div>
               </div>
@@ -353,12 +347,12 @@ const Home = () => {
             </div>
 
             <div className="contact-actions">
-              <button className="btn-primary contact-whatsapp" onClick={openWhatsApp}>
-                Написать в WhatsApp и получить расчёт
+              <button className="btn-primary contact-whatsapp" onClick={() => openWhatsApp('Хочу получить расчёт и КП по проекту.')}>
+                Получить расчёт и КП
               </button>
-              <Link to="/contacts" className="btn-ghost">
-                Все контакты
-              </Link>
+              <button className="btn-secondary" onClick={() => openWhatsApp('Напишите, пожалуйста, инженерную консультацию по ЛСТК.')}>
+                Написать инженеру в WhatsApp
+              </button>
             </div>
           </div>
 
