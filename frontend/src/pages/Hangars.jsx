@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
-import { DollarSign, Layers, Zap, RefreshCw } from 'lucide-react';
+import { ClipboardList, DollarSign, Factory, Layers, PenTool, RefreshCw, Ruler, Wrench, Zap } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import LeadCTA from '../components/LeadCTA';
 import PageHero from '../components/ui/PageHero';
 import SectionHeader from '../components/ui/SectionHeader';
+import ProcessSteps from '../components/ui/ProcessSteps';
 import PricingCards from '../components/ui/PricingCards';
 import './ProductPage.css';
 
@@ -91,10 +92,31 @@ const Hangars = () => {
   ];
 
   const steps = [
-    { number: '01', title: 'Консультация и ТЗ', description: 'Уточняем параметры участка, габариты и задачу' },
-    { number: '02', title: 'Инженерный расчёт', description: 'Закладываем пролёты, нагрузки, узлы и ограждения' },
-    { number: '03', title: 'Производство', description: 'Изготавливаем металлокаркас и подготовку под монтаж' },
-    { number: '04', title: 'Монтаж и сдача', description: 'Собираем, проверяем и передаём объект' }
+    {
+      title: 'Заявка',
+      description: 'Оставляете запрос и фиксируете задачу для будущего ангара или склада',
+      icon: ClipboardList
+    },
+    {
+      title: 'Замеры',
+      description: 'Фиксируем пролёт, высоту, нагрузки и особенности участка',
+      icon: Ruler
+    },
+    {
+      title: 'Проект',
+      description: 'Готовим расчёт нагрузок, узлов и смету с визуализацией',
+      icon: PenTool
+    },
+    {
+      title: 'Производство',
+      description: 'Изготавливаем металлокаркас, комплектуем обшивку и крепёж',
+      icon: Factory
+    },
+    {
+      title: 'Монтаж',
+      description: 'Собираем на площадке, проверяем узлы и сдаём объект',
+      icon: Wrench
+    }
   ];
 
   const handleWhatsAppClick = () => {
@@ -179,15 +201,7 @@ const Hangars = () => {
             title="Процесс работы"
             subtitle="Чёткая последовательность действий от инженерии до монтажа"
           />
-          <div className="steps-grid">
-            {steps.map((step, index) => (
-              <div key={index} className="step-card">
-                <div className="step-number">{step.number}</div>
-                <h3 className="h3">{step.title}</h3>
-                <p className="body-md">{step.description}</p>
-              </div>
-            ))}
-          </div>
+          <ProcessSteps steps={steps} />
         </div>
       </section>
 

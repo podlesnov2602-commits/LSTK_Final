@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { Check, Ruler, Feather, Infinity, Move } from 'lucide-react';
+import { Check, ClipboardList, Factory, Feather, Infinity, Move, PenTool, Ruler, Wrench } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import './ProductPage.css';
 import PageHero from '../components/ui/PageHero';
 import SectionHeader from '../components/ui/SectionHeader';
 import PricingCards from '../components/ui/PricingCards';
 import LeadBar from '../components/ui/LeadBar';
+import ProcessSteps from '../components/ui/ProcessSteps';
 
 import img1 from '../assets/Capsules1.jpg';
 import img2 from '../assets/Capsules2.jpg';
@@ -90,10 +91,31 @@ const Capsules = () => {
   ];
 
   const steps = [
-    { number: '01', title: 'Консультация', description: 'Обсуждаем ваши требования' },
-    { number: '02', title: 'Проектирование', description: 'Создаём 3D-модель' },
-    { number: '03', title: 'Производство', description: 'Изготовление на заводе' },
-    { number: '04', title: 'Монтаж', description: 'Установка за 2–5 дней' }
+    {
+      title: 'Заявка',
+      description: 'Оставляете запрос: глэмпинг, аренда или корпоративное размещение',
+      icon: ClipboardList
+    },
+    {
+      title: 'Замеры',
+      description: 'Понимаем участок, габариты и сценарий, фиксируем инженерные вводы',
+      icon: Ruler
+    },
+    {
+      title: 'Проект',
+      description: 'Согласовываем планировку, финальную комплектацию и смету',
+      icon: PenTool
+    },
+    {
+      title: 'Производство',
+      description: 'Собираем каркас, облицовку и начинку на производстве',
+      icon: Factory
+    },
+    {
+      title: 'Монтаж',
+      description: 'Привозим модуль, ставим на подготовленную площадку и подключаем',
+      icon: Wrench
+    }
   ];
 
   const handleCtaClick = () => {
@@ -192,16 +214,8 @@ const Capsules = () => {
 
       <section className="steps-section">
         <div className="container">
-          <SectionHeader title="Как мы работаем" subtitle="Короткий путь от задачи до монтажа" />
-          <div className="steps-grid">
-            {steps.map((step, index) => (
-              <div key={index} className="step-card">
-                <div className="step-number">{step.number}</div>
-                <h3 className="h3">{step.title}</h3>
-                <p className="body-md">{step.description}</p>
-              </div>
-            ))}
-          </div>
+          <SectionHeader title="Как мы работаем" subtitle="Выстраиваем процесс так, чтобы запуск занял минимум времени" />
+          <ProcessSteps steps={steps} />
         </div>
       </section>
 
