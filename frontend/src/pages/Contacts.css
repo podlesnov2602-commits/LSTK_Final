@@ -59,11 +59,11 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(6, 10, 11, 0.6) 0%,
-    rgba(6, 10, 11, 0.34) 46%,
-    rgba(6, 10, 11, 0.12) 100%
+    rgba(8, 12, 12, 0.46) 0%,
+    rgba(8, 12, 12, 0.28) 46%,
+    rgba(8, 12, 12, 0.12) 100%
   );
-  opacity: 0.9;
+  opacity: 0.94;
   pointer-events: none;
   z-index: 0;
 }
@@ -82,7 +82,7 @@
 }
 
 .contact-info-card {
-  background: linear-gradient(180deg, rgba(12, 18, 18, 0.96) 0%, rgba(10, 15, 15, 0.94) 100%);
+  background: linear-gradient(180deg, rgba(14, 22, 22, 0.96) 0%, rgba(11, 17, 17, 0.92) 100%);
   border: 1px solid var(--card-border);
   border-radius: 16px;
   padding: 32px 28px;
@@ -136,13 +136,13 @@
   border: 1px solid var(--card-border);
   border-radius: 16px;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(12, 18, 18, 0.96) 0%, rgba(10, 15, 15, 0.94) 100%);
-  backdrop-filter: blur(2px);
+  background: linear-gradient(180deg, rgba(14, 22, 22, 0.94) 0%, rgba(11, 17, 17, 0.9) 100%);
+  backdrop-filter: blur(2px) brightness(1.04);
   box-shadow: var(--shadow-soft);
 }
 
 .map-container iframe {
-  filter: grayscale(100%) invert(90%) brightness(0.7);
+  filter: grayscale(0.82) invert(0.7) brightness(0.82) contrast(1.05) saturate(1.04);
 }
 
 .contacts-cta-content {

@@ -191,14 +191,14 @@ const Hangars = () => {
         </div>
       </section>
 
-      <LeadCTA
-        title="Рассчитать ангар под вашу задачу"
-        text="Обсудим размеры, пролёты и нагрузки — инженер ответит напрямую"
-        primaryLabel="Написать в WhatsApp"
-        primaryAction={handleWhatsAppClick}
-        secondaryLabel="Получить КП на почту"
-        secondaryAction={handleEmailRequest}
-      />
+        <LeadCTA
+          title="Рассчитать ангар под вашу задачу"
+          text="Обсудим размеры, пролёты и нагрузки — инженер ответит напрямую"
+          primaryLabel="Получить расчёт и КП"
+          primaryAction={handleWhatsAppClick}
+          secondaryLabel="Получить КП на почту"
+          secondaryAction={handleEmailRequest}
+        />
     </div>
   );
 };

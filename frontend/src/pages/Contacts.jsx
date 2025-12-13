@@ -11,7 +11,7 @@ const Contacts = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
   const handleWhatsAppContact = () => {
-    const message = encodeURIComponent('Здравствуйте! Хочу получить консультацию по продукции');
+    const message = encodeURIComponent('Здравствуйте! Хочу получить расчёт и КП по ЛСТК-проекту. Подскажите, что нужно уточнить.');
     window.open(`${siteConfig.social.whatsapp}?text=${message}`, '_blank');
   };
 
@@ -117,10 +117,10 @@ const Contacts = () => {
             <SectionHeader
               eyebrow="Поддержка"
               title="Готовы ответить на ваши вопросы"
-              subtitle="Напишите нам в WhatsApp и получите подробную консультацию"
+              subtitle="Напишите инженеру — отправим расчёт и КП по вашему запросу"
             />
             <button className="btn-primary" onClick={handleWhatsAppContact}>
-              Написать в WhatsApp
+              Получить расчёт и КП
             </button>
           </div>
         </div>
