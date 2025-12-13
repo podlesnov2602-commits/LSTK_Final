@@ -5,7 +5,7 @@ const LeadCTA = ({ title, text, primaryLabel, primaryAction, secondaryLabel, sec
   return (
     <section className="lead-cta-section">
       <div className="container">
-        <div className="lead-cta-card">
+        <div className="lead-cta-card card-surface subtle-grid">
           <div className="lead-cta-text">
             <h2>{title}</h2>
             <p>{text}</p>

@@ -1,33 +1,27 @@
 .lead-cta-section {
   position: relative;
-  padding: 86px 0 96px;
-  background:
-    radial-gradient(140% 120% at 50% 0%, rgba(14, 162, 115, 0.14), rgba(8, 14, 13, 0)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.028) 0%, rgba(255, 255, 255, 0.014) 100%);
-  overflow: hidden;
+  padding: var(--section-pad-desktop) 0;
+  background: transparent;
+  overflow: visible;
 }
 
 .lead-cta-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(80% 120% at 50% 60%, rgba(14, 162, 115, 0.12), rgba(6, 10, 10, 0.1) 70%, rgba(6, 10, 10, 0) 100%);
-  opacity: 0.9;
-  pointer-events: none;
+  display: none;
 }
 
 .lead-cta-card {
   position: relative;
-  background: linear-gradient(150deg, rgba(9, 15, 15, 0.94), rgba(7, 12, 12, 0.96));
-  border: 1px solid rgba(14, 162, 115, 0.32);
-  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.42), 0 0 48px rgba(14, 162, 115, 0.12);
-  border-radius: 16px;
-  padding: 28px 30px;
+  background: linear-gradient(155deg, rgba(12, 18, 18, 0.96), rgba(8, 13, 13, 0.94));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-xl);
+  padding: 32px 34px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
   z-index: 1;
+  isolation: isolate;
 }
 
 .lead-cta-text h2 {
