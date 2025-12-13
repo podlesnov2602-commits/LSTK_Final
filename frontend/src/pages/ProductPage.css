@@ -1,8 +1,6 @@
 .product-page {
   width: 100%;
-  background: radial-gradient(circle at 18% 18%, rgba(14, 162, 115, 0.08), transparent 32%),
-    radial-gradient(circle at 78% 10%, rgba(8, 24, 22, 0.28), transparent 36%),
-    linear-gradient(180deg, var(--bg-main) 0%, var(--bg-surface) 100%);
+  background: transparent;
   position: relative;
 }
 

@@ -1,7 +1,5 @@
 .home-page {
-  background:
-    radial-gradient(circle at 12% 12%, rgba(14, 162, 115, 0.07), transparent 26%),
-    linear-gradient(180deg, #060a0b 0%, #0a1011 18%, #0b1314 38%, #0d1617 62%, #0e1819 100%);
+  background: transparent;
   color: var(--text-primary);
   min-height: 100vh;
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -17,7 +15,7 @@
   overflow: hidden;
   border: none;
   isolation: isolate;
-  background: linear-gradient(180deg, #050808 0%, #070d0e 100%);
+  background: transparent;
 }
 
 .hero-carousel,
@@ -222,19 +220,13 @@
 /* Directions */
 .directions-section {
   position: relative;
-  background: linear-gradient(180deg, #0a1112 0%, #0c1415 100%);
+  background: transparent;
   overflow: hidden;
 }
 
 .directions-section::before,
 .directions-section::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 120px;
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 .directions-section::before {
@@ -325,19 +317,12 @@
 .aesthetic-section {
   position: relative;
   padding: 120px 0 112px;
-  background: linear-gradient(180deg, #0b1415 0%, #0a1213 100%);
+  background: transparent;
   overflow: hidden;
 }
 
 .aesthetic-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 18%, rgba(14, 162, 115, 0.08), transparent 28%),
-    linear-gradient(115deg, rgba(8, 18, 16, 0.9), rgba(7, 14, 13, 0.86));
-  opacity: 0.92;
-  pointer-events: none;
+  display: none;
 }
 
 .aesthetic-header {
@@ -520,18 +505,13 @@
 
 .documents-section {
   position: relative;
-  background: linear-gradient(180deg, #0a1212 0%, #0b1516 100%);
+  background: transparent;
   overflow: hidden;
 }
 
 .documents-section::before,
 .documents-section::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 110px;
-  pointer-events: none;
+  display: none;
 }
 
 .documents-section::before {
@@ -587,17 +567,12 @@
 /* Contact */
 .contact-section {
   position: relative;
-  background: linear-gradient(180deg, #0a1212 0%, #0c1516 100%);
+  background: transparent;
   overflow: hidden;
 }
 
 .contact-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(6, 10, 10, 0.82), rgba(8, 14, 13, 0.82));
-  opacity: 0.6;
-  pointer-events: none;
+  display: none;
 }
 
 .contact-grid {
