@@ -368,7 +368,7 @@
 
 .process-step-wrapper {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 14px;
   flex: 1;
   min-width: 240px;
@@ -384,6 +384,8 @@
   border-radius: 16px;
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.34);
   backdrop-filter: blur(4px);
+  height: 100%;
+  align-items: stretch;
 }
 
 .process-icon-shell {
@@ -397,12 +399,14 @@
   color: #c5f7e7;
   border: 1px solid rgba(14, 162, 115, 0.55);
   box-shadow: var(--accent-glow);
+  align-self: flex-start;
 }
 
 .process-step-body {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  flex: 1;
 }
 
 .process-step-label {
@@ -435,6 +439,7 @@
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.82);
+  align-self: center;
 }
 
 /* Form Section */
