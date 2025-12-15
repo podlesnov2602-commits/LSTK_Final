@@ -6,16 +6,12 @@ import './CostingBlock.css';
 const CostingBlock = ({ productName }) => {
   const [activeForm, setActiveForm] = useState(null);
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
 
   const productLabel = useMemo(() => productName || 'проект', [productName]);
 
-  const handleWhatsAppSubmit = (event) => {
-    event.preventDefault();
-    if (!name || !phone) return;
-
-    const text = encodeURIComponent(`Расчёт ${productLabel}. Имя: ${name}. Телефон: ${phone}.`);
+  const handleWhatsAppRedirect = () => {
+    const text = encodeURIComponent(`Здравствуйте! Хочу расчёт на ${productLabel}. Напишите, пожалуйста, в WhatsApp.`);
     window.open(`${siteConfig.social.whatsapp}?text=${text}`, '_blank');
   };
 
@@ -28,7 +24,6 @@ const CostingBlock = ({ productName }) => {
     window.location.href = `mailto:${siteConfig.contact.email}?subject=${subject}&body=${body}`;
   };
 
-  const showWhatsAppForm = activeForm === 'whatsapp';
   const showEmailForm = activeForm === 'email';
 
   return (
@@ -40,11 +35,11 @@ const CostingBlock = ({ productName }) => {
               <p className="eyebrow">Расчёт</p>
               <h3>Расчёт стоимости под ключ</h3>
               <p className="body-lg subtle">Без длинных форм и ожиданий</p>
-              <p className="body-md">Имя и телефон — отправим расчёт в WhatsApp или коммерческое предложение в PDF на почту.</p>
+              <p className="body-md">Напишите нам в WhatsApp или оставьте email — пришлём расчёт и КП без задержек.</p>
             </div>
 
             <div className="costing-block__badges">
-              <span>Имя + телефон</span>
+              <span>Моментальный переход в чат</span>
               <span>Цена фиксируется в КП</span>
               <span>Ответ в день обращения</span>
             </div>
@@ -53,7 +48,7 @@ const CostingBlock = ({ productName }) => {
               <button
                 type="button"
                 className="btn-primary btn-whatsapp-solid"
-                onClick={() => setActiveForm(activeForm === 'whatsapp' ? null : 'whatsapp')}
+                onClick={handleWhatsAppRedirect}
               >
                 <MessageCircle size={18} />
                 Рассчитать стоимость в WhatsApp
@@ -69,41 +64,6 @@ const CostingBlock = ({ productName }) => {
             </div>
 
             <div className="costing-block__forms">
-              {showWhatsAppForm && (
-                <form className="costing-form" onSubmit={handleWhatsAppSubmit}>
-                  <div className="form-grid">
-                    <label className="form-label">
-                      Имя
-                      <input
-                        type="text"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="Ваше имя"
-                        required
-                        className="form-input"
-                      />
-                    </label>
-                    <label className="form-label">
-                      Телефон
-                      <input
-                        type="tel"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        placeholder="+7 (___) ___-__-__"
-                        required
-                        className="form-input"
-                      />
-                    </label>
-                  </div>
-                  <div className="form-actions">
-                    <button type="submit" className="btn-primary btn-whatsapp-solid">
-                      Отправить расчёт в WhatsApp
-                    </button>
-                    <span className="form-hint">Откроется чат с готовым сообщением</span>
-                  </div>
-                </form>
-              )}
-
               {showEmailForm && (
                 <form className="costing-form" onSubmit={handleEmailSubmit}>
                   <div className="form-grid">
