@@ -1,0 +1,183 @@
+.contacts-page {
+  width: 100%;
+  background: transparent;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Contacts Hero */
+.contacts-hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.contacts-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(7, 12, 13, 0.9) 0%, rgba(11, 17, 18, 0.82) 56%, rgba(14, 162, 115, 0.26) 100%);
+}
+
+.contacts-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contacts-hero-content h1 {
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.contacts-hero-content p {
+  color: var(--text-secondary);
+}
+
+/* Contact Info Section */
+.contact-info-section,
+.map-section,
+.contacts-cta-section {
+  padding: 100px 0;
+  background: transparent;
+  position: relative;
+  isolation: isolate;
+}
+
+.contact-info-section::before,
+.map-section::before,
+.contacts-cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 12, 12, 0.46) 0%,
+    rgba(8, 12, 12, 0.28) 46%,
+    rgba(8, 12, 12, 0.12) 100%
+  );
+  opacity: 0.94;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-info-section .container,
+.map-section .container,
+.contacts-cta-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.contact-info-card {
+  background: linear-gradient(180deg, rgba(14, 22, 22, 0.96) 0%, rgba(11, 17, 17, 0.92) 100%);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 32px 28px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  backdrop-filter: blur(2px);
+  box-shadow: var(--shadow-soft);
+  text-align: left;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--brand-green);
+  box-shadow: var(--accent-glow);
+}
+
+.contact-info-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(14, 162, 115, 0.12);
+  color: var(--brand-green);
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+  border: 1px solid rgba(14, 162, 115, 0.32);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-info-card:hover .contact-info-icon {
+  background: var(--brand-green);
+  color: #031915;
+  box-shadow: var(--accent-glow);
+}
+
+.contact-info-text h3 {
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.contact-info-text p {
+  color: var(--text-secondary);
+}
+
+.map-container {
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(14, 22, 22, 0.94) 0%, rgba(11, 17, 17, 0.9) 100%);
+  backdrop-filter: blur(2px) brightness(1.04);
+  box-shadow: var(--shadow-soft);
+}
+
+.map-container iframe {
+  filter: grayscale(0.82) invert(0.7) brightness(0.82) contrast(1.05) saturate(1.04);
+}
+
+.contacts-cta-content {
+  text-align: left;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.contacts-cta-content h2 {
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.contacts-cta-content p {
+  margin-bottom: 32px;
+}
+
+@media (max-width: 768px) {
+  .contacts-hero {
+    min-height: 50vh;
+  }
+  
+  .contact-info-section,
+  .map-section,
+  .contacts-cta-section {
+    padding: 80px 0;
+  }
+  
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .contact-info-card {
+    flex-direction: column;
+    text-align: left;
+  }
+}

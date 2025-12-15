@@ -1,0 +1,139 @@
+.price-anchor-section {
+  padding: 58px 0;
+  background: linear-gradient(180deg, rgba(10, 16, 17, 0.96) 0%, rgba(9, 14, 15, 0.94) 100%);
+  position: relative;
+}
+
+.price-anchor-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.price-anchor-title {
+  font-size: clamp(28px, 4vw, 42px);
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.price-anchor-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 88px;
+  height: 2px;
+  background: var(--brand-green);
+  opacity: 0.9;
+  border-radius: 999px;
+}
+
+.price-anchor-subtitle {
+  color: var(--text-secondary);
+  font-size: 15px;
+  max-width: 760px;
+  line-height: 1.6;
+}
+
+.price-anchor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.price-anchor-card {
+  background: linear-gradient(160deg, rgba(12, 20, 21, 0.92) 0%, rgba(10, 16, 17, 0.92) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.35);
+  border-radius: 16px;
+  padding: 26px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.price-anchor-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.price-anchor-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.price-anchor-size {
+  font-size: 18px;
+  font-weight: 650;
+  color: var(--text-primary);
+}
+
+.price-anchor-metric {
+  color: rgba(233, 241, 238, 0.72);
+  font-size: 13px;
+  letter-spacing: 0.01em;
+}
+
+.price-anchor-price {
+  color: var(--brand-green);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+}
+
+.price-anchor-scenario {
+  color: rgba(233, 241, 238, 0.86);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.price-anchor-note {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 0;
+}
+
+.price-anchor-markers {
+  display: grid;
+  gap: 8px;
+}
+
+.price-anchor-marker {
+  color: rgba(233, 241, 238, 0.82);
+  font-size: 14px;
+  letter-spacing: 0.005em;
+}
+
+.price-anchor-footnote {
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .price-anchor-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(14, 162, 115, 0.48);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.42);
+  }
+}
+
+@media (max-width: 768px) {
+  .price-anchor-header {
+    margin-bottom: 24px;
+  }
+
+  .price-anchor-card {
+    padding: 22px;
+  }
+}

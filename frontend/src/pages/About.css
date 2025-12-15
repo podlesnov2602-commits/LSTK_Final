@@ -1,0 +1,416 @@
+/* Premium About Page */
+.about-page {
+  width: 100%;
+  background: transparent;
+}
+
+/* About Hero - Premium Style */
+.about-hero {
+  position: relative;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(7, 12, 13, 0.9) 0%, rgba(11, 17, 18, 0.82) 56%, rgba(14, 162, 115, 0.26) 100%);
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-hero-content h1 {
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  text-shadow: none;
+}
+
+.about-hero-content p {
+  color: var(--text-secondary);
+  font-size: 20px;
+}
+
+/* Story Section - Premium */
+.story-section {
+  padding: 120px 0;
+  background: transparent;
+  position: relative;
+}
+
+.story-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--brand-green), transparent);
+}
+
+.story-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.story-text h2 {
+  color: var(--brand-green-dark);
+  margin-bottom: 32px;
+  position: relative;
+  display: inline-block;
+}
+
+.story-text h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 72px;
+  height: 2px;
+  background: var(--brand-green-dark);
+  border-radius: 999px;
+  opacity: 0.6;
+}
+
+.story-text p {
+  margin-bottom: 24px;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+.story-image {
+  width: 100%;
+  height: 550px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 18px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+.story-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--brand-green);
+  opacity: 0.8;
+}
+
+/* Story Video */
+.story-video {
+  width: 100%;
+  height: 550px;
+  border-radius: 18px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+.story-video::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--brand-green);
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.story-video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Values Section - Premium Cards */
+.values-section {
+  padding: 120px 0;
+  background: transparent;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 80px;
+  color: var(--text-primary);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: var(--brand-green-dark);
+  border-radius: 999px;
+  opacity: 0.6;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.value-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--brand-green);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand-green);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.value-card:hover::before {
+  opacity: 1;
+}
+
+.value-icon {
+  width: 88px;
+  height: 88px;
+  margin: 0 auto 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--brand-green);
+  border-radius: 16px;
+  transition: all 0.25s ease;
+  border: 1.5px solid var(--card-border);
+  box-shadow: none;
+}
+
+.value-card:hover .value-icon {
+  background: var(--brand-green);
+  color: #0A0A0A;
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.value-card h3 {
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.value-card p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Production Details - Premium Stats */
+.production-details-section {
+  padding: 120px 0;
+  background: transparent;
+  position: relative;
+}
+
+.production-details-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--brand-green), transparent);
+}
+
+.production-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+
+.production-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 56px 32px;
+  text-align: center;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: none;
+}
+
+.production-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--brand-green);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.production-item:hover {
+  border-color: var(--brand-green);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.production-item:hover::before {
+  transform: scaleX(1);
+}
+
+.production-number {
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--brand-green);
+  margin-bottom: 20px;
+  line-height: 1;
+  text-shadow: none;
+}
+
+.production-label {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Mission Section - Premium Quote */
+.mission-section {
+  padding: 120px 0;
+  background: transparent;
+  position: relative;
+}
+
+.mission-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 80px 60px;
+  background: var(--card-bg);
+  border-radius: 24px;
+  border: 1px solid var(--card-border);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: none;
+}
+
+.mission-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--brand-green), transparent);
+}
+
+.mission-content h2 {
+  color: var(--text-primary);
+  margin-bottom: 40px;
+}
+
+.mission-content p {
+  margin-bottom: 28px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .story-content {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  
+  .story-image {
+    height: 450px;
+  }
+  
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .production-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: 55vh;
+    background-attachment: scroll;
+  }
+  
+  .about-hero-content p {
+    font-size: 17px;
+  }
+  
+  .story-section,
+  .values-section,
+  .production-details-section,
+  .mission-section {
+    padding: 100px 0;
+  }
+  
+  .section-title {
+    margin-bottom: 60px;
+  }
+  
+  .story-image {
+    height: 350px;
+  }
+  
+  .values-grid,
+  .production-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .mission-content {
+    padding: 60px 32px;
+  }
+  
+  .mission-content p {
+    font-size: 16px;
+  }
+}
