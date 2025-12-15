@@ -8,13 +8,10 @@ import {
   ShieldCheck,
   Sparkles,
   Timer,
-  Building2,
-  PhoneCall,
-  MessageCircle
+  Building2
 } from 'lucide-react';
 
 import { siteConfig } from '../config/siteConfig';
-import LeadCTA from '../components/LeadCTA';
 import SectionHeader from '../components/ui/SectionHeader';
 import './Home.css';
 
@@ -138,13 +135,10 @@ const Home = () => {
           <p className="hero-subtitle">
             Заводские металлокаркасы с инженерным контролем: точная геометрия, прогнозируемые сроки и эстетика без компромиссов.
           </p>
-
+          
           <div className="hero-actions">
             <button className="btn-primary" onClick={() => openWhatsApp('Хочу получить расчёт и КП по ЛСТК-проекту.')}>
               Получить расчёт и КП <ArrowRight size={20} />
-            </button>
-            <button className="btn-secondary hero-whatsapp" onClick={() => openWhatsApp('Здравствуйте! Нужен расчёт по ЛСТК.')}>
-              Написать инженеру в WhatsApp <MessageCircle size={18} />
             </button>
           </div>
 
@@ -305,10 +299,9 @@ const Home = () => {
           </div>
 
           <div className="documents-cta">
-            <Link to="/documents" className="btn-ghost">
+            <Link to="/documents" className="btn-primary">
               Смотреть все документы <ArrowRight size={16} />
             </Link>
-            <button className="btn-secondary" onClick={() => openWhatsApp('Прошу отправить пакет документов для тендера/закупки.')}>Запросить пакет документов</button>
           </div>
         </div>
       </section>
@@ -343,9 +336,6 @@ const Home = () => {
               <button className="btn-primary contact-whatsapp" onClick={() => openWhatsApp('Хочу получить расчёт и КП по проекту.')}>
                 Получить расчёт и КП
               </button>
-              <button className="btn-secondary" onClick={() => openWhatsApp('Напишите, пожалуйста, инженерную консультацию по ЛСТК.')}>
-                Написать инженеру в WhatsApp
-              </button>
             </div>
           </div>
 
@@ -362,14 +352,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <LeadCTA
-        title="Обсудим проект и сделаем предварительный расчёт"
-        text="КП на WhatsApp / почту. Ответим сегодня в рабочее время."
-        guarantee="Без обязательств. 1–2 уточняющих вопроса — и дадим предварительную стоимость."
-        primaryLabel="Получить расчёт и КП"
-        primaryAction={() => openWhatsApp('Хочу получить расчёт и КП по проекту. Ответьте, пожалуйста, сегодня.')}
-      />
     </div>
   );
 };
