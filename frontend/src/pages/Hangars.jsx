@@ -1,11 +1,10 @@
 import React, { useEffect } from 'react';
 import { ClipboardList, DollarSign, Factory, Layers, PenTool, RefreshCw, Ruler, Wrench, Zap } from 'lucide-react';
-import { siteConfig } from '../config/siteConfig';
-import LeadCTA from '../components/LeadCTA';
 import PageHero from '../components/ui/PageHero';
 import SectionHeader from '../components/ui/SectionHeader';
 import ProcessSteps from '../components/ui/ProcessSteps';
 import PricingCards from '../components/ui/PricingCards';
+import CostingBlock from '../components/ui/CostingBlock';
 import './ProductPage.css';
 
 const Hangars = () => {
@@ -119,19 +118,6 @@ const Hangars = () => {
     }
   ];
 
-  const handleWhatsAppClick = () => {
-    const message = encodeURIComponent(
-      'Запрос на расчёт ангара. Опишите размеры, пролёт и нагрузки — инженер свяжется напрямую.'
-    );
-    window.open(`${siteConfig.social.whatsapp}?text=${message}`, '_blank');
-  };
-
-  const handleEmailRequest = () => {
-    const subject = encodeURIComponent('КП по ангарам и складам');
-    const body = encodeURIComponent('Укажите габариты, пролёт, нагрузки и регион — вышлем КП с расчётом.');
-    window.location.href = `mailto:${siteConfig.contact.email}?subject=${subject}&body=${body}`;
-  };
-
   return (
     <div className="product-page">
       <PageHero
@@ -205,14 +191,7 @@ const Hangars = () => {
         </div>
       </section>
 
-        <LeadCTA
-          title="Рассчитать ангар под вашу задачу"
-          text="Обсудим размеры, пролёты и нагрузки — инженер ответит напрямую"
-          primaryLabel="Получить расчёт и КП"
-          primaryAction={handleWhatsAppClick}
-          secondaryLabel="Получить КП на почту"
-          secondaryAction={handleEmailRequest}
-        />
+      <CostingBlock productName="ангар" />
     </div>
   );
 };

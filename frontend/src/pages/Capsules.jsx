@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import { Check, ClipboardList, Factory, Feather, Infinity, Move, PenTool, Ruler, Wrench } from 'lucide-react';
-import { siteConfig } from '../config/siteConfig';
 import './ProductPage.css';
 import PageHero from '../components/ui/PageHero';
 import SectionHeader from '../components/ui/SectionHeader';
 import PricingCards from '../components/ui/PricingCards';
-import LeadBar from '../components/ui/LeadBar';
 import ProcessSteps from '../components/ui/ProcessSteps';
+import CostingBlock from '../components/ui/CostingBlock';
 
 import img1 from '../assets/Capsules1.jpg';
 import img2 from '../assets/Capsules2.jpg';
@@ -118,17 +117,6 @@ const Capsules = () => {
     }
   ];
 
-  const handleCtaClick = () => {
-    const message = encodeURIComponent('Запрос на расчёт: Капсулы — нужна консультация по проекту');
-    window.open(`${siteConfig.social.whatsapp}?text=${message}`, '_blank');
-  };
-
-  const handleEmailRequest = () => {
-    const subject = encodeURIComponent('КП по капсулам');
-    const body = encodeURIComponent('Опишите сценарий (аренда/глэмпинг/офис) и желаемую комплектацию.');
-    window.location.href = `mailto:${siteConfig.contact.email}?subject=${subject}&body=${body}`;
-  };
-
   return (
     <div className="product-page">
       <PageHero
@@ -219,12 +207,7 @@ const Capsules = () => {
         </div>
       </section>
 
-      <LeadBar
-        title="Подобрать капсулу и рассчитать стоимость"
-        description="Уточним сценарий (аренда/глэмпинг/офис) и комплектацию"
-        primaryAction={handleCtaClick}
-        secondaryAction={handleEmailRequest}
-      />
+      <CostingBlock productName="капсулу" />
     </div>
   );
 };
