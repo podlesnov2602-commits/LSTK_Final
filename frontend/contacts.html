@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты — Фабрика Каркасов Алатау</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержанию</a>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a class="logo" href="index.html"><img src="assets/img/logo.png" alt="Фабрика Каркасов Алатау" width="132" height="40"></a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Открыть меню">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true"><span></span></label>
+      <nav class="site-nav" aria-label="Главное меню">
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="capsules.html">Капсулы</a></li>
+          <li><a href="hangars.html">Ангары</a></li>
+          <li><a href="garages.html">Гаражи</a></li>
+          <li><a href="documents.html">Документы</a></li>
+          <li><a href="o-nas.html">О нас</a></li>
+          <li><a class="active" href="contacts.html">Контакты</a></li>
+        </ul>
+        <div class="nav-contacts">
+          <a class="btn-ghost" href="tel:+77000000000">+7 (700) 000-00-00</a>
+          <a class="btn-primary" href="https://wa.me/77000000000" target="_blank" rel="noreferrer">WhatsApp</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section--hero">
+      <div class="container two-col">
+        <div>
+          <p class="eyebrow">Контакты</p>
+          <h1>Свяжитесь с нами</h1>
+          <p>Ответим в течение 15 минут в рабочее время. Форма работает без JavaScript, а скрипты добавляют только подтверждение отправки.</p>
+          <ul class="contact-list">
+            <li><a href="tel:+77000000000">+7 (700) 000-00-00</a></li>
+            <li><a href="mailto:info@alatausteel.kz">info@alatausteel.kz</a></li>
+            <li>Алматы, Казахстан</li>
+          </ul>
+        </div>
+        <div class="alert">Предоставим схемы проезда, реквизиты и персонального менеджера.</div>
+      </div>
+    </section>
+
+    <section class="section" id="form">
+      <div class="container form-grid">
+        <div>
+          <p class="eyebrow">Напишите нам</p>
+          <h2>Форма обратной связи</h2>
+          <p class="muted">Работает без JS. JS только добавляет UX-подсказки.</p>
+        </div>
+        <form class="form" action="https://formspree.io/f/xpzvnnke" method="POST">
+          <label class="form__field">Имя
+            <input type="text" name="name" required aria-required="true" placeholder="Ваше имя">
+          </label>
+          <label class="form__field">Телефон
+            <input type="tel" name="phone" required aria-required="true" placeholder="+7 (___) ___-__-__">
+          </label>
+          <label class="form__field">Сообщение
+            <textarea name="message" rows="4" placeholder="Как мы можем помочь?"></textarea>
+          </label>
+          <button class="btn-primary" type="submit">Отправить</button>
+          <p class="form__note">Оставляя заявку, вы принимаете условия обработки данных.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/img/logo.png" alt="Фабрика Каркасов Алатау" width="140" height="42">
+        <p class="muted">ЛСТК, капсулы, ангары и гаражи.</p>
+      </div>
+      <div>
+        <h3>Навигация</h3>
+        <ul class="footer-nav">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="capsules.html">Капсулы</a></li>
+          <li><a href="hangars.html">Ангары</a></li>
+          <li><a href="garages.html">Гаражи</a></li>
+          <li><a href="documents.html">Документы</a></li>
+          <li><a href="o-nas.html">О нас</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Контакты</h3>
+        <ul class="contact-list">
+          <li><a href="tel:+77000000000">+7 (700) 000-00-00</a></li>
+          <li><a href="mailto:info@alatausteel.kz">info@alatausteel.kz</a></li>
+          <li>Алматы, Казахстан</li>
+        </ul>
+        <div class="footer-actions">
+          <a class="btn-ghost" href="https://wa.me/77000000000" target="_blank" rel="noreferrer">WhatsApp</a>
+          <a class="btn-primary" href="#form">Оставить заявку</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom"><div class="container"><small>© 2024 Фабрика Каркасов Алатау.</small></div></div>
+  </footer>
+
+  <script src="assets/js/enhancements.js" defer></script>
+</body>
+</html>
