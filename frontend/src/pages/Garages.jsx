@@ -1,30 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import {
-  ClipboardList,
-  Clock,
-  DollarSign,
-  Factory,
-  FileText,
-  MessageCircle,
-  PenTool,
-  Ruler,
-  Shield,
-  Wrench,
-  Zap
-} from 'lucide-react';
-import { siteConfig } from '../config/siteConfig';
+import React, { useEffect } from 'react';
+import { ClipboardList, Clock, DollarSign, Factory, PenTool, Ruler, Shield, Wrench, Zap } from 'lucide-react';
 import PageHero from '../components/ui/PageHero';
 import SectionHeader from '../components/ui/SectionHeader';
 import ProcessSteps from '../components/ui/ProcessSteps';
 import PricingCards from '../components/ui/PricingCards';
+import CostingBlock from '../components/ui/CostingBlock';
 import './ProductPage.css';
 
 const Garages = () => {
-  const [activeModal, setActiveModal] = useState(null);
-  const [ctaStatus, setCtaStatus] = useState('idle');
-  const [whatsAppForm, setWhatsAppForm] = useState({ name: '', phone: '', comment: '' });
-  const [emailForm, setEmailForm] = useState({ name: '', phone: '', email: '' });
-
   useEffect(() => {
     // Scroll to gallery section on page load
     const timer = setTimeout(() => {
@@ -147,52 +130,6 @@ const Garages = () => {
     }
   ];
 
-  const openModal = (type) => {
-    setActiveModal(type);
-    setCtaStatus('idle');
-  };
-
-  const closeModal = () => {
-    setActiveModal(null);
-  };
-
-  const handleWhatsAppSubmit = (e) => {
-    e.preventDefault();
-    setCtaStatus('loading');
-    const message = encodeURIComponent(
-      `Расчёт гаража в WhatsApp\nИмя: ${whatsAppForm.name}\nТелефон: ${whatsAppForm.phone}\nКомментарий: ${whatsAppForm.comment}`
-    );
-
-    setTimeout(() => {
-      try {
-        window.open(`${siteConfig.social.whatsapp}?text=${message}`, '_blank');
-        setCtaStatus('success');
-        setWhatsAppForm({ name: '', phone: '', comment: '' });
-      } catch (error) {
-        setCtaStatus('error');
-      }
-    }, 320);
-  };
-
-  const handleEmailSubmit = (e) => {
-    e.preventDefault();
-    setCtaStatus('loading');
-    const subject = encodeURIComponent('КП на гараж (PDF)');
-    const body = encodeURIComponent(
-      `Имя: ${emailForm.name}\nТелефон: ${emailForm.phone}\nEmail: ${emailForm.email}\nКомментарий: Хочу получить КП на гараж`
-    );
-
-    setTimeout(() => {
-      try {
-        window.location.href = `mailto:${siteConfig.contact.email}?subject=${subject}&body=${body}`;
-        setCtaStatus('success');
-        setEmailForm({ name: '', phone: '', email: '' });
-      } catch (error) {
-        setCtaStatus('error');
-      }
-    }, 320);
-  };
-
   return (
     <div className="product-page">
       <PageHero
@@ -266,159 +203,7 @@ const Garages = () => {
         </div>
       </section>
 
-      <section className="costing-cta-section">
-        <div className="container">
-          <div className="costing-cta-grid">
-            <div className="costing-cta-copy subtle-grid">
-              <p className="eyebrow">Расчёт стоимости</p>
-              <h3>Два клика до сметы</h3>
-              <p className="body-lg">
-                Быстрая связь без лишних полей: отправим расчёт в WhatsApp или пришлём коммерческое
-                предложение в PDF на вашу почту.
-              </p>
-              <div className="cta-pills">
-                <span>Персональный менеджер</span>
-                <span>Фиксация цены и сроков</span>
-                <span>Индустриальный стиль</span>
-              </div>
-              <div className="cta-buttons">
-                <button type="button" className="btn-primary btn-whatsapp" onClick={() => openModal('whatsapp')}>
-                  <MessageCircle size={18} />
-                  Рассчитать стоимость в WhatsApp
-                </button>
-                <button type="button" className="btn-secondary btn-ghost" onClick={() => openModal('email')}>
-                  <FileText size={18} />
-                  Получить КП на почту (PDF)
-                </button>
-              </div>
-            </div>
-            <div className="costing-cta-panels">
-              <div className="cta-panel">
-                <div className="panel-label">Минимум полей</div>
-                <h4>От заявки до КП — без задержек</h4>
-                <p>Чёткие вопросы, прозрачные сроки, мгновенная отправка через выбранный канал связи.</p>
-              </div>
-              <div className="cta-panel muted">
-                <div className="panel-label">Подготовим PDF</div>
-                <p className="body-md">
-                  Структурированная смета с комплектацией, сроками и условиями монтажа — в едином
-                  премиальном оформлении.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {activeModal && (
-        <div className="cta-modal-backdrop" onClick={closeModal}>
-          <div className="cta-modal" onClick={(e) => e.stopPropagation()}>
-            <div className="cta-modal-header">
-              <div>
-                <p className="eyebrow">{activeModal === 'whatsapp' ? 'Мессенджер' : 'Коммерческое предложение'}</p>
-                <h4>{activeModal === 'whatsapp' ? 'Рассчитать в WhatsApp' : 'Получить КП на почту'}</h4>
-                <p className="body-md">
-                  {activeModal === 'whatsapp'
-                    ? 'Ответим в чате и закрепим менеджера — без длинных анкет.'
-                    : 'Соберём PDF с ценой, сроками и комплектацией под ваш запрос.'}
-                </p>
-              </div>
-              <button className="btn-secondary" type="button" onClick={closeModal}>
-                Закрыть
-              </button>
-            </div>
-
-            {activeModal === 'whatsapp' ? (
-              <form className="modal-form" onSubmit={handleWhatsAppSubmit}>
-                <div className="form-row">
-                  <label className="form-label">Имя
-                    <input
-                      type="text"
-                      value={whatsAppForm.name}
-                      onChange={(e) => setWhatsAppForm({ ...whatsAppForm, name: e.target.value })}
-                      placeholder="Имя"
-                      required
-                      className="form-input"
-                    />
-                  </label>
-                  <label className="form-label">Телефон
-                    <input
-                      type="tel"
-                      value={whatsAppForm.phone}
-                      onChange={(e) => setWhatsAppForm({ ...whatsAppForm, phone: e.target.value })}
-                      placeholder="+7 (___) ___-__-__"
-                      required
-                      className="form-input"
-                    />
-                  </label>
-                </div>
-                <label className="form-label">Комментарий
-                  <textarea
-                    value={whatsAppForm.comment}
-                    onChange={(e) => setWhatsAppForm({ ...whatsAppForm, comment: e.target.value })}
-                    placeholder="Тип гаража, габариты или пожелания"
-                    className="form-textarea"
-                    rows="3"
-                  />
-                </label>
-                <div className="modal-actions">
-                  <button type="submit" className="btn-primary btn-whatsapp" disabled={ctaStatus === 'loading'}>
-                    {ctaStatus === 'loading' ? 'Открываем WhatsApp...' : 'Открыть чат и отправить'}
-                  </button>
-                  <span className={`form-status form-status--${ctaStatus}`}>
-                    {ctaStatus === 'success' && 'Сообщение готово — дождитесь ответа менеджера в WhatsApp.'}
-                    {ctaStatus === 'error' && 'Не удалось открыть WhatsApp. Попробуйте еще раз.'}
-                  </span>
-                </div>
-              </form>
-            ) : (
-              <form className="modal-form" onSubmit={handleEmailSubmit}>
-                <div className="form-row">
-                  <label className="form-label">Имя
-                    <input
-                      type="text"
-                      value={emailForm.name}
-                      onChange={(e) => setEmailForm({ ...emailForm, name: e.target.value })}
-                      placeholder="Имя"
-                      required
-                      className="form-input"
-                    />
-                  </label>
-                  <label className="form-label">Телефон
-                    <input
-                      type="tel"
-                      value={emailForm.phone}
-                      onChange={(e) => setEmailForm({ ...emailForm, phone: e.target.value })}
-                      placeholder="+7 (___) ___-__-__"
-                      required
-                      className="form-input"
-                    />
-                  </label>
-                </div>
-                <label className="form-label">Email для отправки
-                  <input
-                    type="email"
-                    value={emailForm.email}
-                    onChange={(e) => setEmailForm({ ...emailForm, email: e.target.value })}
-                    placeholder="mail@example.com"
-                    required
-                    className="form-input"
-                  />
-                </label>
-                <div className="modal-actions">
-                  <button type="submit" className="btn-primary" disabled={ctaStatus === 'loading'}>
-                    {ctaStatus === 'loading' ? 'Формируем КП...' : 'Получить КП (PDF)'}
-                  </button>
-                  <span className={`form-status form-status--${ctaStatus}`}>
-                    {ctaStatus === 'success' && 'Формируем письмо с КП и отправляем на указанную почту.'}
-                    {ctaStatus === 'error' && 'Не удалось подготовить письмо. Проверьте настройки почты.'}
-                  </span>
-                </div>
-              </form>
-            )}
-          </div>
-        </div>
-      )}
+      <CostingBlock productName="гараж" />
     </div>
   );
 };
