@@ -7,13 +7,6 @@ import PricingCards from '../components/ui/PricingCards';
 import ProcessSteps from '../components/ui/ProcessSteps';
 import CostingBlock from '../components/ui/CostingBlock';
 
-import img1 from '../assets/Capsules1.jpg';
-import img2 from '../assets/Capsules2.jpg';
-import img3 from '../assets/Capsules3.jpg';
-import img4 from '../assets/Capsules4.jpg';
-import img5 from '../assets/Capsules5.jpg';
-import img6 from '../assets/Capsules6.jpg';
-
 const Capsules = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -29,13 +22,45 @@ const Capsules = () => {
   }, []);
 
   const gallery = [
-    { image: img1, caption: 'Капсула', usage: 'под аренду' },
-    { image: img2, caption: 'БарнХаус', usage: 'под глэмпинг' },
-    { image: img3, caption: 'Модульный дом 44м²', usage: 'офис продаж / ресепшн' },
-    { image: img4, caption: 'Гостевой дом 29м²', usage: 'под глэмпинг' },
-    { image: img5, caption: 'Модульный дом 29м²', usage: 'под аренду' },
-    { image: img6, caption: 'Гостевой дом 48м²', usage: 'офис продаж / ресепшн' }
+    {
+      image:
+        'https://images.unsplash.com/photo-1709741455970-be31d448826d?auto=format&fit=crop&w=1600&q=80',
+      caption: 'Капсула',
+      usage: 'под аренду'
+    },
+    {
+      image:
+        'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80',
+      caption: 'БарнХаус',
+      usage: 'под глэмпинг'
+    },
+    {
+      image:
+        'https://images.unsplash.com/photo-1473862170184-862ab08aae5b?auto=format&fit=crop&w=1600&q=80',
+      caption: 'Модульный дом 44м²',
+      usage: 'офис продаж / ресепшн'
+    },
+    {
+      image:
+        'https://images.unsplash.com/photo-1413845009317-1f713c4230eb?auto=format&fit=crop&w=1600&q=80',
+      caption: 'Гостевой дом 29м²',
+      usage: 'под глэмпинг'
+    },
+    {
+      image:
+        'https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?auto=format&fit=crop&w=1600&q=80',
+      caption: 'Модульный дом 29м²',
+      usage: 'под аренду'
+    },
+    {
+      image:
+        'https://images.unsplash.com/photo-1430285561322-7808604715df?auto=format&fit=crop&w=1600&q=80',
+      caption: 'Гостевой дом 48м²',
+      usage: 'офис продаж / ресепшн'
+    }
   ];
+
+  const heroImage = gallery[0].image;
 
   const configurations = [
     {
@@ -123,7 +148,7 @@ const Capsules = () => {
         title="Капсулы"
         subtitle="Модульные решения для бизнеса и инвестиций"
         meta="Industrial Premium • Капсулы"
-        image={img4}
+        image={heroImage}
       />
 
       <section className="gallery-section">
