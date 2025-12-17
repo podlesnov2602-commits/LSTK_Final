@@ -263,7 +263,7 @@
 
 /* Trust section */
 .trust-section {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.036) 0%, rgba(255, 255, 255, 0.02) 100%);
+  position: relative;
 }
 
 .trust-grid {
@@ -294,23 +294,6 @@
 .directions-section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
-  backdrop-filter: saturate(106%) brightness(1.02);
-}
-
-.directions-section::before,
-.directions-section::after {
-  display: none;
-}
-
-.directions-section::before {
-  top: -1px;
-  background: linear-gradient(180deg, rgba(6, 10, 11, 0.7), transparent);
-}
-
-.directions-section::after {
-  bottom: -1px;
-  background: linear-gradient(0deg, rgba(10, 16, 17, 0.7), transparent);
 }
 
 .directions-grid {
@@ -421,7 +404,6 @@
   position: relative;
   padding: 120px 0 112px;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.022) 0%, rgba(255, 255, 255, 0.01) 100%);
 }
 
 .aesthetic-section::before {
@@ -441,6 +423,20 @@
   gap: 44px;
   align-items: start;
   z-index: 1;
+}
+
+.aesthetic-cluster {
+  position: relative;
+}
+
+.cluster-surface {
+  position: relative;
+  border-radius: 22px;
+  padding: 18px;
+  background: rgba(10, 16, 15, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
 }
 
 .factory-card {
@@ -746,22 +742,6 @@
 .documents-section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.024) 0%, rgba(255, 255, 255, 0.012) 100%);
-}
-
-.documents-section::before,
-.documents-section::after {
-  display: none;
-}
-
-.documents-section::before {
-  top: -1px;
-  background: linear-gradient(180deg, rgba(6, 10, 11, 0.72), transparent);
-}
-
-.documents-section::after {
-  bottom: -1px;
-  background: linear-gradient(0deg, rgba(9, 14, 14, 0.76), transparent);
 }
 
 .documents-grid {
@@ -826,11 +806,6 @@
 .contact-section {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
-}
-
-.contact-section::before {
-  display: none;
 }
 
 .contact-grid {

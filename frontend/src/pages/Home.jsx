@@ -285,42 +285,46 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="premium-quad">
-              <div className="premium-card premium-core">
-                <div className="core-top">
-                  <span className="core-badge">{coreBenefit.badge}</span>
-                  <span className="core-meta">{coreBenefit.meta}</span>
-                </div>
-                <div className="core-header">
-                  <div className="premium-icon accent">
-                    <CoreIcon size={28} />
-                  </div>
-                  <div className="core-title-block">
-                    <h3>{coreBenefit.title}</h3>
-                    <p className="core-subline">Факт → ценность → результат</p>
-                  </div>
-                </div>
-                <p className="core-text">{coreBenefit.text}</p>
-                <div className="core-footer">
-                  <div className="core-signal">Стабильная геометрия по всей партии</div>
-                </div>
-              </div>
-
-              <div className="support-grid">
-                {supportingBenefits.map((item, idx) => {
-                  const Icon = item.icon;
-                  return (
-                    <div key={idx} className={`premium-card support-card ${idx === 2 ? 'wide-support' : ''}`}>
-                      <div className="premium-icon subdued">
-                        <Icon size={22} />
+            <div className="aesthetic-cluster">
+              <div className="cluster-surface">
+                <div className="premium-quad">
+                  <div className="premium-card premium-core">
+                    <div className="core-top">
+                      <span className="core-badge">{coreBenefit.badge}</span>
+                      <span className="core-meta">{coreBenefit.meta}</span>
+                    </div>
+                    <div className="core-header">
+                      <div className="premium-icon accent">
+                        <CoreIcon size={28} />
                       </div>
-                      <div className="support-body">
-                        <h3>{item.title}</h3>
-                        <p>{item.text}</p>
+                      <div className="core-title-block">
+                        <h3>{coreBenefit.title}</h3>
+                        <p className="core-subline">Факт → ценность → результат</p>
                       </div>
                     </div>
-                  );
-                })}
+                    <p className="core-text">{coreBenefit.text}</p>
+                    <div className="core-footer">
+                      <div className="core-signal">Стабильная геометрия по всей партии</div>
+                    </div>
+                  </div>
+
+                  <div className="support-grid">
+                    {supportingBenefits.map((item, idx) => {
+                      const Icon = item.icon;
+                      return (
+                        <div key={idx} className={`premium-card support-card ${idx === 2 ? 'wide-support' : ''}`}>
+                          <div className="premium-icon subdued">
+                            <Icon size={22} />
+                          </div>
+                          <div className="support-body">
+                            <h3>{item.title}</h3>
+                            <p>{item.text}</p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
