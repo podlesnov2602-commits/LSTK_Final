@@ -1,15 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-  ArrowRight,
-  CheckCircle2,
-  Gem,
-  Layers,
-  ShieldCheck,
-  Sparkles,
-  Timer,
-  Building2
-} from 'lucide-react';
+import { ArrowRight, CheckCircle2, Gem, Layers, ShieldCheck, Sparkles, Timer, Building2, FileText, Factory, Gauge } from 'lucide-react';
 
 import { siteConfig } from '../config/siteConfig';
 import SectionHeader from '../components/ui/SectionHeader';
@@ -22,40 +13,28 @@ import productionImg from '../assets/production.jpg';
 import factoryDiagram from '../assets/factory-diagram.svg';
 
 const Home = () => {
-  const [currentSlide, setCurrentSlide] = React.useState(0);
-
   const heroImages = [
-    `linear-gradient(120deg, rgba(11,17,16,0.86) 0%, rgba(12,24,21,0.9) 40%, rgba(14,162,115,0.22) 100%), url(${productionImg})`,
-    `linear-gradient(115deg, rgba(11,17,16,0.9) 18%, rgba(12,24,21,0.92) 58%, rgba(14,162,115,0.18) 100%), url(${hangarsImg})`,
-    `linear-gradient(120deg, rgba(11,17,16,0.88) 0%, rgba(12,24,21,0.9) 42%, rgba(14,162,115,0.2) 100%), url(${capsulesImg})`
+    `linear-gradient(120deg, rgba(6,10,10,0.9) 0%, rgba(10,18,16,0.92) 48%, rgba(10,22,18,0.86) 100%), url(${productionImg})`
   ];
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 6000);
-
-    return () => clearInterval(interval);
-  }, [heroImages.length]);
 
   const categories = [
     {
       title: 'Капсульные модульные дома',
-      description: 'Премиальные капсулы с панорамным остеклением и заводской чистотой сборки.',
+      description: 'ЛСТК-каркас, инженерное проектирование, производство комплекта и монтаж с контролем геометрии.',
       audience: 'Для частных и коммерческих проектов',
       image: capsulesImg,
       link: '/capsules'
     },
     {
       title: 'Ангары и склады',
-      description: 'Индустриальные решения с высоким ресурсом и идеальной геометрией ЛСТК.',
+      description: 'Индустриальный ЛСТК-комплект: расчёт нагрузок, профилирование, упаковка и маркировка для быстрой сборки.',
       audience: 'Для складов, производств и логистики',
       image: hangarsImg,
       link: '/hangars'
     },
     {
       title: 'Гаражи и навесы',
-      description: 'Элегантные и надёжные конструкции для автомобилей и спецтехники.',
+      description: 'ЛСТК-каркас с точной посадкой, комплект крепежа и чертежи монтажа для минимизации простоев.',
       audience: 'Для бизнеса и частных участков',
       image: garagesImg,
       link: '/garages'
@@ -93,36 +72,54 @@ const Home = () => {
   const CoreIcon = coreBenefit.icon;
 
   const productionHighlights = [
-    'Единый стандарт качества от расчёта до монтажа',
-    'Собственный инжиниринг и дизайн-поддержка проектов',
-    'Полный пакет документов для коммерческих объектов',
-    'Доставка и сервис по всему Казахстану'
+    'Входной контроль металла и маркировка партий',
+    'Инженерный расчёт ЛСТК и выпуск КМ/КМД',
+    'ЧПУ-пробивка и профилирование с допуском по геометрии',
+    'Упаковка, маркировка, логистика и шеф-монтаж'
   ];
 
   const productionStats = [
-    'Производство: X м²/мес — вставить фактические данные',
-    'Срок изготовления: от X дней — вставить фактические данные',
-    'Толщины/профиль: X–X мм — вставить фактические данные',
-    'География: Алматы / Казахстан'
+    'X лет на рынке — заводской контур',
+    'X м² конструкций в год — подтверждённая мощность',
+    'Толщины профилей X–X мм — под нагрузку проекта',
+    'География: Казахстан / регионы'
   ];
 
   const documents = [
-    { title: 'Сертификат соответствия', file: '/documents', result: 'Ускоряет согласование' },
-    { title: 'Договор поставки', file: '/documents', result: 'Снижает риски для заказчика' },
-    { title: 'Реквизиты компании', file: '/documents', result: 'Подходит для закупок/тендеров' }
+    { title: 'Пакет документов для тендера', file: '/documents', result: 'Готовность к закупкам' },
+    { title: 'Сертификаты соответствия', file: '/documents', result: 'Подтверждённые материалы' },
+    { title: 'Договор и спецификация', file: '/documents', result: 'Прозрачные условия поставки' }
   ];
 
-  const trustReasons = [
-    'Заводская точность и контроль качества',
-    'Понятная смета и спецификация',
-    'ЛСТК-геометрия без “сюрпризов” на монтаже',
-    'Документы и готовность к тендерам'
+  const trustMetrics = [
+    { label: 'Лет на рынке', value: 'X+' },
+    { label: 'м² ЛСТК в год', value: 'X 000' },
+    { label: 'Реализованных объектов', value: 'X+' },
+    { label: 'География', value: 'Казахстан / регионы' },
+    { label: 'Контроль геометрии', value: 'допуск по проекту' }
   ];
 
   const heroBadges = [
-    'X+ лет опыта',
-    'X+ объектов',
-    'Сроки по договору / контроль качества'
+    'Точность профилирования и маркировка',
+    'Чёткие сроки производства и отгрузки',
+    'Проектная ответственность и сопровождение'
+  ];
+
+  const processSteps = [
+    { title: 'Техническое задание', detail: 'Фиксируем нагрузки, сроки, требования к геометрии и монтажу.' },
+    { title: 'Инженерный расчёт ЛСТК', detail: 'Расчёт сечения, схемы крепежа и проверка несущей способности.' },
+    { title: 'Проектирование', detail: 'Выпускаем КМ/КМД, увязываем закладные и стыковочные узлы.' },
+    { title: 'Производство', detail: 'ЧПУ-разметка, профилирование, контроль размеров каждой партии.' },
+    { title: 'Контроль качества', detail: 'Входной контроль металла, выборочный контроль узлов и крепежа.' },
+    { title: 'Упаковка и доставка', detail: 'Маркируем, упаковываем в транспортный формат, организуем логистику.' },
+    { title: 'Монтаж / сопровождение', detail: 'Шеф-монтаж, инструкции и авторский надзор по запросу.' }
+  ];
+
+  const materials = [
+    { icon: Factory, title: 'Сталь', text: 'Прокат X марки, подтверждён сертификатами. Входной контроль партии.' },
+    { icon: Gauge, title: 'Толщина профилей', text: 'X–X мм под нагрузку проекта. Расчёт и подбор сечений инженером.' },
+    { icon: ShieldCheck, title: 'Покрытие', text: 'Цинк/покрытие промышленного класса, стойкость к коррозии.', },
+    { icon: FileText, title: 'Нормы и стандарты', text: 'Проектирование и производство по ГОСТ / СТ РК (по применимости).' }
   ];
 
   const openWhatsApp = (message) => {
@@ -136,11 +133,7 @@ const Home = () => {
       <section className="hero-section">
         <div className="hero-carousel">
           {heroImages.map((img, index) => (
-            <div
-              key={index}
-              className={`hero-slide ${index === currentSlide ? 'active' : ''}`}
-              style={{ backgroundImage: img }}
-            />
+            <div key={index} className="hero-slide active" style={{ backgroundImage: img }} />
           ))}
         </div>
 
@@ -148,21 +141,23 @@ const Home = () => {
         <div className="hero-vignette" />
 
         <div className="container hero-inner">
-          <div className="hero-badge">Industrial premium • ЛСТК</div>
+          <div className="hero-badge">Промышленное производство ЛСТК</div>
           <h1 className="hero-title">
-            <span className="hero-word steel">Стальные</span>
-            <span className="hero-word accent">решения</span>
+            <span className="hero-word steel">Стальные решения</span>
             <span className="hero-word subtitle-line">для масштабных проектов</span>
           </h1>
-          <p className="hero-positioning">ЛСТК-конструкции под ключ: расчёт, производство, доставка и монтаж по Казахстану</p>
-          <p className="hero-subtitle">
-            Заводские металлокаркасы с инженерным контролем: точная геометрия, прогнозируемые сроки и эстетика без компромиссов.
+          <p className="hero-positioning">
+            Производство ЛСТК-конструкций: проектирование, расчёт, изготовление, поставка и монтаж по РК.
           </p>
-          
+          <p className="hero-subtitle">
+            Инженерный контроль на каждом этапе: входной контроль металла, ЧПУ-профилирование, маркировка и сопровождение монтажа.
+          </p>
+
           <div className="hero-actions">
             <button className="btn-primary" onClick={() => openWhatsApp('Хочу получить расчёт и КП по ЛСТК-проекту.')}>
               Получить расчёт и КП <ArrowRight size={20} />
             </button>
+            <button className="btn-ghost" onClick={() => openWhatsApp('Запросить тендерный пакет документов.')}>Запросить тендерный пакет</button>
           </div>
 
           <div className="hero-meta">
@@ -176,13 +171,12 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="hero-indicators">
-            {heroImages.map((_, index) => (
-              <button
-                key={index}
-                className={`hero-indicator ${index === currentSlide ? 'active' : ''}`}
-                onClick={() => setCurrentSlide(index)}
-              />
+          <div className="trust-metrics">
+            {trustMetrics.map((metric, idx) => (
+              <div key={idx} className="metric-card">
+                <div className="metric-value">{metric.value}</div>
+                <div className="metric-label">{metric.label}</div>
+              </div>
             ))}
           </div>
         </div>
@@ -193,15 +187,25 @@ const Home = () => {
           <SectionHeader
             eyebrow="Почему нам доверяют"
             title="Закрываем ключевые риски на старте"
-            subtitle="Показываем прозрачные цифры, геометрию и документы, чтобы монтаж проходил без остановок."
+            subtitle="Фиксируем требования по геометрии и документации заранее, чтобы монтаж и сдача объекта шли без пауз."
           />
           <div className="trust-grid">
-            {trustReasons.map((item, index) => (
-              <div key={index} className="trust-card">
-                <CheckCircle2 size={18} />
-                <p>{item}</p>
-              </div>
-            ))}
+            <div className="trust-card">
+              <Layers size={18} />
+              <p>Входной контроль металла, ЧПУ-профилирование и маркировка каждой детали.</p>
+            </div>
+            <div className="trust-card">
+              <Gem size={18} />
+              <p>Комплектация по спецификации: крепёж, метизы, инструкции и маркировка узлов.</p>
+            </div>
+            <div className="trust-card">
+              <ShieldCheck size={18} />
+              <p>Сертификаты материалов, договор, спецификация и готовность к тендерам.</p>
+            </div>
+            <div className="trust-card">
+              <Timer size={18} />
+              <p>Сроки производства и отгрузки по графику, закреплённому в договоре.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -211,13 +215,13 @@ const Home = () => {
           <SectionHeader
             eyebrow="Линейка решений"
             title="КАТЕГОРИИ"
-            subtitle="От модульных капсул до масштабных ангаров — каждая конструкция создаётся с акцентом на эстетику, долговечность и точность геометрии."
+            subtitle="Промышленные комплекты ЛСТК с инженерным расчётом, контролем геометрии и сопровождаемым монтажом."
           />
 
           <div className="directions-grid">
             {categories.map((item, index) => (
-              <Link key={index} to={item.link} className={`direction-card ${index === 0 ? 'featured-card' : ''}`}>
-                <div className="direction-image" style={{ backgroundImage: `url(${item.image})` }} />
+              <Link key={index} to={item.link} className="direction-card">
+                <div className="direction-image" style={{ backgroundImage: `linear-gradient(180deg, rgba(4,7,7,0.6) 0%, rgba(4,7,7,0.4) 36%, rgba(4,7,7,0.78) 100%), url(${item.image})` }} />
                 <div className="direction-body">
                   <div className="direction-top">
                     <h3>{item.title}</h3>
@@ -226,7 +230,7 @@ const Home = () => {
                   <p className="direction-audience">{item.audience}</p>
                   <p>{item.description}</p>
                   <div className="direction-actions">
-                    <span className="btn-primary ghost">Подробнее</span>
+                    <span className="btn-primary ghost">Получить расчёт</span>
                   </div>
                 </div>
               </Link>
@@ -240,52 +244,52 @@ const Home = () => {
           <SectionHeader
             eyebrow="Премиальный стандарт"
             title="Архитектурная эстетика и технологичность"
-            subtitle="Мы объединяем инженерную точность ЛСТК с дизайнерским подходом: строгие формы, акцентные линии и комфорт для повседневной эксплуатации."
+            subtitle="Производство ЛСТК с упором на процессы: контроль металла, точность профилирования, инженерные расчёты и стабильность геометрии."
           />
 
           <div className="aesthetic-grid">
-            <div className="factory-card">
-              <div className="factory-layer">
-                <div className="factory-badge">
-                  <Sparkles size={16} /> Фабрика Каркасов Алатау
-                </div>
-                <h3>Технологичная фабрика полного цикла</h3>
-                <p>
-                  От проектирования до монтажа — управляем всей цепочкой, чтобы сохранить точную геометрию ЛСТК и сроки, закреплённые в договоре.
-                </p>
+            <div className="aesthetic-surface">
+              <div className="factory-card">
+                <div className="factory-layer">
+                  <div className="factory-badge">
+                    <Sparkles size={16} /> Фабрика Каркасов Алатау
+                  </div>
+                  <h3>Технологичная фабрика полного цикла</h3>
+                  <p>
+                    Управляем всей цепочкой — от входного контроля металла до шеф-монтажа. Геометрия и сроки фиксируются в договоре.
+                  </p>
 
-                <div className="factory-stats">
-                  {productionStats.map((item, idx) => (
-                    <div key={idx} className="stat-pill">
-                      <Timer size={16} /> {item}
-                    </div>
-                  ))}
-                </div>
-
-                <div className="factory-body">
-                  <div className="production-highlights">
-                    {productionHighlights.map((item, index) => (
-                      <div key={index} className="highlight-item">
-                        <CheckCircle2 size={18} /> {item}
+                  <div className="factory-stats">
+                    {productionStats.map((item, idx) => (
+                      <div key={idx} className="stat-pill">
+                        <Timer size={16} /> {item}
                       </div>
                     ))}
                   </div>
 
-                  <div className="factory-visual">
-                    <div className="visual-frame">
-                      <img src={factoryDiagram} alt="Схема потоков фабрики от расчёта до монтажа" />
-                      <div className="visual-caption">Реальный поток работ: расчёт → ЧПУ → сборка → контроль → монтаж</div>
+                  <div className="factory-body">
+                    <div className="production-highlights">
+                      {productionHighlights.map((item, index) => (
+                        <div key={index} className="highlight-item">
+                          <CheckCircle2 size={18} /> {item}
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="factory-visual">
+                      <div className="visual-frame">
+                        <img src={factoryDiagram} alt="Схема потоков фабрики от расчёта до монтажа" />
+                        <div className="visual-caption">Реальный поток работ: расчёт → ЧПУ → сборка → контроль → монтаж</div>
+                      </div>
                     </div>
                   </div>
+
+                  <Link to="/about" className="btn-primary factory-action">
+                    Как мы производим <ArrowRight size={18} />
+                  </Link>
                 </div>
-
-                <Link to="/about" className="btn-primary factory-action">
-                  Как мы производим <ArrowRight size={18} />
-                </Link>
               </div>
-            </div>
 
-            <div className="aesthetic-cluster">
               <div className="cluster-surface">
                 <div className="premium-quad">
                   <div className="premium-card premium-core">
@@ -331,12 +335,61 @@ const Home = () => {
         </div>
       </section>
 
+      <section className="process-section">
+        <div className="container">
+          <SectionHeader
+            eyebrow="Как мы работаем"
+            title="Процесс производства"
+            subtitle="Линейный инженерный процесс от задания до монтажа: фиксация требований, расчёт, производство, логистика."
+          />
+
+          <div className="process-grid">
+            {processSteps.map((step, index) => (
+              <div key={index} className="process-card">
+                <div className="process-index">{index + 1}</div>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="materials-section">
+        <div className="container">
+          <SectionHeader
+            eyebrow="Материалы и стандарты"
+            title="Факты о комплектации"
+            subtitle="Работаем только с подтверждёнными материалами и нормами — без маркетинговых обещаний."
+          />
+
+          <div className="materials-grid">
+            {materials.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div key={index} className="material-card">
+                  <div className="material-icon">
+                    <Icon size={22} />
+                  </div>
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.text}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section className="documents-section">
         <div className="container">
           <SectionHeader
             eyebrow="Документы"
             title="Прозрачность и готовность к тендерам"
-            subtitle="Предоставляем пакет документов по запросу — для тендеров и закупок"
+            subtitle="Пакет документов и нормативов, готовый для тендеров и закупок."
           />
 
           <div className="documents-grid">
@@ -351,8 +404,9 @@ const Home = () => {
 
           <div className="documents-cta">
             <Link to="/documents" className="btn-primary">
-              Смотреть все документы <ArrowRight size={16} />
+              Запросить тендерный пакет <ArrowRight size={16} />
             </Link>
+            <button className="btn-ghost" onClick={() => openWhatsApp('Нужен тендерный пакет и спецификация по ЛСТК.')}>Связаться с инженером</button>
           </div>
         </div>
       </section>
