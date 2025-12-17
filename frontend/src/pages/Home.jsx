@@ -157,7 +157,6 @@ const Home = () => {
             <button className="btn-primary" onClick={() => openWhatsApp('Хочу получить расчёт и КП по ЛСТК-проекту.')}>
               Получить расчёт и КП <ArrowRight size={20} />
             </button>
-            <button className="btn-ghost" onClick={() => openWhatsApp('Запросить тендерный пакет документов.')}>Запросить тендерный пакет</button>
           </div>
 
           <div className="hero-meta">
@@ -230,7 +229,7 @@ const Home = () => {
                   <p className="direction-audience">{item.audience}</p>
                   <p>{item.description}</p>
                   <div className="direction-actions">
-                    <span className="btn-primary ghost">Получить расчёт</span>
+                    <span className="btn-primary ghost">Подробнее</span>
                   </div>
                 </div>
               </Link>
@@ -408,7 +407,7 @@ const Home = () => {
 
           <div className="documents-cta">
             <Link to="/documents" className="btn-primary">
-              Запросить тендерный пакет <ArrowRight size={16} />
+              Подробнее <ArrowRight size={16} />
             </Link>
             <button className="btn-ghost" onClick={() => openWhatsApp('Нужен тендерный пакет и спецификация по ЛСТК.')}>Связаться с инженером</button>
           </div>
