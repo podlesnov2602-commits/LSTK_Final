@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Instagram } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import PageHero from '../components/ui/PageHero';
 import SectionHeader from '../components/ui/SectionHeader';
@@ -21,6 +21,12 @@ const Contacts = () => {
       title: 'Телефон',
       value: siteConfig.contact.phone,
       link: `tel:${siteConfig.contact.phoneRaw}`
+    },
+    {
+      icon: Instagram,
+      title: 'Instagram',
+      value: '@alatau_lstk',
+      link: siteConfig.social.instagram
     },
     {
       icon: Mail,
