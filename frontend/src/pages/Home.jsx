@@ -106,13 +106,41 @@ const Home = () => {
   ];
 
   const processSteps = [
-    { title: 'Техническое задание', detail: 'Фиксируем нагрузки, допуски, сроки и требования к монтажу.' },
-    { title: 'Инженерный расчёт ЛСТК', detail: 'Подбираем сечения, крепёж и проверяем несущую способность.' },
-    { title: 'Проектирование', detail: 'Выпускаем КМ/КМД, увязываем узлы, закладные и маркировку.' },
-    { title: 'Производство', detail: 'ЧПУ-разметка, профилирование, контроль размеров каждой партии.' },
-    { title: 'Контроль качества', detail: 'Входной контроль металла и выборочная проверка узлов, крепежа.' },
-    { title: 'Упаковка и доставка', detail: 'Маркируем, упаковываем под транспорт, организуем логистику.' },
-    { title: 'Монтаж / сопровождение', detail: 'Шеф-монтаж, инструкции и авторский надзор по запросу.' }
+    {
+      title: 'Техническое задание',
+      subtitle: 'Фиксация требований проекта',
+      description: 'Нагрузки, пролёты, сроки, требования к геометрии и монтажу.'
+    },
+    {
+      title: 'Инженерный расчёт ЛСТК',
+      subtitle: 'Расчёт несущей способности',
+      description: 'Подбор сечений, схем креплений, проверка нагрузок и устойчивости.'
+    },
+    {
+      title: 'Проектирование (КМ / КМД)',
+      subtitle: 'Рабочая документация',
+      description: 'Выпускаем КМ/КМД, увязываем узлы, закладные и маркировку элементов.'
+    },
+    {
+      title: 'Производство',
+      subtitle: 'Изготовление конструкций',
+      description: 'ЧПУ-разметка, профилирование, контроль размеров каждой партии.'
+    },
+    {
+      title: 'Контроль качества',
+      subtitle: 'Проверка и приёмка',
+      description: 'Входной контроль металла, выборочная проверка узлов и крепежа.'
+    },
+    {
+      title: 'Упаковка и доставка',
+      subtitle: 'Логистика под объект',
+      description: 'Маркировка, упаковка, транспортный формат, организация поставки.'
+    },
+    {
+      title: 'Монтаж / сопровождение',
+      subtitle: 'Поддержка реализации',
+      description: 'Шеф-монтаж, инструкции, авторский надзор по запросу.'
+    }
   ];
 
   const materials = [
@@ -342,19 +370,55 @@ const Home = () => {
             subtitle="Линейный инженерный процесс от задания до монтажа: фиксация требований, расчёт, производство, логистика."
           />
 
-          <div className="process-grid">
-            <div className="process-flow" aria-label="Производственная цепочка">
-              {processSteps.map((step, index) => (
-                <div key={index} className="process-step" aria-label={`${index + 1}. ${step.title}`}>
-                  <div className="process-index">
-                    <span>{index + 1}</span>
+          <div className="process-regulation">
+            <div className="process-route" aria-hidden="true">
+              <svg viewBox="0 0 100 70" preserveAspectRatio="none">
+                <defs>
+                  <marker id="process-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                    <polygon points="0 0, 6 3, 0 6" fill="rgba(14, 162, 115, 0.8)" />
+                  </marker>
+                </defs>
+                <path
+                  d="M4 18 H96 V44 H6 H94"
+                  stroke="rgba(14, 162, 115, 0.5)"
+                  strokeWidth="1.4"
+                  fill="none"
+                  strokeDasharray="7 6"
+                  markerEnd="url(#process-arrow)"
+                />
+              </svg>
+            </div>
+
+            <div className="process-track" aria-label="Производственная цепочка">
+              <div className="process-row process-row-top">
+                {processSteps.slice(0, 4).map((step, index) => (
+                  <div key={index} className="process-card" aria-label={`${index + 1}. ${step.title}`}>
+                    <div className="process-step-number">0{index + 1}</div>
+                    <div className="process-step-content">
+                      <div className="process-step-subtitle">{step.subtitle}</div>
+                      <h3 className="process-step-title">{step.title}</h3>
+                      <p className="process-step-text">{step.description}</p>
+                    </div>
                   </div>
-                  <div className="process-body">
-                    <h3>{step.title}</h3>
-                    <p>{step.detail}</p>
+                ))}
+              </div>
+
+              <div className="process-row process-row-bottom">
+                {processSteps.slice(4).map((step, index) => (
+                  <div key={index + 4} className="process-card" aria-label={`${index + 5}. ${step.title}`}>
+                    <div className="process-step-number">0{index + 5}</div>
+                    <div className="process-step-content">
+                      <div className="process-step-subtitle">{step.subtitle}</div>
+                      <h3 className="process-step-title">{step.title}</h3>
+                      <p className="process-step-text">{step.description}</p>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+
+            <div className="process-note">
+              Процесс выстроен как единый инженерный цикл — от расчёта до монтажа, без разрывов и допущений.
             </div>
           </div>
         </div>
