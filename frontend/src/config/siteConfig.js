@@ -15,7 +15,7 @@ export const siteConfig = {
   },
   social: {
     whatsapp: 'https://wa.me/77003840505',
-    instagram: '#',
+    instagram: 'https://www.instagram.com/alatau_lstk',
     facebook: '#'
   },
   location: {

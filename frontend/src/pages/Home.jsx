@@ -455,8 +455,8 @@ const Home = () => {
         <div className="container">
           <SectionHeader
             eyebrow="Документы"
-            title="Прозрачность и готовность к тендерам"
-            subtitle="Пакет документов и нормативов, готовый для тендеров и закупок."
+            title="Документы и сертификаты"
+            subtitle="Актуальные сертификаты, договор и спецификация поставки."
           />
 
           <div className="documents-grid">
@@ -473,7 +473,6 @@ const Home = () => {
             <Link to="/documents" className="btn-primary">
               Подробнее <ArrowRight size={16} />
             </Link>
-            <button className="btn-ghost" onClick={() => openWhatsApp('Нужен тендерный пакет и спецификация по ЛСТК.')}>Связаться с инженером</button>
           </div>
         </div>
       </section>
@@ -495,6 +494,12 @@ const Home = () => {
             <div className="contact-details">
               <div className="contact-item">
                 <strong>Телефон:</strong> {siteConfig.contact.phone}
+              </div>
+              <div className="contact-item">
+                <strong>Instagram:</strong>{' '}
+                <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer">
+                  @alatau_lstk
+                </a>
               </div>
               <div className="contact-item">
                 <strong>Адрес:</strong> {siteConfig.contact.address}
