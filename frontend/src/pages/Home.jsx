@@ -63,11 +63,34 @@ const Home = () => {
   ];
 
   const premiumBenefits = [
-    { icon: Gem, title: 'Премиальные материалы', text: 'Оцинкованный металл и профессиональные покрытия, созданные служить десятилетиями.' },
-    { icon: Layers, title: 'Инженерная точность', text: 'Собственное производство на ЧПУ: каждая деталь безупречно повторяет проект.' },
-    { icon: ShieldCheck, title: 'Гарантированная безопасность', text: 'Строгий контроль качества, соответствие нормативам и необходимые сертификаты.' },
-    { icon: Timer, title: 'Сроки без компромиссов', text: 'Оптимизированная логистика и монтаж под ключ в заранее согласованные сроки.' }
+    {
+      icon: Layers,
+      title: 'Инженерная точность',
+      text: 'ЧПУ-разметка и калиброванные профили → стабильная геометрия → монтаж без подрезок.',
+      badge: 'Ключевая ценность',
+      meta: 'Основа производства'
+    },
+    {
+      icon: Gem,
+      title: 'Премиальные материалы',
+      text: 'Оцинковка и защитные покрытия промышленного класса → ресурс конструкции → без коррозии на сроке службы.'
+    },
+    {
+      icon: ShieldCheck,
+      title: 'Контроль безопасности',
+      text: 'Нормативные проверки и паспорта партий → подтверждённая несущая способность → допуск к коммерческим объектам.'
+    },
+    {
+      icon: Timer,
+      title: 'Дисциплина сроков',
+      text: 'Синхронизация расчёта, производства и логистики → предсказуемый график → ввод объекта без задержек.'
+    }
   ];
+
+  const coreBenefit = premiumBenefits[0];
+  const supportingBenefits = premiumBenefits.slice(1);
+
+  const CoreIcon = coreBenefit.icon;
 
   const productionHighlights = [
     'Единый стандарт качества от расчёта до монтажа',
@@ -263,18 +286,42 @@ const Home = () => {
             </div>
 
             <div className="premium-quad">
-              {premiumBenefits.map((item, idx) => {
-                const Icon = item.icon;
-                return (
-                  <div key={idx} className="premium-card">
-                    <div className="premium-icon">
-                      <Icon size={26} />
-                    </div>
-                    <h3>{item.title}</h3>
-                    <p>{item.text}</p>
+              <div className="premium-card premium-core">
+                <div className="core-top">
+                  <span className="core-badge">{coreBenefit.badge}</span>
+                  <span className="core-meta">{coreBenefit.meta}</span>
+                </div>
+                <div className="core-header">
+                  <div className="premium-icon accent">
+                    <CoreIcon size={28} />
                   </div>
-                );
-              })}
+                  <div className="core-title-block">
+                    <h3>{coreBenefit.title}</h3>
+                    <p className="core-subline">Факт → ценность → результат</p>
+                  </div>
+                </div>
+                <p className="core-text">{coreBenefit.text}</p>
+                <div className="core-footer">
+                  <div className="core-signal">Стабильная геометрия по всей партии</div>
+                </div>
+              </div>
+
+              <div className="support-grid">
+                {supportingBenefits.map((item, idx) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={idx} className={`premium-card support-card ${idx === 2 ? 'wide-support' : ''}`}>
+                      <div className="premium-icon subdued">
+                        <Icon size={22} />
+                      </div>
+                      <div className="support-body">
+                        <h3>{item.title}</h3>
+                        <p>{item.text}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
