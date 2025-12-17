@@ -1,7 +1,7 @@
 /* Industrial Premium Footer */
 
 .site-footer {
-  background: var(--bg-primary);
+  background: transparent;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: 64px 0 32px;
   position: relative;
