@@ -6,6 +6,7 @@ import SectionHeader from '../components/ui/SectionHeader';
 import PricingCards from '../components/ui/PricingCards';
 import ProcessSteps from '../components/ui/ProcessSteps';
 import CostingBlock from '../components/ui/CostingBlock';
+import capsulesHeroImg from '../assets/CapsulesHero.png';
 
 const Capsules = () => {
   useEffect(() => {
@@ -60,7 +61,7 @@ const Capsules = () => {
     }
   ];
 
-  const heroImage = gallery[0].image;
+  const heroImage = capsulesHeroImg;
 
   const configurations = [
     {
