@@ -93,7 +93,7 @@
   line-height: 1.1;
   max-width: 820px;
   font-weight: 800;
-  color: var(--text-primary);
+  color: #f3fbf7;
   text-shadow: 0 14px 46px rgba(0, 0, 0, 0.46);
   margin: 0;
 }
@@ -224,7 +224,7 @@
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: linear-gradient(180deg, rgba(6, 10, 10, 0.96) 0%, rgba(4, 8, 8, 0.98) 100%);
+  background: linear-gradient(180deg, rgba(8, 12, 12, 0.96) 0%, rgba(6, 10, 10, 0.97) 100%);
   display: grid;
   grid-template-rows: 220px 1fr;
   text-decoration: none;
@@ -282,7 +282,7 @@
 
 .direction-card.featured {
   grid-template-rows: 255px 1fr;
-  background: linear-gradient(180deg, rgba(8, 14, 14, 0.96) 0%, rgba(5, 10, 10, 0.985) 100%);
+  background: linear-gradient(180deg, rgba(10, 16, 16, 0.96) 0%, rgba(7, 12, 12, 0.985) 100%);
   border-color: rgba(255, 255, 255, 0.18);
   box-shadow: 0 24px 52px rgba(0, 12, 14, 0.38);
   transform: translateY(-2px);
@@ -318,7 +318,7 @@
   padding: 18px 18px 16px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(160deg, rgba(10, 16, 15, 0.92), rgba(6, 10, 10, 0.9));
+  background: linear-gradient(160deg, rgba(12, 18, 17, 0.93), rgba(8, 12, 12, 0.91));
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
   display: grid;
   gap: 8px;
@@ -345,7 +345,7 @@
 
 .process-regulation {
   position: relative;
-  background: linear-gradient(160deg, rgba(6, 10, 10, 0.96), rgba(4, 7, 7, 0.94));
+  background: linear-gradient(160deg, rgba(8, 12, 12, 0.96), rgba(6, 10, 10, 0.94));
   border: 1px solid rgba(14, 162, 115, 0.28);
   border-radius: 20px;
   padding: 26px 26px 22px;
@@ -373,7 +373,7 @@
   padding: 18px 18px 16px;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(145deg, rgba(10, 15, 15, 0.95), rgba(6, 10, 10, 0.9));
+  background: linear-gradient(145deg, rgba(12, 18, 17, 0.95), rgba(8, 12, 12, 0.92));
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
   height: 100%;
 }
@@ -544,7 +544,7 @@
   padding: 16px 18px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: linear-gradient(160deg, rgba(10, 16, 15, 0.92), rgba(4, 7, 7, 0.92));
+  background: linear-gradient(160deg, rgba(12, 18, 17, 0.93), rgba(6, 10, 10, 0.93));
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 12px;
@@ -589,7 +589,7 @@
   padding: 16px 16px 14px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(150deg, rgba(10, 16, 15, 0.92), rgba(4, 7, 7, 0.92));
+  background: linear-gradient(150deg, rgba(12, 18, 17, 0.93), rgba(6, 10, 10, 0.93));
   display: grid;
   gap: 8px;
   align-content: start;
