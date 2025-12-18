@@ -127,25 +127,31 @@ const Header = () => {
               </div>
             </nav>
 
-            {/* Кнопка телефона */}
-            <a href={`tel:${siteConfig.contact.phoneRaw}`} className="phone-link">
-              <Phone size={20} />
-              <span>{siteConfig.contact.phone}</span>
-            </a>
+            <div className="header-actions">
+              {/* Кнопка телефона */}
+              <a href={`tel:${siteConfig.contact.phoneRaw}`} className="phone-link">
+                <Phone size={20} />
+                <span>{siteConfig.contact.phone}</span>
+              </a>
 
-            {/* Компактная кнопка звонка для мобилы */}
-            <a href={`tel:${siteConfig.contact.phoneRaw}`} className="phone-icon-button" aria-label="Позвонить">
-              <Phone size={18} />
-            </a>
+              {/* Компактная кнопка звонка для мобилы */}
+              <a
+                href={`tel:${siteConfig.contact.phoneRaw}`}
+                className="phone-icon-button"
+                aria-label="Позвонить"
+              >
+                <Phone size={18} />
+              </a>
 
-            {/* Бургер */}
-            <button
-              className="mobile-menu-toggle"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Menu"
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+              {/* Бургер */}
+              <button
+                className="mobile-menu-toggle"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label="Menu"
+              >
+                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
 
           </div>
         </div>
