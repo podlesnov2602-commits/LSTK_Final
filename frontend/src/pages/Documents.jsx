@@ -9,51 +9,71 @@ const Documents = () => {
     // Scroll to top on page load
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
-  const documents = [
+
+  const documentGroups = [
     {
-      title: 'Сертификат соответствия',
-      description: 'Сертификат качества на продукцию',
-      file: '#'
+      title: 'Юридические документы',
+      items: [
+        {
+          title: 'Сертификат соответствия',
+          description: 'Сертификат качества на продукцию',
+          file: '#',
+          priority: true
+        },
+        {
+          title: 'Лицензия на деятельность',
+          description: 'Лицензия на осуществление деятельности',
+          file: '#',
+          priority: true
+        },
+        {
+          title: 'Реквизиты компании',
+          description: 'Полные реквизиты для оформления договора',
+          file: '#',
+          priority: true
+        },
+        {
+          title: 'Договор поставки',
+          description: 'Типовой договор поставки продукции',
+          file: '#'
+        }
+      ]
     },
     {
-      title: 'Договор поставки',
-      description: 'Типовой договор поставки продукции',
-      file: '#'
+      title: 'Техническая документация',
+      items: [
+        {
+          title: 'Технические условия',
+          description: 'Технические характеристики продукции',
+          file: '#'
+        },
+        {
+          title: 'Гарантийное обязательство',
+          description: 'Условия гарантийного обслуживания',
+          file: '#'
+        },
+        {
+          title: 'Пожарный сертификат',
+          description: 'Сертификат пожарной безопасности',
+          file: '#',
+          priority: true
+        }
+      ]
     },
     {
-      title: 'Реквизиты компании',
-      description: 'Полные реквизиты для оформления договора',
-      file: '#'
-    },
-    {
-      title: 'Технические условия',
-      description: 'Технические характеристики продукции',
-      file: '#'
-    },
-    {
-      title: 'Гарантийное обязательство',
-      description: 'Условия гарантийного обслуживания',
-      file: '#'
-    },
-    {
-      title: 'Лицензия на деятельность',
-      description: 'Лицензия на осуществление деятельности',
-      file: '#'
-    },
-    {
-      title: 'Пожарный сертификат',
-      description: 'Сертификат пожарной безопасности',
-      file: '#'
-    },
-    {
-      title: 'Прайс-лист',
-      description: 'Актуальные цены на продукцию',
-      file: '#'
-    },
-    {
-      title: 'Каталог продукции',
-      description: 'Полный каталог производимой продукции',
-      file: '#'
+      title: 'Коммерческие материалы',
+      items: [
+        {
+          title: 'Прайс-лист',
+          description: 'Актуальные цены на продукцию',
+          file: '#'
+        },
+        {
+          title: 'Каталог продукции',
+          description: 'Полный каталог производимой продукции',
+          file: '#'
+        }
+      ]
     }
   ];
 
@@ -79,23 +99,33 @@ const Documents = () => {
             title="Документы"
             subtitle="Готовые к загрузке сертификаты, договоры и каталоги"
           />
-          <div className="documents-grid">
-            {documents.map((doc, index) => (
-              <div key={index} className="document-card">
-                <div className="document-icon-wrapper">
-                  <FileText size={40} />
+          <div className="documents-groups">
+            {documentGroups.map((group, groupIndex) => (
+              <div key={groupIndex} className="documents-group">
+                <h3 className="h3 documents-group-title">{group.title}</h3>
+                <div className="documents-grid">
+                  {group.items.map((doc, docIndex) => (
+                    <div
+                      key={`${groupIndex}-${docIndex}`}
+                      className={`document-card ${doc.priority ? 'document-card-priority' : ''}`}
+                    >
+                      <div className="document-icon-wrapper">
+                        <FileText size={40} />
+                      </div>
+                      <div className="document-info">
+                        <h3 className="h3">{doc.title}</h3>
+                        <p className="body-md">{doc.description}</p>
+                      </div>
+                      <button
+                        className="btn-primary download-btn"
+                        onClick={() => handleDownload(doc.file)}
+                      >
+                        <Download size={18} />
+                        Скачать
+                      </button>
+                    </div>
+                  ))}
                 </div>
-                <div className="document-info">
-                  <h3 className="h3">{doc.title}</h3>
-                  <p className="body-md">{doc.description}</p>
-                </div>
-                <button 
-                  className="btn-primary download-btn"
-                  onClick={() => handleDownload(doc.file)}
-                >
-                  <Download size={18} />
-                  Скачать
-                </button>
               </div>
             ))}
           </div>
@@ -109,10 +139,10 @@ const Documents = () => {
             <SectionHeader
               eyebrow="Стандарты"
               title="Официальные документы"
-              subtitle="Все наши продукты имеют необходимые сертификаты соответствия и отвечают всем стандартам качества"
+              subtitle="Подтверждаем законность деятельности и допуск к работам"
             />
             <p className="body-lg">
-              Мы обеспечиваем полную прозрачность нашей деятельности и предоставляем все необходимые документы для оформления сотрудничества.
+              Все представленные документы действительны и предоставляются для проверки, согласования и заключения договоров. Мы работаем в соответствии с требованиями законодательства и отраслевых стандартов.
             </p>
           </div>
         </div>
