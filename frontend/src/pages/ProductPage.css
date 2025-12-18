@@ -1,8 +1,16 @@
 .product-page {
   width: 100%;
-  background: transparent;
+  min-height: 100vh;              /* FIX: фон на всю высоту */
   position: relative;
+  overflow: hidden;               /* FIX: убирает визуальные разрывы */
+
+  /* FIX: единый фон полотном */
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.02), transparent 32%),
+    radial-gradient(circle at 82% 22%, rgba(255, 255, 255, 0.02), transparent 28%),
+    #050808;
 }
+
 
 /* Product Hero */
 .product-hero {
@@ -219,9 +227,9 @@
 /* Advantages */
 .advantages-section-product {
   padding: 50px 0;
-  background: linear-gradient(135deg, rgba(9, 14, 15, 0.92) 0%, rgba(7, 12, 13, 0.9) 60%, rgba(14, 162, 115, 0.06) 100%);
+  background: transparent;   /* FIX */
   position: relative;
-  isolation: isolate;
+  isolation: auto;           /* FIX: не изолируем слой */
 }
 
 .advantages-grid-product {
@@ -350,7 +358,7 @@
 /* Steps Section */
 .steps-section {
   padding: 64px 0 58px 0;
-  background: linear-gradient(180deg, rgba(8, 14, 15, 0.9) 0%, rgba(7, 12, 13, 0.88) 100%);
+  background: transparent;   /* FIX */
 }
 
 .steps-section .section-title {
@@ -564,7 +572,7 @@
 
 .costing-cta-section {
   padding: 68px 0;
-  background: linear-gradient(135deg, rgba(9, 15, 16, 0.92) 0%, rgba(7, 12, 13, 0.94) 58%, rgba(14, 162, 115, 0.08) 100%);
+  background: transparent;   /* FIX */
 }
 
 .costing-cta-grid {
@@ -795,3 +803,11 @@
     flex-direction: column;
   }
 }
+
+/* FIX: ВСЕ прямые дети product-page не должны иметь фон */
+.product-page > * {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+
