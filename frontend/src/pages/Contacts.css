@@ -132,6 +132,20 @@
   color: var(--text-secondary);
 }
 
+.microcopy {
+  color: var(--text-secondary);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  opacity: 0.9;
+}
+
+.map-label {
+  margin: 12px 0 10px;
+  display: inline-block;
+}
+
 .map-container {
   border: 1px solid var(--card-border);
   border-radius: 16px;
@@ -142,7 +156,7 @@
 }
 
 .map-container iframe {
-  filter: grayscale(0.82) invert(0.7) brightness(0.82) contrast(1.05) saturate(1.04);
+  filter: grayscale(0.6) brightness(0.94) contrast(1.18) saturate(0.9);
 }
 
 .contacts-cta-content {
@@ -158,6 +172,12 @@
 
 .contacts-cta-content p {
   margin-bottom: 32px;
+}
+
+.contacts-cta-content .microcopy {
+  margin-top: 14px;
+  margin-bottom: 0;
+  display: inline-block;
 }
 
 @media (max-width: 768px) {

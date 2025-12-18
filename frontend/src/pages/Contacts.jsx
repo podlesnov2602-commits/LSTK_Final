@@ -19,30 +19,35 @@ const Contacts = () => {
     {
       icon: Phone,
       title: 'Телефон',
+      caption: 'Прямая связь с производством',
       value: siteConfig.contact.phone,
       link: `tel:${siteConfig.contact.phoneRaw}`
     },
     {
       icon: Instagram,
       title: 'Instagram',
+      caption: 'Актуальные проекты и сборки',
       value: '@alatau_lstk',
       link: siteConfig.social.instagram
     },
     {
       icon: Mail,
       title: 'Email',
+      caption: 'Для расчётов и КП',
       value: siteConfig.contact.email,
       link: `mailto:${siteConfig.contact.email}`
     },
     {
       icon: MapPin,
       title: 'Адрес',
+      caption: 'Производственная площадка и офис',
       value: siteConfig.contact.address,
       link: null
     },
     {
       icon: Clock,
       title: 'Режим работы',
+      caption: 'Инженерная поддержка',
       value: siteConfig.contact.workingHours,
       link: null
     }
@@ -62,8 +67,8 @@ const Contacts = () => {
         <div className="container">
           <SectionHeader
             eyebrow="Связь"
-            title="Мы всегда на линии"
-            subtitle="Команда ответит в рабочие часы и направит к нужному специалисту"
+            title="Связь с производством"
+            subtitle="Свяжитесь с нами для расчёта, консультации или выезда специалиста. Работаем напрямую, без посредников."
           />
           <div className="contact-info-grid">
             {contactInfo.map((info, index) => {
@@ -75,6 +80,7 @@ const Contacts = () => {
                   </div>
                   <div className="contact-info-text">
                     <h3 className="h3">{info.title}</h3>
+                    <p className="microcopy">{info.caption}</p>
                     <p className="body-md">{info.value}</p>
                   </div>
                 </>
@@ -102,6 +108,7 @@ const Contacts = () => {
             title="Мы на карте"
             subtitle="Производственная площадка и офис на одной оси"
           />
+          <p className="map-label microcopy">Производственная площадка и офис</p>
           <div className="map-container">
             <iframe
               title="Company Location"
@@ -126,8 +133,9 @@ const Contacts = () => {
               subtitle="Напишите инженеру — отправим расчёт и КП по вашему запросу"
             />
             <button className="btn-primary" onClick={handleWhatsAppContact}>
-              Получить расчёт и КП
+              Получить расчёт и консультацию инженера
             </button>
+            <p className="microcopy">Ответим в рабочее время, рассчитаем стоимость и сроки</p>
           </div>
         </div>
       </section>
