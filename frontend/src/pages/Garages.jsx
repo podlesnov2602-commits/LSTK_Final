@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ClipboardList, Clock, DollarSign, Factory, PenTool, Ruler, Shield, Wrench, Zap } from 'lucide-react';
+import { ClipboardList, Factory, PenTool, Ruler, Shield, Wrench } from 'lucide-react';
 import PageHero from '../components/ui/PageHero';
 import SectionHeader from '../components/ui/SectionHeader';
 import ProcessSteps from '../components/ui/ProcessSteps';
@@ -22,110 +22,104 @@ const Garages = () => {
   }, []);
 
   const gallery = [
-    { 
+    {
       image: 'https://images.unsplash.com/photo-1635961179148-3d886568775c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHw0fHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Гараж на 1 авто'
+      caption: 'Гараж на 1 авто — частный участок'
     },
-    { 
+    {
       image: 'https://images.unsplash.com/photo-1720036237334-9263cd28c3d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Двойной гараж'
+      caption: 'Гараж на 2 авто — частный дом'
     },
-    { 
+    {
       image: 'https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Гараж с мастерской'
+      caption: 'Гараж с мастерской — техника и инструменты'
     },
-    { 
+    {
       image: 'https://images.unsplash.com/photo-1635961179148-3d886568775c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHw0fHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Утеплённый гараж'
+      caption: 'Утеплённый гараж — круглогодичное хранение'
     },
-    { 
+    {
       image: 'https://images.unsplash.com/photo-1669003152237-7bd1ac4c13f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx3YXJlaG91c2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQzMjM4OTJ8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Гараж под ключ'
+      caption: 'Гараж с навесом — техника и склад'
     },
-    { 
+    {
       image: 'https://images.unsplash.com/photo-1720036237334-9263cd28c3d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Металлический бокс'
+      caption: 'Металлический хозблок — хранение и мастерская'
     }
   ];
 
   const configurations = [
     {
-      title: 'Навес на 1 авто',
-      subtitle: '3×6 м',
-      price: 'от 490 000 ₸',
-      features: ['Каркас ЛСТК', 'Профнастил', 'Кровля', 'Монтаж']
+      title: 'Гараж 6×6',
+      subtitle: '6×6 м',
+      features: ['Каркас ЛСТК', 'Обшивка: профлист / сэндвич', 'Кровля', 'Ворота / двери (по комплектации)']
     },
     {
       title: 'Гараж на 2 авто',
-      subtitle: '6×6 м',
-      price: 'от 1.2 млн ₸',
-      features: ['Каркас усиленный', 'Двое ворот', 'Утепление', 'Вентиляция']
-    },
-    {
-      title: 'Навес на 2 авто',
-      subtitle: '6×6 м',
-      price: 'от 790 000 ₸',
-      features: ['Каркас ЛСТК', 'Профнастил', 'Кровля', 'Монтаж']
-    },
-    {
-      title: 'Гараж 6×6',
-      subtitle: 'Стандарт',
-      price: 'от 1.1 млн ₸',
-      features: ['Каркас ЛСТК', 'Ворота', 'Утепление', 'Электрика']
+      subtitle: '6×9 м',
+      features: ['Каркас ЛСТК', 'Обшивка: профлист / сэндвич', 'Кровля', 'Ворота / двери (по комплектации)']
     },
     {
       title: 'Хозблок',
-      subtitle: '3×3 м',
-      price: 'от 350 000 ₸',
-      features: ['Каркас ЛСТК', 'Обшивка', 'Дверь', 'Кровля']
+      subtitle: '3×6 м',
+      features: ['Каркас ЛСТК', 'Обшивка: профлист / сэндвич', 'Кровля', 'Ворота / двери (по комплектации)']
+    },
+    {
+      title: 'Навес',
+      subtitle: 'под 1–2 авто',
+      features: ['Каркас ЛСТК', 'Обшивка: профлист / сэндвич', 'Кровля', 'Ворота / двери (по комплектации)']
     },
     {
       title: 'Гараж с навесом',
       subtitle: '6×9 м',
-      price: 'от 1.5 млн ₸',
-      features: ['Гараж + навес', 'Усиленный каркас', 'Ворота', 'Кровля']
+      features: ['Каркас ЛСТК', 'Обшивка: профлист / сэндвич', 'Кровля', 'Ворота / двери (по комплектации)']
+    },
+    {
+      title: 'Металлический бокс',
+      subtitle: 'для техники и склада',
+      features: ['Каркас ЛСТК', 'Обшивка: профлист / сэндвич', 'Кровля', 'Ворота / двери (по комплектации)']
     }
   ];
 
   const pricingCards = configurations.map((config) => ({
     meta: config.subtitle,
     title: config.title,
-    price: config.price,
-    description: 'Готовое решение в единой архитектуре',
+    price: 'По расчёту',
+    description: 'Металлическая конструкция для хранения, техники или мастерской',
     markers: config.features
   }));
 
   const advantages = [
-    { icon: Zap, title: 'Быстро', description: 'Монтаж 3-5 дней' },
-    { icon: DollarSign, title: 'Дешево', description: 'Доступные цены' },
-    { icon: Shield, title: 'Аккуратно', description: 'Качественная сборка' },
-    { icon: Clock, title: 'Не требует разрешений', description: 'Легкие конструкции' }
+    { icon: Factory, title: 'Заводская сборка без кустарных решений' },
+    { icon: Shield, title: 'Расчёт конструкции под снеговые и ветровые нагрузки' },
+    { icon: Wrench, title: 'Минимум работ на участке' },
+    { icon: ClipboardList, title: 'Понятная комплектация без скрытых доплат' }
   ];
 
   const processSteps = [
     {
-      title: 'Заявка',
-      description: 'Оставляете заявку в один клик или пишете в мессенджер',
+      title: 'Запрос и базовые параметры',
+      description: 'Получаем размеры, сценарий использования и сроки',
       icon: ClipboardList
     },
     {
-      title: 'Замеры',
-      description: 'Фиксируем габариты участка, высоту и нагрузку на конструкцию',
+      title: 'Замеры и уточнение нагрузок',
+      description: 'Фиксируем габариты участка и учитываем снеговые и ветровые зоны',
       icon: Ruler
     },
     {
-      title: 'Проект',
-      description: 'Готовим смету, компоновку и визуализацию под ваш сценарий',
+      title: 'Подбор конструкции и комплектации',
+      description: 'Выбираем тип каркаса, обшивку и двери под задачу',
       icon: PenTool
     },
     {
-      title: 'Производство',
-      description: 'Запускаем ЛСТК в работу и собираем комплектацию на заводе',
+      title: 'Производство на заводе',
+      description: 'Режем и маркируем ЛСТК, собираем комплект на складе',
       icon: Factory
     },
     {
-      title: 'Монтаж',
-      description: 'Приезжаем на объект, собираем гараж и сдаём заказчику',
+      title: 'Монтаж и сдача объекта',
+      description: 'Приезжаем на участок, собираем конструкцию и передаем заказчику',
       icon: Wrench
     }
   ];
@@ -134,7 +128,7 @@ const Garages = () => {
     <div className="product-page">
       <PageHero
         title="Гаражи"
-        subtitle="Надёжные металлические гаражи и боксы в едином индустриальном стиле"
+        subtitle="Гаражи и хозблоки с расчётом под реальные нагрузки"
         meta="Industrial Premium • Гаражи"
         image={gallery[0].image}
       />
@@ -166,8 +160,8 @@ const Garages = () => {
         <div className="container">
           <SectionHeader
             eyebrow="Технология"
-            title="Преимущества"
-            subtitle="Быстрый монтаж, аккуратные фасады и стабильный бюджет"
+            title="Инженерные решения без декоративной избыточности"
+            subtitle="Сосредоточены на расчётах, комплектации и заводском изготовлении"
           />
           <div className="advantages-grid-product">
             {advantages.map((advantage, index) => {
@@ -187,9 +181,9 @@ const Garages = () => {
 
       <PricingCards
         title="Типовые проекты"
-        subtitle="Опции для одного или двух авто, утеплённые решения и интеграция с навесами"
+        subtitle="Гаражи, хозблоки и навесы под хранение техники или мастерской"
         items={pricingCards}
-        footnote="Стоимость рассчитываем под комплектацию, регион и сроки монтажа"
+        footnote="Цена ориентировочная. Рассчитывается по комплектации и региону."
       />
 
       <section className="steps-section">
@@ -197,7 +191,7 @@ const Garages = () => {
           <SectionHeader
             eyebrow="Процесс"
             title="Как мы работаем"
-            subtitle="От заявки до монтажа — последовательные шаги без задержек"
+            subtitle="Этапы работ по гаражам, хозблокам и навесам"
           />
           <ProcessSteps steps={processSteps} />
         </div>
