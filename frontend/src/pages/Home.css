@@ -237,7 +237,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  filter: brightness(1.16) contrast(0.96) saturate(0.96);
+  filter: brightness(1.33) contrast(0.96) saturate(0.96);
 }
 
 .direction-image::after {
