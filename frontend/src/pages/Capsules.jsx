@@ -52,12 +52,6 @@ const Capsules = () => {
         'https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?auto=format&fit=crop&w=1600&q=80',
       caption: 'Модульный дом 29м²',
       usage: 'под аренду'
-    },
-    {
-      image:
-        'https://images.unsplash.com/photo-1430285561322-7808604715df?auto=format&fit=crop&w=1600&q=80',
-      caption: 'Гостевой дом 48м²',
-      usage: 'офис продаж / ресепшн'
     }
   ];
 
