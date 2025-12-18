@@ -150,7 +150,7 @@
 }
 
 .documents-info-content {
-  max-width: 750px;
+  max-width: 700px;
   margin: 0 auto;
   text-align: left;
 }
@@ -166,6 +166,13 @@
 
 .documents-info-content p {
   margin-bottom: 16px;
+}
+
+.documents-info-text {
+  text-align: justify;
+  hyphens: auto;
+  line-height: 1.65;
+  word-spacing: normal;
 }
 
 @media (max-width: 768px) {
