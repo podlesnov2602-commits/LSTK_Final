@@ -26,9 +26,9 @@
   padding: 0 28px;
 }
 
-
 .header-content {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 28px;
   height: 86px;
@@ -38,7 +38,6 @@
 .logo {
   display: flex;
   align-items: center;
-  flex-shrink: 0;
 }
 
 .logo-icon {
@@ -54,9 +53,9 @@
   gap: 24px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  justify-content: flex-start;
-  width: auto;
-  flex: 1;
+  justify-self: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .nav-link {
@@ -103,7 +102,6 @@
   align-items: center;
   gap: 12px;
   justify-content: flex-end;
-  margin-left: auto;
 }
 
 .nav-links {
@@ -205,6 +203,7 @@
   }
 
   .header-content {
+    grid-template-columns: auto 1fr auto;
     height: 72px;
     padding: 0 8px;
     gap: 16px;
