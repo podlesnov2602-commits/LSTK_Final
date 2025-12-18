@@ -26,21 +26,14 @@
   padding: 0 28px;
 }
 
-/* =========================
-   HEADER CONTENT
-========================= */
-
 .header-content {
-  /* ★ ИЗМЕНЕНО */
-  position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 28px;
   height: 86px;
   width: 100%;
 }
-
-/* LOGO */
 
 .logo {
   display: flex;
@@ -54,25 +47,15 @@
   filter: none;
 }
 
-/* =========================
-   NAVIGATION (CENTER)
-========================= */
-
 .main-nav {
-  /* ★ ИЗМЕНЕНО */
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
   gap: 24px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-
-  /* БЫЛО, НО БОЛЬШЕ НЕ НУЖНО ДЛЯ ЦЕНТРА */
-  /* justify-self: center; */
-  /* justify-content: center; */
-  /* width: 100%; */
+  justify-self: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .nav-link {
@@ -98,19 +81,6 @@
   border-radius: 12px;
 }
 
-/* =========================
-   ACTIONS (RIGHT)
-========================= */
-
-.header-actions {
-  /* ★ ИЗМЕНЕНО */
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  justify-content: flex-end;
-}
-
 .phone-link {
   background: rgba(14, 162, 115, 0.12);
   border: 1px solid rgba(14, 162, 115, 0.5);
@@ -127,15 +97,12 @@
   box-shadow: none;
 }
 
-.phone-link:hover {
-  background: rgba(14, 162, 115, 0.2);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.32), 0 0 14px var(--brand-green-soft);
-  transform: translateY(-1px);
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
 }
-
-/* =========================
-   ВСЁ НИЖЕ — БЕЗ ИЗМЕНЕНИЙ
-========================= */
 
 .nav-links {
   display: flex;
@@ -157,7 +124,68 @@
   flex-shrink: 0;
 }
 
-/* ---------- MOBILE: НЕ ТРОГАЕМ ---------- */
+.catalog-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, #c2ffe6, #2bd19c);
+  box-shadow: 0 0 0 6px rgba(14, 162, 115, 0.12), 0 0 0 12px rgba(14, 162, 115, 0.06);
+}
+
+.catalog-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.catalog-label {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232, 246, 240, 0.76);
+}
+
+.catalog-current {
+  font-size: 14px;
+  font-weight: 600;
+  color: #b6f3d7;
+}
+
+.mobile-menu-card {
+  display: contents;
+}
+
+.mobile-contacts,
+.mobile-menu-phone {
+  display: none;
+}
+
+.phone-link:hover {
+  background: rgba(14, 162, 115, 0.2);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.32), 0 0 14px var(--brand-green-soft);
+  transform: translateY(-1px);
+}
+
+.phone-icon-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(14, 162, 115, 0.12);
+  border: 1px solid rgba(14, 162, 115, 0.5);
+  color: var(--brand-green);
+  text-decoration: none;
+  box-shadow: none;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+}
 
 @media (max-width: 1024px) {
   .header-content {
@@ -175,8 +203,10 @@
   }
 
   .header-content {
+    grid-template-columns: auto 1fr auto;
     height: 72px;
     padding: 0 8px;
+    gap: 16px;
   }
 
   .logo-icon {
@@ -207,5 +237,129 @@
     z-index: 2000;
     pointer-events: none;
     visibility: hidden;
+    filter: none;
+    backdrop-filter: none;
+    opacity: 1;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  .main-nav.mobile-open {
+    pointer-events: auto;
+    visibility: visible;
+  }
+
+  .mobile-menu-card {
+    position: relative;
+    width: min(520px, 100%);
+    margin: 0;
+    background: linear-gradient(180deg, #141f1b 0%, #0f1916 100%);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.32);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 96px 20px 32px;
+    height: 100%;
+    transform: translateY(-8px);
+    transition: transform 0.26s ease;
+    filter: none;
+    backdrop-filter: none;
+    opacity: 1;
+    font-family: inherit;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    pointer-events: auto;
+  }
+
+  .main-nav.mobile-open .mobile-menu-card {
+    transform: translateY(0);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    width: 100%;
+  }
+
+  .nav-link {
+    height: auto;
+    padding: 18px 14px;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a2622;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    color: #f3f7f5;
+    line-height: 1.6;
+    font-family: inherit;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  .nav-link.active,
+  .nav-link:hover {
+    color: #0c241d;
+    background: linear-gradient(180deg, #6fe0b8 0%, #4cc59c 100%);
+    border-color: rgba(111, 224, 184, 0.42);
+  }
+
+  .nav-link::after,
+  .nav-link.active::after {
+    display: none;
+  }
+
+  .mobile-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: #f5f9f7;
+    z-index: 1300;
+  }
+
+  .mobile-contacts {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mobile-contacts__caption {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: rgba(243, 247, 245, 0.74);
+  }
+
+  .mobile-menu-phone {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: 0;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--brand-green);
+    color: var(--brand-green);
+  }
+
+  .mobile-menu-phone:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), 0 0 14px var(--brand-green-soft);
+  }
+
+  .mobile-menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 16, 14, 0.48);
+    backdrop-filter: none;
+    z-index: 1400;
+    pointer-events: none;
   }
 }
