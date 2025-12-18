@@ -54,7 +54,8 @@ const Home = () => {
       title: 'Капсульные здания',
       description: 'Быстрый ввод, предсказуемый бюджет и полный комплект для сборки без доработок на площадке.',
       image: capsulesImg,
-      link: '/capsules'
+      link: '/capsules',
+      featured: true
     },
     {
       title: 'Ангары и склады',
@@ -220,7 +221,7 @@ const Home = () => {
 
           <div className="directions-grid">
             {categories.map((item, index) => (
-              <Link key={index} to={item.link} className="direction-card">
+              <Link key={index} to={item.link} className={`direction-card ${item.featured ? 'featured' : ''}`}>
                 <div className="direction-image" style={{ backgroundImage: `linear-gradient(180deg, rgba(4,7,7,0.7) 0%, rgba(4,7,7,0.7) 48%, rgba(4,7,7,0.86) 100%), url(${item.image})` }} />
                 <div className="direction-body">
                   <div className="direction-top">
