@@ -22,14 +22,42 @@ const Home = () => {
   );
 
   const [currentHeroBgIndex, setCurrentHeroBgIndex] = useState(0);
+  const [previousHeroBgIndex, setPreviousHeroBgIndex] = useState(null);
+  const [isCrossfading, setIsCrossfading] = useState(false);
+  const [isCurrentLayerVisible, setIsCurrentLayerVisible] = useState(true);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentHeroBgIndex((prev) => (prev + 1) % heroBackgrounds.length);
-    }, 5500);
+    const fadeInterval = () => {
+      setCurrentHeroBgIndex((prev) => {
+        setPreviousHeroBgIndex(prev);
+        setIsCrossfading(true);
+        setIsCurrentLayerVisible(false);
+        return (prev + 1) % heroBackgrounds.length;
+      });
+    };
+
+    const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches;
+    const delay = isMobile ? 11000 : 7000;
+
+    const interval = setInterval(fadeInterval, delay);
 
     return () => clearInterval(interval);
   }, [heroBackgrounds.length]);
+
+  useEffect(() => {
+    if (!isCrossfading) return undefined;
+
+    const frame = requestAnimationFrame(() => setIsCurrentLayerVisible(true));
+    const timeout = setTimeout(() => {
+      setIsCrossfading(false);
+      setPreviousHeroBgIndex(null);
+    }, 1500);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      clearTimeout(timeout);
+    };
+  }, [isCrossfading]);
 
   const categories = [
     {
@@ -137,10 +165,21 @@ const Home = () => {
   return (
     <div className="home-page">
       <section className="hero-section">
-        <div
-          className="hero-surface"
-          style={{ backgroundImage: `${heroBackground}, url(${heroBackgrounds[currentHeroBgIndex]})` }}
-        />
+        <div className="hero-surfaces">
+          {previousHeroBgIndex !== null && (
+            <div
+              className={`hero-surface-layer hero-surface-layer--previous is-visible ${isCrossfading ? 'is-fading' : ''}`}
+              style={{ backgroundImage: `${heroBackground}, url(${heroBackgrounds[previousHeroBgIndex]})` }}
+            />
+          )}
+
+          <div
+            className={`hero-surface-layer hero-surface-layer--current ${isCurrentLayerVisible ? 'is-visible' : ''}`}
+            style={{ backgroundImage: `${heroBackground}, url(${heroBackgrounds[currentHeroBgIndex]})` }}
+          />
+        </div>
+
+        <div className="hero-overlay" />
 
         <div className="container hero-inner">
           <div className="hero-badge">Промышленное производство ЛСТК</div>
