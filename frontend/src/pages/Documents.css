@@ -44,7 +44,7 @@
 /* Documents Grid Section */
 .documents-grid-section,
 .documents-info-section {
-  padding: 100px 0;
+  padding: 72px 0;
   background: transparent;
   position: relative;
   isolation: isolate;
@@ -150,9 +150,13 @@
 }
 
 .documents-info-content {
-  max-width: 900px;
+  max-width: 750px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
+}
+
+.documents-info-content .section-header {
+  margin-bottom: 20px;
 }
 
 .documents-info-content h2 {
@@ -161,17 +165,17 @@
 }
 
 .documents-info-content p {
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 @media (max-width: 768px) {
   .documents-hero {
     min-height: 50vh;
   }
-  
+
   .documents-grid-section,
   .documents-info-section {
-    padding: 80px 0;
+    padding: 60px 0;
   }
   
   .documents-grid {
