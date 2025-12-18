@@ -23,28 +23,46 @@ const Hangars = () => {
 
   const gallery = [
     {
-      image: 'https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Ангар 700 м² · склад и логистика'
+      image:
+        'https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
+      title: 'Ангар 700 м²',
+      purpose: 'Склад и логистика',
+      tag: 'АНГАР'
     },
     {
-      image: 'https://images.unsplash.com/photo-1720036237334-9263cd28c3d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Индустриальный корпус 1200 м² · производство и сборка'
+      image:
+        'https://images.unsplash.com/photo-1720036237334-9263cd28c3d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
+      title: 'Индустриальный корпус 1200 м²',
+      purpose: 'Производство и сборка',
+      tag: 'АНГАР'
     },
     {
-      image: 'https://images.unsplash.com/photo-1669003152237-7bd1ac4c13f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx3YXJlaG91c2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQzMjM4OTJ8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Комплекс 2400 м² · кросс-докинг'
+      image:
+        'https://images.unsplash.com/photo-1669003152237-7bd1ac4c13f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx3YXJlaG91c2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQzMjM4OTJ8MA&ixlib=rb-4.1.0&q=85',
+      title: 'Комплекс 2400 м²',
+      purpose: 'Кросс-докинг',
+      tag: 'СКЛАД'
     },
     {
-      image: 'https://images.unsplash.com/photo-1635961179148-3d886568775c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHw0fHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Ангар 300 м² · локальный склад'
+      image:
+        'https://images.unsplash.com/photo-1635961179148-3d886568775c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHw0fHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
+      title: 'Ангар 300 м²',
+      purpose: 'Локальный склад',
+      tag: 'АНГАР'
     },
     {
-      image: 'https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Индустриальный корпус 1800 м² · логистика 24/7'
+      image:
+        'https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
+      title: 'Индустриальный корпус 1800 м²',
+      purpose: 'Логистика 24/7',
+      tag: 'СКЛАД'
     },
     {
-      image: 'https://images.unsplash.com/photo-1669003152237-7bd1ac4c13f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx3YXJlaG91c2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQzMjM4OTJ8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Складской модуль 950 м² · FMCG'
+      image:
+        'https://images.unsplash.com/photo-1669003152237-7bd1ac4c13f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx3YXJlaG91c2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQzMjM4OTJ8MA&ixlib=rb-4.1.0&q=85',
+      title: 'Складской модуль 950 м²',
+      purpose: 'FMCG',
+      tag: 'СКЛАД'
     }
   ];
 
@@ -52,26 +70,26 @@ const Hangars = () => {
     {
       title: '150 м²',
       price: 'от 4.5 млн ₸',
-      scenario: 'Компактный склад и сервис в небольших городах',
+      scenario: 'Компактный склад / сервис',
       metric: 'Пролёт 12–15 м · высота до 6 м',
       note: 'Базовая конфигурация для хранения и сервиса',
-      markers: ['Быстрая сборка и доставка', 'Пролёт без внутренних опор', 'Оптимален для локальной логистики']
+      markers: ['Оптимизация фундамента под лёгкий каркас', 'Свободное размещение стеллажей', 'Инженерия под региональные нагрузки']
     },
     {
       title: '200 м²',
       price: 'от 6 млн ₸',
-      scenario: 'Логистические узлы и сервисные станции',
+      scenario: 'Логистические и сервисные здания',
       metric: 'Пролёт 16–18 м · высота до 7.5 м',
       note: 'Типовой пролёт для складов и цехов',
-      markers: ['Гибкая планировка под стеллажи', 'Усиление под снег/ветер', 'Подвод коммуникаций под задачу']
+      markers: ['Проходная высота под коммерческий транспорт', 'Узел ворот и доков в проекте', 'Подготовка под стеллажные системы']
     },
     {
       title: '300 м²',
       price: 'от 9 млн ₸',
-      scenario: 'Лёгкое производство и сборка с техникой',
+      scenario: 'Лёгкое производство и сборка техники',
       metric: 'Пролёт 18–21 м · высота до 9 м',
       note: 'Производственные задачи с кран-балкой',
-      markers: ['Закладка под мостовые краны', 'Технологические ворота и доки', 'Запуск под ключ с монтажом']
+      markers: ['Закладка под мостовые краны', 'Расстановка оборудования и коммуникаций', 'Сдача объекта с монтажом']
     }
   ];
 
@@ -85,35 +103,36 @@ const Hangars = () => {
 
   const advantages = [
     { icon: Layers, title: 'Большие пролёты без внутренних опор' },
-    { icon: DollarSign, title: 'Снижение стоимости фундамента' },
-    { icon: Zap, title: 'Быстрый монтаж и масштабируемость' },
-    { icon: RefreshCw, title: 'Расчёт под снеговые и ветровые нагрузки' }
+    { icon: DollarSign, title: 'Снижение затрат на фундамент' },
+    { icon: Zap, title: 'Быстрый монтаж и масштабирование' },
+    { icon: RefreshCw, title: 'Расчёт под снеговые и ветровые нагрузки' },
+    { icon: PenTool, title: 'Планировка под логистику и техпроцессы' }
   ];
 
   const steps = [
     {
-      title: 'Заявка',
-      description: 'Оставляете запрос и фиксируете задачу для будущего ангара или склада',
+      title: 'Заявка и сценарий эксплуатации',
+      description: 'Фиксируем задачу: логистика, производство, хранение',
       icon: ClipboardList
     },
     {
-      title: 'Замеры',
-      description: 'Фиксируем пролёт, высоту, нагрузки и особенности участка',
+      title: 'Замеры и расчёт нагрузок',
+      description: 'Пролёт, высота, снеговая и ветровая зона, грунты',
       icon: Ruler
     },
     {
-      title: 'Проект',
-      description: 'Готовим расчёт нагрузок, узлов и смету с визуализацией',
+      title: 'Проект и визуализация',
+      description: 'Узлы, пролёты, ворота, доки и стеллажные зоны',
       icon: PenTool
     },
     {
-      title: 'Производство',
-      description: 'Изготавливаем металлокаркас, комплектуем обшивку и крепёж',
+      title: 'Производство ЛСТК',
+      description: 'Каркас, крепёж, обшивка и готовые монтажные схемы',
       icon: Factory
     },
     {
-      title: 'Монтаж',
-      description: 'Собираем на площадке, проверяем узлы и сдаём объект',
+      title: 'Монтаж и сдача объекта',
+      description: 'Сборка, контроль узлов, передача готового ангара или склада',
       icon: Wrench
     }
   ];
@@ -121,9 +140,9 @@ const Hangars = () => {
   return (
     <div className="product-page">
       <PageHero
-        title="Ангары"
-        subtitle="Промышленные ангары и склады под логистику, производство и хранение"
-        meta="Industrial Premium • Ангары"
+        title="Ангары и склады"
+        subtitle="Промышленные ангары и складские здания под логистику, производство и хранение"
+        meta="Industrial Premium • Ангары и склады"
         image={gallery[0].image}
       />
 
@@ -132,15 +151,16 @@ const Hangars = () => {
           <SectionHeader
             eyebrow="Проекты"
             title="Галерея проектов"
-            subtitle="Решения для логистики, производства и локальных складских задач"
+            subtitle="Масштабные пролёты и разные сценарии эксплуатации: от локальных складов до кросс-доков"
           />
           <div className="gallery-grid">
             {gallery.map((item, index) => (
               <div key={index} className="project-card">
                 <div className="project-visual" style={{ backgroundImage: `url(${item.image})` }}>
                   <div className="project-overlay">
-                    <p className="project-caption">{item.caption}</p>
-                    <span className="project-meta">Ангар</span>
+                    <p className="project-caption">{item.title}</p>
+                    <p className="project-purpose">{item.purpose}</p>
+                    <span className="project-meta">{item.tag}</span>
                   </div>
                 </div>
               </div>
@@ -155,7 +175,7 @@ const Hangars = () => {
           <SectionHeader
             eyebrow="Технология"
             title="Преимущества"
-            subtitle="Инженерные пролёты, расчёт нагрузок и аккуратный монтаж под вашу задачу"
+            subtitle="Инженерные параметры: пролёты, нагрузки, монтаж без лишней декоративности"
           />
           <div className="advantages-grid-product">
             {advantages.map((advantage, index) => {
@@ -191,7 +211,7 @@ const Hangars = () => {
         </div>
       </section>
 
-      <CostingBlock productName="ангар" />
+      <CostingBlock productName="ангар или склад" />
     </div>
   );
 };
