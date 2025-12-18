@@ -215,8 +215,8 @@
 
 .directions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 18px;
+  grid-template-columns: minmax(340px, 1.35fr) repeat(2, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .direction-card {
@@ -237,7 +237,7 @@
   background-size: cover;
   background-position: center;
   position: relative;
-  filter: brightness(0.98) contrast(1.04) saturate(0.96);
+  filter: brightness(1.18) contrast(1.02) saturate(0.98);
 }
 
 .direction-image::after {
