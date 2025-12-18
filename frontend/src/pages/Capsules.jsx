@@ -143,7 +143,7 @@ const Capsules = () => {
   ];
 
   return (
-    <div className="product-page">
+    <div className="product-page capsules-page">
       <PageHero
         title="Капсулы"
         subtitle="Модульные решения для бизнеса и инвестиций"

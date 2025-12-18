@@ -4,6 +4,13 @@
   position: relative;
 }
 
+.capsules-page {
+  background: radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.02), transparent 32%),
+    radial-gradient(circle at 82% 22%, rgba(255, 255, 255, 0.02), transparent 28%),
+    #050808;
+  color: var(--text-primary);
+}
+
 /* Product Hero */
 .product-hero {
   position: relative;
@@ -224,6 +231,10 @@
   isolation: isolate;
 }
 
+.capsules-page .advantages-section-product {
+  background: transparent;
+}
+
 .advantages-grid-product {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -351,6 +362,10 @@
 .steps-section {
   padding: 64px 0 58px 0;
   background: linear-gradient(180deg, rgba(8, 14, 15, 0.9) 0%, rgba(7, 12, 13, 0.88) 100%);
+}
+
+.capsules-page .steps-section {
+  background: transparent;
 }
 
 .steps-section .section-title {
