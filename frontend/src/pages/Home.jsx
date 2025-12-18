@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Sparkles, Timer, Building2, FileText, Factory, Gauge, ShieldCheck } from 'lucide-react';
 
@@ -14,50 +14,40 @@ import capsulesHeroImg from '../assets/CapsulesHero.png';
 import factoryDiagram from '../assets/factory-diagram.svg';
 
 const Home = () => {
-  const heroBackground = 'linear-gradient(135deg, rgba(18, 26, 25, 0.64) 0%, rgba(14, 26, 24, 0.62) 45%, rgba(16, 30, 28, 0.62) 100%)';
-
   const heroBackgrounds = useMemo(
     () => [productionImg, hangarsImg, capsulesHeroImg],
     []
   );
 
-  const [currentHeroBgIndex, setCurrentHeroBgIndex] = useState(0);
-  const [previousHeroBgIndex, setPreviousHeroBgIndex] = useState(null);
-  const [isCrossfading, setIsCrossfading] = useState(false);
-  const [isCurrentLayerVisible, setIsCurrentLayerVisible] = useState(true);
+  const [visibleLayer, setVisibleLayer] = useState(0);
+  const [layerImages, setLayerImages] = useState(() => [
+    { id: 'layer-1', index: 0 },
+    { id: 'layer-2', index: heroBackgrounds.length > 1 ? 1 : 0 }
+  ]);
+  const visibleLayerRef = useRef(0);
 
   useEffect(() => {
-    const fadeInterval = () => {
-      setCurrentHeroBgIndex((prev) => {
-        setPreviousHeroBgIndex(prev);
-        setIsCrossfading(true);
-        setIsCurrentLayerVisible(false);
-        return (prev + 1) % heroBackgrounds.length;
-      });
-    };
-
     const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches;
     const delay = isMobile ? 11000 : 7000;
 
-    const interval = setInterval(fadeInterval, delay);
+    const interval = setInterval(() => {
+      const hiddenLayer = visibleLayerRef.current === 0 ? 1 : 0;
+
+      setLayerImages((prev) => {
+        const nextIndex = (prev[visibleLayerRef.current].index + 1) % heroBackgrounds.length;
+        const updated = [...prev];
+        updated[hiddenLayer] = { ...updated[hiddenLayer], index: nextIndex };
+        return updated;
+      });
+
+      requestAnimationFrame(() => {
+        visibleLayerRef.current = hiddenLayer;
+        setVisibleLayer(hiddenLayer);
+      });
+    }, delay);
 
     return () => clearInterval(interval);
   }, [heroBackgrounds.length]);
-
-  useEffect(() => {
-    if (!isCrossfading) return undefined;
-
-    const frame = requestAnimationFrame(() => setIsCurrentLayerVisible(true));
-    const timeout = setTimeout(() => {
-      setIsCrossfading(false);
-      setPreviousHeroBgIndex(null);
-    }, 1800);
-
-    return () => {
-      cancelAnimationFrame(frame);
-      clearTimeout(timeout);
-    };
-  }, [isCrossfading]);
 
   const categories = [
     {
@@ -166,17 +156,15 @@ const Home = () => {
     <div className="home-page">
       <section className="hero-section">
         <div className="hero-surfaces">
-          {previousHeroBgIndex !== null && (
+          {layerImages.map((layer, idx) => (
             <div
-              className={`hero-surface-layer hero-surface-layer--previous is-visible ${isCrossfading ? 'is-fading' : ''}`}
-              style={{ backgroundImage: `${heroBackground}, url(${heroBackgrounds[previousHeroBgIndex]})` }}
-            />
-          )}
-
-          <div
-            className={`hero-surface-layer hero-surface-layer--current ${isCurrentLayerVisible ? 'is-visible' : ''}`}
-            style={{ backgroundImage: `${heroBackground}, url(${heroBackgrounds[currentHeroBgIndex]})` }}
-          />
+              key={layer.id}
+              className={`hero-surface-layer ${visibleLayer === idx ? 'is-visible' : ''}`}
+            >
+              <img src={heroBackgrounds[layer.index]} alt="Hero background" className="hero-surface-image" loading="lazy" />
+              <div className="hero-surface-gradient" aria-hidden />
+            </div>
+          ))}
         </div>
 
         <div className="hero-overlay" />
