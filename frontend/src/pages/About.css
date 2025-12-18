@@ -92,6 +92,30 @@
   font-size: 17px;
 }
 
+.story-facts {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.story-fact {
+  padding: 20px 24px;
+  border-radius: 14px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+}
+
+.story-fact__title {
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.story-fact__desc {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
 .story-image {
   width: 100%;
   height: 550px;
@@ -142,6 +166,20 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Reality Section */
+.reality-section {
+  padding: 40px 0 0;
+  background: transparent;
+}
+
+.reality-content .section-header {
+  align-items: flex-start;
+}
+
+.reality-section .story-video {
+  margin-top: 32px;
 }
 
 /* Values Section - Premium Cards */
