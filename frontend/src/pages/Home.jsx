@@ -14,7 +14,7 @@ import capsulesHeroImg from '../assets/CapsulesHero.png';
 import factoryDiagram from '../assets/factory-diagram.svg';
 
 const Home = () => {
-  const heroBackground = 'linear-gradient(135deg, rgba(12, 17, 16, 0.94) 0%, rgba(10, 20, 19, 0.92) 45%, rgba(11, 24, 22, 0.92) 100%)';
+  const heroBackground = 'linear-gradient(135deg, rgba(18, 26, 25, 0.64) 0%, rgba(14, 26, 24, 0.62) 45%, rgba(16, 30, 28, 0.62) 100%)';
 
   const heroBackgrounds = useMemo(
     () => [productionImg, hangarsImg, capsulesHeroImg],
@@ -51,7 +51,7 @@ const Home = () => {
     const timeout = setTimeout(() => {
       setIsCrossfading(false);
       setPreviousHeroBgIndex(null);
-    }, 1500);
+    }, 1800);
 
     return () => {
       cancelAnimationFrame(frame);
