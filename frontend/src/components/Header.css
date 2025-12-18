@@ -27,11 +27,11 @@
 }
 
 .header-content {
-  display: grid;
-  grid-template-columns: auto 1fr auto auto auto;
+  display: flex;
   align-items: center;
   gap: 28px;
   height: 86px;
+  width: 100%;
 }
 
 .logo {
@@ -52,7 +52,8 @@
   gap: 24px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  justify-self: center;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-link {
@@ -79,7 +80,7 @@
 }
 
 .phone-link {
-  margin-left: 0;
+  margin-left: auto;
   background: rgba(14, 162, 115, 0.12);
   border: 1px solid rgba(14, 162, 115, 0.5);
   border-radius: 10px;
