@@ -169,10 +169,13 @@
 }
 
 .documents-info-text {
-  text-align: justify;
+  text-align: justify !important;
   hyphens: auto;
   line-height: 1.65;
-  word-spacing: normal;
+  word-spacing: 0.02em;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 768px) {
