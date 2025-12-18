@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Sparkles, Timer, Building2, FileText, Factory, Gauge, ShieldCheck } from 'lucide-react';
 
@@ -9,10 +9,27 @@ import './Home.css';
 import capsulesImg from '../assets/capsules.png';
 import hangarsImg from '../assets/Hangars.jpeg';
 import garagesImg from '../assets/garages.jpeg';
+import productionImg from '../assets/production.jpg';
+import capsulesHeroImg from '../assets/CapsulesHero.png';
 import factoryDiagram from '../assets/factory-diagram.svg';
 
 const Home = () => {
-  const heroBackground = 'linear-gradient(135deg, #0c1110 0%, #0a1413 45%, #0b1816 100%)';
+  const heroBackground = 'linear-gradient(135deg, rgba(12, 17, 16, 0.94) 0%, rgba(10, 20, 19, 0.92) 45%, rgba(11, 24, 22, 0.92) 100%)';
+
+  const heroBackgrounds = useMemo(
+    () => [productionImg, hangarsImg, capsulesHeroImg],
+    []
+  );
+
+  const [currentHeroBgIndex, setCurrentHeroBgIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHeroBgIndex((prev) => (prev + 1) % heroBackgrounds.length);
+    }, 5500);
+
+    return () => clearInterval(interval);
+  }, [heroBackgrounds.length]);
 
   const categories = [
     {
@@ -120,7 +137,10 @@ const Home = () => {
   return (
     <div className="home-page">
       <section className="hero-section">
-        <div className="hero-surface" style={{ backgroundImage: heroBackground }} />
+        <div
+          className="hero-surface"
+          style={{ backgroundImage: `${heroBackground}, url(${heroBackgrounds[currentHeroBgIndex]})` }}
+        />
 
         <div className="container hero-inner">
           <div className="hero-badge">Промышленное производство ЛСТК</div>
