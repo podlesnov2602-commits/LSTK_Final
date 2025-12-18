@@ -223,14 +223,14 @@
   position: relative;
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: linear-gradient(180deg, rgba(36, 48, 47, 0.94) 0%, rgba(24, 32, 32, 0.97) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(26, 36, 35, 0.94) 0%, rgba(16, 24, 24, 0.97) 100%);
   display: grid;
   grid-template-rows: 220px 1fr;
   text-decoration: none;
   color: inherit;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34), 0 6px 18px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.32);
 }
 
 .direction-image {
@@ -244,7 +244,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(3, 5, 5, 0.03) 0%, rgba(5, 8, 8, 0.28) 70%, rgba(5, 8, 8, 0.45) 100%);
+  background: linear-gradient(180deg, rgba(3, 5, 5, 0.05) 0%, rgba(5, 8, 8, 0.36) 70%, rgba(5, 8, 8, 0.6) 100%);
 }
 
 .direction-body {
@@ -281,10 +281,10 @@
 }
 
 .direction-card.featured {
-  grid-template-rows: 254px 1fr;
-  background: linear-gradient(180deg, rgba(46, 60, 59, 0.96) 0%, rgba(30, 40, 40, 0.98) 100%);
-  border-color: rgba(255, 255, 255, 0.22);
-  box-shadow: 0 26px 58px rgba(0, 0, 0, 0.46), 0 10px 22px rgba(0, 0, 0, 0.26);
+  grid-template-rows: 255px 1fr;
+  background: linear-gradient(180deg, rgba(32, 44, 43, 0.96) 0%, rgba(20, 28, 28, 0.98) 100%);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.44);
   transform: translateY(-2px);
 }
 
@@ -293,14 +293,14 @@
 }
 
 .direction-card.featured .btn-primary.ghost {
-  background: rgba(14, 162, 115, 0.32);
+  background: rgba(14, 162, 115, 0.29);
   border-color: rgba(14, 162, 115, 0.86);
 }
 
 .direction-card:hover {
   transform: translateY(-4px);
   border-color: var(--brand-green);
-  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.44), 0 10px 26px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.42);
 }
 
 /* Risk */
@@ -673,10 +673,6 @@
 
   .direction-card {
     grid-template-rows: 200px auto;
-  }
-
-  .direction-card.featured {
-    grid-template-rows: 230px auto;
   }
 
   .hero-trust {
