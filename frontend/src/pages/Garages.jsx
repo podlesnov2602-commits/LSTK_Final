@@ -127,9 +127,9 @@ const Garages = () => {
   return (
     <div className="product-page">
       <PageHero
-        title="Гаражи"
-        subtitle="Гаражи и хозблоки с расчётом под реальные нагрузки"
-        meta="Industrial Premium • Гаражи"
+        title="Гаражи и хозблоки"
+        subtitle="Металлические гаражи и хозблоки с расчётом под реальные нагрузки"
+        meta="INDUSTRIAL PREMIUM · ГАРАЖИ И ХОЗБЛОКИ"
         image={gallery[0].image}
       />
 
