@@ -222,7 +222,7 @@ const Home = () => {
           <div className="directions-grid">
             {categories.map((item, index) => (
               <Link key={index} to={item.link} className={`direction-card ${item.featured ? 'featured' : ''}`}>
-                <div className="direction-image" style={{ backgroundImage: `linear-gradient(180deg, rgba(4,7,7,0.7) 0%, rgba(4,7,7,0.7) 48%, rgba(4,7,7,0.86) 100%), url(${item.image})` }} />
+                <div className="direction-image" style={{ backgroundImage: `linear-gradient(180deg, rgba(4,7,7,0.6) 0%, rgba(4,7,7,0.6) 48%, rgba(4,7,7,0.74) 100%), url(${item.image})` }} />
                 <div className="direction-body">
                   <div className="direction-top">
                     <h3>{item.title}</h3>
