@@ -7,6 +7,15 @@ import PricingCards from '../components/ui/PricingCards';
 import CostingBlock from '../components/ui/CostingBlock';
 import './ProductPage.css';
 
+// Локальные изображения
+import img1 from '../assets/Angar1.jpg';
+import img2 from '../assets/Angar2.jpg';
+import img3 from '../assets/Angar3.jpg';
+import img4 from '../assets/Angar4.jpg';
+import img5 from '../assets/Angar5.jpg';
+import img6 from '../assets/Angar6.jpg';
+
+
 const Hangars = () => {
   useEffect(() => {
     // Scroll to gallery section on page load
@@ -24,43 +33,43 @@ const Hangars = () => {
   const gallery = [
     {
       image:
-        'https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      title: 'Ангар 700 м²',
+        img1,
+      title: 'Ангар 400 м²',
       purpose: 'Склад и логистика',
       tag: 'АНГАР'
     },
     {
       image:
-        'https://images.unsplash.com/photo-1720036237334-9263cd28c3d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      title: 'Индустриальный корпус 1200 м²',
-      purpose: 'Производство и сборка',
+        img2,
+      title: 'Ангар 57 м²',
+      purpose: 'Склад и логистика',
       tag: 'АНГАР'
     },
     {
       image:
-        'https://images.unsplash.com/photo-1669003152237-7bd1ac4c13f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx3YXJlaG91c2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQzMjM4OTJ8MA&ixlib=rb-4.1.0&q=85',
-      title: 'Комплекс 2400 м²',
-      purpose: 'Кросс-докинг',
-      tag: 'СКЛАД'
+        img3,
+      title: 'Ангар 367 м²',
+      purpose: 'Склад и логистика',
+      tag: 'АНГАР'
     },
     {
       image:
-        'https://images.unsplash.com/photo-1635961179148-3d886568775c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHw0fHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      title: 'Ангар 300 м²',
+        img4,
+      title: 'Цех 250 м²',
       purpose: 'Локальный склад',
-      tag: 'АНГАР'
-    },
-    {
-      image:
-        'https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      title: 'Индустриальный корпус 1800 м²',
-      purpose: 'Логистика 24/7',
       tag: 'СКЛАД'
     },
     {
       image:
-        'https://images.unsplash.com/photo-1669003152237-7bd1ac4c13f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx3YXJlaG91c2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQzMjM4OTJ8MA&ixlib=rb-4.1.0&q=85',
-      title: 'Складской модуль 950 м²',
+        img5,
+      title: 'Складской модуль 290 м²',
+      purpose: 'FMCG',
+      tag: 'СКЛАД'
+    },
+    {
+      image:
+        img6,
+      title: 'Складской модуль 601 м²',
       purpose: 'FMCG',
       tag: 'СКЛАД'
     }
