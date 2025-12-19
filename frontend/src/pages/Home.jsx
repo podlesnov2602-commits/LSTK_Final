@@ -197,7 +197,7 @@ const Home = () => {
 
         <div className="hero-overlay" />
 
-        <div className="container hero-inner">
+        <div className="container hero-inner hero-panel">
           <div className="hero-badge">Промышленное производство ЛСТК</div>
           <h1 className="hero-title">
             <span className="hero-word steel">Стальные решения</span>
