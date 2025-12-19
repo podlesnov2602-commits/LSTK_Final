@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Phone, Menu, X } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
@@ -10,7 +10,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 12);
     handleScroll();
     window.addEventListener('scroll', handleScroll);
@@ -46,14 +46,15 @@ const Header = () => {
       if (location.pathname !== '/') {
         navigate('/');
         setTimeout(() => {
-          const element = document.getElementById(anchorId);
-          if (element) element.scrollIntoView({ behavior: 'smooth' });
+          const el = document.getElementById(anchorId);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
         }, 120);
       } else {
-        const element = document.getElementById(anchorId);
-        if (element) element.scrollIntoView({ behavior: 'smooth' });
+        const el = document.getElementById(anchorId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
       }
     }
+
     setMobileMenuOpen(false);
   };
 
@@ -62,7 +63,8 @@ const Header = () => {
       <header className={`site-header ${isScrolled ? 'is-scrolled' : ''}`}>
         <div className="container">
           <div className="header-content">
-            {/* Логотип */}
+
+            {/* 1. ЛОГО */}
             <Link to="/" className="logo">
               <img
                 src={siteConfig.company.logo}
@@ -71,10 +73,11 @@ const Header = () => {
               />
             </Link>
 
-            {/* Навигация */}
+            {/* 2. ОСНОВНАЯ НАВИГАЦИЯ */}
             <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
               <div className="mobile-menu-card">
-                {/* Крестик мобильного меню */}
+
+                {/* мобильный крестик */}
                 {mobileMenuOpen && (
                   <button
                     className="mobile-close-btn"
@@ -121,12 +124,16 @@ const Header = () => {
                     <span>{siteConfig.contact.phone}</span>
                   </a>
                 </div>
+
               </div>
             </nav>
 
-            {/* === DESKTOP ONLY: ИНДИКАТОР КАТАЛОГА === */}
+            {/* 3. DESKTOP — ИНДИКАТОР КАТАЛОГА */}
             {isCatalogPage && (
-              <div className="catalog-indicator floating" aria-label="Вы в каталоге">
+              <div
+                className="catalog-indicator floating"
+                aria-label="Вы в каталоге"
+              >
                 <span className="catalog-dot" />
                 <div className="catalog-meta">
                   <span className="catalog-label">Каталог</span>
@@ -137,8 +144,8 @@ const Header = () => {
               </div>
             )}
 
+            {/* 4. ДЕЙСТВИЯ (ТЕЛЕФОН + БУРГЕР) */}
             <div className="header-actions">
-              {/* Кнопка телефона */}
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
                 className="phone-link"
@@ -147,7 +154,7 @@ const Header = () => {
                 <span>{siteConfig.contact.phone}</span>
               </a>
 
-              {/* Компактная кнопка звонка для мобилы */}
+              {/* мобильная иконка */}
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
                 className="phone-icon-button"
@@ -156,7 +163,7 @@ const Header = () => {
                 <Phone size={18} />
               </a>
 
-              {/* Бургер */}
+              {/* бургер */}
               <button
                 className="mobile-menu-toggle"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -165,11 +172,12 @@ const Header = () => {
                 {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
+
           </div>
         </div>
       </header>
 
-      {/* Затемнение фона при открытом меню */}
+      {/* затемнение для мобилки */}
       {mobileMenuOpen && <div className="mobile-menu-overlay" />}
     </>
   );
