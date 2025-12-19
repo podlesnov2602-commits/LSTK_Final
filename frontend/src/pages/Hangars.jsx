@@ -183,7 +183,7 @@ const Hangars = () => {
         <div className="container">
           <SectionHeader
             eyebrow="Технология"
-            title="Преимущества"
+            title="Инженерные решения без декоративной избыточности"
             subtitle="Инженерные параметры: пролёты, нагрузки, монтаж без лишней декоративности"
           />
           <div className="advantages-grid-product">
