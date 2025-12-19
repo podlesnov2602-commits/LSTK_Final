@@ -33,34 +33,40 @@ const Capsules = () => {
   const gallery = [
     {
       image:
-        'https://images.unsplash.com/photo-1709741455970-be31d448826d?auto=format&fit=crop&w=1600&q=80',
+        img1,
       caption: 'Капсула',
       usage: 'под аренду'
     },
     {
       image:
-        img1,
+        img2,
       caption: 'БарнХаус',
       usage: 'под глэмпинг'
     },
     {
       image:
-        img2,
+        img3,
       caption: 'Модульный дом 44м²',
       usage: 'офис продаж / ресепшн'
     },
     {
       image:
-        img3,
+        img4,
       caption: 'Гостевой дом 29м²',
       usage: 'под глэмпинг'
     },
     {
       image:
-        img4,
+        img5,
       caption: 'Модульный дом 29м²',
       usage: 'под аренду'
-    }
+    },
+    {
+      image:
+        img6,
+      caption: 'Модульный дом 29м²',
+      usage: 'под аренду'
+    },
   ];
 
   const heroImage = capsulesHeroImg;
