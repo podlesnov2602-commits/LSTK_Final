@@ -8,6 +8,14 @@ import ProcessSteps from '../components/ui/ProcessSteps';
 import CostingBlock from '../components/ui/CostingBlock';
 import capsulesHeroImg from '../assets/CapsulesHero.png';
 
+// Локальные изображения
+import img1 from '../assets/Capsules1.jpg';
+import img2 from '../assets/Capsules2.jpg';
+import img3 from '../assets/Capsules3.jpg';
+import img4 from '../assets/Capsules4.jpg';
+import img5 from '../assets/Capsules5.jpg';
+import img6 from '../assets/Capsules6.jpg';
+
 const Capsules = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -31,25 +39,25 @@ const Capsules = () => {
     },
     {
       image:
-        'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1600&q=80',
+        img1,
       caption: 'БарнХаус',
       usage: 'под глэмпинг'
     },
     {
       image:
-        'https://images.unsplash.com/photo-1473862170184-862ab08aae5b?auto=format&fit=crop&w=1600&q=80',
+        img2,
       caption: 'Модульный дом 44м²',
       usage: 'офис продаж / ресепшн'
     },
     {
       image:
-        'https://images.unsplash.com/photo-1413845009317-1f713c4230eb?auto=format&fit=crop&w=1600&q=80',
+        img3,
       caption: 'Гостевой дом 29м²',
       usage: 'под глэмпинг'
     },
     {
       image:
-        'https://images.unsplash.com/photo-1501045661006-fcebe0257c3f?auto=format&fit=crop&w=1600&q=80',
+        img4,
       caption: 'Модульный дом 29м²',
       usage: 'под аренду'
     }
