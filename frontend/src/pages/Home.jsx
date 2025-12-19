@@ -19,6 +19,8 @@ const Home = () => {
     []
   );
 
+  const mobileHeroImage = heroBackgrounds[0];
+
   const [isMobile, setIsMobile] = useState(false);
   const [visibleLayer, setVisibleLayer] = useState(0);
   const [layerImages, setLayerImages] = useState(() => [
@@ -184,15 +186,32 @@ const Home = () => {
     <div className="home-page">
       <section className="hero-section">
         <div className="hero-surfaces">
-          {layerImages.map((layer, idx) => (
-            <div
-              key={layer.id}
-              className={`hero-surface-layer ${visibleLayer === idx ? 'is-visible' : ''}`}
-            >
-              <img src={heroBackgrounds[layer.index]} alt="Hero background" className="hero-surface-image" loading="lazy" />
+          {isMobile ? (
+            <div className="hero-static-layer">
+              <img
+                src={mobileHeroImage}
+                alt="Hero background"
+                className="hero-static-image"
+                loading="lazy"
+              />
               <div className="hero-surface-gradient" aria-hidden />
             </div>
-          ))}
+          ) : (
+            layerImages.map((layer, idx) => (
+              <div
+                key={layer.id}
+                className={`hero-surface-layer ${visibleLayer === idx ? 'is-visible' : ''}`}
+              >
+                <img
+                  src={heroBackgrounds[layer.index]}
+                  alt="Hero background"
+                  className="hero-surface-image"
+                  loading="lazy"
+                />
+                <div className="hero-surface-gradient" aria-hidden />
+              </div>
+            ))
+          )}
         </div>
 
         <div className="hero-overlay" />
