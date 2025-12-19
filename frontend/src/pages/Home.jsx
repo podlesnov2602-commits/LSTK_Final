@@ -13,6 +13,8 @@ import productionImg from '../assets/production.jpg';
 import capsulesHeroImg from '../assets/CapsulesHero.png';
 import factoryDiagram from '../assets/factory-diagram.svg';
 
+const mediaQueryString = '(max-width: 768px)';
+
 const Home = () => {
   const heroBackgrounds = useMemo(
     () => [productionImg, hangarsImg, capsulesHeroImg],
@@ -21,7 +23,10 @@ const Home = () => {
 
   const mobileHeroImage = heroBackgrounds[0];
 
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.matchMedia(mediaQueryString).matches;
+  });
   const [visibleLayer, setVisibleLayer] = useState(0);
   const [layerImages, setLayerImages] = useState(() => [
     { id: 'layer-1', index: 0 },
@@ -32,7 +37,7 @@ const Home = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return undefined;
 
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    const mediaQuery = window.matchMedia(mediaQueryString);
     const updateMatch = () => setIsMobile(mediaQuery.matches);
 
     updateMatch();
@@ -184,20 +189,13 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      <section className="hero-section">
-        <div className="hero-surfaces">
-          {isMobile ? (
-            <div className="hero-static-layer">
-              <img
-                src={mobileHeroImage}
-                alt="Hero background"
-                className="hero-static-image"
-                loading="lazy"
-              />
-              <div className="hero-surface-gradient" aria-hidden />
-            </div>
-          ) : (
-            layerImages.map((layer, idx) => (
+      <section
+        className="hero-section"
+        style={isMobile ? { backgroundImage: `url(${mobileHeroImage})` } : undefined}
+      >
+        {!isMobile && (
+          <div className="hero-surfaces">
+            {layerImages.map((layer, idx) => (
               <div
                 key={layer.id}
                 className={`hero-surface-layer ${visibleLayer === idx ? 'is-visible' : ''}`}
@@ -210,9 +208,9 @@ const Home = () => {
                 />
                 <div className="hero-surface-gradient" aria-hidden />
               </div>
-            ))
-          )}
-        </div>
+            ))}
+          </div>
+        )}
 
         <div className="hero-overlay" />
 
