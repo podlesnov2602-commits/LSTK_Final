@@ -248,23 +248,19 @@
     visibility: visible;
   }
 
-  .mobile-menu-card {
-  position: relative;
+ .mobile-menu-card {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
   width: min(520px, 100%);
-
-  /* 🔑 ЯКОРЬ К ПРАВОМУ КРАЮ */
-  margin-left: auto;
-  margin-right: 0;
-
-  align-self: stretch;
-  height: 100%;
+  height: 100vh;
 
   background: linear-gradient(180deg, #141f1b 0%, #0f1916 100%);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.32);
+  box-shadow: -14px 0 32px rgba(0, 0, 0, 0.32);
 
-  /* граница со стороны контента */
   border-left: 1px solid rgba(255, 255, 255, 0.08);
-  border-right: none;
 
   display: flex;
   flex-direction: column;
@@ -272,21 +268,12 @@
 
   padding: 96px 20px 32px;
 
-  /* ⛔ старт — ЗА ЭКРАНОМ СПРАВА */
+  /* старт — ЗА ЭКРАНОМ СПРАВА */
   transform: translateX(100%);
-  transition: transform 0.26s ease;
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
 
-  filter: none;
-  backdrop-filter: none;
-  opacity: 1;
-
-  font-family: inherit;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-
-  pointer-events: auto;
+  z-index: 2100;
 }
-
 
   .main-nav.mobile-open .mobile-menu-card {
     transform: translate(0, 0);
