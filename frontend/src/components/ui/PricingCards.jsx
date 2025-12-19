@@ -19,7 +19,7 @@ const PricingCards = ({ title, subtitle, items, footnote }) => {
                 <div className="pricing-price">{item.price}</div>
               </div>
               {item.badge && <div className="pricing-badge">{item.badge}</div>}
-              <p className="body-md">{item.description}</p>
+              <p className="body-md pricing-description">{item.description}</p>
               <div className="pricing-markers">
                 {item.markers.map((marker, idx) => (
                   <div key={idx} className="pricing-marker">
@@ -28,6 +28,7 @@ const PricingCards = ({ title, subtitle, items, footnote }) => {
                   </div>
                 ))}
               </div>
+              <button className="btn-primary pricing-cta">{item.price}</button>
               <p className="pricing-hint">Цена ориентировочная</p>
             </article>
           ))}
