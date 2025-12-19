@@ -29,7 +29,7 @@
 
 .header-content {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto auto 1fr;
   align-items: center;
   gap: 28px;
   height: 86px;
@@ -54,10 +54,12 @@
   gap: 24px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  justify-self: center;
-  justify-content: center;
-  width: 100%;
+
+  justify-self: start;     /* ← к логотипу */
+  justify-content: flex-start;
+  width: auto;
 }
+
 
 .nav-link {
   position: relative;
