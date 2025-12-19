@@ -52,8 +52,8 @@
   display: flex;
   align-items: center;
   gap: 24px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  text-transform: none;      /* ← ВАЖНО */
+  letter-spacing: 0.04em;    /* ближе к премиум */
 
   justify-self: start;     /* ← к логотипу */
   justify-content: flex-start;
@@ -142,16 +142,15 @@
 }
 
 .catalog-label {
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(232, 246, 240, 0.76);
+  font-size: 13px;           /* как у nav-link */
+  letter-spacing: 0.04em;    /* одинаково с меню */
+  text-transform: none;      /* ← КЛЮЧ */
+  color: #ffffff;
 }
 
 .catalog-current {
-  font-size: 14px;
-  font-weight: 600;
-  color: #b6f3d7;
+  font-size: 13px;
+  font-weight: 500; /* как у .nav-link */
 }
 
 .mobile-menu-card {
