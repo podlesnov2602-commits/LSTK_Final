@@ -7,6 +7,14 @@ import PricingCards from '../components/ui/PricingCards';
 import CostingBlock from '../components/ui/CostingBlock';
 import './ProductPage.css';
 
+// Локальные изображения
+import img1 from '../assets/Garage1.jpg';
+import img2 from '../assets/Garage2.jpg';
+import img3 from '../assets/Garage3.jpg';
+import img4 from '../assets/Garage4.jpg';
+import img5 from '../assets/Garage5.jpg';
+import img6 from '../assets/Garage6.jpg';
+
 const Garages = () => {
   useEffect(() => {
     // Scroll to gallery section on page load
@@ -23,28 +31,28 @@ const Garages = () => {
 
   const gallery = [
     {
-      image: 'https://images.unsplash.com/photo-1635961179148-3d886568775c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHw0fHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Гараж на 1 авто — частный участок'
+      image: img1,
+      caption: 'Гараж — СТО 205м²'
     },
     {
-      image: 'https://images.unsplash.com/photo-1720036237334-9263cd28c3d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Гараж на 2 авто — частный дом'
+      image: img2,
+      caption: 'Гараж 32м²'
     },
     {
-      image: 'https://images.unsplash.com/photo-1679068215572-e4ba8fdce4dd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Гараж с мастерской — техника и инструменты'
+      image: img3,
+      caption: 'Гаража 6х4 24м²'
     },
     {
-      image: 'https://images.unsplash.com/photo-1635961179148-3d886568775c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHw0fHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Утеплённый гараж — круглогодичное хранение'
+      image: img4,
+      caption: 'Хозблок с навесом 48м²'
     },
     {
-      image: 'https://images.unsplash.com/photo-1669003152237-7bd1ac4c13f3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NjZ8MHwxfHNlYXJjaHwxfHx3YXJlaG91c2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3NjQzMjM4OTJ8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Гараж с навесом — техника и склад'
+      image: img5,
+      caption: 'Хозблок 36м²'
     },
     {
-      image: 'https://images.unsplash.com/photo-1720036237334-9263cd28c3d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwyfHxzdGVlbCUyMGhhbmdhcnxlbnwwfHx8fDE3NjQzMjM4ODd8MA&ixlib=rb-4.1.0&q=85',
-      caption: 'Металлический хозблок — хранение и мастерская'
+      image: img6,
+      caption: 'Хозблок 8х4 32м²'
     }
   ];
 
