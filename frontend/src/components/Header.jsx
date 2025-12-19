@@ -20,18 +20,23 @@ const Header = () => {
   const catalogLabels = {
     '/capsules': 'Капсулы',
     '/hangars': 'Ангары',
-    '/garages': 'Гаражи'
+    '/garages': 'Гаражи',
   };
 
-  const isCatalogPage = Object.keys(catalogLabels).some((path) => location.pathname.startsWith(path));
-  const currentCatalog = Object.entries(catalogLabels).find(([path]) => location.pathname.startsWith(path))?.[1];
+  const isCatalogPage = Object.keys(catalogLabels).some((path) =>
+    location.pathname.startsWith(path)
+  );
+
+  const currentCatalog = Object.entries(catalogLabels).find(([path]) =>
+    location.pathname.startsWith(path)
+  )?.[1];
 
   const menuItems = [
     { path: '/', label: 'Главная' },
     { path: '#premium-directions', label: 'Каталог', isAnchor: true },
     { path: '/about', label: 'О нас' },
     { path: '/documents', label: 'Документы' },
-    { path: '/contacts', label: 'Контакты' }
+    { path: '/contacts', label: 'Контакты' },
   ];
 
   const handleNavClick = (item) => {
@@ -57,13 +62,12 @@ const Header = () => {
       <header className={`site-header ${isScrolled ? 'is-scrolled' : ''}`}>
         <div className="container">
           <div className="header-content">
-
             {/* Логотип */}
             <Link to="/" className="logo">
-              <img 
-                src={siteConfig.company.logo} 
-                alt={siteConfig.company.name} 
-                className="logo-icon" 
+              <img
+                src={siteConfig.company.logo}
+                alt={siteConfig.company.name}
+                className="logo-icon"
               />
             </Link>
 
@@ -95,7 +99,9 @@ const Header = () => {
                       <Link
                         key={item.path}
                         to={item.path}
-                        className={`nav-link ${location.pathname === item.path ? 'active' : ''}`}
+                        className={`nav-link ${
+                          location.pathname === item.path ? 'active' : ''
+                        }`}
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {item.label}
@@ -104,16 +110,7 @@ const Header = () => {
                   )}
                 </div>
 
-                {isCatalogPage && (
-                  <div className="catalog-indicator" aria-label="Вы в каталоге">
-                    <span className="catalog-dot" />
-                    <div className="catalog-meta">
-                      <span className="catalog-label">Каталог</span>
-                      <span className="catalog-current">{currentCatalog || 'Раздел продукции'}</span>
-                    </div>
-                  </div>
-                )}
-
+                {/* МОБИЛЬНЫЕ КОНТАКТЫ — НЕ ТРОГАЕМ */}
                 <div className="mobile-contacts">
                   <p className="mobile-contacts__caption">Свяжитесь с нами</p>
                   <a
@@ -127,9 +124,25 @@ const Header = () => {
               </div>
             </nav>
 
+            {/* === DESKTOP ONLY: ИНДИКАТОР КАТАЛОГА === */}
+            {isCatalogPage && (
+              <div className="catalog-indicator floating" aria-label="Вы в каталоге">
+                <span className="catalog-dot" />
+                <div className="catalog-meta">
+                  <span className="catalog-label">Каталог</span>
+                  <span className="catalog-current">
+                    {currentCatalog || 'Раздел продукции'}
+                  </span>
+                </div>
+              </div>
+            )}
+
             <div className="header-actions">
               {/* Кнопка телефона */}
-              <a href={`tel:${siteConfig.contact.phoneRaw}`} className="phone-link">
+              <a
+                href={`tel:${siteConfig.contact.phoneRaw}`}
+                className="phone-link"
+              >
                 <Phone size={20} />
                 <span>{siteConfig.contact.phone}</span>
               </a>
@@ -152,15 +165,12 @@ const Header = () => {
                 {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
-
           </div>
         </div>
       </header>
 
       {/* Затемнение фона при открытом меню */}
-      {mobileMenuOpen && (
-        <div className="mobile-menu-overlay" />
-      )}
+      {mobileMenuOpen && <div className="mobile-menu-overlay" />}
     </>
   );
 };
