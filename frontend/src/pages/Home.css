@@ -699,38 +699,33 @@
     min-height: auto;
     padding: 20px 0 34px;
     align-items: stretch;
-
-    /* fallback фон — ОБЯЗАТЕЛЬНО */
-    background-image: url("/images/hero-mobile.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
     isolation: auto;
   }
 
-  /* отключаем анимационную карусель */
-  .hero-surfaces {
-    display: none;
+  /* полностью отключаем анимационную карусель */
+  .hero-surfaces,
+  .hero-surface-layer {
+    display: none !important;
   }
 
-  /* статичный слой */
+  /* используем существующий статичный слой */
   .hero-static-layer {
     display: block;
   }
 
+  /* КЛЮЧЕВО: без обрезки на мобиле */
   .hero-static-image {
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
   }
 
-  /* затемнение */
+  /* затемнение для читаемости текста */
   .hero-overlay {
     opacity: 0.6;
     background: linear-gradient(
       180deg,
       rgba(5, 8, 8, 0.55) 0%,
-      rgba(5, 8, 8, 0.78) 100%
+      rgba(5, 8, 8, 0.85) 100%
     );
   }
 
