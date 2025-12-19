@@ -34,20 +34,20 @@ const Capsules = () => {
     {
       image:
         img1,
-      caption: 'Капсула',
+      caption: 'Капсула 23м²',
       usage: 'под аренду'
     },
     {
       image:
         img2,
-      caption: 'БарнХаус',
+      caption: 'БарнХаус 36м²',
       usage: 'под глэмпинг'
     },
     {
       image:
         img3,
       caption: 'Модульный дом 44м²',
-      usage: 'офис продаж / ресепшн'
+      usage: 'под глэмпинг'
     },
     {
       image:
@@ -58,14 +58,14 @@ const Capsules = () => {
     {
       image:
         img5,
-      caption: 'Модульный дом 29м²',
-      usage: 'под аренду'
+      caption: 'Растущий дом 20м²',
+      usage: 'под глэмпинг'
     },
     {
       image:
         img6,
-      caption: 'Модульный дом 29м²',
-      usage: 'под аренду'
+      caption: 'Гостевой дом 48м²',
+      usage: 'под глэмпинг'
     },
   ];
 
