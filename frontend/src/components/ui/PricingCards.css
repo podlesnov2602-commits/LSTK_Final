@@ -13,6 +13,10 @@
   }
 }
 
+.pricing-cta {
+  display: none;
+}
+
 .pricing-card {
   display: flex;
   flex-direction: column;
@@ -67,4 +71,53 @@
 
 .pricing-footnote {
   margin-top: 24px;
+}
+
+@media (max-width: 767px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card {
+    padding: 18px;
+    gap: 10px;
+    box-shadow: none;
+  }
+
+  .pricing-card__top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .pricing-price {
+    display: none;
+  }
+
+  .pricing-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 15px;
+  }
+
+  .pricing-markers {
+    gap: 8px;
+  }
+
+  .pricing-marker:nth-child(n + 4) {
+    display: none;
+  }
+
+  .pricing-cta {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .pricing-hint {
+    margin-top: 2px;
+  }
 }
