@@ -20,11 +20,12 @@
 }
 
 .site-header .container {
-  max-width: var(--container-width);
+  max-width: none;      /* снимаем ограничение ширины */
   width: 100%;
-  margin: 0 auto;
-  padding: 0 12px;
+  margin: 0;            /* убираем центрирование */
+  padding: 0 28px;      /* отступ от края экрана */
 }
+
 
 .header-content {
   display: grid;
