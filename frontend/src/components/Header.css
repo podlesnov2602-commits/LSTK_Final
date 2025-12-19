@@ -153,6 +153,15 @@
   font-weight: 500; /* как у .nav-link */
 }
 
+/* ===== DESKTOP: floating catalog indicator ===== */
+.catalog-indicator.floating {
+  position: absolute;
+  top: 50%;
+  right: 220px; /* ⬅️ подбирается под ширину телефона */
+  transform: translateY(-50%);
+  margin: 0;
+  pointer-events: none;
+}
 
 .mobile-contacts,
 .mobile-menu-phone {
