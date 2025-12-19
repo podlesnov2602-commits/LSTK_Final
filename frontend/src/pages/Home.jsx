@@ -19,6 +19,7 @@ const Home = () => {
     []
   );
 
+  const [isMobile, setIsMobile] = useState(false);
   const [visibleLayer, setVisibleLayer] = useState(0);
   const [layerImages, setLayerImages] = useState(() => [
     { id: 'layer-1', index: 0 },
@@ -27,8 +28,34 @@ const Home = () => {
   const visibleLayerRef = useRef(0);
 
   useEffect(() => {
-    const isMobile = typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches;
-    const delay = isMobile ? 11000 : 7000;
+    if (typeof window === 'undefined') return undefined;
+
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    const updateMatch = () => setIsMobile(mediaQuery.matches);
+
+    updateMatch();
+    mediaQuery.addEventListener('change', updateMatch);
+
+    return () => mediaQuery.removeEventListener('change', updateMatch);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) {
+      visibleLayerRef.current = 0;
+      setVisibleLayer(0);
+      setLayerImages([{ id: 'layer-1', index: 0 }]);
+    } else {
+      setLayerImages([
+        { id: 'layer-1', index: 0 },
+        { id: 'layer-2', index: heroBackgrounds.length > 1 ? 1 : 0 }
+      ]);
+    }
+  }, [heroBackgrounds.length, isMobile]);
+
+  useEffect(() => {
+    if (isMobile || heroBackgrounds.length <= 1) return undefined;
+
+    const delay = 7000;
 
     const interval = setInterval(() => {
       const hiddenLayer = visibleLayerRef.current === 0 ? 1 : 0;
@@ -47,7 +74,7 @@ const Home = () => {
     }, delay);
 
     return () => clearInterval(interval);
-  }, [heroBackgrounds.length]);
+  }, [heroBackgrounds.length, isMobile]);
 
   const categories = [
     {
