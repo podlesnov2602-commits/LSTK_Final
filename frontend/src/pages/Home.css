@@ -16,6 +16,10 @@
   align-items: center;
   overflow: hidden;
   isolation: isolate;
+  background-color: #050808;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero-surfaces {
@@ -694,6 +698,13 @@
     aspect-ratio: auto;
     align-items: stretch;
     padding: 20px 0 34px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-surfaces {
+    display: none;
   }
 
   .hero-surfaces {
