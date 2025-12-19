@@ -10,7 +10,6 @@ import capsulesImg from '../assets/capsules.png';
 import hangarsImg from '../assets/Hangars.jpeg';
 import garagesImg from '../assets/garages.jpeg';
 import productionImg from '../assets/production.jpg';
-import capsulesHeroImg from '../assets/CapsulesHero.png';
 import factoryDiagram from '../assets/factory-diagram.svg';
 
 const mediaQueryString = '(max-width: 768px)';
