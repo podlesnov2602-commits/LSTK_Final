@@ -14,7 +14,7 @@ import img3 from '../assets/Garage3.jpg';
 import img4 from '../assets/Garage4.jpg';
 import img5 from '../assets/Garage5.jpg';
 import img6 from '../assets/Garage6.jpg';
-import garagesHero from '../assets/garages.jpeg';
+import garagesHero from '../assets/GarageHero.png';
 
 const Garages = () => {
   useEffect(() => {
