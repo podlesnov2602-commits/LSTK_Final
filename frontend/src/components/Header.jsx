@@ -111,6 +111,21 @@ const Header = () => {
                       </Link>
                     )
                   )}
+
+                  {isCatalogPage && (
+                    <div
+                      className="catalog-indicator in-menu"
+                      aria-label="Вы в каталоге"
+                    >
+                      <span className="catalog-dot" />
+                      <div className="catalog-meta">
+                        <span className="catalog-label">Каталог</span>
+                        <span className="catalog-current">
+                          {currentCatalog || 'Раздел продукции'}
+                        </span>
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* МОБИЛЬНЫЕ КОНТАКТЫ — НЕ ТРОГАЕМ */}
@@ -128,23 +143,7 @@ const Header = () => {
               </div>
             </nav>
 
-            {/* 3. DESKTOP — ИНДИКАТОР КАТАЛОГА */}
-            {isCatalogPage && (
-              <div
-                className="catalog-indicator floating"
-                aria-label="Вы в каталоге"
-              >
-                <span className="catalog-dot" />
-                <div className="catalog-meta">
-                  <span className="catalog-label">Каталог</span>
-                  <span className="catalog-current">
-                    {currentCatalog || 'Раздел продукции'}
-                  </span>
-                </div>
-              </div>
-            )}
-
-            {/* 4. ДЕЙСТВИЯ (ТЕЛЕФОН + БУРГЕР) */}
+            {/* 3. ДЕЙСТВИЯ (ТЕЛЕФОН + БУРГЕР) */}
             <div className="header-actions">
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
