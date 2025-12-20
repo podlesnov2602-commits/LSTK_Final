@@ -202,6 +202,10 @@
 }
 
 @media (max-width: 768px) {
+  .catalog-indicator {
+    display: none;
+  }
+
   .site-header {
     height: 72px;
   }
