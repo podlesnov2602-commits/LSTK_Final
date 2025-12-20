@@ -14,6 +14,7 @@ import img3 from '../assets/Angar3.jpg';
 import img4 from '../assets/Angar4.jpg';
 import img5 from '../assets/Angar5.jpeg';
 import img6 from '../assets/Angar6.jpg';
+import hangarsHero from '../assets/Hangars.jpeg';
 
 
 const Hangars = () => {
@@ -152,7 +153,7 @@ const Hangars = () => {
         title="Ангары и склады"
         subtitle="Промышленные ангары и складские здания под логистику, производство и хранение"
         meta="Industrial Premium • Ангары и склады"
-        image={gallery[0].image}
+        image={hangarsHero}
       />
 
       <section className="gallery-section">
