@@ -1,6 +1,4 @@
-/* =========================
-   Industrial Premium Header
-========================= */
+/* Industrial Premium Header */
 
 .site-header {
   position: sticky;
@@ -33,18 +31,16 @@
   padding: 0 28px;
 }
 
-/* =========================
-   Layout
-========================= */
-
 .header-content {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr auto auto;
   align-items: center;
   gap: 28px;
   height: 86px;
   width: 100%;
 }
+
+/* Logo */
 
 .logo {
   display: flex;
@@ -55,18 +51,20 @@
   height: 62px;
   width: auto;
   object-fit: contain;
+  filter: none;
 }
 
-/* =========================
-   Navigation
-========================= */
+/* Navigation */
 
 .main-nav {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 28px;
+  gap: 24px;
+  text-transform: none;
   letter-spacing: 0.04em;
+  justify-self: start;
+  justify-content: flex-start;
+  width: auto;
 }
 
 .nav-links {
@@ -99,22 +97,20 @@
   border-radius: 12px;
 }
 
-/* =========================
-   Catalog Indicator (NAV)
-========================= */
+/* Catalog indicator */
 
 .catalog-indicator {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 8px 14px;
-  margin-left: 18px;
+  padding: 10px 14px;
+  margin-left: 8px;
   border-radius: 12px;
-  background: rgba(14, 162, 115, 0.06);
-  border: 1px solid rgba(14, 162, 115, 0.32);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+  background: rgba(14, 162, 115, 0.1);
+  border: 1px solid rgba(14, 162, 115, 0.42);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26);
   color: #e8f6f0;
-  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .catalog-dot {
@@ -135,6 +131,7 @@
 .catalog-label {
   font-size: 13px;
   letter-spacing: 0.04em;
+  text-transform: none;
   color: #ffffff;
 }
 
@@ -143,9 +140,17 @@
   font-weight: 500;
 }
 
-/* =========================
-   Header Actions (CTA)
-========================= */
+/* Floating variant */
+
+.catalog-indicator.floating {
+  position: static;
+  margin-left: 12px;
+  align-self: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Header actions */
 
 .header-actions {
   display: flex;
@@ -166,6 +171,7 @@
   align-items: center;
   gap: 10px;
   letter-spacing: 0.02em;
+  box-shadow: none;
   transition: 0.25s ease;
 }
 
@@ -176,16 +182,14 @@
   transform: translateY(-1px);
 }
 
-/* =========================
-   Mobile / Responsive
-========================= */
-
 .phone-icon-button,
 .mobile-menu-toggle,
 .mobile-contacts,
 .mobile-menu-phone {
   display: none;
 }
+
+/* Responsive */
 
 @media (max-width: 1024px) {
   .header-content {
@@ -219,14 +223,6 @@
 
   .phone-icon-button {
     display: inline-flex;
-    width: 42px;
-    height: 42px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    background: rgba(14, 162, 115, 0.12);
-    border: 1px solid rgba(14, 162, 115, 0.5);
-    color: var(--brand-green);
   }
 
   .mobile-menu-toggle {
@@ -242,10 +238,13 @@
     display: flex;
     justify-content: flex-end;
     align-items: stretch;
+    padding: 0 0 32px;
+    background: transparent;
     height: 100vh;
     z-index: 2000;
     pointer-events: none;
     visibility: hidden;
+    opacity: 1;
   }
 
   .main-nav.mobile-open {
@@ -259,6 +258,7 @@
     right: 0;
     bottom: 0;
     width: min(520px, 100%);
+    height: 100vh;
     background: linear-gradient(180deg, #141f1b 0%, #0f1916 100%);
     box-shadow: -14px 0 32px rgba(0, 0, 0, 0.32);
     border-left: 1px solid rgba(255, 255, 255, 0.08);
@@ -268,6 +268,7 @@
     padding: 96px 20px 32px;
     transform: translateX(100%);
     transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 2100;
   }
 
   .main-nav.mobile-open .mobile-menu-card {
@@ -276,7 +277,9 @@
 
   .nav-links {
     flex-direction: column;
+    align-items: stretch;
     gap: 14px;
+    width: 100%;
   }
 
   .nav-link {
@@ -285,18 +288,49 @@
     font-size: 15px;
     letter-spacing: 0.08em;
     border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: #1a2622;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    color: #f3f7f5;
+    line-height: 1.6;
+    font-weight: 500;
     text-transform: uppercase;
   }
 
+  .nav-link.active,
+  .nav-link:hover {
+    color: #0c241d;
+    background: linear-gradient(180deg, #6fe0b8 0%, #4cc59c 100%);
+    border-color: rgba(111, 224, 184, 0.42);
+  }
+
+  .mobile-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: #f5f9f7;
+    z-index: 1300;
+  }
+
   .mobile-contacts {
+    margin-top: 12px;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    padding-top: 12px;
+    padding-top: 8px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .mobile-contacts__caption {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: rgba(243, 247, 245, 0.74);
   }
 
   .mobile-menu-phone {
@@ -313,5 +347,6 @@
     inset: 0;
     background: rgba(8, 16, 14, 0.48);
     z-index: 1400;
+    pointer-events: none;
   }
 }
