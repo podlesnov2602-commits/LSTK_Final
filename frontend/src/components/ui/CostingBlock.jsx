@@ -8,12 +8,49 @@ const CostingBlock = ({ productName }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const productLabel = useMemo(() => productName || 'проект', [productName]);
 
   const handleWhatsAppRedirect = () => {
-    const text = encodeURIComponent(`Здравствуйте! Хочу расчёт на ${productLabel}. Напишите, пожалуйста, в WhatsApp.`);
+    const text = encodeURIComponent(
+      `Здравствуйте! Хочу расчёт на ${productLabel}. Напишите, пожалуйста, в WhatsApp.`
+    );
     window.open(`${siteConfig.social.whatsapp}?text=${text}`, '_blank');
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (loading) return;
+
+    setLoading(true);
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('product', productLabel);
+    formData.append('_subject', 'Заявка на КП — LSTK');
+
+    try {
+      const response = await fetch('https://formspree.io/f/mgowaqqw', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setName('');
+        setEmail('');
+      }
+    } catch (error) {
+      console.error('Ошибка отправки формы', error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const showEmailForm = activeForm === 'email';
@@ -27,7 +64,9 @@ const CostingBlock = ({ productName }) => {
               <p className="eyebrow">Расчёт</p>
               <h3>Расчёт стоимости под ключ</h3>
               <p className="body-lg subtle">Без длинных форм и ожиданий</p>
-              <p className="body-md">Напишите нам в WhatsApp или оставьте email — пришлём расчёт и КП без задержек.</p>
+              <p className="body-md">
+                Напишите нам в WhatsApp или оставьте email — пришлём расчёт и КП без задержек.
+              </p>
             </div>
 
             <div className="costing-block__badges">
@@ -45,12 +84,13 @@ const CostingBlock = ({ productName }) => {
                 <MessageCircle size={18} />
                 Рассчитать стоимость в WhatsApp
               </button>
+
               <button
                 type="button"
                 className="btn-secondary btn-secondary-muted"
                 onClick={() => {
                   setSubmitted(false);
-                  setActiveForm(activeForm === 'email' ? null : 'email');
+                  setActiveForm(showEmailForm ? null : 'email');
                 }}
               >
                 <FileText size={18} />
@@ -60,12 +100,7 @@ const CostingBlock = ({ productName }) => {
 
             <div className="costing-block__forms">
               {showEmailForm && (
-                <form
-                  className="costing-form"
-                  action="https://formspree.io/f/mgowaqqw"
-                  method="POST"
-                  onSubmit={() => setSubmitted(true)}
-                >
+                <form className="costing-form" onSubmit={handleSubmit}>
                   <div className="form-grid">
                     <label className="form-label">
                       Имя
@@ -79,6 +114,7 @@ const CostingBlock = ({ productName }) => {
                         className="form-input"
                       />
                     </label>
+
                     <label className="form-label">
                       Email
                       <input
@@ -92,16 +128,28 @@ const CostingBlock = ({ productName }) => {
                       />
                     </label>
                   </div>
-                  <input type="hidden" name="product" value={productLabel} />
+
+                  {/* антиспам */}
                   <input type="text" name="_gotcha" style={{ display: 'none' }} />
-                  <input type="hidden" name="_subject" value="Заявка на КП — LSTK" />
+
                   <div className="form-actions">
-                    <button type="submit" className="btn-secondary btn-secondary-muted">
-                      Получить КП в PDF
+                    <button
+                      type="submit"
+                      className="btn-secondary btn-secondary-muted"
+                      disabled={loading}
+                    >
+                      {loading ? 'Отправка…' : 'Получить КП в PDF'}
                     </button>
-                    <span className="form-hint">Пришлём файл с фиксированной ценой</span>
+                    <span className="form-hint">
+                      Пришлём файл с фиксированной ценой
+                    </span>
                   </div>
-                  {submitted && <div className="form-success">Заявка отправлена. Мы свяжемся с вами.</div>}
+
+                  {submitted && (
+                    <div className="form-success">
+                      Заявка отправлена. Мы свяжемся с вами.
+                    </div>
+                  )}
                 </form>
               )}
             </div>
@@ -111,7 +159,9 @@ const CostingBlock = ({ productName }) => {
             <div className="aside-card">
               <p className="eyebrow">Как вы получите расчёт</p>
               <h4>Без задержек и лишних шагов</h4>
-              <p className="body-md">Мы уточним базовые параметры и отправим расчёт выбранным способом без задержек.</p>
+              <p className="body-md">
+                Мы уточним базовые параметры и отправим расчёт выбранным способом без задержек.
+              </p>
               <ul className="aside-list">
                 <li>Один специалист отвечает за запрос</li>
                 <li>Чётко фиксируем цену в КП</li>
