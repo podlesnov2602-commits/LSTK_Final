@@ -19,39 +19,45 @@ const CostingBlock = ({ productName }) => {
     window.open(`${siteConfig.social.whatsapp}?text=${text}`, '_blank');
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (loading) return;
+  if (loading) return;
+  setLoading(true);
 
-    setLoading(true);
+  const formData = new FormData();
+  formData.append('name', name);
+  formData.append('email', email);
+  formData.append('_replyto', email); // 🔥 ОБЯЗАТЕЛЬНО
+  formData.append('product', productLabel);
+  formData.append('_subject', 'Заявка на КП — LSTK');
 
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('email', email);
-    formData.append('product', productLabel);
-    formData.append('_subject', 'Заявка на КП — LSTK');
+  try {
+    const response = await fetch('https://formspree.io/f/mgowaqqw', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json',
+      },
+    });
 
-    try {
-      const response = await fetch('https://formspree.io/f/mgowaqqw', {
-        method: 'POST',
-        body: formData,
-        headers: {
-          Accept: 'application/json',
-        },
-      });
+    const result = await response.json();
+    console.log('Formspree response:', result);
 
-      if (response.ok) {
-        setSubmitted(true);
-        setName('');
-        setEmail('');
-      }
-    } catch (error) {
-      console.error('Ошибка отправки формы', error);
-    } finally {
-      setLoading(false);
+    if (response.ok) {
+      setSubmitted(true);
+      setName('');
+      setEmail('');
+    } else {
+      alert('Ошибка отправки формы. Проверь консоль.');
     }
-  };
+  } catch (error) {
+    console.error('Ошибка отправки формы:', error);
+    alert('Ошибка сети при отправке формы');
+  } finally {
+    setLoading(false);
+  }
+};
 
   const showEmailForm = activeForm === 'email';
 
