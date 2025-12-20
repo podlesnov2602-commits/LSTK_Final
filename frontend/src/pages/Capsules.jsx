@@ -6,7 +6,7 @@ import SectionHeader from '../components/ui/SectionHeader';
 import PricingCards from '../components/ui/PricingCards';
 import ProcessSteps from '../components/ui/ProcessSteps';
 import CostingBlock from '../components/ui/CostingBlock';
-import capsulesHeroImg from '../assets/CapsulesHero.png';
+import capsulesHeroImg from '../assets/CapsulesHero.jpg';
 
 // Локальные изображения
 import img1 from '../assets/Capsules1.jpg';
