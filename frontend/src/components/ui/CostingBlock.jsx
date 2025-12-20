@@ -7,21 +7,13 @@ const CostingBlock = ({ productName }) => {
   const [activeForm, setActiveForm] = useState(null);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [submitted, setSubmitted] = useState(false);
 
   const productLabel = useMemo(() => productName || 'проект', [productName]);
 
   const handleWhatsAppRedirect = () => {
     const text = encodeURIComponent(`Здравствуйте! Хочу расчёт на ${productLabel}. Напишите, пожалуйста, в WhatsApp.`);
     window.open(`${siteConfig.social.whatsapp}?text=${text}`, '_blank');
-  };
-
-  const handleEmailSubmit = (event) => {
-    event.preventDefault();
-    if (!name || !email) return;
-
-    const subject = encodeURIComponent(`КП на ${productLabel}`);
-    const body = encodeURIComponent(`Имя: ${name}\nEmail: ${email}\nУточните параметры ${productLabel} — отправим PDF без задержек.`);
-    window.location.href = `mailto:${siteConfig.contact.email}?subject=${subject}&body=${body}`;
   };
 
   const showEmailForm = activeForm === 'email';
@@ -56,7 +48,10 @@ const CostingBlock = ({ productName }) => {
               <button
                 type="button"
                 className="btn-secondary btn-secondary-muted"
-                onClick={() => setActiveForm(activeForm === 'email' ? null : 'email')}
+                onClick={() => {
+                  setSubmitted(false);
+                  setActiveForm(activeForm === 'email' ? null : 'email');
+                }}
               >
                 <FileText size={18} />
                 Получить КП в PDF на почту
@@ -65,12 +60,18 @@ const CostingBlock = ({ productName }) => {
 
             <div className="costing-block__forms">
               {showEmailForm && (
-                <form className="costing-form" onSubmit={handleEmailSubmit}>
+                <form
+                  className="costing-form"
+                  action="https://formspree.io/f/mgowaqqw"
+                  method="POST"
+                  onSubmit={() => setSubmitted(true)}
+                >
                   <div className="form-grid">
                     <label className="form-label">
                       Имя
                       <input
                         type="text"
+                        name="name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Ваше имя"
@@ -82,6 +83,7 @@ const CostingBlock = ({ productName }) => {
                       Email
                       <input
                         type="email"
+                        name="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="mail@example.com"
@@ -90,12 +92,16 @@ const CostingBlock = ({ productName }) => {
                       />
                     </label>
                   </div>
+                  <input type="hidden" name="product" value={productLabel} />
+                  <input type="text" name="_gotcha" style={{ display: 'none' }} />
+                  <input type="hidden" name="_subject" value="Заявка на КП — LSTK" />
                   <div className="form-actions">
                     <button type="submit" className="btn-secondary btn-secondary-muted">
                       Получить КП в PDF
                     </button>
                     <span className="form-hint">Пришлём файл с фиксированной ценой</span>
                   </div>
+                  {submitted && <div className="form-success">Заявка отправлена. Мы свяжемся с вами.</div>}
                 </form>
               )}
             </div>
