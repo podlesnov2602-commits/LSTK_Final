@@ -1,9 +1,11 @@
 .whatsapp-float {
   position: fixed;
-  bottom: 18px;
-  right: 18px;
+  bottom: max(18px, env(safe-area-inset-bottom));
+  right: max(18px, env(safe-area-inset-right));
   z-index: 999;
   animation: fadeInUp 0.4s ease-out;
+  max-width: min(360px, calc(100vw - 28px));
+  width: fit-content;
 }
 
 @keyframes fadeInUp {
@@ -24,6 +26,7 @@
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
   transition: all 0.25s ease;
   white-space: nowrap;
+  touch-action: manipulation;
 }
 
 .whatsapp-float-btn:hover {
@@ -62,7 +65,11 @@
 }
 
 @media (max-width: 768px) {
-  .whatsapp-float { bottom: 14px; right: 14px; }
+  .whatsapp-float {
+    bottom: max(14px, env(safe-area-inset-bottom));
+    right: max(14px, env(safe-area-inset-right));
+    left: auto;
+  }
   .whatsapp-float:not(.expanded) .whatsapp-labels { display: none; }
   .whatsapp-float-btn { padding: 12px; }
 }
