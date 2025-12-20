@@ -29,7 +29,7 @@
 
 .header-content {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr auto auto;
   align-items: center;
   gap: 28px;
   height: 86px;
@@ -117,14 +117,14 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 0 16px;
+  padding: 10px 14px;
+  margin-left: 8px;
   border-radius: 12px;
   background: rgba(14, 162, 115, 0.1);
   border: 1px solid rgba(14, 162, 115, 0.42);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.26);
   color: #e8f6f0;
   flex-shrink: 0;
-  height: 86px;
 }
 
 .catalog-dot {
@@ -153,8 +153,11 @@
   font-weight: 500; /* как у .nav-link */
 }
 
-.catalog-indicator.in-menu {
-  margin-left: 0;
+/* === DESKTOP: catalog indicator near Contacts === */
+.catalog-indicator.floating {
+  position: static;          /* ❗ ключ */
+  margin-left: 12px;         /* отступ от "Контакты" */
+  align-self: center;
   white-space: nowrap;
   pointer-events: none;
 }
@@ -215,10 +218,6 @@
 
   .logo-icon {
     height: 52px;
-  }
-
-  .catalog-indicator.in-menu {
-    display: none;
   }
 
   .phone-link {
