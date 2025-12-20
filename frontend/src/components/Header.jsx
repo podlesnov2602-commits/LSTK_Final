@@ -73,7 +73,7 @@ const Header = () => {
               />
             </Link>
 
-            {/* 2. НАВИГАЦИЯ */}
+            {/* 2. ОСНОВНАЯ НАВИГАЦИЯ */}
             <nav className={`main-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
               <div className="mobile-menu-card">
 
@@ -113,23 +113,7 @@ const Header = () => {
                   )}
                 </div>
 
-                {/* ИНДИКАТОР КАТАЛОГА — ТЕПЕРЬ В НАВИГАЦИИ */}
-                {isCatalogPage && (
-                  <div
-                    className="catalog-indicator inline"
-                    aria-label="Вы в каталоге"
-                  >
-                    <span className="catalog-dot" />
-                    <div className="catalog-meta">
-                      <span className="catalog-label">Каталог</span>
-                      <span className="catalog-current">
-                        {currentCatalog || 'Раздел продукции'}
-                      </span>
-                    </div>
-                  </div>
-                )}
-
-                {/* МОБИЛЬНЫЕ КОНТАКТЫ */}
+                {/* МОБИЛЬНЫЕ КОНТАКТЫ — НЕ ТРОГАЕМ */}
                 <div className="mobile-contacts">
                   <p className="mobile-contacts__caption">Свяжитесь с нами</p>
                   <a
@@ -144,7 +128,23 @@ const Header = () => {
               </div>
             </nav>
 
-            {/* 3. CTA — ТОЛЬКО ТЕЛЕФОН И БУРГЕР */}
+            {/* 3. DESKTOP — ИНДИКАТОР КАТАЛОГА */}
+            {isCatalogPage && (
+              <div
+                className="catalog-indicator floating"
+                aria-label="Вы в каталоге"
+              >
+                <span className="catalog-dot" />
+                <div className="catalog-meta">
+                  <span className="catalog-label">Каталог</span>
+                  <span className="catalog-current">
+                    {currentCatalog || 'Раздел продукции'}
+                  </span>
+                </div>
+              </div>
+            )}
+
+            {/* 4. ДЕЙСТВИЯ (ТЕЛЕФОН + БУРГЕР) */}
             <div className="header-actions">
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
@@ -154,6 +154,7 @@ const Header = () => {
                 <span>{siteConfig.contact.phone}</span>
               </a>
 
+              {/* мобильная иконка */}
               <a
                 href={`tel:${siteConfig.contact.phoneRaw}`}
                 className="phone-icon-button"
@@ -162,6 +163,7 @@ const Header = () => {
                 <Phone size={18} />
               </a>
 
+              {/* бургер */}
               <button
                 className="mobile-menu-toggle"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -175,6 +177,7 @@ const Header = () => {
         </div>
       </header>
 
+      {/* затемнение для мобилки */}
       {mobileMenuOpen && <div className="mobile-menu-overlay" />}
     </>
   );
