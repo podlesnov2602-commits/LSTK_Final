@@ -33,7 +33,7 @@ const handleSubmit = async (e) => {
   formData.append('_subject', 'Заявка на КП — LSTK');
 
   try {
-    const response = await fetch('https://formspree.io/f/mgowaqqw', {
+    const response = await fetch('https://formspree.io/f/mgowaqow', {
       method: 'POST',
       body: formData,
       headers: {
