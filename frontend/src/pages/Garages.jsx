@@ -14,6 +14,7 @@ import img3 from '../assets/Garage3.jpg';
 import img4 from '../assets/Garage4.jpg';
 import img5 from '../assets/Garage5.jpg';
 import img6 from '../assets/Garage6.jpg';
+import garagesHero from '../assets/garages.jpeg';
 
 const Garages = () => {
   useEffect(() => {
@@ -138,7 +139,7 @@ const Garages = () => {
         title="Гаражи и хозблоки"
         subtitle="Металлические гаражи и хозблоки с расчётом под реальные нагрузки"
         meta="INDUSTRIAL PREMIUM · ГАРАЖИ И ХОЗБЛОКИ"
-        image={gallery[0].image}
+        image={garagesHero}
       />
 
       <section className="gallery-section">
