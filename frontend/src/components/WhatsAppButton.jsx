@@ -8,6 +8,13 @@ const WhatsAppButton = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    if (isMobile) {
+      setIsVisible(true);
+      return undefined;
+    }
+
     const handleScroll = () => {
       if (window.scrollY > 300) {
         setIsVisible(true);
