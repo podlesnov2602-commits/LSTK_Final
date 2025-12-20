@@ -14,7 +14,7 @@ import img3 from '../assets/Angar3.jpg';
 import img4 from '../assets/Angar4.jpg';
 import img5 from '../assets/Angar5.jpeg';
 import img6 from '../assets/Angar6.jpg';
-import hangarsHero from '../assets/Hangars.jpeg';
+import hangarsHero from '../assets/HangarsHero.png';
 
 
 const Hangars = () => {
