@@ -459,17 +459,30 @@ const Home = () => {
             <button className="btn-primary" onClick={() => openWhatsApp('Готов обсудить проект и получить расчёт.')}>Обсудить проект</button>
           </div>
 
-          <div className="contact-map subdued-map">
-            <iframe
-              title="map"
-              width="100%"
-              height="100%"
-              style={{ border: 0, borderRadius: '18px' }}
-              loading="lazy"
-              allowFullScreen
-              src={`https://www.google.com/maps?q=${siteConfig.location.lat},${siteConfig.location.lng}&hl=ru&z=14&output=embed`}
-            />
-          </div>
+         <div
+           
+  className="contact-map subdued-map"
+  onClick={() =>
+    window.open(
+      `https://www.google.com/maps?q=${siteConfig.location.lat},${siteConfig.location.lng}`,
+      '_blank'
+    )
+  }
+>
+  <iframe
+    title="map"
+    src={`https://www.google.com/maps?q=${siteConfig.location.lat},${siteConfig.location.lng}&hl=ru&z=14&output=embed`}
+    style={{
+      width: '100%',
+      height: '100%',
+      border: 0,
+      borderRadius: '18px',
+      pointerEvents: 'none', // 🔥 КЛЮЧЕВОЕ
+    }}
+    loading="eager"
+    allowFullScreen
+  />
+</div>
         </div>
       </section>
     </div>
