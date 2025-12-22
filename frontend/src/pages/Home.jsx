@@ -459,30 +459,19 @@ const Home = () => {
             <button className="btn-primary" onClick={() => openWhatsApp('Готов обсудить проект и получить расчёт.')}>Обсудить проект</button>
           </div>
 
-         <div
-           
-  className="contact-map subdued-map"
-  onClick={() =>
-    window.open(
-      `https://www.google.com/maps?q=${siteConfig.location.lat},${siteConfig.location.lng}`,
-      '_blank'
-    )
-  }
+       <a
+         aria-label="Открыть адрес в Google Maps"
+  href={`https://www.google.com/maps?q=${siteConfig.location.lat},${siteConfig.location.lng}`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="contact-map static-map subdued-map"
 >
-  <iframe
-    title="map"
-    src={`https://www.google.com/maps?q=${siteConfig.location.lat},${siteConfig.location.lng}&hl=ru&z=14&output=embed`}
-    style={{
-      width: '100%',
-      height: '100%',
-      border: 0,
-      borderRadius: '18px',
-      pointerEvents: 'none', // 🔥 КЛЮЧЕВОЕ
-    }}
-    loading="eager"
-    allowFullScreen
+  <img
+    src={`https://maps.googleapis.com/maps/api/staticmap?center=${siteConfig.location.lat},${siteConfig.location.lng}&zoom=${siteConfig.location.zoom}&size=640x320&scale=2&markers=color:green|${siteConfig.location.lat},${siteConfig.location.lng}&key=${siteConfig.location.mapApiKey}`}
+    alt="Карта проезда"
   />
-</div>
+  <span className="map-hint">Открыть в Google Maps</span>
+</a>
         </div>
       </section>
     </div>
