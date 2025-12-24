@@ -6,15 +6,15 @@ import SectionHeader from '../components/ui/SectionHeader';
 import PricingCards from '../components/ui/PricingCards';
 import ProcessSteps from '../components/ui/ProcessSteps';
 import CostingBlock from '../components/ui/CostingBlock';
-import capsulesHeroImg from '../assets/CapsulesHero.jpg';
+import capsulesHeroImg from '../assets/CapsulesHero.webp';
 
 // Локальные изображения
-import img1 from '../assets/Capsules1.jpg';
-import img2 from '../assets/Capsules2.jpg';
-import img3 from '../assets/Capsules3.jpg';
-import img4 from '../assets/Capsules4.jpg';
-import img5 from '../assets/Capsules5.jpg';
-import img6 from '../assets/Capsules6.jpg';
+import img1 from '../assets/Capsules1.webp';
+import img2 from '../assets/Capsules2.webp';
+import img3 from '../assets/Capsules3.webp';
+import img4 from '../assets/Capsules4.webp';
+import img5 from '../assets/Capsules5.webp';
+import img6 from '../assets/Capsules6.webp';
 
 const Capsules = () => {
   useEffect(() => {
