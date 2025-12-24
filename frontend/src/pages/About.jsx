@@ -1,15 +1,62 @@
-import React, { useEffect } from 'react';
-import { Award, Users, Factory, Target, Ruler, Wrench, Repeat } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Award, Users, Factory, Target, Ruler, Wrench, Repeat, Play, Volume2, VolumeX } from 'lucide-react';
 import PageHero from '../components/ui/PageHero';
 import SectionHeader from '../components/ui/SectionHeader';
 import './About.css';
 import productionVideo from '../assets/About.mp4';
+import logoImage from '../assets/logo.png';
 
 const About = () => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
+  const [hasStarted, setHasStarted] = useState(false);
+
   useEffect(() => {
     // Scroll to top on page load
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
+
+  const handleStart = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    setHasStarted(true);
+    video.muted = isMuted;
+    video.play();
+    setIsPlaying(true);
+  };
+
+  const handleTogglePlay = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (!hasStarted) {
+      handleStart();
+      return;
+    }
+
+    if (isPlaying) {
+      video.pause();
+      setIsPlaying(false);
+    } else {
+      video.play();
+      setIsPlaying(true);
+    }
+  };
+
+  const handleToggleMute = (event) => {
+    event.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+
+    const nextMuted = !isMuted;
+    video.muted = nextMuted;
+    setIsMuted(nextMuted);
+  };
+
+  const handleVideoPause = () => setIsPlaying(false);
+  const handleVideoPlay = () => setIsPlaying(true);
   const values = [
     {
       icon: Award,
@@ -115,15 +162,40 @@ const About = () => {
             </div>
             <div className="reality-video-column">
               <div className="reality-video-frame">
-                <video
-                  controls
-                  preload="metadata"
-                  className="reality-video"
-                  poster="https://customer-assets.emergentagent.com/job_metal-builder/artifacts/vertical-production-poster.jpg"
-                >
-                  <source src={productionVideo} type="video/mp4" />
-                  Ваш браузер не поддерживает видео.
-                </video>
+                <div className="reality-video-surface" onClick={handleTogglePlay}>
+                  <video
+                    ref={videoRef}
+                    preload="metadata"
+                    className="reality-video"
+                    muted={isMuted}
+                    poster="https://customer-assets.emergentagent.com/job_metal-builder/artifacts/vertical-production-poster.jpg"
+                    onPause={handleVideoPause}
+                    onPlay={handleVideoPlay}
+                  >
+                    <source src={productionVideo} type="video/mp4" />
+                    Ваш браузер не поддерживает видео.
+                  </video>
+
+                  {!hasStarted && (
+                    <button className="reality-preview" type="button" onClick={handleStart} aria-label="Запустить видео">
+                      <div className="reality-preview-logo">
+                        <img src={logoImage} alt="СТК" />
+                      </div>
+                      <div className="reality-preview-play">
+                        <Play size={36} />
+                      </div>
+                    </button>
+                  )}
+
+                  <button
+                    className="reality-mute-toggle"
+                    type="button"
+                    onClick={handleToggleMute}
+                    aria-label={isMuted ? 'Включить звук' : 'Выключить звук'}
+                  >
+                    {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
