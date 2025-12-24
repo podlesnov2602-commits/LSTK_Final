@@ -6,10 +6,10 @@ import { siteConfig } from '../config/siteConfig';
 import SectionHeader from '../components/ui/SectionHeader';
 import './Home.css';
 
-import capsulesImg from '../assets/capsules.png';
-import hangarsImg from '../assets/Hangars.jpeg';
-import garagesImg from '../assets/garages.jpeg';
-import productionImg from '../assets/production.jpg';
+import capsulesImg from '../assets/capsules.webp';
+import hangarsImg from '../assets/Hangars.webp';
+import garagesImg from '../assets/garages.webp';
+import productionImg from '../assets/production.webp';
 import factoryDiagram from '../assets/factory-diagram.svg';
 
 const mediaQueryString = '(max-width: 768px)';
