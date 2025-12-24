@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a75fc398.css",
+    "main.js": "/static/js/main.af6e5b8f.js",
+    "static/media/About.mp4": "/static/media/About.b4ad640d4e5cac1e8477.mp4",
+    "static/media/AboutHero.webp": "/static/media/AboutHero.1af91055ae107dc11c56.webp",
+    "static/media/Hangars.webp": "/static/media/Hangars.2ec71470510f7640a26a.webp",
+    "static/media/Garage6.webp": "/static/media/Garage6.df8d953b03be53d5e626.webp",
+    "static/media/capsules.webp": "/static/media/capsules.51b96bee66a1deef9716.webp",
+    "static/media/Angar6.webp": "/static/media/Angar6.45edff0a4fe01c8ac168.webp",
+    "static/media/Garage4.webp": "/static/media/Garage4.369add1d9a540ad809f2.webp",
+    "static/media/Angar4.webp": "/static/media/Angar4.73581fefc177002c874d.webp",
+    "static/media/Capsules5.webp": "/static/media/Capsules5.041800a7a1ba6876a711.webp",
+    "static/media/HangarsHero.webp": "/static/media/HangarsHero.e9a37626224c8cfa7411.webp",
+    "static/media/Capsules4.webp": "/static/media/Capsules4.edcb86ad26df02ca5d4e.webp",
+    "static/media/Garage1.webp": "/static/media/Garage1.b459b298be8113650f3a.webp",
+    "static/media/Garage2.webp": "/static/media/Garage2.8877de1eb23085ff4339.webp",
+    "static/media/Capsules3.webp": "/static/media/Capsules3.813c0a469a9d40c83204.webp",
+    "static/media/CapsulesHero.webp": "/static/media/CapsulesHero.ba3c6fdd4ce05b9bc9d6.webp",
+    "static/media/Angar5.webp": "/static/media/Angar5.531fd082565dde2de2fa.webp",
+    "static/media/Capsules6.webp": "/static/media/Capsules6.64964adfe577d6452a4b.webp",
+    "static/media/Capsules1.webp": "/static/media/Capsules1.143cf78df43ca3565a8b.webp",
+    "static/media/garages.webp": "/static/media/garages.deafa054862332f3ddf7.webp",
+    "static/media/logo.png": "/static/media/logo.0c9e13f502b01f9a64eb.png",
+    "static/media/Angar3.webp": "/static/media/Angar3.0ca3cdb1b7fea75a511b.webp",
+    "static/media/GarageHero.webp": "/static/media/GarageHero.bd163927bf363462a950.webp",
+    "static/media/Angar2.webp": "/static/media/Angar2.ed4568765930ef1c303b.webp",
+    "static/media/Garage3.webp": "/static/media/Garage3.b2ffa0a6084e3a11ef3f.webp",
+    "static/media/Angar1.webp": "/static/media/Angar1.857b3d11094fbf923cdc.webp",
+    "static/media/Capsules2.webp": "/static/media/Capsules2.9963f32d74636455aab9.webp",
+    "static/media/production.webp": "/static/media/production.5e6b1665cb9feb12d4a5.webp",
+    "static/media/ContactsHero.webp": "/static/media/ContactsHero.44044a3fac49217ac0f3.webp",
+    "static/media/Garage5.webp": "/static/media/Garage5.2d41756ad3ee204a2e3d.webp",
+    "static/media/factory-diagram.svg": "/static/media/factory-diagram.e476c5a86410cab2f478999827985d6e.svg",
+    "index.html": "/index.html",
+    "main.a75fc398.css.map": "/static/css/main.a75fc398.css.map",
+    "main.af6e5b8f.js.map": "/static/js/main.af6e5b8f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a75fc398.css",
+    "static/js/main.af6e5b8f.js"
+  ]
+}
