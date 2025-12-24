@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Award, Users, Factory, Target } from 'lucide-react';
+import { Award, Users, Factory, Target, Ruler, Wrench, Repeat } from 'lucide-react';
 import PageHero from '../components/ui/PageHero';
 import SectionHeader from '../components/ui/SectionHeader';
 import './About.css';
@@ -73,24 +73,63 @@ const About = () => {
       {/* Production reality */}
       <section className="reality-section">
         <div className="container">
-          <div className="reality-content">
-            <SectionHeader
-              eyebrow="О компании"
-              title="Производство в реальности"
-              subtitle="Реальные процессы, оборудование и сборка без постановки. Видео фиксирует, как формируются профили, узлы и монтажные операции."
-            />
-          </div>
-          <div className="story-video">
-            <video
-              controls
-              muted
-              playsInline
-              className="story-video-player"
-              poster="https://customer-assets.emergentagent.com/job_metal-builder/artifacts/hero-production-poster.jpg"
-            >
-              <source src="https://videos.pexels.com/video-files/5752729/5752729-uhd_2560_1440_25fps.mp4" type="video/mp4" />
-              Ваш браузер не поддерживает видео.
-            </video>
+          <div className="reality-layout">
+            <div className="reality-video-column">
+              <div className="reality-video-frame">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="reality-video"
+                  poster="https://customer-assets.emergentagent.com/job_metal-builder/artifacts/vertical-production-poster.jpg"
+                >
+                  <source
+                    src="https://videos.pexels.com/video-files/3129671/3129671-uhd_1440_2560_30fps.mp4"
+                    type="video/mp4"
+                  />
+                  Ваш браузер не поддерживает видео.
+                </video>
+              </div>
+            </div>
+            <div className="reality-text">
+              <SectionHeader
+                eyebrow="О компании"
+                title="Производство в реальности"
+                subtitle="Реальные процессы, реальные цеха и полный контроль каждого этапа"
+              />
+              <p className="body-lg reality-lead">
+                Мы не используем стоковые визуализации и абстрактные рендеры. Каждое решение, которое вы видите на сайте,
+                проходит через реальное производство: от проектирования и расчёта нагрузок до выпуска профилей, сборки узлов и
+                монтажа конструкций.
+              </p>
+              <ul className="reality-list">
+                <li className="reality-list-item">
+                  <div className="reality-icon">
+                    <Factory size={22} />
+                  </div>
+                  <span>Собственное производство ЛСТК-конструкций</span>
+                </li>
+                <li className="reality-list-item">
+                  <div className="reality-icon">
+                    <Ruler size={22} />
+                  </div>
+                  <span>Контроль узлов, геометрии и допусков на каждом этапе</span>
+                </li>
+                <li className="reality-list-item">
+                  <div className="reality-icon">
+                    <Wrench size={22} />
+                  </div>
+                  <span>Сборка и монтаж без субподрядчиков</span>
+                </li>
+                <li className="reality-list-item">
+                  <div className="reality-icon">
+                    <Repeat size={22} />
+                  </div>
+                  <span>Повторяемость решений и стабильное качество от проекта к проекту</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
