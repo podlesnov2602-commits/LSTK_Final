@@ -75,19 +75,6 @@ const About = () => {
       <section className="reality-section">
         <div className="container">
           <div className="reality-layout">
-            <div className="reality-video-column">
-              <div className="reality-video-frame">
-                <video
-                  controls
-                  preload="metadata"
-                  className="reality-video"
-                  poster="https://customer-assets.emergentagent.com/job_metal-builder/artifacts/vertical-production-poster.jpg"
-                >
-                  <source src={productionVideo} type="video/mp4" />
-                  Ваш браузер не поддерживает видео.
-                </video>
-              </div>
-            </div>
             <div className="reality-text">
               <SectionHeader
                 eyebrow="О компании"
@@ -125,6 +112,19 @@ const About = () => {
                   <span>Повторяемость решений и стабильное качество от проекта к проекту</span>
                 </li>
               </ul>
+            </div>
+            <div className="reality-video-column">
+              <div className="reality-video-frame">
+                <video
+                  controls
+                  preload="metadata"
+                  className="reality-video"
+                  poster="https://customer-assets.emergentagent.com/job_metal-builder/artifacts/vertical-production-poster.jpg"
+                >
+                  <source src={productionVideo} type="video/mp4" />
+                  Ваш браузер не поддерживает видео.
+                </video>
+              </div>
             </div>
           </div>
         </div>
