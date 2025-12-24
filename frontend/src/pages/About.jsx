@@ -5,6 +5,7 @@ import SectionHeader from '../components/ui/SectionHeader';
 import './About.css';
 import productionVideo from '../assets/About.mp4';
 import logoImage from '../assets/logo.png';
+import aboutHeroImg from '../assets/AboutHero.webp';
 
 const About = () => {
   const videoRef = useRef(null);
@@ -86,7 +87,7 @@ const About = () => {
         title="О компании"
         subtitle="Производство ЛСТК-конструкций в Казахстане"
         meta="INDUSTRIAL PREMIUM • О КОМПАНИИ"
-        image="https://customer-assets.emergentagent.com/job_metal-builder/artifacts/6umjvmc1_zensiny-inzenery-rabotaut.jpg"
+         image={aboutHeroImg}
       />
 
       {/* Story */}
