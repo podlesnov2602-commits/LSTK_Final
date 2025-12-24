@@ -177,7 +177,7 @@
 
 .reality-layout {
   display: grid;
-  grid-template-columns: minmax(420px, 460px) 1fr;
+  grid-template-columns: minmax(320px, 360px) 1fr;
   gap: 72px;
   align-items: center;
 }
@@ -189,7 +189,7 @@
 
 .reality-video-frame {
   width: 100%;
-  max-width: 460px;
+  max-width: 360px;
   aspect-ratio: 9 / 16;
   border-radius: 18px;
   overflow: hidden;
@@ -215,8 +215,9 @@
 .reality-video {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  background-color: #0a0a0a;
 }
 
 .reality-text {

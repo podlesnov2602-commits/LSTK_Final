@@ -78,10 +78,8 @@ const About = () => {
             <div className="reality-video-column">
               <div className="reality-video-frame">
                 <video
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
+                  controls
+                  preload="metadata"
                   className="reality-video"
                   poster="https://customer-assets.emergentagent.com/job_metal-builder/artifacts/vertical-production-poster.jpg"
                 >
