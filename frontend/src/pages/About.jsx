@@ -3,6 +3,7 @@ import { Award, Users, Factory, Target, Ruler, Wrench, Repeat } from 'lucide-rea
 import PageHero from '../components/ui/PageHero';
 import SectionHeader from '../components/ui/SectionHeader';
 import './About.css';
+import productionVideo from '../assets/About.mp4';
 
 const About = () => {
   useEffect(() => {
@@ -84,10 +85,7 @@ const About = () => {
                   className="reality-video"
                   poster="https://customer-assets.emergentagent.com/job_metal-builder/artifacts/vertical-production-poster.jpg"
                 >
-                  <source
-                    src="https://videos.pexels.com/video-files/3129671/3129671-uhd_1440_2560_30fps.mp4"
-                    type="video/mp4"
-                  />
+                  <source src={productionVideo} type="video/mp4" />
                   Ваш браузер не поддерживает видео.
                 </video>
               </div>
