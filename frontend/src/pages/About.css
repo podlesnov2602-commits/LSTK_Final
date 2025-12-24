@@ -177,7 +177,7 @@
 
 .reality-layout {
   display: grid;
-  grid-template-columns: minmax(320px, 360px) 1fr;
+  grid-template-columns: 1fr minmax(320px, 360px);
   gap: 72px;
   align-items: center;
 }
