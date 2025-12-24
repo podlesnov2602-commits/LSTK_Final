@@ -4,6 +4,7 @@ import { siteConfig } from '../config/siteConfig';
 import PageHero from '../components/ui/PageHero';
 import SectionHeader from '../components/ui/SectionHeader';
 import './Contacts.css';
+import contactsHeroImg from '../assets/ContactsHero.webp';
 
 const Contacts = () => {
   useEffect(() => {
@@ -54,7 +55,7 @@ const Contacts = () => {
         title="Контакты"
         subtitle="Свяжитесь с нами удобным способом"
         meta="Industrial Premium • Контакты"
-        image="https://customer-assets.emergentagent.com/job_metal-builder/artifacts/4t51ec3s_1764756420383-019ae3ad-9634-7630-8426-e44060d6f5c2.png"
+        image={contactsHeroImg}
       />
 
       {/* Contact Info */}
