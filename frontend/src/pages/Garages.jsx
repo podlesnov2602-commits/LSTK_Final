@@ -8,13 +8,13 @@ import CostingBlock from '../components/ui/CostingBlock';
 import './ProductPage.css';
 
 // Локальные изображения
-import img1 from '../assets/Garage1.jpg';
-import img2 from '../assets/Garage2.jpg';
-import img3 from '../assets/Garage3.jpg';
-import img4 from '../assets/Garage4.jpg';
-import img5 from '../assets/Garage5.jpg';
-import img6 from '../assets/Garage6.jpg';
-import garagesHero from '../assets/GarageHero.png';
+import img1 from '../assets/Garage1.webp';
+import img2 from '../assets/Garage2.webp';
+import img3 from '../assets/Garage3.webp';
+import img4 from '../assets/Garage4.webp';
+import img5 from '../assets/Garage5.webp';
+import img6 from '../assets/Garage6.webp';
+import garagesHero from '../assets/GarageHero.webp';
 
 const Garages = () => {
   useEffect(() => {
