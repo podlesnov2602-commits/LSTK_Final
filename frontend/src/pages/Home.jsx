@@ -11,13 +11,14 @@ import hangarsImg from '../assets/HangarsHero.webp';
 import garagesImg from '../assets/garages.webp';
 import productionImg from '../assets/production.webp';
 import heroImg from '../assets/Hero2.webp';
+import herosImg from '../assets/HeroStart.webp';
 import factoryDiagram from '../assets/factory-diagram.svg';
 
 const mediaQueryString = '(max-width: 768px)';
 
 const Home = () => {
   const heroBackgrounds = useMemo(
-    () => [productionImg, heroImg],
+    () => [productionImg, heroImg, herosImg],
     []
   );
 
