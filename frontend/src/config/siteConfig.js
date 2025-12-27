@@ -21,7 +21,7 @@ export const siteConfig = {
   location: {
     lat: 43.710918,
     lng: 77.031865,
-    zoom: 15,
+    zoom: 12,
     mapApiKey: 'AIzaSyB1CDpNW2-7gBu6YtA_zPCl26erVPuXuzc'
   }
 };
