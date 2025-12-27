@@ -7,7 +7,7 @@ import SectionHeader from '../components/ui/SectionHeader';
 import './Home.css';
 
 import capsulesImg from '../assets/capsules.webp';
-import hangarsImg from '../assets/Hangars.webp';
+import hangarsImg from '../assets/HangarsHero.webp';
 import garagesImg from '../assets/garages.webp';
 import productionImg from '../assets/production.webp';
 import heroImg from '../assets/Hero2.webp';
