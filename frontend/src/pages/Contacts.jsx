@@ -104,15 +104,19 @@ const Contacts = () => {
             subtitle="Производственная площадка и офис на одной оси"
           />
           <div className="map-container">
-            <iframe
-              title="Company Location"
-              src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2906.2524871691937!2d${siteConfig.location.lng}!3d${siteConfig.location.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDEzJzE5LjIiTiA3NsKwNTEnMDQuMyJF!5e0!3m2!1sen!2skz!4v1234567890123!5m2!1sen!2skz`}
-              width="100%"
-              height="500"
-              style={{ border: 0, borderRadius: '16px' }}
-              allowFullScreen=""
-              loading="lazy"
-            />
+            <a
+              aria-label="Открыть адрес в Google Maps"
+              href={`https://www.google.com/maps?q=${siteConfig.location.lat},${siteConfig.location.lng}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-map static-map subdued-map"
+            >
+              <img
+                src={`https://maps.googleapis.com/maps/api/staticmap?center=${siteConfig.location.lat},${siteConfig.location.lng}&zoom=${siteConfig.location.zoom}&size=640x320&scale=2&markers=color:green|${siteConfig.location.lat},${siteConfig.location.lng}&key=${siteConfig.location.mapApiKey}`}
+                alt="Карта проезда"
+              />
+              <span className="map-hint">Открыть в Google Maps</span>
+            </a>
           </div>
         </div>
       </section>
