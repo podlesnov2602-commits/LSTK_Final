@@ -84,7 +84,7 @@ const Home = () => {
 
   const categories = [
     {
-      title: 'Капсульные здания',
+      title: 'Модульные здания',
       description: 'Быстрый ввод, предсказуемый бюджет и полный комплект для сборки без доработок на площадке.',
       image: capsulesImg,
       link: '/capsules',
