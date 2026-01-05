@@ -22,9 +22,9 @@
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(8, 12, 12, 0.96) 0%, rgba(6, 10, 10, 0.97) 100%);
+  box-shadow: 0 16px 36px rgba(0, 10, 12, 0.32);
   display: flex;
   flex-direction: column;
   min-height: 360px;
@@ -32,9 +32,9 @@
 }
 
 .modules-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(14, 162, 115, 0.7);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.38), 0 0 0 1px rgba(14, 162, 115, 0.4);
+  transform: translateY(-4px);
+  border-color: var(--brand-green);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.42);
 }
 
 .modules-card__image {
@@ -42,7 +42,7 @@
   height: 180px;
   background-size: cover;
   background-position: center;
-  filter: brightness(0.92);
+  filter: brightness(1.33) contrast(0.96) saturate(0.96);
 }
 
 .modules-card__body {
@@ -70,7 +70,7 @@
 
 .modules-card__description {
   margin: 0;
-  color: var(--muted);
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 
