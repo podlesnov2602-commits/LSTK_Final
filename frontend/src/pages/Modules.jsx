@@ -9,7 +9,7 @@ import './Modules.css';
 
 import productionImg from '../assets/production.webp';
 import capsulesImg from '../assets/capsules.webp';
-import heroImg from '../assets/Hero2.webp';
+import bigImg from '../assets/modulesbig.webp';
 
 const directions = [
   {
@@ -26,7 +26,7 @@ const directions = [
       'Малоэтажные жилые здания на базе ЛСТК — с расчётом нагрузок, КМД и заводской подготовкой конструкций.',
     cta: 'Смотреть решения',
     link: '/modules/residential',
-    image: heroImg
+    image: bigImg
   },
   {
     title: 'Малые функциональные здания',
