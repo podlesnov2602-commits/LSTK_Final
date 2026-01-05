@@ -45,7 +45,7 @@ const Footer = () => {
           <div className="footer-column">
             <h4 className="footer-heading">Продукция</h4>
             <nav className="footer-nav">
-              <Link to="/capsules" className="footer-link">Капсулы</Link>
+              <Link to="/capsules" className="footer-link">Модульные здания</Link>
               <Link to="/hangars" className="footer-link">Ангары</Link>
               <Link to="/garages" className="footer-link">Гаражи</Link>
             </nav>
