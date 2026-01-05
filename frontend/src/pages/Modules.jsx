@@ -7,7 +7,7 @@ import SectionHeader from '../components/ui/SectionHeader';
 
 import './Modules.css';
 
-import productionImg from '../assets/production.webp';
+import banyaImg from '../assets/banya.webp';
 import capsulesImg from '../assets/capsules.webp';
 import bigImg from '../assets/modulesbig.webp';
 
@@ -34,7 +34,7 @@ const directions = [
       'Компактные здания для частных участков и коммерческих задач: бани, сауны, хозблоки и сервисные модули.',
     cta: 'Смотреть решения',
     link: '/modules/small',
-    image: productionImg
+    image: banyaImg
   }
 ];
 
