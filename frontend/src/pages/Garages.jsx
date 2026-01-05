@@ -235,6 +235,7 @@ const Garages = () => {
         subtitle="Гаражи, хозблоки и навесы под хранение техники или мастерской"
         items={pricingCards}
         footnote="Цена ориентировочная. Рассчитывается по комплектации и региону."
+        showHint={false}
       />
 
       <section className="steps-section">

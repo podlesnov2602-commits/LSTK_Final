@@ -3,7 +3,7 @@ import { Check } from 'lucide-react';
 import './PricingCards.css';
 import SectionHeader from './SectionHeader';
 
-const PricingCards = ({ title, subtitle, items, footnote }) => {
+const PricingCards = ({ title, subtitle, items, footnote, showHint = true }) => {
   return (
     <section className="pricing-shell section-shell subtle-grid">
       <div className="container">
@@ -29,7 +29,7 @@ const PricingCards = ({ title, subtitle, items, footnote }) => {
                 ))}
               </div>
               <button className="btn-primary pricing-cta">{item.price}</button>
-              <p className="pricing-hint">Цена ориентировочная</p>
+              {showHint && <p className="pricing-hint">Цена ориентировочная</p>}
             </article>
           ))}
         </div>
