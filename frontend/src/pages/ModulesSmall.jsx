@@ -146,7 +146,7 @@ const ModulesSmall = () => {
           />
           <div className="gallery-grid">
             {gallery.map((item, index) => (
-              <div key={index} className={`project-card ${index === 0 ? 'featured' : ''}`}>
+              <div key={index} className="project-card">
                 <div className="project-visual" style={{ backgroundImage: `url(${item.image})` }}>
                   <div className="project-overlay">
                     <p className="project-caption">{item.caption}</p>
