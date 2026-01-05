@@ -1,92 +1,198 @@
 import React, { useEffect } from 'react';
-import { CheckCircle2, ClipboardList, HardHat, Layers } from 'lucide-react';
+import { ClipboardList, Factory, Layers, PenTool, RefreshCw, Ruler, ShieldCheck } from 'lucide-react';
 
 import PageHero from '../components/ui/PageHero';
 import SectionHeader from '../components/ui/SectionHeader';
+import ProcessSteps from '../components/ui/ProcessSteps';
+import PricingCards from '../components/ui/PricingCards';
+import CostingBlock from '../components/ui/CostingBlock';
 
-import './ModuleDetails.css';
+import './ProductPage.css';
 
-import heroImg from '../assets/HeroStart.webp';
+import heroImg from '../assets/Hero2.webp';
+import gallery1 from '../assets/HeroStart.webp';
+import gallery2 from '../assets/AboutHero.webp';
+import gallery3 from '../assets/production.webp';
+import gallery4 from '../assets/HangarsHero.webp';
+import gallery5 from '../assets/Hero2.webp';
 
 const ModulesResidential = () => {
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const timer = setTimeout(() => {
+      const gallerySection = document.querySelector('.gallery-section');
+      if (gallerySection) {
+        const yOffset = -100;
+        const y = gallerySection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
-  const deliverables = [
-    'КМ/КМД с расчётом нагрузок и узлов сопряжений',
-    'Комплект ЛСТК с маркировкой и упаковкой под очередность монтажа',
-    'Сводная спецификация для бюджета, логистики и контроля на площадке'
+  const gallery = [
+    {
+      image: gallery1,
+      title: 'Жилой дом 120 м²',
+      purpose: 'Каркас под индивидуальную планировку',
+      tag: 'ЖИЛОЙ ДОМ'
+    },
+    {
+      image: gallery2,
+      title: 'Жилой дом 180 м²',
+      purpose: 'ЛСТК-контур с инженерным расчётом',
+      tag: 'ЖИЛОЙ ДОМ'
+    },
+    {
+      image: gallery3,
+      title: 'Дом с плоской кровлей 2 этажа',
+      purpose: 'Современный объём с заводской подготовкой',
+      tag: 'ЖИЛОЙ ДОМ'
+    },
+    {
+      image: gallery4,
+      title: 'Гостевой дом 2 этажа',
+      purpose: 'Каркас для операторских форматов размещения',
+      tag: 'ЖИЛОЙ ДОМ'
+    },
+    {
+      image: gallery5,
+      title: 'Малоэтажный дом 3 этажа',
+      purpose: 'Расчёт нагрузок под регион и фасады',
+      tag: 'ЖИЛОЙ ДОМ'
+    }
   ];
 
-  const scenarios = [
-    'Коттеджные посёлки и клубные форматы — управляемая себестоимость и быстрый тираж',
-    'Персонал и вахтовые городки — надёжная геометрия и тёплый контур',
-    'Апартаменты и операторские форматы размещения — точные сроки поставки и сборки'
+  const pricingCards = [
+    {
+      meta: 'Жилое здание 1–2 этажа',
+      title: 'Дом 100–140 м²',
+      price: 'от … ₸',
+      description: 'Лёгкий ЛСТК-каркас под гибкую планировку и быстрый ввод в эксплуатацию.',
+      markers: ['Расчёт снеговых и ветровых нагрузок', 'Комплектация КМД', 'Маркировка и упаковка под монтаж', 'Совместимость с фасадами и инженеркой']
+    },
+    {
+      meta: 'Жилое здание 2 этажа',
+      title: 'Дом 150–200 м²',
+      price: 'от … ₸',
+      description: 'Двухэтажный дом с заводской подготовкой узлов и контролем геометрии.',
+      markers: ['Планировки под смешанные сценарии проживания', 'Усиленные сечения под перекрытия', 'Комплектация крепежом и схемами монтажа', 'Подготовка под чистовые фасады']
+    },
+    {
+      meta: 'Жилое здание 2–3 этажа',
+      title: 'Дом 200–300 м²',
+      price: 'от … ₸',
+      description: 'Малоэтажный объём с расчётом нагрузок, КМД и логистикой поставок.',
+      markers: ['Расчёт под региональные нагрузки', 'Паспорт партии и маркировка элементов', 'Вариативность фасадных решений', 'Шеф-монтаж по запросу']
+    }
   ];
 
-  const stack = [
-    { icon: HardHat, title: 'Проектирование', text: 'Проверка нагрузок, выбор сечений и крепежа, согласование узлов с подрядчиком.' },
-    { icon: Layers, title: 'Поставка', text: 'Заводская подготовка профилей, маркировка, упаковка и паспортизация партии.' },
-    { icon: ClipboardList, title: 'Сопровождение', text: 'Инструкции, шеф-монтаж и контроль геометрии на узлах по запросу заказчика.' }
+  const advantages = [
+    { icon: RefreshCw, title: 'Расчёт под снеговые и ветровые нагрузки' },
+    { icon: Layers, title: 'КМД и заводская точность' },
+    { icon: ShieldCheck, title: 'Минимум работ на участке' },
+    { icon: PenTool, title: 'Предсказуемые сроки и бюджет' },
+    { icon: Factory, title: 'Совместимость с любыми фасадными решениями' }
+  ];
+
+  const steps = [
+    {
+      title: 'Запрос и исходные данные',
+      description: 'Фиксируем габариты, этажность, нагрузки и требования к фасадам.',
+      icon: ClipboardList
+    },
+    {
+      title: 'Проектирование и КМД',
+      description: 'Готовим расчёты, выпускаем КМД и согласовываем узлы сопряжений.',
+      icon: Ruler
+    },
+    {
+      title: 'Производство каркаса',
+      description: 'Пробивка, профилирование, маркировка и упаковка под очередность монтажа.',
+      icon: Factory
+    },
+    {
+      title: 'Поставка и монтаж',
+      description: 'Логистика под график объекта, сопровождение и шеф-монтаж по запросу.',
+      icon: Layers
+    },
+    {
+      title: 'Сдача объекта',
+      description: 'Контроль геометрии и передача готового каркаса под дальнейшие работы.',
+      icon: PenTool
+    }
   ];
 
   return (
-    <div className="module-detail-page">
+    <div className="product-page">
       <PageHero
         title="Жилые дома до 3 этажей"
-        subtitle="Малоэтажные жилые здания на базе ЛСТК: инженерные расчёты, заводская точность и готовность к быстрому вводу."
-        meta="Industrial Premium • Модульные здания"
+        subtitle="Малоэтажные жилые здания на базе ЛСТК с инженерным расчётом нагрузок, КМД и заводской подготовкой конструкций."
+        meta="INDUSTRIAL PREMIUM · ЖИЛЫЕ ЗДАНИЯ ЛСТК"
         image={heroImg}
       />
 
-      <section className="module-detail-section">
+      <section className="gallery-section">
         <div className="container">
-          <SectionHeader
-            eyebrow="Жилые решения"
-            title="Что поставляем"
-            subtitle="Готовим комплект для инженерного строительства: от документации до поставки маркированных профилей."
-          />
-
-          <div className="module-detail-grid">
-            <div className="module-detail-card">
-              <h3>Пакет поставки</h3>
-              <ul className="module-detail-list">
-                {deliverables.map((item) => (
-                  <li key={item}>
-                    <CheckCircle2 size={18} />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="module-detail-card">
-              <h3>Сценарии применения</h3>
-              <ul className="module-detail-list">
-                {scenarios.map((item) => (
-                  <li key={item}>
-                    <CheckCircle2 size={18} />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="module-stack-grid">
-            {stack.map((item) => (
-              <div key={item.title} className="module-stack-card">
-                <item.icon size={28} />
-                <div>
-                  <h4>{item.title}</h4>
-                  <p>{item.text}</p>
+          <SectionHeader eyebrow="Проекты" title="Галерея проектов" />
+          <div className="gallery-grid">
+            {gallery.map((item, index) => (
+              <div key={index} className="project-card">
+                <div className="project-visual" style={{ backgroundImage: `url(${item.image})` }}>
+                  <div className="project-overlay">
+                    <p className="project-caption">{item.title}</p>
+                    <p className="project-purpose">{item.purpose}</p>
+                    <span className="project-meta">{item.tag}</span>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      <section className="advantages-section-product">
+        <div className="container">
+          <SectionHeader
+            eyebrow="Технология"
+            title="Инженерный подход к жилому строительству"
+            subtitle="Фиксируем нагрузки, выпускаем КМД и поставляем маркированный ЛСТК-каркас под монтаж"
+          />
+          <div className="advantages-grid-product">
+            {advantages.map((advantage, index) => {
+              const IconComponent = advantage.icon;
+              return (
+                <div key={index} className="advantage-card-product">
+                  <div className="advantage-icon-circle">
+                    <IconComponent size={28} className="advantage-icon" />
+                  </div>
+                  <h3>{advantage.title}</h3>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <PricingCards
+        title="Типовые решения и ориентиры по стоимости"
+        subtitle="Стоимость зависит от проекта, этажности, региона и комплектации."
+        items={pricingCards}
+        footnote="Стоимость зависит от проекта, этажности, региона и комплектации."
+      />
+
+      <section className="steps-section">
+        <div className="container">
+          <SectionHeader
+            eyebrow="Процесс"
+            title="Процесс реализации проекта"
+            subtitle="Пять этапов — от исходных данных до сдачи готового каркаса"
+          />
+          <ProcessSteps steps={steps} />
+        </div>
+      </section>
+
+      <CostingBlock productName="жилой дом" />
     </div>
   );
 };
