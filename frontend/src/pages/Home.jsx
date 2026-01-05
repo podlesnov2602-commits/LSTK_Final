@@ -6,7 +6,7 @@ import { siteConfig } from '../config/siteConfig';
 import SectionHeader from '../components/ui/SectionHeader';
 import './Home.css';
 
-import capsulesImg from '../assets/capsules.webp';
+import capsulesImg from '../assets/capsulesh.webp';
 import hangarsImg from '../assets/HangarsHero.webp';
 import garagesImg from '../assets/garages.webp';
 import productionImg from '../assets/production.webp';
