@@ -87,10 +87,11 @@ const Home = () => {
   const categories = [
     {
       title: 'Модульные здания',
-      description: 'Быстрый ввод, предсказуемый бюджет и полный комплект для сборки без доработок на площадке.',
+      description: 'Модульные и малоэтажные решения ЛСТК — от глэмпинга до жилых и сервисных объектов',
       image: capsulesImg,
-      link: '/capsules',
-      featured: true
+      link: '/modules',
+      featured: true,
+      cta: 'Выбрать направление'
     },
     {
       title: 'Ангары и склады',
@@ -279,7 +280,7 @@ const Home = () => {
                   </div>
                   <p className="direction-summary">{item.description}</p>
                   <div className="direction-actions">
-                    <span className="btn-primary ghost">Подробнее</span>
+                    <span className="btn-primary ghost">{item.cta || 'Подробнее'}</span>
                   </div>
                 </div>
               </Link>

@@ -11,6 +11,9 @@ import Garages from './pages/Garages';
 import About from './pages/About';
 import Documents from './pages/Documents';
 import Contacts from './pages/Contacts';
+import Modules from './pages/Modules';
+import ModulesResidential from './pages/ModulesResidential';
+import ModulesSmall from './pages/ModulesSmall';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
             <Route path="/capsules" element={<Capsules />} />
             <Route path="/hangars" element={<Hangars />} />
             <Route path="/garages" element={<Garages />} />
+            <Route path="/modules" element={<Modules />} />
+            <Route path="/modules/residential" element={<ModulesResidential />} />
+            <Route path="/modules/small" element={<ModulesSmall />} />
             <Route path="/about" element={<About />} />
             <Route path="/documents" element={<Documents />} />
             <Route path="/contacts" element={<Contacts />} />
