@@ -18,6 +18,9 @@ const Header = () => {
   }, []);
 
   const catalogLabels = {
+    '/modules': 'Модульные здания',
+    '/modules/residential': 'Модульные здания',
+    '/modules/small': 'Модульные здания',
     '/capsules': 'Капсулы',
     '/hangars': 'Ангары',
     '/garages': 'Гаражи',
