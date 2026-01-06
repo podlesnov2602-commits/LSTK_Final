@@ -9,7 +9,7 @@ import CostingBlock from '../components/ui/CostingBlock';
 
 import './ProductPage.css';
 
-import heroImg from '../assets/Hero2.webp';
+import heroImg from '../assets/HeroBig.webp';
 import gallery1 from '../assets/Dom1.webp';
 import gallery2 from '../assets/Dom2.webp';
 import gallery3 from '../assets/Dom3.webp';
