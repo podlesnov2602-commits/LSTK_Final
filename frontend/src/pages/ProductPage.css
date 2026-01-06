@@ -114,14 +114,14 @@
   position: relative;
   height: 300px;
   background-repeat: no-repeat;
-  background-size: 115%;            /* “отдаление” без пустот */
-  background-position: center 18%;  /* подними фокус (подстрой по вкусу) */
+  background-size: 90% 100%;        /* Ключ: 90% по ширине — отдаляем, 100% по высоте — без полос */
+  background-position: center center; /* Центрируем идеально */
+  background-color: #0a0f10;        /* На всякий случай, если где-то просветит */
   display: flex;
   align-items: flex-end;
   isolation: isolate;
-  transition: background-size .25s ease, background-position .25s ease;
+  transition: background-size 0.3s ease;
 }
-
 
 
 .project-visual::after {
