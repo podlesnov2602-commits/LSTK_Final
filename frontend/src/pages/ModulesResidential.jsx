@@ -10,11 +10,12 @@ import CostingBlock from '../components/ui/CostingBlock';
 import './ProductPage.css';
 
 import heroImg from '../assets/Hero2.webp';
-import gallery1 from '../assets/HeroStart.webp';
-import gallery2 from '../assets/AboutHero.webp';
-import gallery3 from '../assets/production.webp';
-import gallery4 from '../assets/HangarsHero.webp';
-import gallery5 from '../assets/Hero2.webp';
+import gallery1 from '../assets/Dom1.webp';
+import gallery2 from '../assets/Dom2.webp';
+import gallery3 from '../assets/Dom3.webp';
+import gallery4 from '../assets/Dom4.webp';
+import gallery5 from '../assets/Dom5.webp';
+import gallery6 from '../assets/Dom6.webp';
 
 const ModulesResidential = () => {
   useEffect(() => {
@@ -59,6 +60,12 @@ const ModulesResidential = () => {
       image: gallery5,
       title: 'Малоэтажный дом 3 этажа',
       purpose: 'Расчёт нагрузок под регион и фасады',
+      tag: 'ЖИЛОЙ ДОМ'
+    },
+     {
+      image: gallery6,
+      title: 'Гостевой дом 2 этажа',
+      purpose: 'Каркас для операторских форматов размещения',
       tag: 'ЖИЛОЙ ДОМ'
     }
   ];
