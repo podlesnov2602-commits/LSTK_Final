@@ -114,15 +114,32 @@
   position: relative;
   height: 300px;
   background-repeat: no-repeat;
-  background-size: 90% 100%;        /* Ключ: 90% по ширине — отдаляем, 100% по высоте — без полос */
-  background-position: center center; /* Центрируем идеально */
-  background-color: #0a0f10;        /* На всякий случай, если где-то просветит */
+  background-size: cover;              /* Всегда заполняет блок полностью без полос */
+  background-position: center center;   /* Фокус строго по центру */
   display: flex;
   align-items: flex-end;
   isolation: isolate;
-  transition: background-size 0.3s ease;
+  overflow: hidden;                    /* Важно: обрезает "выход" за пределы при scale */
+  border-radius: 16px;                 /* Чтобы corners не торчали */
 }
 
+.project-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: inherit;           /* Наследует фон от .project-visual */
+  background-size: inherit;
+  background-position: inherit;
+  background-repeat: inherit;
+  transform: scale(0.90);              /* Отдаление: 0.90 = 90%, подберите 0.88–0.92 */
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.project-visual > * {
+  position: relative;
+  z-index: 2;
+}
 
 .project-visual::after {
   content: '';
@@ -131,7 +148,6 @@
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 36%, rgba(0, 0, 0, 0.75) 100%);
   z-index: 1;
 }
-
 .project-overlay {
   position: relative;
   z-index: 2;
