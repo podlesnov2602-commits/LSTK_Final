@@ -34,27 +34,27 @@ const ModulesSmall = () => {
   const gallery = [
     {
       image: module1,
-      caption: 'Баня модульная 24 м²'
+      caption: 'Баня 21 м²'
     },
     {
       image: module2,
-      caption: 'Сауна модульная 18 м²'
+      caption: 'Баня 54 м²'
     },
     {
       image: module3,
-      caption: 'Хозблок 30 м²'
+      caption: 'Баня 48 м²'
     },
     {
       image: module4,
-      caption: 'Сервисный модуль 40 м²'
+      caption: 'Модульная баня'
     },
         {
       image: module5,
-      caption: 'Сервисный модуль 40 м²'
+      caption: 'Модульная баня 24 м²'
     },
     {
       image: module6,
-      caption: 'Технический блок 36 м²'
+      caption: 'Модульная баня 24 м²'
     }
   ];
 
