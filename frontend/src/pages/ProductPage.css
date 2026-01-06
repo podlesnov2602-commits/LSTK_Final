@@ -111,9 +111,17 @@
 }
 
 .project-visual {
-  background-size: 60% !important;
-  background-position: left top !important;
+  position: relative;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: 115%;            /* “отдаление” без пустот */
+  background-position: center 18%;  /* подними фокус (подстрой по вкусу) */
+  display: flex;
+  align-items: flex-end;
+  isolation: isolate;
+  transition: background-size .25s ease, background-position .25s ease;
 }
+
 
 
 .project-visual::after {
