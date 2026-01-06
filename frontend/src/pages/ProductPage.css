@@ -113,13 +113,12 @@
 .project-visual {
   position: relative;
   height: 300px;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;           /* Заполняет весь блок без полос и искажений */
+  background-color: #050808;        /* Тёмный фон вместо дубликата картинки */
+  background-image: none;           /* Убираем фон с контейнера полностью */
   display: flex;
   align-items: flex-end;
   isolation: isolate;
-  overflow: hidden;                 /* Обрезает "выход" за границы при уменьшении */
+  overflow: hidden;
   border-radius: 16px;
 }
 
@@ -127,16 +126,14 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-image: inherit;        /* Берёт изображение от родителя */
-  background-size: inherit;
-  background-position: inherit;
-  background-repeat: inherit;
-  transform: scale(0.80);           /* Отдаление на ~20% (80% от оригинала) */
+  background-image: inherit;        /* Берёт url из inline-style в JSX */
+  background-size: cover;           /* Важно: сохраняет пропорции и заполняет */
+  background-position: center center;
+  background-repeat: no-repeat;
+  transform: scale(0.80);           /* Отдаление на 20% — как ты хотел */
   transition: transform 0.35s ease;
-  z-index: 0;
 }
 
-/* Градиент снизу (как был раньше) */
 .project-visual::after {
   content: '';
   position: absolute;
