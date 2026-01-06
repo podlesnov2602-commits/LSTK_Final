@@ -113,11 +113,22 @@
 .project-visual {
   position: relative;
   height: 300px;
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: flex-end;
   isolation: isolate;
+}
+
+.project-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--project-image);
+  background-size: cover;
+  background-position: center 32%;
+  background-repeat: no-repeat;
+  transform: scale(0.9);
+  transform-origin: center;
+  z-index: 0;
 }
 
 .project-visual::after {
