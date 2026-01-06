@@ -164,14 +164,14 @@ const Hangars = () => {
             subtitle="Масштабные пролёты и разные сценарии эксплуатации: от локальных складов до кросс-доков"
           />
           <div className="gallery-grid">
-              {gallery.map((item, index) => (
-                <div key={index} className="project-card">
-                  <div className="project-visual" style={{ '--project-image': `url(${item.image})` }}>
-                    <div className="project-overlay">
-                      <p className="project-caption">{item.title}</p>
-                      <p className="project-purpose">{item.purpose}</p>
-                      <span className="project-meta">{item.tag}</span>
-                    </div>
+            {gallery.map((item, index) => (
+              <div key={index} className="project-card">
+                <div className="project-visual" style={{ backgroundImage: `url(${item.image})` }}>
+                  <div className="project-overlay">
+                    <p className="project-caption">{item.title}</p>
+                    <p className="project-purpose">{item.purpose}</p>
+                    <span className="project-meta">{item.tag}</span>
+                  </div>
                 </div>
               </div>
             ))}

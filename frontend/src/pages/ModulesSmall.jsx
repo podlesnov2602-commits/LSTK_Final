@@ -145,14 +145,14 @@ const ModulesSmall = () => {
             subtitle="Компактные ЛСТК-модули для сервисных, технических и вспомогательных задач"
           />
           <div className="gallery-grid">
-              {gallery.map((item, index) => (
-                <div key={index} className="project-card">
-                  <div className="project-visual" style={{ '--project-image': `url(${item.image})` }}>
-                    <div className="project-overlay">
-                      <p className="project-caption">{item.caption}</p>
-                      <span className="project-meta">ФУНКЦИОНАЛЬНОЕ ЗДАНИЕ</span>
-                    </div>
+            {gallery.map((item, index) => (
+              <div key={index} className="project-card">
+                <div className="project-visual" style={{ backgroundImage: `url(${item.image})` }}>
+                  <div className="project-overlay">
+                    <p className="project-caption">{item.caption}</p>
+                    <span className="project-meta">ФУНКЦИОНАЛЬНОЕ ЗДАНИЕ</span>
                   </div>
+                </div>
               </div>
             ))}
           </div>
