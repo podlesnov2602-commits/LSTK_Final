@@ -114,49 +114,45 @@
   position: relative;
   height: 300px;
   background-repeat: no-repeat;
-  background-size: cover;              /* Всегда заполняет блок полностью без полос */
-  background-position: center center;   /* Фокус строго по центру */
+  background-position: center center;
+  background-size: cover;           /* Заполняет весь блок без полос и искажений */
   display: flex;
   align-items: flex-end;
   isolation: isolate;
-  overflow: hidden;                    /* Важно: обрезает "выход" за пределы при scale */
-  border-radius: 16px;                 /* Чтобы corners не торчали */
+  overflow: hidden;                 /* Обрезает "выход" за границы при уменьшении */
+  border-radius: 16px;
 }
 
 .project-visual::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: inherit;           /* Наследует фон от .project-visual */
+  background-image: inherit;        /* Берёт изображение от родителя */
   background-size: inherit;
   background-position: inherit;
   background-repeat: inherit;
-  transform: scale(0.90);              /* Отдаление: 0.90 = 90%, подберите 0.88–0.92 */
-  transition: transform 0.3s ease;
+  transform: scale(0.80);           /* Отдаление на ~20% (80% от оригинала) */
+  transition: transform 0.35s ease;
   z-index: 0;
 }
 
-.project-visual > * {
-  position: relative;
-  z-index: 2;
-}
-
+/* Градиент снизу (как был раньше) */
 .project-visual::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 36%, rgba(0, 0, 0, 0.75) 100%);
   z-index: 1;
+  pointer-events: none;
 }
+
 .project-overlay {
   position: relative;
   z-index: 2;
   padding: 18px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
 }
+
 
 .project-caption {
   margin: 0;
