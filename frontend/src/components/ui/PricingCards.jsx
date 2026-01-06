@@ -29,7 +29,6 @@ const PricingCards = ({ title, subtitle, items, footnote }) => {
                 ))}
               </div>
               <button className="btn-primary pricing-cta">{item.price}</button>
-              <p className="pricing-hint">Цена ориентировочная</p>
             </article>
           ))}
         </div>
