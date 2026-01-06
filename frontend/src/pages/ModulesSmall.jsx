@@ -9,11 +9,12 @@ import CostingBlock from '../components/ui/CostingBlock';
 
 import './ProductPage.css';
 
-import module1 from '../assets/Garage1.webp';
-import module2 from '../assets/Garage2.webp';
-import module3 from '../assets/Garage3.webp';
-import module4 from '../assets/Garage4.webp';
-import module5 from '../assets/Garage5.webp';
+import module1 from '../assets/Banya1.webp';
+import module2 from '../assets/Banya2.webp';
+import module3 from '../assets/Banya3.webp';
+import module4 from '../assets/Banya4.webp';
+import module5 from '../assets/Banya5.webp';
+import module6 from '../assets/Banya6.webp';
 import heroImage from '../assets/HangarsHero.webp';
 
 const ModulesSmall = () => {
@@ -47,8 +48,12 @@ const ModulesSmall = () => {
       image: module4,
       caption: 'Сервисный модуль 40 м²'
     },
-    {
+        {
       image: module5,
+      caption: 'Сервисный модуль 40 м²'
+    },
+    {
+      image: module6,
       caption: 'Технический блок 36 м²'
     }
   ];
