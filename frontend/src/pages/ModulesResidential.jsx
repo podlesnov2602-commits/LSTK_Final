@@ -145,7 +145,7 @@ const ModulesResidential = () => {
           <div className="gallery-grid">
             {gallery.map((item, index) => (
               <div key={index} className="project-card">
-                <div className="project-visual" style={{ '--project-image': `url(${item.image})` }}>
+                <div className="project-visual" style={{ backgroundImage: `url(${item.image})` }}>
                   <div className="project-overlay">
                     <p className="project-caption">{item.title}</p>
                     <p className="project-purpose">{item.purpose}</p>
