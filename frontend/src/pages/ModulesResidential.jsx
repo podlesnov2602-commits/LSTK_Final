@@ -35,37 +35,31 @@ const ModulesResidential = () => {
     {
       image: gallery1,
       title: 'Жилой дом Адлер 129 м²',
-      purpose:,
       tag: 'ЖИЛОЙ ДОМ'
     },
     {
       image: gallery2,
       title: 'Жилой дом 72 м²',
-      purpose:,
       tag: 'ЖИЛОЙ ДОМ'
     },
     {
       image: gallery3,
       title: 'Жилой дом 102,6 м²',
-      purpose: ,
       tag: 'ЖИЛОЙ ДОМ'
     },
     {
       image: gallery4,
       title: 'Финский дом 158м²',
-      purpose: ,
       tag: 'ЖИЛОЙ ДОМ'
     },
     {
       image: gallery5,
       title: 'Малоэтажный дом 2 этажа',
-      purpose: ,
       tag: 'ЖИЛОЙ ДОМ'
     },
      {
       image: gallery6,
       title: 'Жилой дом «Хельсинки»',
-      purpose: ,
       tag: 'ЖИЛОЙ ДОМ'
     }
   ];
