@@ -10,7 +10,7 @@ import './Modules.css';
 import banyaImg from '../assets/banya.webp';
 import capsulesImg from '../assets/capsules.webp';
 import bigImg from '../assets/modulesbig.webp';
-import productionImg from '../assets/production.webp';
+import productionImg from '../assets/Hero3.webp';
 
 const directions = [
   {
