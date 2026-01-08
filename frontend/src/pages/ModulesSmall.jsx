@@ -15,7 +15,7 @@ import module3 from '../assets/Banya3.webp';
 import module4 from '../assets/Banya4.webp';
 import module5 from '../assets/Banya5.webp';
 import module6 from '../assets/Banya6.webp';
-import heroImage from '../assets/HangarsHero.webp';
+import heroImage from '../assets/HeroSmal.webp';
 
 const ModulesSmall = () => {
   useEffect(() => {
