@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Instagram, Facebook } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import './Footer.css';
 
@@ -30,14 +30,6 @@ const Footer = () => {
                 <Instagram size={22} />
               </a>
 
-              <a 
-                href={siteConfig.social.facebook} 
-                className="footer-social-link" 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <Facebook size={22} />
-              </a>
             </div>
           </div>
 
@@ -58,7 +50,6 @@ const Footer = () => {
               <Link to="/about" className="footer-link">О нас</Link>
               <Link to="/documents" className="footer-link">Документы</Link>
               <Link to="/contacts" className="footer-link">Контакты</Link>
-              <Link to="/privacy-policy" className="footer-link">Политика конфиденциальности</Link>
             </nav>
           </div>
 
@@ -90,6 +81,9 @@ const Footer = () => {
           <p className="footer-copyright">
             © 2025. Все права защищены.
           </p>
+          <Link to="/privacy-policy" className="footer-policy-link">
+            Политика конфиденциальности
+          </Link>
         </div>
       </div>
     </footer>

@@ -142,12 +142,29 @@
   padding-top: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 .footer-copyright {
   color: var(--text-secondary);
   font-size: 14px;
   opacity: 0.65;
+}
+
+.footer-policy-link {
+  color: var(--text-secondary);
+  font-size: 14px;
+  opacity: 0.65;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-policy-link:hover {
+  color: var(--brand-green);
+  opacity: 1;
 }
 
 @media (max-width: 1024px) {
