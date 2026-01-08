@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
         title="Политика конфиденциальности"
         subtitle="Обработка и защита персональных данных пользователей сайта"
         meta="Industrial Premium • Политика"
-        image=heroImage
+        image={heroImage}
       />
 
       <section className="privacy-policy-section">
