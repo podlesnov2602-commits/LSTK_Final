@@ -14,6 +14,7 @@ import Contacts from './pages/Contacts';
 import Modules from './pages/Modules';
 import ModulesResidential from './pages/ModulesResidential';
 import ModulesSmall from './pages/ModulesSmall';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/documents" element={<Documents />} />
             <Route path="/contacts" element={<Contacts />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </main>
         <Footer />
