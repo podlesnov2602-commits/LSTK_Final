@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import PageHero from '../components/ui/PageHero';
 import SectionHeader from '../components/ui/SectionHeader';
 import './PrivacyPolicy.css';
+import heroImage from '../assets/HeroPol.webp';
 
 const PrivacyPolicy = () => {
   useEffect(() => {
@@ -14,7 +15,7 @@ const PrivacyPolicy = () => {
         title="Политика конфиденциальности"
         subtitle="Обработка и защита персональных данных пользователей сайта"
         meta="Industrial Premium • Политика"
-        image="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?q=80&w=2070"
+        image=heroImage
       />
 
       <section className="privacy-policy-section">
