@@ -3,7 +3,7 @@ import { FileText, MessageCircle } from 'lucide-react';
 import { siteConfig } from '../../config/siteConfig';
 import './CostingBlock.css';
 
-const CostingBlock = ({ productName }) => {
+const CostingBlock = ({ productName, expansionNote }) => {
   const [activeForm, setActiveForm] = useState(null);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -72,6 +72,7 @@ const handleSubmit = async (e) => {
               <p className="body-lg subtle">Без длинных форм и ожиданий</p>
               <p className="body-md">
                 Напишите нам в WhatsApp или оставьте email — пришлём расчёт и КП без задержек.
+                {expansionNote ? ` ${expansionNote}` : ''}
               </p>
             </div>
 
